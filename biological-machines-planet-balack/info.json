@@ -1,0 +1,9 @@
+{
+  "name": "biological-machines-planet-balack",
+  "version": "1.0.0",
+  "title": "Biological Machines: Planet Balack",
+  "author": "bradythehuman",
+  "description": "Adds Balack, a post aquilo planet centered around a new building, the bio fabricator, which can only be placed at the origin and produces lots of pollution. A unique scrap resource can be turned into ammo and building supplies to defend the fabricator against powerful enemies. The fabricator is required to produce new speed+quality module, tank mk2, mech armor mk2 and warp drive. Both balack and the shattered planet require promethium science which can be mined on some inner planets",
+  "factorio_version": "2.0",
+  "dependencies": ["biological-machines-warp-drive >= 1.0.0", "ArmouredBiters >= 1.2.1", "k2-wind-turbine-zars-fork >= 1.2.9", "module-inserter >= 1.0.2", "? promethium-belts >= 1.0.2", "? RoboticsFacility", "? BuggisNuclearBots >= 2.0.1"]
+}

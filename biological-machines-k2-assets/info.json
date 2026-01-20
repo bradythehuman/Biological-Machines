@@ -1,0 +1,9 @@
+{
+  "name": "biological-machines-k2-assets",
+  "version": "1.0.0",
+  "title": "Biological Machines: K2 Assets",
+  "author": "bradythehuman",
+  "description": "Does nothing on its own. Derived from Krastorio 2 and kept seperate for BM mods to comply with K2's license. Please let me know if I am breaking the license, will fix asap.",
+  "factorio_version": "2.0",
+  "dependencies": ["base >= 2.0.0", "space-age", "quality"]
+}

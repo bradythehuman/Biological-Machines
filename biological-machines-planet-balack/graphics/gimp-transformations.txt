@@ -1,0 +1,14 @@
+TILES / ROCKS
+brightness -60 / contrast +20
+saturation -90 (0.1)
+
+RUINS
+lightness -40 / saturation -90
+
+GLEBA TILE
+lightness -80
+
+MODULE
+colorize case (hue 0.78 / saturation 0.74 / lightness -0.3)
+hue-chroma lightbulb (hue 85 / lightness 10)
+hue-chroma darkbulb (hue 85 / lightness -30)

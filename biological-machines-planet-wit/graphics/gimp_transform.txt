@@ -1,0 +1,17 @@
+vulcanus tiles -> wit tiles
+brightness +100 / contrast +90
+
+stone -> copper sulphate
+hue +180
+lightness +15
+contrast +100
+
+calcite -> glass shard
+cyan +50 / blue +10
+opacity 70
+
+iceberg - > glassberg
+grayscale
+colorize r=40 g=70 b=80
+brightness +15 / contrast +15
+opacity 70

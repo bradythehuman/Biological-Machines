@@ -1,0 +1,9 @@
+{
+  "name": "biological-machines-hunger",
+  "version": "1.0.0",
+  "title": "Biological Machines: Hunger",
+  "author": "bradythehuman",
+  "description": "Adds a hunger mechanic which consumes selected foods from the engineers (or an occupied space platforms) inventory or the engineer starves. Differnt foods give the engineer passive regen/movement buffs/debuffs while they are being consumed. Also adds equipment which removes the need to eat constantly and allows the engineer to consume u-235 for a strong passive effect. The engineer can no longer consume food as capsules to apply buffs, but new items were added to replace them. Foods are ranked in a gui accessible via shortcut/hotkey and only ranked foods will be consumed. The current food, its spoilage percentage and the engineers saturation meter are optionally displayed in a widget above the equipment gui.",
+  "factorio_version": "2.0",
+  "dependencies": ["biological-machines-core >= 1.0.0"]
+}

@@ -1,0 +1,60 @@
+data:extend({
+  {
+    type = "recipe",
+    name = "bm-homeworld-market",
+    --category = "crafting",
+    subgroup = "bm-homeworld",
+    order = "b",
+    enabled = false,
+    energy_required = 1,
+    --ingredients = {{type = "item", name = "bm-credit", amount = 20}},
+    ingredients = {
+      {type = "item", name = "steel-plate", amount = 5},
+      {type = "item", name = "iron-plate", amount = 20},
+    },
+    results = {{type = "item", name = "bm-homeworld-market", amount = 1}},
+  },
+  {
+    type = "recipe",
+    name = "bm-super-credit",
+    icons = {
+      {
+        icon = "__biological-machines-k2-assets__/graphics/arrow-g.png",
+      },
+      {
+        icon = "__base__/graphics/icons/coin.png",
+        scale = 0.28,
+        shift = {-8, -8},
+      },
+      {
+        icon = "__biological-machines-homeworld__/graphics/purple-coin.png",
+        scale = 0.28,
+        shift = {4, 8},
+      },
+    },
+    category = "bm-market",
+    subgroup = "bm-homeworld",
+    order = "b",
+    --hidden = true,
+    enabled = false,
+    energy_required = 1,
+    ingredients = {{type = "item", name = "bm-credit", amount = 200}},
+    results = {{type = "item", name = "bm-super-credit", amount = 1}},
+  },
+  {
+    type = "recipe",
+    name = "bm-interstellar-energy-link",
+    category = "electromagnetics",
+    enabled = false,
+    energy_required = 30,
+    ingredients = {
+      {type = "item", name = "bm-energy-link-core", amount = 10},
+      {type = "item", name = "low-density-structure", amount = 200},
+      {type = "item", name = "quantum-processor", amount = 100},
+      {type = "item", name = "superconductor", amount = 400},
+      {type = "item", name = "tungsten-plate", amount = 200},
+      {type = "item", name = "refined-concrete", amount = 100},
+    },
+    results = {{type = "item", name = "bm-interstellar-energy-link", amount = 1}},
+  },
+})

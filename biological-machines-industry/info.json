@@ -1,0 +1,9 @@
+{
+  "name": "biological-machines-industry",
+  "version": "1.0.0",
+  "title": "Biological Machines: Industry",
+  "author": "bradythehuman",
+  "description": "Brings several space age mechanics to the nauvis early game including spoilage, recycling, crushing and agriculture. Adds several new buildings including the carbonizer and scrapyard. Adds new biological materials and intermediates to basic recipes including carbon in steel, circuit boards in electronic circuits, ethanol in oil cracking and gunpowder in explosives. Also makes significant additions to gleba including production of napalm from new agricultural products and processing seeds into seed oil into heavy oil. Changes some non biological recipes to rebalance total consumption of iron, copper and stone.",
+  "factorio_version": "2.0",
+  "dependencies": ["biological-machines-core >= 1.0.0", "? aai-loaders >= 0.2.7", "? slipstacks >= 1.1.0", "? LargerLamps-2_0 >= 0.2.2", "? snouz_better_substation >= 1.2.1", "? shield-projector >= 0.2.2"]
+}
