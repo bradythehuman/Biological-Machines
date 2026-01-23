@@ -118,6 +118,7 @@ data:extend({
     damaged_trigger_effect = link_entity.damaged_trigger_effect,
     resistances = link_entity.resistances,
     minable = link_entity.minable,
+    placeable_by = {item = "bm-interstellar-energy-link", count = 1},
     corpse = link_entity.corpse,
     flags = {"not-on-map"},
     hidden = true,

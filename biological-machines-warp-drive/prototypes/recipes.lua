@@ -49,7 +49,7 @@ data:extend({
     --hidden_in_factoriopedia = true,
     allow_productivity = false,
     allow_decomposition = false,
-    energy_required = 10,
+    energy_required = 60,
     ingredients = {{type = "item", name = "bm-warp-power-cell", amount = 1}},
     results = {{type = "item", name = "bm-warp", amount = 1}},
     result_is_always_fresh = true,

@@ -39,7 +39,7 @@ data:extend({
     --hidden = true,
     --hidden_in_factoriopedia = true,
 
-    spoil_ticks = 2,
+    spoil_ticks = 1,
     spoil_to_trigger_result = {
       items_per_trigger = 1,
       trigger = {

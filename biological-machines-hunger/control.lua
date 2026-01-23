@@ -70,7 +70,6 @@ local default_prefs = {
   foods_to_i["none"],
   foods_to_i["none"],
   foods_to_i["none"],
-  foods_to_i["none"],
 }
 
 
@@ -344,7 +343,7 @@ local function initialize_prefs(i)
     old_prefs = {}
   end
   local new_prefs = {}
-  for pref_i=1, settings.get_player_settings(i)["bm-pref-count"].value do
+  for pref_i = 1, max_preferences do
     new_prefs[pref_i] = old_prefs[pref_i] or default_prefs[pref_i]
   end
   storage.hungry[i].prefs = new_prefs
@@ -473,15 +472,7 @@ script.on_event(defines.events.on_player_changed_surface, function(event)
 end)
 
 script.on_event(defines.events.on_runtime_mod_setting_changed, function(event)
-  if event.setting == "bmh-pref-count" then
-    if event.player_index then
-      initialize_prefs(event.player_index)
-    else
-      for i, _ in pairs(game.players) do
-        initialize_prefs(i)
-      end
-    end
-  elseif event.setting == "bmh-sat-per-sec"
+  if event.setting == "bmh-sat-per-sec"
   or event.setting == "bmh-injury-sat-scalar" then
     base_sat_per_sec = settings.global["bm-sat-per-sec"].value
     injured_sat_per_sec = settings.global["bm-sat-per-sec"].value
@@ -606,7 +597,7 @@ script.on_nth_tick(hunger_interval, function(event)
       end
 
       local special_equipment = get_special_equipment(i, c)
-      for pref_i=1, #hunger.prefs do
+      for pref_i = 1, max_preferences do
         local food = i_to_foods[hunger.prefs[pref_i]]
         if food ~= "none" then
           for q, _ in pairs(prototypes.quality) do

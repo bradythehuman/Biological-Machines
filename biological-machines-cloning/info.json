@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "title": "Biological Machines: Cloning",
   "author": "bradythehuman",
-  "description": "Clones can be made in a biochamber and stored in dedicated tanks. Getting in a tank will fill the tank and open a respawn screen where the engineer can respawn at any filled tank or at the default spawn. Clones can be made with quality ingredients/modules and higher quality clones will have increased health, running speed, crafing speed and mining speed.",
+  "description": "Clones can be made in a biochamber and stored in dedicated tanks. Getting in a tank will fill the tank and open a respawn screen where the engineer can respawn at any filled tank or at the default spawn. Higher quality clones will have increased health, running speed, crafing speed and mining speed.",
   "factorio_version": "2.0",
   "dependencies": ["biological-machines-core >= 1.0.0"]
 }

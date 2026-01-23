@@ -1,7 +1,7 @@
 data:extend({
   {
     type = "bool-setting",
-    name = "bm-bot-start",
+    name = "bm-bot-start-standalone",
     setting_type = "startup",
     default_value = false
   },

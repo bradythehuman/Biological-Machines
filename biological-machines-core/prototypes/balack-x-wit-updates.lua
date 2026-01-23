@@ -1,3 +1,4 @@
+local recycling = require("__quality__.prototypes.recycling")
 local item_sounds = require("__base__.prototypes.item_sounds")
 
 local dh = require("__biological-machines-core__.data-helper")
@@ -129,7 +130,7 @@ data:extend({
     effects = {
       {type = "unlock-recipe", recipe = "bm-ai-control-unit-trained"},
     },
-    prerequisites = {"bm-activated-ai-control-unit", "bm-interstellar-science-pack"},
+    prerequisites = {"bm-planet-discovery-balack", "bm-interstellar-science-pack"},
     unit = {
       count = 5000,
       ingredients = util.table.deepcopy(bm_all_sci_packs),
@@ -137,3 +138,6 @@ data:extend({
     }
   },
 })
+
+recycling.generate_self_recycling_recipe(data.raw["module"]["bm-ai-control-unit-trained"])
+data.raw.recipe["bm-ai-control-unit-trained-recycling"].results = data.raw.recipe["bm-ai-control-unit-recycling"].results

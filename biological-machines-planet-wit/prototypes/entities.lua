@@ -314,11 +314,11 @@ data:extend({
     drawing_box_vertical_extension = 0.5,
     energy_source = {
       type = "electric",
-      buffer_capacity = "5GJ",
+      buffer_capacity = "10GJ",
       usage_priority = "tertiary",
-      input_flow_limit = "3GW",
-      output_flow_limit = "3GW",
-      drain = "3MW"
+      input_flow_limit = "2GW",
+      output_flow_limit = "2GW",
+      drain = "10MW"
     },
     chargable_graphics = {
       picture = aa_picture(),

@@ -16,14 +16,6 @@ data:extend({
     default_value = 2
   },
   {
-    type = "int-setting",
-    name = "bm-pref-count",
-    setting_type = "runtime-per-user",
-    minimum_value = 1,
-    maximum_value = 9,
-    default_value = 3
-  },
-  {
     type = "bool-setting",
     name = "bm-show-widget",
     setting_type = "runtime-per-user",

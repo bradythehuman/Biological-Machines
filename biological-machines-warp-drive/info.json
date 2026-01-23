@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "title": "Biological Machines: Warp Drive",
   "author": "bradythehuman",
-  "description": "Adds a warp drive machine which consumes warp power cells to transport a space platform to the next space location instantly. Platform must be moving forward to be teleported. ",
+  "description": "Adds a warp drive machine which consumes warp power cells to transport a space platform to the next space location instantly. Platform must be moving forward to be teleported.",
   "factorio_version": "2.0",
   "dependencies": ["biological-machines-core >= 1.0.0"]
 }

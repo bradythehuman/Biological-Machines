@@ -62,6 +62,9 @@ local function attempt_build_link(entity)
   local surface_index = entity.surface_index
   local existing_link = storage.energy_links[surface_index]
   if not existing_link or not existing_link.valid then
+    local qual_scalar = 1 + entity.quality.level
+    entity.electric_buffer_size = qual_scalar * entity.electric_buffer_size
+    entity.power_production = qual_scalar * entity.power_production
     storage.energy_links[surface_index] = entity
     return
   end
@@ -96,6 +99,10 @@ script.on_init(function()
     final_message = {"bm.victory-final"},
     image_path = "__base__/script/freeplay/victory-space-age.png",
   }
+
+  storage.owed_credits = 0
+  storage.energy_links = {}
+  storage.finished = {}
 end)
 
 script.on_event(defines.events.on_surface_created, function(event)
@@ -106,10 +113,7 @@ script.on_event(defines.events.on_surface_created, function(event)
     surface.create_entity({name = "hidden-electric-energy-interface", position = {20, -20}})
     storage.trade_counts = {}
     storage.tradable_counts = {}
-    storage.owed_credits = 0
     storage.trade_gui = {}
-    storage.finished = {}
-    storage.energy_links = {}
   end
 end)
 
@@ -191,7 +195,7 @@ script.on_event(defines.events.on_space_platform_changed_state, function(event)
     return
   end
 
-  player_force.print({"bm.final-platform-removed", platform.index})
+  force.print({"bm.final-platform-removed", platform.index})
 
   if not storage.finished[force.name] then
     storage.finished[force.name] = true

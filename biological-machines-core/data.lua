@@ -42,7 +42,8 @@ and settings.startup["bm-shattered-core"].value) then
 end
 
 --OPTIONAL FEATURES
-if settings.startup["bm-bot-start"].value then
+if mods["biological-machines-modpack"]
+or settings.startup["bm-bot-start-standalone"].value then
   require("prototypes.bot-start")
 end
 

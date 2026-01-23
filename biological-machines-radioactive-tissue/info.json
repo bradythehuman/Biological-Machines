@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "title": "Biological Machines: Radioactive Tissue",
   "author": "bradythehuman",
-  "description": "Adds tissue dropped by biter nests which may be cultivated in a biochamber using bioflux and u-235. The tissue may be crafted into a new science pack, various machines, poison gas, uranium ore (centrifuge) and clones. Machines include the biolab which now consumes u-235 as fuel and a new military assembing machine which has 50% base productivity. Poison gas can be used to make grenades, bullets and mines and its damage is increased with an infinite research. By continually growing and processing tissue the engineer can turn bioflux into surplus uranium. Clones grown in biochambers may be placed in tanks. When the engineer dies or gets in a prepared tank they may choose to respawn at the default location or in any filled tank. A high quality clone body gives the engineer increased health and mining/crafting/running speed.",
+  "description": "Adds tissue dropped by biter nests which may be cultivated in a biochamber using bioflux and u-235. The tissue may be crafted into a new nuclear military science pack, various machines (including new military assembler with 50% base productivity), poison gas, uranium ore (centrifuge) and clones.",
   "factorio_version": "2.0",
   "dependencies": ["biological-machines-cloning >= 1.0.0", "poison-immune-asteroids >= 0.1.0", "? ironclad-gunboat-and-mortar-turret-fork >= 0.0.3", "? shelter-k2 >= 0.0.3", "? snouz-handcannon >= 1.0.1"]
 }

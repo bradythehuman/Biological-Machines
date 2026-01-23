@@ -126,9 +126,10 @@ end
 
 script.on_event(defines.events.on_script_trigger_effect, function(event)
 	local new_name = id_to_name[event.effect_id]
-	if new_name then
-		transform_tank(event.target_entity or event.source_entity, new_name)
-	end
+	if not new_name then return end
+	local tank = event.target_entity or event.source_entity
+	if tank == nil or tank.name ~= "bm-suspension-tank" then return end
+	transform_tank(tank, new_name)
 end)
 
 

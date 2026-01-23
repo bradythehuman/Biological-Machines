@@ -24,7 +24,7 @@ data:extend({
     selection_box = {{-3, -3}, {3, 3}},
     crafting_categories = {"bm-warp-drive"},
     fixed_recipe = "bm-warp",
-    energy_usage = "500MW",
+    energy_usage = "1GW",
     crafting_speed = 1,
     energy_source = {
       type = "electric",

@@ -51,7 +51,7 @@ local function equip_armour(index)
   end
 end
 
-if settings.startup["bm-bot-start"].value then
+if prototypes.item["bm-survival-armor"] then
 	script.on_event(defines.events.on_cutscene_cancelled, function(event)
 	  equip_armour(event.player_index)
 	end)

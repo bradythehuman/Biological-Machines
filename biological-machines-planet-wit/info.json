@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "title": "Biological Machines: Planet Wit",
   "author": "bradythehuman",
-  "description": "Adds Wit, a moon of nauvis covered in asteroid craters. The engineer must ship resources to a space platform to produce ammo/fuel to travel to Wit. On Wit the engineer must mine asteroids, glass shards, copper sulfate crystals and helium gas to produce helium power cells, a neccesary ingredient in space science, laser turrets, advanced solar panels and a new robotics facility. The robotics facility has 50% base productivity and is required to craft asteroid collectors needed to make self sufficient space platforms. The atmosphere of Wit has insufficient oxygen for any burner machines which requires the engineer to bring at least one solar panel, power pole and electric furnace to start production.",
+  "description": "Adds Wit, a moon of Nauvis covered in asteroid craters, glass, helium and coper sulfate. Use these resources to produce helium power cells, a necessary ingredient in space science, laser turrets and the robotics facility (req to craft asteroid collectors, 50% base prod). Return post Aquilo for interstellar science pack.",
   "factorio_version": "2.0",
   "dependencies": ["biological-machines-warp-drive >= 1.0.0", "electricboiler >= 2.0.1", "RoboticsFacility >= 0.6.1", "PlanetsLib >= 1.7.0", "? aai-signal-transmission >= 0.5.1", "? PersonalTeslaDefenseEquipment >= 1.7.0", "? Repair_Turret >= 2.0.4", "? reach-equipment >= 1.0.3"]
 }
