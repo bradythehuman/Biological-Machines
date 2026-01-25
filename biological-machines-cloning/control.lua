@@ -55,178 +55,11 @@ local function get_tank_name(tank_id)
 	end
 end
 
-local function transform_tank(tank, new_name)
-	local tank_id = get_tank_id(tank)
-	local surface = tank.surface
-	local tank_data = {
-		name = new_name,
-		position = tank.position,
-		direction = tank.direction,
-		quality = tank.quality,
-		force = tank.force,
-	}
-
-	if new_name ~= "bm-suspension-tank" and tank.name == "bm-suspension-tank" then
-		local recipe, quality = tank.get_recipe()
-		local control = tank.get_or_create_control_behavior()
-		storage.tanks[tank_id] = {
-			recipe = recipe.name,
-			--quality = quality.name,
-			quality = quality,
-			control = {
-				circuit_set_recipe = control.circuit_set_recipe,
-				circuit_read_contents = control.circuit_read_contents,
-				include_in_crafting = control.include_in_crafting,
-				include_fuel = control.include_fuel,
-				circuit_read_ingredients = control.circuit_read_ingredients,
-				circuit_read_recipe_finished = control.circuit_read_recipe_finished,
-				circuit_recipe_finished_signal = util.table.deepcopy(control.circuit_recipe_finished_signal),
-				circuit_read_working = control.circuit_read_working,
-				circuit_working_signal = util.table.deepcopy(control.circuit_working_signal),
-				circuit_enable_disable = control.circuit_enable_disable,
-				circuit_condition = util.table.deepcopy(control.circuit_condition),
-				connect_to_logistic_network = control.connect_to_logistic_network,
-				logistic_condition = util.table.deepcopy(control.logistic_condition),
-			},
-			connections = {
-				red = connections_unwrapper(tank.get_wire_connector(defines.wire_connector_id.circuit_red, true).real_connections),
-				green = connections_unwrapper(tank.get_wire_connector(defines.wire_connector_id.circuit_green, true).real_connections)
-			},
-			direction = tank.direction,
-			name = get_tank_name(tank_id),
-		}
-	end
-
-	local stored_data = storage.tanks[tank_id]
-
-	if new_name == "bm-suspension-tank-filled" and tank.name == "bm-suspension-tank" then
-		stored_data.clone_qual = storage.tanks[tank_id].quality
-	else
-		stored_data.clone_qual = nil
-	end
-
-	tank.destroy()
-	local new_tank = surface.create_entity(tank_data)
-	stored_data.tank = new_tank
-
-	if new_name == "bm-suspension-tank" then
-		new_tank.set_recipe(stored_data.recipe, stored_data.quality)
-		local control = new_tank.get_or_create_control_behavior()
-		for k, v in pairs(stored_data.control) do
-			control[k] = v
-		end
-		connections_connector(new_tank, stored_data.connections["red"], defines.wire_connector_id.circuit_red)
-		connections_connector(new_tank, stored_data.connections["green"], defines.wire_connector_id.circuit_green)
-	end
-
-	if new_name ~= "bm-suspension-tank-prepared" then
-		new_tank.direction = stored_data.direction
-	end
-end
-
-script.on_event(defines.events.on_script_trigger_effect, function(event)
-	local new_name = id_to_name[event.effect_id]
-	if not new_name then return end
-	local tank = event.target_entity or event.source_entity
-	if tank == nil or tank.name ~= "bm-suspension-tank" then return end
-	transform_tank(tank, new_name)
-end)
-
-
-
-script.on_event(defines.events.on_gui_opened, function(event)
-	if event.entity == nil then return end
-	local player = game.get_player(event.player_index)
-
-	if event.entity.name == "bm-suspension-tank-prepared"
-	or event.entity.name == "bm-suspension-tank-filled" then
-		local tank_id = get_tank_id(event.entity)
-		local main = player.gui.relative.add({
-	    type = "frame",
-	    name = "bm_tank_frame",
-	    direction = "vertical",
-	  })
-	  main.anchor = {
-	    gui = defines.relative_gui_type.assembling_machine_gui,
-	    position = defines.relative_gui_position["right"],
-	  }
-		if event.entity.name == "bm-suspension-tank-prepared" then
-			main.add{type="button", name="bm_tank_enter", caption={"bm-gui.enter-tank"}}
-		end
-		main.add{type="button", name="bm_tank_dump", caption={"bm-gui.dump-tank"}}
-		main.add{
-			type = "textfield",
-			name = "bm_tank_name",
-			text = get_tank_name(tank_id)
-		}
-		main.style.top_padding = 8
-	  main.style.vertically_stretchable = false
-	  main.style.horizontally_stretchable = false
-		storage.gui.open_tank[event.player_index] = {
-			main = main,
-			tank_id = tank_id,
-			entity = event.entity,
-		}
-
-	elseif event.entity.name == "space-platform-hub"
-	and player.physical_controller_type == defines.controllers.character
-	and event.entity.surface_index == player.character.surface_index then
-		local main = player.gui.relative.add({
-	    type = "frame",
-	    name = "bm_platform_hub_frame",
-	    direction = "horizontal",
-	  })
-	  main.anchor = {
-	    gui = defines.relative_gui_type.space_platform_hub_gui,
-	    position = defines.relative_gui_position["bottom"],
-	  }
-		main.add{
-			type = "button",
-			name = "bm_hub_player_empty",
-			caption = {"bm-gui.hub-player-empty"},
-			tooltip = {"bm-gui.hub-player-empty-tooltip"},
-		}
-		main.add{
-			type = "button",
-			name = "bm_hub_player_insert",
-			caption = {"bm-gui.hub-player-insert"},
-			tooltip = {"bm-gui.hub-player-insert-tooltip"},
-		}
-		storage.gui.hub[event.player_index] = {
-			main = main,
-			entity = event.entity,
-		}
-	end
-end)
-
 local function destroy_gui(player_index, gui_type)
 	if not storage.gui[gui_type][player_index] then return end
 	storage.gui[gui_type][player_index].main.destroy()
 	storage.gui[gui_type][player_index] = nil
 end
-
-script.on_event(defines.events.on_gui_closed, function(event)
-	if not event.entity then return end
-	if event.entity.name == "bm-suspension-tank-prepared"
-	or event.entity.name == "bm-suspension-tank-filled" then
-		destroy_gui(event.player_index, "open_tank")
-	end
-	if event.entity.name == "space-platform-hub" then
-		destroy_gui(event.player_index, "hub")
-	end
-end)
-
-script.on_event(defines.events.on_gui_text_changed, function(event)
-	local stored_gui = storage.gui.open_tank[event.player_index]
-	if event.element.name == "bm_tank_name" then
-		storage.tanks[stored_gui.tank_id].name = event.text
-	end
-end)
-
-local inventories = {
-	"character_main", "character_guns", "character_ammo",
-	"character_armor", "character_trash"
-}
 
 local function build_respawn_gui(player_index, selected_dd_id)
 	local player = game.get_player(player_index)
@@ -397,6 +230,196 @@ local function rebuild_respawn_gui(player_index)
 	build_respawn_gui(player_index, selected_dd_id)
 end
 
+local function attempt_rebuild_respawn_guis()
+	for player_index, _ in pairs(storage.gui.respawn) do
+		rebuild_respawn_gui(player_index)
+	end
+end
+
+local function transform_tank(tank, new_name)
+	local tank_id = get_tank_id(tank)
+	local surface = tank.surface
+	local tank_data = {
+		name = new_name,
+		position = tank.position,
+		direction = tank.direction,
+		quality = tank.quality,
+		force = tank.force,
+	}
+
+	if new_name ~= "bm-suspension-tank" and tank.name == "bm-suspension-tank" then
+		local recipe, quality = tank.get_recipe()
+		local control = tank.get_or_create_control_behavior()
+		storage.tanks[tank_id] = {
+			recipe = recipe.name,
+			--quality = quality.name,
+			quality = quality,
+			control = {
+				circuit_set_recipe = control.circuit_set_recipe,
+				circuit_read_contents = control.circuit_read_contents,
+				include_in_crafting = control.include_in_crafting,
+				include_fuel = control.include_fuel,
+				circuit_read_ingredients = control.circuit_read_ingredients,
+				circuit_read_recipe_finished = control.circuit_read_recipe_finished,
+				circuit_recipe_finished_signal = util.table.deepcopy(control.circuit_recipe_finished_signal),
+				circuit_read_working = control.circuit_read_working,
+				circuit_working_signal = util.table.deepcopy(control.circuit_working_signal),
+				circuit_enable_disable = control.circuit_enable_disable,
+				circuit_condition = util.table.deepcopy(control.circuit_condition),
+				connect_to_logistic_network = control.connect_to_logistic_network,
+				logistic_condition = util.table.deepcopy(control.logistic_condition),
+			},
+			connections = {
+				red = connections_unwrapper(tank.get_wire_connector(defines.wire_connector_id.circuit_red, true).real_connections),
+				green = connections_unwrapper(tank.get_wire_connector(defines.wire_connector_id.circuit_green, true).real_connections)
+			},
+			direction = tank.direction,
+			name = get_tank_name(tank_id),
+		}
+	end
+
+	local stored_data = storage.tanks[tank_id]
+
+	if new_name == "bm-suspension-tank-filled" and tank.name == "bm-suspension-tank" then
+		stored_data.clone_qual = storage.tanks[tank_id].quality
+	else
+		stored_data.clone_qual = nil
+	end
+
+	tank.destroy()
+	local new_tank = surface.create_entity(tank_data)
+	stored_data.tank = new_tank
+
+	if new_name == "bm-suspension-tank" then
+		new_tank.set_recipe(stored_data.recipe, stored_data.quality)
+		local control = new_tank.get_or_create_control_behavior()
+		for k, v in pairs(stored_data.control) do
+			control[k] = v
+		end
+		connections_connector(new_tank, stored_data.connections["red"], defines.wire_connector_id.circuit_red)
+		connections_connector(new_tank, stored_data.connections["green"], defines.wire_connector_id.circuit_green)
+	end
+
+	if new_name ~= "bm-suspension-tank-prepared" then
+		new_tank.direction = stored_data.direction
+	end
+end
+
+local function destroy_tank_data(event)
+	storage.tanks[get_tank_id(event.entity)] = nil
+end
+
+local function check_tanks_valid()
+	for tank_id, stored_data in pairs(storage.tanks) do
+		if not stored_data.tank.valid then
+			storage.tanks[tank_id] = nil
+		end
+	end
+end
+
+
+
+script.on_event(defines.events.on_script_trigger_effect, function(event)
+	local new_name = id_to_name[event.effect_id]
+	if not new_name then return end
+	local tank = event.target_entity or event.source_entity
+	if tank == nil or tank.name ~= "bm-suspension-tank" then return end
+	transform_tank(tank, new_name)
+	if new_name == "bm-suspension-tank-filled" then
+		attempt_rebuild_respawn_guis()
+	end
+end)
+
+
+
+script.on_event(defines.events.on_gui_opened, function(event)
+	if event.entity == nil then return end
+	local player = game.get_player(event.player_index)
+
+	if event.entity.name == "bm-suspension-tank-prepared"
+	or event.entity.name == "bm-suspension-tank-filled" then
+		local tank_id = get_tank_id(event.entity)
+		local main = player.gui.relative.add({
+	    type = "frame",
+	    name = "bm_tank_frame",
+	    direction = "vertical",
+	  })
+	  main.anchor = {
+	    gui = defines.relative_gui_type.assembling_machine_gui,
+	    position = defines.relative_gui_position["right"],
+	  }
+		if event.entity.name == "bm-suspension-tank-prepared" then
+			main.add{type="button", name="bm_tank_enter", caption={"bm-gui.enter-tank"}}
+		end
+		main.add{type="button", name="bm_tank_dump", caption={"bm-gui.dump-tank"}}
+		main.add{
+			type = "textfield",
+			name = "bm_tank_name",
+			text = get_tank_name(tank_id)
+		}
+		main.style.top_padding = 8
+	  main.style.vertically_stretchable = false
+	  main.style.horizontally_stretchable = false
+		storage.gui.open_tank[event.player_index] = {
+			main = main,
+			tank_id = tank_id,
+			entity = event.entity,
+		}
+
+	elseif event.entity.name == "space-platform-hub"
+	and player.physical_controller_type == defines.controllers.character
+	and event.entity.surface_index == player.character.surface_index then
+		local main = player.gui.relative.add({
+	    type = "frame",
+	    name = "bm_platform_hub_frame",
+	    direction = "horizontal",
+	  })
+	  main.anchor = {
+	    gui = defines.relative_gui_type.space_platform_hub_gui,
+	    position = defines.relative_gui_position["bottom"],
+	  }
+		main.add{
+			type = "button",
+			name = "bm_hub_player_empty",
+			caption = {"bm-gui.hub-player-empty"},
+			tooltip = {"bm-gui.hub-player-empty-tooltip"},
+		}
+		main.add{
+			type = "button",
+			name = "bm_hub_player_insert",
+			caption = {"bm-gui.hub-player-insert"},
+			tooltip = {"bm-gui.hub-player-insert-tooltip"},
+		}
+		storage.gui.hub[event.player_index] = {
+			main = main,
+			entity = event.entity,
+		}
+	end
+end)
+
+script.on_event(defines.events.on_gui_closed, function(event)
+	if not event.entity then return end
+	if event.entity.name == "bm-suspension-tank-prepared"
+	or event.entity.name == "bm-suspension-tank-filled" then
+		destroy_gui(event.player_index, "open_tank")
+	end
+	if event.entity.name == "space-platform-hub" then
+		destroy_gui(event.player_index, "hub")
+	end
+end)
+
+script.on_event(defines.events.on_gui_text_changed, function(event)
+	local stored_gui = storage.gui.open_tank[event.player_index]
+	if event.element.name == "bm_tank_name" then
+		storage.tanks[stored_gui.tank_id].name = event.text
+	end
+end)
+
+local inventories = {
+	"character_main", "character_guns", "character_ammo",
+	"character_armor", "character_trash"
+}
+
 script.on_event(defines.events.on_gui_click, function(event)
 	if event.element.name == "bm_tank_enter" then
 		--check if character is able to enter tank. if not, explaination and return
@@ -453,10 +476,19 @@ script.on_event(defines.events.on_gui_click, function(event)
 		--old_character.die()
 		player.character = nil
 		player.create_character({name = "character", quality = "normal"})
+		-- teleport to planet spawnpoint. if on platform teleport to nauvis spawnpoint
 		if valid_in_hub then
+			local spawn_surface = game.get_surface(1)
+			local position = spawn_surface.find_non_colliding_position("character",
+				player.force.get_spawn_position(spawn_surface), 0, 0.1
+			)
 			player.teleport(player.force.get_spawn_position(1), 1)
 		else
-			player.teleport(player.force.get_spawn_position(player.surface))
+			local spawn_surface = player.surface
+			local position = spawn_surface.find_non_colliding_position("character",
+				player.force.get_spawn_position(spawn_surface), 0, 0.1
+			)
+			player.teleport(position)
 		end
 		local respawn_items = remote.call('freeplay',"get_respawn_items")
 		local main_inventory = player.get_main_inventory()
@@ -464,12 +496,14 @@ script.on_event(defines.events.on_gui_click, function(event)
 			main_inventory.insert({name = item_name, count = item_count})
 		end
 		old_character.destroy()
+		attempt_rebuild_respawn_guis()
 		build_respawn_gui(event.player_index, "respawn")
 
 	elseif event.element.name == "bm_tank_dump" then
 		local tank = storage.gui.open_tank[event.player_index].entity
 		transform_tank(tank, "bm-suspension-tank")
 		destroy_gui(event.player_index, "open_tank")
+		attempt_rebuild_respawn_guis()
 
 	elseif event.element.name == "bm_confirm_respawn" then
 		local player = game.get_player(event.player_index)
@@ -570,6 +604,7 @@ script.on_event(defines.events.on_gui_click, function(event)
 			end
 		end
 		destroy_gui(event.player_index, "respawn")
+		attempt_rebuild_respawn_guis()
 		--[[
 		script.raise_event(storage.custom_events.respawn_in_tank, {
 			player_index = event.player_index
@@ -632,13 +667,17 @@ end)
 
 
 
-local function destroy_tank_data(event)
-	storage.tanks[get_tank_id(event.entity)] = nil
-end
-
-script.on_event(defines.events.on_entity_died,
-function(event) destroy_tank_data(event) end,
-{{filter = "name", name = "bm-suspension-tank"}})
+script.on_event(defines.events.on_entity_died, function(event)
+	local entity_name = event.entity.name
+	if entity_name == "bm-suspension-tank" then
+		destroy_tank_data(event)
+	elseif entity_name == "bm-suspension-tank-filled" then
+		attempt_rebuild_respawn_guis()
+	end
+end, {
+	{filter = "name", name = "bm-suspension-tank"},
+	{filter = "name", name = "bm-suspension-tank-filled"}
+})
 
 script.on_event(defines.events.on_player_mined_entity,
 function(event) destroy_tank_data(event) end,
@@ -671,14 +710,6 @@ script.on_event(defines.events.on_player_respawned, function(event)
 end)
 
 
-
-local function check_tanks_valid()
-	for tank_id, stored_data in pairs(storage.tanks) do
-		if not stored_data.tank.valid then
-			storage.tanks[tank_id] = nil
-		end
-	end
-end
 
 script.on_event(defines.events.on_surface_cleared, function(event)
 	check_tanks_valid()

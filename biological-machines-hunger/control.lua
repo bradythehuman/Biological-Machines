@@ -373,6 +373,86 @@ local function initialize_player(i)
   storage.show_widget[i] = true
 end
 
+local function hunger_tick_player(i, hunger, tick)
+  if hunger.is_hungry and game.get_player(i) and game.get_player(i).character then
+    local s
+    local c = game.get_player(i).character
+    if c.get_health_ratio() < 1 then
+      s = hunger.saturation - injured_sat_per_sec
+    else
+      s = hunger.saturation - base_sat_per_sec
+    end
+
+    if hunger.saturation > 0 then
+      hunger.saturation = s
+      apply_sticker(c, hunger.effect)
+      build_widget(i)
+      return
+    end
+
+    local special_equipment = get_special_equipment(i, c)
+    for pref_i = 1, max_preferences do
+      local food = i_to_foods[hunger.prefs[pref_i]]
+      if food ~= "none" then
+        for q, _ in pairs(prototypes.quality) do
+          if food ~= "uranium-235"
+          and hunger.food_inventory.remove({name = food, quality = q}) == 1 then
+            hunger.saturation = s + foods[food].saturation
+            hunger.effect = foods[food].effect
+            hunger.food = food
+            hunger.quality = q
+            apply_sticker(c, hunger.effect)
+            if food_wrappers[food] then
+              hunger.food_inventory.insert({name = food_wrappers[food], quality = q})
+            end
+            eat_until_full(i)
+            build_widget(i)
+            return
+          elseif food == "uranium-235"
+          and special_equipment["bm-artificial-organs"]
+          and hunger.food_inventory.remove({name = "uranium-235", quality = q}) == 1 then
+            local food_data = foods["uranium-235"]
+            hunger.saturation = s + foods[food].saturation
+            hunger.effect = foods[food].effect
+            hunger.food = food
+            hunger.quality = q
+            apply_sticker(c, hunger.effect)
+            eat_until_full(i)
+            build_widget(i)
+            return
+          end
+        end
+      end
+    end
+
+    if special_equipment["bm-artificial-organs"] then
+      hunger.food = "bm-artificial-organs"
+    elseif special_equipment["bm-biological-recycler"] then
+      hunger.food = "bm-biological-recycler"
+      apply_sticker(c, "bm-malnourished")
+    else
+      hunger.food = "none"
+      apply_sticker(c, "bm-starving")
+      --[[
+      log(c.name.."   "..c.health.."   "..tostring(c.driving))
+      if game.get_player(i).physical_vehicle then
+        log(game.get_player(i).physical_vehicle.name)
+      end
+      ]]
+      --c.damage(0.1 * hunger_interval, "enemy", "starvation")
+      c.health = c.health -  0.1 * hunger_interval
+      c.tick_of_last_damage = tick
+      if c.health <= 0 then
+        c.die()
+      end
+    end
+    hunger.saturation = 0
+    hunger.quality = "normal"
+    build_widget(i)
+  else
+    destroy_widget(i)
+  end
+end
 --setup
 script.on_init(function()
   if remote.interfaces.freeplay then
@@ -580,84 +660,7 @@ end)
 --hunger tick
 script.on_nth_tick(hunger_interval, function(event)
   for i, hunger in pairs(storage.hungry) do
-    if hunger.is_hungry and game.get_player(i) and game.get_player(i).character then
-      local s
-      local c = game.get_player(i).character
-      if c.get_health_ratio() < 1 then
-        s = hunger.saturation - injured_sat_per_sec
-      else
-        s = hunger.saturation - base_sat_per_sec
-      end
-
-      if hunger.saturation > 0 then
-        hunger.saturation = s
-        apply_sticker(c, hunger.effect)
-        build_widget(i)
-        return
-      end
-
-      local special_equipment = get_special_equipment(i, c)
-      for pref_i = 1, max_preferences do
-        local food = i_to_foods[hunger.prefs[pref_i]]
-        if food ~= "none" then
-          for q, _ in pairs(prototypes.quality) do
-            if food ~= "uranium-235"
-            and hunger.food_inventory.remove({name = food, quality = q}) == 1 then
-              hunger.saturation = s + foods[food].saturation
-              hunger.effect = foods[food].effect
-              hunger.food = food
-              hunger.quality = q
-              apply_sticker(c, hunger.effect)
-              if food_wrappers[food] then
-                hunger.food_inventory.insert({name = food_wrappers[food], quality = q})
-              end
-              eat_until_full(i)
-              build_widget(i)
-              return
-            elseif food == "uranium-235"
-            and special_equipment["bm-artificial-organs"]
-            and hunger.food_inventory.remove({name = "uranium-235", quality = q}) == 1 then
-              local food_data = foods["uranium-235"]
-              hunger.saturation = s + foods[food].saturation
-              hunger.effect = foods[food].effect
-              hunger.food = food
-              hunger.quality = q
-              apply_sticker(c, hunger.effect)
-              eat_until_full(i)
-              build_widget(i)
-              return
-            end
-          end
-        end
-      end
-
-      if special_equipment["bm-artificial-organs"] then
-        hunger.food = "bm-artificial-organs"
-      elseif special_equipment["bm-biological-recycler"] then
-        hunger.food = "bm-biological-recycler"
-        apply_sticker(c, "bm-malnourished")
-      else
-        hunger.food = "none"
-        apply_sticker(c, "bm-starving")
-        --[[
-        log(c.name.."   "..c.health.."   "..tostring(c.driving))
-        if game.get_player(i).physical_vehicle then
-          log(game.get_player(i).physical_vehicle.name)
-        end
-        ]]
-        --c.damage(0.1 * hunger_interval, "enemy", "starvation")
-        c.health = c.health -  0.1 * hunger_interval
-        c.tick_of_last_damage = event.tick
-        if c.health <= 0 then
-          c.die()
-        end
-      end
-      hunger.saturation = 0
-      hunger.quality = "normal"
-      build_widget(i)
-    else
-      destroy_widget(i)
-    end
+    hunger_tick_player(i, hunger, event.tick)
   end
 end)
 
