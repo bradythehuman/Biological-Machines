@@ -334,10 +334,14 @@ end)
 
 script.on_event(defines.events.on_gui_opened, function(event)
 	if event.entity == nil then return end
-	local player = game.get_player(event.player_index)
+	local player_index = event.player_index
+	local player = game.get_player(player_index)
 
 	if event.entity.name == "bm-suspension-tank-prepared"
 	or event.entity.name == "bm-suspension-tank-filled" then
+		if storage.gui["open_tank"][player_index] then
+			destroy_gui(player_index, "open_tank")
+		end
 		local tank_id = get_tank_id(event.entity)
 		local main = player.gui.relative.add({
 	    type = "frame",
@@ -369,6 +373,9 @@ script.on_event(defines.events.on_gui_opened, function(event)
 	elseif event.entity.name == "space-platform-hub"
 	and player.physical_controller_type == defines.controllers.character
 	and event.entity.surface_index == player.character.surface_index then
+		if storage.gui["hub"][player_index] then
+			destroy_gui(player_index, "hub")
+		end
 		local main = player.gui.relative.add({
 	    type = "frame",
 	    name = "bm_platform_hub_frame",
@@ -479,16 +486,16 @@ script.on_event(defines.events.on_gui_click, function(event)
 		-- teleport to planet spawnpoint. if on platform teleport to nauvis spawnpoint
 		if valid_in_hub then
 			local spawn_surface = game.get_surface(1)
-			local position = spawn_surface.find_non_colliding_position("character",
+			local spawn_position = spawn_surface.find_non_colliding_position("character",
 				player.force.get_spawn_position(spawn_surface), 0, 0.1
 			)
-			player.teleport(player.force.get_spawn_position(1), 1)
+			player.teleport(spawn_position, 1)
 		else
 			local spawn_surface = player.surface
-			local position = spawn_surface.find_non_colliding_position("character",
+			local spawn_position = spawn_surface.find_non_colliding_position("character",
 				player.force.get_spawn_position(spawn_surface), 0, 0.1
 			)
-			player.teleport(position)
+			player.teleport(spawn_position)
 		end
 		local respawn_items = remote.call('freeplay',"get_respawn_items")
 		local main_inventory = player.get_main_inventory()
