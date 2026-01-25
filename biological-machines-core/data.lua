@@ -41,7 +41,6 @@ and settings.startup["bm-shattered-core"].value) then
   require("prototypes.empty-space")
 end
 
---OPTIONAL FEATURES
 if mods["biological-machines-modpack"]
 or settings.startup["bm-bot-start-standalone"].value then
   require("prototypes.bot-start")

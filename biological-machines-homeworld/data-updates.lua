@@ -51,6 +51,7 @@ local function make_trade(item_type, item_name, item_amount)
     category = "bm-market",
     subgroup = "bm-homeworld",
     order = "c",
+    enabled = false,
     energy_required = 1,
     ingredients = {{type = "item", name = "bm-credit", amount = th.initial_payout}},
     results = {{type = "item", name = item_name, amount = item_amount}}

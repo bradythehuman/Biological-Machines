@@ -22,8 +22,7 @@ end
 local function equip_armour(index)
   storage.equipped = storage.equipped or {}
   if storage.equipped[index] then return end
-  -- Flag player as equipped so this isn't run again
-  storage.equipped[index] = true
+
   local player = game.get_player(index)
   if player and player.valid then
     local character = player.character
@@ -46,13 +45,23 @@ local function equip_armour(index)
           grid.put{name="solar-panel-equipment"}
         end
         character.insert{name="construction-robot", count=10}
+				-- Flag player as equipped so this isn't run again
+				storage.equipped[index] = true
       end
     end
   end
 end
 
 if prototypes.item["bm-survival-armor"] then
+	---[[
 	script.on_event(defines.events.on_cutscene_cancelled, function(event)
 	  equip_armour(event.player_index)
 	end)
+	--]]
+
+	---[[
+	script.on_event(defines.events.on_player_created, function(event)
+	  equip_armour(event.player_index)
+	end)
+	--]]
 end

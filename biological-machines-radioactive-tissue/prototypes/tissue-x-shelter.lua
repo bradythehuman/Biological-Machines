@@ -26,3 +26,5 @@ shelter_tech.unit = {
   },
   time = 60,
 }
+
+table.insert(bm_add_full_resistences, data.raw["electric-energy-interface"]["kr-shelter"])

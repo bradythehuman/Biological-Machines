@@ -12,6 +12,7 @@ local unlock = {
   ["bm-wit"] = "bm-planet-discovery-wit",
   ["bm-balack"] = "bm-planet-discovery-balack",
   ["shattered-planet"] = "bm-planet-discovery-shattered-planet",
+  ["bm-dyson-sphere"] = "bm-planet-discovery-balack",
 }
 
 local sheilding = {
@@ -23,6 +24,7 @@ local sheilding = {
   ["bm-wit"] = "iron-plate",
   ["bm-balack"] = "steel-plate",
   ["shattered-planet"] = "bm-radiation-sheilding",
+  ["bm-dyson-sphere"] = "steel-plate",
 }
 
 local rp_order = "c-"

@@ -1,3 +1,10 @@
+function BM_STANDALONE_SETTING_OVERRIDE(setting_name)
+  local setting_prototype = data.raw["bool-setting"][setting_name]
+  setting_prototype.hidden = true
+  setting_prototype.forced_value = true
+end
+
+
 data:extend({
   {
     type = "bool-setting",

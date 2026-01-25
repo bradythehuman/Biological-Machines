@@ -106,13 +106,18 @@ local add_gear = {
 }
 dh.add_ingredient_table(add_gear, "item", "iron-gear-wheel")
 
+dh.remove_ingredient("low-density-structure", "steel-plate")
 local add_steel = {
   ["speed-module"] = 1,
   ["efficiency-module"] = 1,
   ["productivity-module"] = 1,
-  ["quality-module"] = 1
+  ["quality-module"] = 1,
+  ["low-density-structure"] = 5
 }
 dh.add_ingredient_table(add_steel, "item", "steel-plate")
+
+dh.remove_ingredient("low-density-structure", "copper-plate")
+dh.add_ingredient("low-density-structure", "item", "copper-plate", 5)
 
 local add_piston = {
   --["transport-belt"] = 1,

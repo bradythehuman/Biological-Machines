@@ -37,6 +37,11 @@ or (prototypes and prototypes.item["bm-nutrient-paste"]) then
   extra_trades["bm-nutrient-paste"] = 200
 end
 
+if (settings.startup["bm-rocket-parts"] and settings.startup["bm-rocket-parts"].value)
+or (prototypes and prototypes.recipe["bm-rocket-part-bm-dyson-sphere"]) then
+  extra_trades["rocket-part"] = 50
+end
+
 
 
 local function scale_trade(initial_amount, trade_count)

@@ -9,6 +9,7 @@ See BM: Planet Wit and BM: Homeworld for warnings.
 Biological Machines is a space age overhaul focused on mundane and sci-fi biological processes. This mod is the intended BM experience, although it only contains dependencies, any of which may be left out for preference/compatibility.
 
 *Includes*
+
 - BM: Hunger ()
 - BM: Industry ()
 - BM: Radioactive tissue ()
@@ -24,7 +25,7 @@ Most optional dependencies for the above mods are modified by compatibility patc
 
 ### Future Plans
 
-- Bugfixes
+- Bugfixes including script/gui ups optimizations
 - Balance tweaks including extra settings so players can customize the balance for their preferences
 - Compatibility with content mods including Maraxis Cerys, Moshine and Orbital ion cannon
 - Graphics upgrades including berry bush, scrapyard and BM: Homeworld generally
@@ -35,6 +36,7 @@ If you want to help with anything, particularly with graphics or additional loca
 ### Other Supported Mods
 
 *Utility*
+
 - [Editor Extensions](https://mods.factorio.com/mod/EditorExtensions) by raiguard
 - [Cursor Enhancements](https://mods.factorio.com/mod/CursorEnhancements?from=search) by raiguard
 - [Rate calculator](https://mods.factorio.com/mod/RateCalculator) by raiguard
@@ -43,6 +45,7 @@ If you want to help with anything, particularly with graphics or additional loca
 - [Mining patch planner](https://mods.factorio.com/mod/mining-patch-planner) by rimbas
 
 *Graphics*
+
 - [Visible planets in space](https://mods.factorio.com/mod/visible-planets) by Nauviax
 - [4k planets](https://mods.factorio.com/mod/4k_planets) by grog2
 - [Cleaned concrete](https://mods.factorio.com/mod/CleanedConcrete) by JusticeDroid
@@ -50,6 +53,7 @@ If you want to help with anything, particularly with graphics or additional loca
 - [Smooth Platform Walls](https://mods.factorio.com/mod/smooth_platform_walls) by wretlaw120
 
 *Content*
+
 - [Text Plates](https://mods.factorio.com/mod/textplates?from=search) by Earendel
 - [Pollution Combinator](https://mods.factorio.com/mod/PollutionCombinator-JamieFork) by JamieNyanchi
 - [Extra Storage Tanks: Tiny Storage Tanks](https://mods.factorio.com/mod/est-tiny-storage-tank) by ZarSasha
@@ -67,10 +71,12 @@ Inspiration and concepts of a plan from [AAI Industry](https://mods.factorio.com
 Adds a hunger mechanic which consumes selected foods from the engineers inventory or the engineer starves. Different foods give the engineer passive regen/movement buffs/debuffs while they are being consumed. Also adds equipment which prevents starvation and more.
 
 *Includes*
+
 - BM: Core ()
 - BM: K2 Assets ()
 
 *Included in*
+
 - BM: Modpack ()
 
 ### Features
@@ -102,10 +108,12 @@ Adds a hunger mechanic which consumes selected foods from the engineers inventor
 Adds new biological materials and intermediates to basic recipes including steel, circuits, concrete and explosives. To do so it brings several space age mechanics to the Nauvis early game including spoilage, recycling, crushing and agriculture. Also makes significant additions to Gleba including napalm and biodiesel.
 
 *Includes*
+
 - BM: Core ()
 - BM: K2 Assets ()
 
 *Included in*
+
 - BM: Modpack ()
 
 ### Features
@@ -147,11 +155,13 @@ Adds new biological materials and intermediates to basic recipes including steel
 Adds tissue dropped by biter nests which may be cultivated in a biochamber using bioflux and u-235. The tissue may be crafted into a new nuclear military science pack, various machines (including new military assembler with 50% base productivity), poison gas, uranium ore (centrifuge) and clones.
 
 *Includes*
+
 - BM: Cloning ()
 - BM: Core ()
 - BM: K2 Assets ()
 
 *Included in*
+
 - BM: Modpack ()
 
 ### Features
@@ -188,11 +198,13 @@ Burner buildings (including the stone furnace and boiler) cannot be placed on Wi
 Adds Wit, a moon of Nauvis covered in asteroid craters, glass, helium and coper sulfate. Use these resources to produce helium power cells, a necessary ingredient in space science, laser turrets and the robotics facility (req to craft asteroid collectors, 50% base prod). Return post Aquilo for interstellar science pack.
 
 *Includes*
+
 - BM: Warp Drive ()
 - BM: Core ()
 - BM: K2 Assets ()
 
 *Included in*
+
 - BM: Modpack ()
 
 ### Features
@@ -235,11 +247,13 @@ Adds Wit, a moon of Nauvis covered in asteroid craters, glass, helium and coper 
 Adds Balack, a post aquilo planet containing new scrap, oil sludge and strong enemies. A single bio fabricator can be placed at spawn and is required to produce new intermediates and products including a new module at the cost of massive pollution. The intermediates can be used to produce tank mk2, mech armor mk2 and warp drive.
 
 *Includes*
+
 - BM: Warp Drive ()
 - BM: Core ()
 - BM: K2 Assets ()
 
 *Included in*
+
 - BM: Modpack ()
 
 ### Features
@@ -282,12 +296,14 @@ Any sufficient platforms sent to the new system will be destroyed. Also, bring c
 Use a warp drive to travel back to the engineers home star. Land on a dyson sphere construction platform to exchange materials for credits. Spend the credits on different materials and power uplinks which can send the power of the dyson sphere to the engineers factories. Also includes a new ending.
 
 *Includes*
+
 - BM: Warp Drive ()
 - BM: Cloning ()
 - BM: Core ()
 - BM: K2 Assets ()
 
 *Included in*
+
 - BM: Modpack ()
 
 ### Features
@@ -318,10 +334,12 @@ Use a warp drive to travel back to the engineers home star. Land on a dyson sphe
 Clones can be made in a biochamber and stored in dedicated tanks. Getting in a tank will fill the tank and open a respawn screen where the engineer can respawn at any filled tank or at the default spawn. Higher quality clones will have increased health, running speed, crafing speed and mining speed.
 
 *Includes*
+
 - BM: Core ()
 - BM: K2 Assets ()
 
 *Included in*
+
 - BM: Modpack ()
 - BM: Radioactive tissue ()
 - BM: Homeworld ()
@@ -345,10 +363,12 @@ Clones can be made in a biochamber and stored in dedicated tanks. Getting in a t
 Adds a warp drive machine which consumes warp power cells to transport a space platform to the next space location instantly. Platform must be moving forward to be teleported.
 
 *Includes*
+
 - BM: Core ()
 - BM: K2 Assets ()
 
 *Included in*
+
 - BM: Modpack ()
 - BM: Planet Wit ()
 - BM: Planet Balack ()
@@ -372,9 +392,11 @@ Adds a warp drive machine which consumes warp power cells to transport a space p
 Contains shared modules and compatibility patches for other Biological Machines mods. Does nothing on its own by default although some modules can be enabled as standalone via mod settings.
 
 *Includes*
+
 - BM: K2 Assets ()
 
 *Included in*
+
 - BM: Modpack ()
 - BM: Hunger ()
 - BM: Industry ()
@@ -387,10 +409,39 @@ Contains shared modules and compatibility patches for other Biological Machines 
 
 ### Standalone Modules
 
-- Bot start, adds a repair harness and 10 bots to players starting inventory. Auto included with BM: Modpack
-- Alternative nutrients, adds source of nutrients to early game Nauvis and Vulcanus/Fulgora. This includes plantable berries on Nauvis and new bacteria to Vulcanus/Fulgora. Also adds nutrient wine and ethanol which may be consumed to gain a short regen buff followed by a movement speed debuff. Auto included with BM: Hunger and BM: Industry
-- Scrapyard, adds an early game recycler which consumes no power, is less space efficient and outputs a lot of polution. Auto included with BM: Industry and BM: Planet Wit
-- Reinforced wall, adds a more durable wall made from refined concrete and tungsten plate. Auto included with BM: Radioactive Tissue and BM: Planet Balack
+- *Bot start*, adds a repair harness and 10 bots to players starting inventory
+  - Auto included with BM: Modpack
+  - Internal setting name is bm-bot-start-standalone
+- *Alternative nutrients*, adds source of nutrients to early game Nauvis and Vulcanus/Fulgora. This includes plant-able berries on Nauvis and new bacteria to Vulcanus/Fulgora. Also adds nutrient wine and ethanol which may be consumed to gain a short regen buff followed by a movement speed debuff
+  - Auto included with BM: Hunger and BM: Industry
+  - Internal setting name is bm-alternative-nutrients-standalone
+- *Scrapyard*, adds an early game recycler which consumes no power, is less space efficient and outputs a lot of pollution
+  - Auto included with BM: Industry and BM: Planet Wit
+  - Internal setting name is bm-scrapyard-standalone
+- *Reinforced wall*, adds a more durable wall made from refined concrete and tungsten plate
+  - Auto included with BM: Radioactive Tissue and BM: Planet Balack
+  - Internal setting name is bm-reinforced-wall-standalone
+
+### Modding Support
+
+Third party mods with BM: Core as a dependency can use the following tools
+
+- *Data helper*, a util file with functions to manipulate data in the prototype stage. Load into your mod by calling
+
+  `local dh = require("__biological-machines-core__.data-helper")`
+
+- *Full resistances*, a table containing entity prototypes which will be made 100% resistant to all damage in the data-final-fixes stage. Mark an entity for full resistance in the data or data-updates stages by calling
+
+  `ENTITY_PROTOTYPE = data.raw[ENTITY_TYPE][ENTITY_NAME]  
+  table.insert(bm_add_full_resistences, ENTITY_PROTOTYPE)`
+
+- *All science*, a table containing names of technologies which will be made to consume all science packs during the data-final-fixes stage. Mark a technology for all science in the data or data-updates stages by calling
+
+  `table.insert(bm_add_all_packs, TECHNOLOGY_NAME)`
+
+- *Standalone modules*, a global function to force a standalone module to be loaded and hide the setting. Call the function in any of the setting stages using the standalone modules internal setting name
+
+  `BM_STANDALONE_SETTING_OVERRIDE(INTERNAL_SETTING_NAME)`
 
 ### Credit
 
@@ -407,6 +458,7 @@ Does nothing on its own. Derived from Krastorio 2 and kept separate for BM mods 
 Please let me know if I am not properly complying with the license and I will fix ASAP.
 
 *Included in*
+
 - BM: Modpack ()
 - BM: Hunger ()
 - BM: Industry ()
