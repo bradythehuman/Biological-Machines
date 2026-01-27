@@ -8,6 +8,10 @@ dh.mod_override_setting("snouz_better_substation", "bm-snouz-substation-override
 
 dh.mod_override_setting("shield-projector", "bm-shield-projector-override")
 
+dh.mod_override_setting("pollution-detector", "bm-pollution-detector-override")
+
+dh.mod_override_setting("big-wooden-pole", "bm-big-wooden-pole-override")
+
 if mods["aai-loaders"] then
   local mode_setting = data.raw["string-setting"]["aai-loaders-mode"]
   mode_setting.default_value = "expensive"

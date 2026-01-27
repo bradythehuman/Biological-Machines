@@ -13,7 +13,7 @@ data:extend({
 				recipe = "personal-tesla-defense-equipment"
 			}
 		},
-    prerequisites = {"tesla-weapons", "personal-laser-defense-equipment"},
+    prerequisites = {"speed-module-2", "tesla-weapons", "personal-laser-defense-equipment"},
     unit = {
       count = 1500,
       ingredients =
@@ -37,7 +37,7 @@ tesla_equipment_recipe.category = "bm-advanced-robotics"
 tesla_equipment_recipe.ingredients = {
   {type = "item", name = "teslagun", amount = 1},
   {type = "item", name = "low-density-structure", amount = 10},
-  {type = "item", name = "processing-unit", amount = 20},
+  {type = "item", name = "speed-module-2", amount = 5},
   {type = "item", name = "electric-engine-unit", amount = 2},
 }
 tesla_equipment_recipe.enabled = false

@@ -38,6 +38,10 @@ dh.mod_override_require("snouz_better_substation", "bm-snouz-substation-override
 
 dh.mod_override_require("shield-projector", "bm-shield-projector-override", "prototypes.industry-x-shield-projector")
 
+dh.mod_override_require("pollution-detector", "bm-pollution-detector-override", "prototypes.industry-x-pollution-detector")
+
+dh.mod_override_require("big-wooden-pole", "bm-big-wooden-pole-override", "prototypes.industry-x-big-wooden-pole")
+
 
 
 data:extend({

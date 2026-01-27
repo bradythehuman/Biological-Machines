@@ -13,6 +13,7 @@ data.raw["recipe"]["shield-projector"].ingredients = {
   {type = "item", name = "low-density-structure", amount = 100},
   {type = "item", name = "superconductor", amount = 100},
   {type = "item", name = "processing-unit", amount = 50},
+  {type = "item", name = "copper-cable", amount = 200},
 }
 
 local sp_tech = data.raw["technology"]["shield-projector"]

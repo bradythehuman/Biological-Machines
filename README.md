@@ -28,7 +28,7 @@ Most optional dependencies for the above mods are modified by compatibility patc
 - Bugfixes including script/gui ups optimizations
 - Balance tweaks including extra settings so players can customize the balance for their preferences
 - Compatibility with content mods including Maraxis Cerys, Moshine and Orbital ion cannon
-- Graphics upgrades including berry bush, scrapyard and BM: Homeworld generally
+- Graphics upgrades including berry bush, circuit board, scrapyard, recipe icons and BM: Homeworld generally
 - Additional content including a Gleba moon, an enemy on wit and demolisher spawners on Vulcanus
 
 If you want to help with anything, particularly with graphics or additional localizations, please let me know I would appreciate it.  
@@ -55,7 +55,7 @@ If you want to help with anything, particularly with graphics or additional loca
 *Content*
 
 - [Text Plates](https://mods.factorio.com/mod/textplates?from=search) by Earendel
-- [Pollution Combinator](https://mods.factorio.com/mod/PollutionCombinator-JamieFork) by JamieNyanchi
+- [Pollution detector](https://mods.factorio.com/mod/pollution-detector) by Schorty
 - [Extra Storage Tanks: Tiny Storage Tanks](https://mods.factorio.com/mod/est-tiny-storage-tank) by ZarSasha
 - [Wood Walls and floors](https://mods.factorio.com/mod/Wood-Walls) by zanven
 - [Big wooden pole](https://mods.factorio.com/mod/big-wooden-pole) by ElAdamo
@@ -135,9 +135,11 @@ Adds new biological materials and intermediates to basic recipes including steel
 
 - [AAI Loaders](https://mods.factorio.com/mod/aai-loaders) by Earendel. Changes recipes to be more in line with BM: Industry splitters
 - [Slipstack agriculture](https://mods.factorio.com/mod/slipstacks) by LordMiguel. Changes spore recipe
-- [Larger lamps 2.0](https://mods.factorio.com/mod/LargerLamps-2_0) by goakiller900. Changes recipes
+- [Larger lamps 2.0](https://mods.factorio.com/mod/LargerLamps-2_0) by goakiller900. Changes recipes, removes all but 1 lamp
 - [Hypercell substation](https://mods.factorio.com/mod/snouz_better_substation) by snouz. Changes tech and recipe
 - [Shield projector](https://mods.factorio.com/mod/shield-projector) by earendel. Changes tech and recipe
+- [Pollution detector](https://mods.factorio.com/mod/pollution-detector) by Schorty. Changes recipe and tech prereqs
+- [Big wooden pole](https://mods.factorio.com/mod/big-wooden-pole) by ElAdamo. Reduces copper cost and moves order after small wooden pole
 
 ### Credit
 

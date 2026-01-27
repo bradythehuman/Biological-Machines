@@ -2,6 +2,14 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 
+dh.add_ingredient("personal-laser-defense-equipment", "item", "bm-piston", 20)
+dh.recycle_to_ingredients("personal-laser-defense-equipment")
+
+dh.add_ingredient("discharge-defense-equipment", "item", "plastic-bar", 20)
+dh.recycle_to_ingredients("discharge-defense-equipment")
+
+
+
 data.raw["recipe"]["bm-glass-dust-filtration"].results = {
   {type = "item", name = "bm-sand", amount = 10},
   {type = "item", name = "bm-lime", amount = 2},

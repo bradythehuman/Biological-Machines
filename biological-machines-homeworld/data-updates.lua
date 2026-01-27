@@ -66,14 +66,12 @@ local function make_trade(item_type, item_name, item_amount)
 end
 
 for item_name, item_amount in pairs(th.initial_trades) do
-  if item_name == "bm-ai-control-unit" then
-    make_trade("module", item_name, item_amount)
-  else
+  if th.only_sell[item_name] == nil then
     make_trade("item", item_name, item_amount)
   end
 end
 
-for item_name, item_amount in pairs(th.extra_trades) do
+for item_name, item_amount in pairs(th.only_buy) do
   make_trade("item", item_name, item_amount)
 end
 

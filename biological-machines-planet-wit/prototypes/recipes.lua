@@ -2,7 +2,21 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 
-dh.add_ingredient("laser-turret", "item", "bm-helium-power-cell", 10)
+local remove_laser_turret = {"personal-laser-defense-equipment", "discharge-defense-equipment"}
+dh.remove_ingredient(remove_laser_turret, "laser-turret")
+
+local add_helium_cell = {
+  ["laser-turret"] = 10,
+  ["personal-laser-defense-equipment"] = 30,
+  ["discharge-defense-equipment"] = 15,
+}
+dh.add_ingredient_table(add_helium_cell, "item", "bm-helium-power-cell")
+
+local add_battery = {
+  ["personal-laser-defense-equipment"] = 30,
+  ["discharge-defense-equipment"] = 60,
+}
+dh.add_ingredient_table(add_battery, "item", "battery")
 
 dh.add_ingredient("bm-warp-power-cell", "item", "bm-mixed-gas-power-cell", 5)
 

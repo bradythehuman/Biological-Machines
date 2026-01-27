@@ -5,5 +5,5 @@
   "author": "bradythehuman",
   "description": "Adds new biological materials and intermediates to basic recipes including steel, circuits, concrete and explosives. To do so it brings several space age mechanics to the Nauvis early game including spoilage, recycling, crushing and agriculture. Also makes significant additions to Gleba including napalm and biodiesel.",
   "factorio_version": "2.0",
-  "dependencies": ["biological-machines-core >= 1.0.0", "? aai-loaders >= 0.2.7", "? slipstacks >= 1.1.0", "? LargerLamps-2_0 >= 0.2.2", "? snouz_better_substation >= 1.2.1", "? shield-projector >= 0.2.2", "? est-tiny-storage-tank >= 1.4.0"]
+  "dependencies": ["biological-machines-core >= 1.0.0", "? aai-loaders >= 0.2.7", "? slipstacks >= 1.1.0", "? LargerLamps-2_0 >= 0.2.2", "? snouz_better_substation >= 1.2.1", "? shield-projector >= 0.2.2", "? est-tiny-storage-tank >= 1.4.0", "? pollution-detector >= 0.7.1", "? big-wooden-pole >= 0.2.1"]
 }

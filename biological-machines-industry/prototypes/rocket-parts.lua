@@ -12,7 +12,7 @@ local unlock = {
   ["bm-wit"] = "bm-planet-discovery-wit",
   ["bm-balack"] = "bm-planet-discovery-balack",
   ["shattered-planet"] = "bm-planet-discovery-shattered-planet",
-  ["bm-dyson-sphere"] = "bm-planet-discovery-balack",
+  ["bm-dyson-sphere"] = "bm-solar-system-discovery-homeworld",
 }
 
 local sheilding = {

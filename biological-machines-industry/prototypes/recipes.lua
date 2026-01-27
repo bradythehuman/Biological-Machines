@@ -119,6 +119,11 @@ dh.add_ingredient_table(add_steel, "item", "steel-plate")
 dh.remove_ingredient("low-density-structure", "copper-plate")
 dh.add_ingredient("low-density-structure", "item", "copper-plate", 5)
 
+dh.remove_ingredient("casting-low-density-structure", "molten-iron")
+dh.add_ingredient("casting-low-density-structure", "fluid", "bm-molten-steel", 200)
+dh.remove_ingredient("casting-low-density-structure", "molten-copper")
+dh.add_ingredient("casting-low-density-structure", "fluid", "molten-copper", 60)
+
 local add_piston = {
   --["transport-belt"] = 1,
   ["inserter"] = 1,
