@@ -10,16 +10,16 @@ Biological Machines is a space age overhaul focused on mundane and sci-fi biolog
 
 *Includes*
 
-- BM: Hunger ()
-- BM: Industry ()
-- BM: Radioactive tissue ()
-- BM: Planet Wit ()
-- BM: Planet Balack ()
-- BM: Homeworld ()
-- BM: Cloning ()
-- BM: Warp Drive ()
-- BM: Core ()
-- BM: K2 Assets ()
+- BM: Hunger (https://mods.factorio.com/mod/biological-machines-hunger)
+- BM: Industry (https://mods.factorio.com/mod/biological-machines-industry)
+- BM: Radioactive tissue (https://mods.factorio.com/mod/biological-machines-radioactive-tissue)
+- BM: Planet Wit (https://mods.factorio.com/mod/biological-machines-planet-wit)
+- BM: Planet Balack (https://mods.factorio.com/mod/biological-machines-planet-balack)
+- BM: Homeworld (https://mods.factorio.com/mod/biological-machines-homeworld)
+- BM: Cloning (https://mods.factorio.com/mod/biological-machines-cloning)
+- BM: Warp Drive (https://mods.factorio.com/mod/biological-machines-warp-drive)
+- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
+- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 Most optional dependencies for the above mods are modified by compatibility patches which can be skipped by disabling the mod override setting. All override settings are enabled by default and can be disabled for preference/compatibility. Any compatibility patch which fixes game breaking bugs has no override setting.
 
@@ -72,12 +72,12 @@ Adds a hunger mechanic which consumes selected foods from the engineers inventor
 
 *Includes*
 
-- BM: Core ()
-- BM: K2 Assets ()
+- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
+- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack ()
+- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
 
 ### Features
 
@@ -109,12 +109,12 @@ Adds new biological materials and intermediates to basic recipes including steel
 
 *Includes*
 
-- BM: Core ()
-- BM: K2 Assets ()
+- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
+- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack ()
+- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
 
 ### Features
 
@@ -150,7 +150,7 @@ Adds new biological materials and intermediates to basic recipes including steel
 - Graphics/code from [Offshore dump](https://mods.factorio.com/mod/offshore-dump/downloads) by chocoman
 - Sand/potash/lime/potassium nitrate graphics from [Krastorio 2](https://mods.factorio.com/mod/Krastorio2?from=search) by raiguard, Krastor and Linver
 
-# Biological Machines Radioactive Tissue
+# Biological Machines: Radioactive Tissue
 
 ### Description
 
@@ -158,13 +158,13 @@ Adds tissue dropped by biter nests which may be cultivated in a biochamber using
 
 *Includes*
 
-- BM: Cloning ()
-- BM: Core ()
-- BM: K2 Assets ()
+- BM: Cloning (https://mods.factorio.com/mod/biological-machines-cloning)
+- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
+- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack ()
+- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
 
 ### Features
 
@@ -201,13 +201,13 @@ Adds Wit, a moon of Nauvis covered in asteroid craters, glass, helium and coper 
 
 *Includes*
 
-- BM: Warp Drive ()
-- BM: Core ()
-- BM: K2 Assets ()
+- BM: Warp Drive (https://mods.factorio.com/mod/biological-machines-warp-drive)
+- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
+- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack ()
+- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
 
 ### Features
 
@@ -250,13 +250,13 @@ Adds Balack, a post aquilo planet containing new scrap, oil sludge and strong en
 
 *Includes*
 
-- BM: Warp Drive ()
-- BM: Core ()
-- BM: K2 Assets ()
+- BM: Warp Drive (https://mods.factorio.com/mod/biological-machines-warp-drive)
+- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
+- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack ()
+- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
 
 ### Features
 
@@ -286,6 +286,7 @@ Adds Balack, a post aquilo planet containing new scrap, oil sludge and strong en
 - Graphics/code from [Offshore dump](https://mods.factorio.com/mod/offshore-dump/downloads) by chocoman
 - Oil sludge/warp power cell/tier II graphics from [Krastorio 2](https://mods.factorio.com/mod/Krastorio2?from=search) by raiguard, Krastor and Linver
 - Hypersonic ammo graphics/code from [Tungsten ammo](https://mods.factorio.com/mod/tungsten-munition) by Hanuryk
+- AAI loader compat for promethium belts from [Advanced Belts](https://mods.factorio.com/mod/AdvancedBeltsSA) by Buggi
 
 # Biological Machines: Homeworld
 
@@ -299,14 +300,14 @@ Use a warp drive to travel back to the engineers home star. Land on a dyson sphe
 
 *Includes*
 
-- BM: Warp Drive ()
-- BM: Cloning ()
-- BM: Core ()
-- BM: K2 Assets ()
+- BM: Warp Drive (https://mods.factorio.com/mod/biological-machines-warp-drive)
+- BM: Cloning (https://mods.factorio.com/mod/biological-machines-cloning)
+- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
+- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack ()
+- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
 
 ### Features
 
@@ -337,14 +338,14 @@ Clones can be made in a biochamber and stored in dedicated tanks. Getting in a t
 
 *Includes*
 
-- BM: Core ()
-- BM: K2 Assets ()
+- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
+- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack ()
-- BM: Radioactive tissue ()
-- BM: Homeworld ()
+- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
+- BM: Radioactive tissue (https://mods.factorio.com/mod/biological-machines-radioactive-tissue)
+- BM: Homeworld (https://mods.factorio.com/mod/biological-machines-homeworld)
 
 ### Features
 
@@ -366,15 +367,15 @@ Adds a warp drive machine which consumes warp power cells to transport a space p
 
 *Includes*
 
-- BM: Core ()
-- BM: K2 Assets ()
+- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
+- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack ()
-- BM: Planet Wit ()
-- BM: Planet Balack ()
-- BM: Homeworld ()
+- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
+- BM: Planet Wit (https://mods.factorio.com/mod/biological-machines-planet-wit)
+- BM: Planet Balack (https://mods.factorio.com/mod/biological-machines-planet-balack)
+- BM: Homeworld (https://mods.factorio.com/mod/biological-machines-homeworld)
 
 ### Features
 
@@ -395,19 +396,19 @@ Contains shared modules and compatibility patches for other Biological Machines 
 
 *Includes*
 
-- BM: K2 Assets ()
+- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack ()
-- BM: Hunger ()
-- BM: Industry ()
-- BM: Radioactive tissue ()
-- BM: Planet Wit ()
-- BM: Planet Balack ()
-- BM: Homeworld ()
-- BM: Cloning ()
-- BM: Warp Drive ()
+- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
+- BM: Hunger (https://mods.factorio.com/mod/biological-machines-hunger)
+- BM: Industry (https://mods.factorio.com/mod/biological-machines-industry)
+- BM: Radioactive tissue (https://mods.factorio.com/mod/biological-machines-radioactive-tissue)
+- BM: Planet Wit (https://mods.factorio.com/mod/biological-machines-planet-wit)
+- BM: Planet Balack (https://mods.factorio.com/mod/biological-machines-planet-balack)
+- BM: Homeworld (https://mods.factorio.com/mod/biological-machines-homeworld)
+- BM: Cloning (https://mods.factorio.com/mod/biological-machines-cloning)
+- BM: Warp Drive (https://mods.factorio.com/mod/biological-machines-warp-drive)
 
 ### Standalone Modules
 
@@ -461,16 +462,16 @@ Please let me know if I am not properly complying with the license and I will fi
 
 *Included in*
 
-- BM: Modpack ()
-- BM: Hunger ()
-- BM: Industry ()
-- BM: Radioactive tissue ()
-- BM: Planet Wit ()
-- BM: Planet Balack ()
-- BM: Homeworld ()
-- BM: Cloning ()
-- BM: Warp Drive ()
-- BM: Core ()
+- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
+- BM: Hunger (https://mods.factorio.com/mod/biological-machines-hunger)
+- BM: Industry (https://mods.factorio.com/mod/biological-machines-industry)
+- BM: Radioactive tissue (https://mods.factorio.com/mod/biological-machines-radioactive-tissue)
+- BM: Planet Wit (https://mods.factorio.com/mod/biological-machines-planet-wit)
+- BM: Planet Balack (https://mods.factorio.com/mod/biological-machines-planet-balack)
+- BM: Homeworld (https://mods.factorio.com/mod/biological-machines-homeworld)
+- BM: Cloning (https://mods.factorio.com/mod/biological-machines-cloning)
+- BM: Warp Drive (https://mods.factorio.com/mod/biological-machines-warp-drive)
+- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
 
 ### Credit
 
