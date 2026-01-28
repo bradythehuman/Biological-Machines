@@ -67,10 +67,3 @@ if mods["biological-machines-planet-balack"]
 and mods["biological-machines-homeworld"] then
   require("prototypes.balack-x-homeworld-updates")
 end
-
-
-
---ALL SCIENCE
-for _, science in pairs(bm_add_all_packs) do
-  data.raw["technology"][science].unit.ingredients = util.table.deepcopy(bm_all_sci_packs)
-end

@@ -1,9 +1,3 @@
---ALL SCIENCE
-table.insert(bm_add_all_packs, "bm-solar-system-discovery-homeworld")
-table.insert(bm_add_all_packs, "bm-market-productivity")
-
-
-
 data:extend({
   {
     type = "technology",
@@ -33,6 +27,7 @@ data:extend({
     prerequisites = {"bm-warp-drive", "bm-cloning"},
     unit = {
       count = 10000,
+      ingredients = BM_COPY_ALL_SCI_PACKS(),
       time = 120
     }
   },
@@ -76,6 +71,7 @@ data:extend({
     prerequisites = {"bm-solar-system-discovery-homeworld"},
     unit = {
       count_formula = "1.1^(L-1)*1000",
+      ingredients = BM_COPY_ALL_SCI_PACKS(),
       time = 120
     },
     max_level = "infinite",

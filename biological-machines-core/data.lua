@@ -57,4 +57,15 @@ bm_add_full_resistences = {}
 
 --ALL SCIENCE
 bm_all_sci_packs = util.table.deepcopy(data.raw.technology["research-productivity"].unit.ingredients)
-bm_add_all_packs = {}
+
+if mods["biological-machines-radioactive-tissue"] then
+  table.insert(bm_all_sci_packs, {"bm-nuclear-military-science-pack", 1})
+end
+
+if mods["biological-machines-planet-wit"] then
+  table.insert(bm_all_sci_packs, {"bm-interstellar-science-pack", 1})
+end
+
+function BM_COPY_ALL_SCI_PACKS()
+  return util.table.deepcopy(bm_all_sci_packs)
+end

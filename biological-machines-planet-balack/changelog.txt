@@ -1,0 +1,7 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 28. 1. 2026
+  Compatibility:
+    - Disables and hides shattered core setting if Shattered Planet by CPU_BlackHeart is installed as the two surfaces conflict
+  Changes:
+    - Replaces thumbnail, replacing text plates with text

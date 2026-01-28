@@ -2,11 +2,6 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 
---ALL SCIENCE
-table.insert(bm_all_sci_packs, {"bm-nuclear-military-science-pack", 1})
-
-
-
 --fix technology prerequisites
 dh.remove_prereq("uranium-ammo", {"tank", "uranium-processing"})
 

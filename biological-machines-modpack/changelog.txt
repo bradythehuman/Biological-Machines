@@ -1,0 +1,6 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 28. 1. 2026
+  Changes:
+    - Replaces thumbnail, replacing text plates with text
+

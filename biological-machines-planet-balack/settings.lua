@@ -49,3 +49,11 @@ data:extend({
     default_value = 10000,
   },
 })
+
+
+
+if mods["skewer_shattered_planet"] then
+  local setting_prototype = data.raw["bool-setting"]["bm-shattered-core"]
+  setting_prototype.hidden = true
+  setting_prototype.forced_value = false
+end

@@ -1,6 +1,6 @@
 {
   "name": "biological-machines-hunger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "title": "Biological Machines: Hunger",
   "author": "bradythehuman",
   "description": "Adds a hunger mechanic which consumes selected foods from the engineers inventory or the engineer starves. Different foods give the engineer passive regen/movement buffs/debuffs while they are being consumed. Also adds equipment which prevents starvation and more.",

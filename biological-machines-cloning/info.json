@@ -1,6 +1,6 @@
 {
   "name": "biological-machines-cloning",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "title": "Biological Machines: Cloning",
   "author": "bradythehuman",
   "description": "Clones can be made in a biochamber and stored in dedicated tanks. Getting in a tank will fill the tank and open a respawn screen where the engineer can respawn at any filled tank or at the default spawn. Higher quality clones will have increased health, running speed, crafing speed and mining speed.",

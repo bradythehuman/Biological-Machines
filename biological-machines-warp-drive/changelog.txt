@@ -1,0 +1,8 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 28. 1. 2026
+  Compatibility:
+    - Technology units no longer left nil between data and data-updates stages.
+      This prevents factorio crashing on load when Particle Physics by half_a_cat
+  Changes:
+    - Replaces thumbnail, replacing text plates with text

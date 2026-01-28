@@ -2,7 +2,11 @@
 
 ### Warning
 
-See BM: Planet Wit and BM: Homeworld for warnings.
+Burner buildings (including the stone furnace and boiler) cannot be placed on Wit. Bring at least 1 solar panel, 1 electric furnace and 1 power pole to get started. I would recommend bringing a significant supply of food as it is hard to produce on Wit.
+
+Any sufficient platforms (no players and a suspended clone) sent to the new system will be destroyed. Also, bring construction materials to the homeworlds dyson sphere construction platform as nothing is provided except power.
+
+All BM mods should be safe to add to existing saves (and subsequently remove) but some have complications, see individual mods warnings for details. If there is nothing relevant in the mods warning, it can be added/removed without complication.
 
 ### Description  
 
@@ -10,16 +14,16 @@ Biological Machines is a space age overhaul focused on mundane and sci-fi biolog
 
 *Includes*
 
-- BM: Hunger (https://mods.factorio.com/mod/biological-machines-hunger)
-- BM: Industry (https://mods.factorio.com/mod/biological-machines-industry)
-- BM: Radioactive tissue (https://mods.factorio.com/mod/biological-machines-radioactive-tissue)
-- BM: Planet Wit (https://mods.factorio.com/mod/biological-machines-planet-wit)
-- BM: Planet Balack (https://mods.factorio.com/mod/biological-machines-planet-balack)
-- BM: Homeworld (https://mods.factorio.com/mod/biological-machines-homeworld)
-- BM: Cloning (https://mods.factorio.com/mod/biological-machines-cloning)
-- BM: Warp Drive (https://mods.factorio.com/mod/biological-machines-warp-drive)
-- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
-- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
+- [BM: Hunger](https://mods.factorio.com/mod/biological-machines-hunger)
+- [BM: Industry](https://mods.factorio.com/mod/biological-machines-industry)
+- [BM: Radioactive tissue](https://mods.factorio.com/mod/biological-machines-radioactive-tissue)
+- [BM: Planet Wit](https://mods.factorio.com/mod/biological-machines-planet-wit)
+- [BM: Planet Balack](https://mods.factorio.com/mod/biological-machines-planet-balack)
+- [BM: Homeworld](https://mods.factorio.com/mod/biological-machines-homeworld)
+- [BM: Cloning](https://mods.factorio.com/mod/biological-machines-cloning)
+- [BM: Warp Drive](https://mods.factorio.com/mod/biological-machines-warp-drive)
+- [BM: Core](https://mods.factorio.com/mod/biological-machines-core)
+- [BM: K2 Assets](https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 Most optional dependencies for the above mods are modified by compatibility patches which can be skipped by disabling the mod override setting. All override settings are enabled by default and can be disabled for preference/compatibility. Any compatibility patch which fixes game breaking bugs has no override setting.
 
@@ -28,6 +32,7 @@ Most optional dependencies for the above mods are modified by compatibility patc
 - Bugfixes including script/gui ups optimizations
 - Balance tweaks including extra settings so players can customize the balance for their preferences
 - Compatibility with content mods including Maraxis Cerys, Moshine and Orbital ion cannon
+- Explanations in the form of item descriptions or tips
 - Graphics upgrades including berry bush, circuit board, scrapyard, recipe icons and BM: Homeworld generally
 - Additional content including a Gleba moon, an enemy on wit and demolisher spawners on Vulcanus
 
@@ -54,7 +59,6 @@ If you want to help with anything, particularly with graphics or additional loca
 
 *Content*
 
-- [Text Plates](https://mods.factorio.com/mod/textplates?from=search) by Earendel
 - [Pollution detector](https://mods.factorio.com/mod/pollution-detector) by Schorty
 - [Extra Storage Tanks: Tiny Storage Tanks](https://mods.factorio.com/mod/est-tiny-storage-tank) by ZarSasha
 - [Wood Walls and floors](https://mods.factorio.com/mod/Wood-Walls) by zanven
@@ -64,7 +68,12 @@ If you want to help with anything, particularly with graphics or additional loca
 
 Inspiration and concepts of a plan from [AAI Industry](https://mods.factorio.com/mod/aai-industry?from=search) + [Krastorio 2](https://mods.factorio.com/mod/Krastorio2?from=search). Specifically DoshDoshington's [playthrough and critique](https://www.youtube.com/watch?v=y4TIDFJaKrU&t=1872s) on Youtube.
 
+
 # Biological Machines: Hunger
+
+###  Warning
+
+Can be added to existing saves but I recommend being near a source of fish/bioflux to eat when you do so. Also berries will only spawn in newly generated chunks on Nauvis.
 
 ###  Description
 
@@ -72,12 +81,12 @@ Adds a hunger mechanic which consumes selected foods from the engineers inventor
 
 *Includes*
 
-- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
-- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
+- [BM: Core](https://mods.factorio.com/mod/biological-machines-core)
+- [BM: K2 Assets](https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
+- [BM: Modpack](https://mods.factorio.com/mod/biological-machines-modpack)
 
 ### Features
 
@@ -101,7 +110,12 @@ Adds a hunger mechanic which consumes selected foods from the engineers inventor
 - Concept, code and graphics from [stingfrond farming](https://mods.factorio.com/mod/fluroflux) by LordMiguel
 - Medkit/stims graphics from [Krastorio 2](https://mods.factorio.com/mod/Krastorio2?from=search) by raiguard, Krastor and Linver
 
+
 # Biological Machines: Industry
+
+### Warning
+
+Can be added to existing saves but many of the basic recipes are changed so existing factories would stop working including space platforms.
 
 ### Description
 
@@ -109,12 +123,12 @@ Adds new biological materials and intermediates to basic recipes including steel
 
 *Includes*
 
-- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
-- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
+- [BM: Core](https://mods.factorio.com/mod/biological-machines-core)
+- [BM: K2 Assets](https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
+- [BM: Modpack](https://mods.factorio.com/mod/biological-machines-modpack)
 
 ### Features
 
@@ -150,7 +164,12 @@ Adds new biological materials and intermediates to basic recipes including steel
 - Graphics/code from [Offshore dump](https://mods.factorio.com/mod/offshore-dump/downloads) by chocoman
 - Sand/potash/lime/potassium nitrate graphics from [Krastorio 2](https://mods.factorio.com/mod/Krastorio2?from=search) by raiguard, Krastor and Linver
 
+
 # Biological Machines: Radioactive Tissue
+
+### Warning
+
+Can be added to existing saves but biolabs will require u-235 as fuel instead of electricity.
 
 ### Description
 
@@ -158,13 +177,13 @@ Adds tissue dropped by biter nests which may be cultivated in a biochamber using
 
 *Includes*
 
-- BM: Cloning (https://mods.factorio.com/mod/biological-machines-cloning)
-- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
-- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
+- [BM: Cloning](https://mods.factorio.com/mod/biological-machines-cloning)
+- [BM: Core](https://mods.factorio.com/mod/biological-machines-core)
+- [BM: K2 Assets](https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
+- [BM: Modpack](https://mods.factorio.com/mod/biological-machines-modpack)
 
 ### Features
 
@@ -176,6 +195,7 @@ Adds tissue dropped by biter nests which may be cultivated in a biochamber using
 - Military assembler is unlocked via nuclear science packs and gives 50% base productivity
 - Poison gas can be used to make grenades, bullets and mines and its damage is increased with an infinite research
 - Clones, after Aquilo tissue may be turned into clones which can be held in tanks for when the player respawns. Quality clones give the engineer increased health and mining/crafting/running speed
+- Can be added to existing saves without any complications
 
 ### Supported Mods
 
@@ -189,11 +209,14 @@ Adds tissue dropped by biter nests which may be cultivated in a biochamber using
 - Code for cutscene and player quality from [player recycling](https://mods.factorio.com/mod/player-recycling?from=search) by PickledCow
 - Military assembler graphics and code from [Krastorio 2](https://mods.factorio.com/mod/Krastorio2?from=search) by raiguard, Krastor and Linver
 
+
 # Biological Machines: Planet Wit
 
 ### Warning
 
-Burner buildings (including the stone furnace and boiler) cannot be placed on Wit. Bring at least 1 solar panel, 1 electric furnace and 1 power pole to get started.
+Burner buildings (including the stone furnace and boiler) cannot be placed on Wit. Bring at least 1 solar panel, 1 electric furnace and 1 power pole to get started. If playing with BM: Hunger I would recommend bringing a significant supply of food as it is hard to produce on Wit.
+
+Can be added to existing saves but space science and an intermediate used in lasers now must be made on Wit so their production would need to be redone on Wit.
 
 ### Description
 
@@ -201,13 +224,13 @@ Adds Wit, a moon of Nauvis covered in asteroid craters, glass, helium and coper 
 
 *Includes*
 
-- BM: Warp Drive (https://mods.factorio.com/mod/biological-machines-warp-drive)
-- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
-- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
+- [BM: Warp Drive](https://mods.factorio.com/mod/biological-machines-warp-drive)
+- [BM: Core](https://mods.factorio.com/mod/biological-machines-core)
+- [BM: K2 Assets](https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
+- [BM: Modpack](https://mods.factorio.com/mod/biological-machines-modpack)
 
 ### Features
 
@@ -242,21 +265,22 @@ Adds Wit, a moon of Nauvis covered in asteroid craters, glass, helium and coper 
 - Graphics for advanced accumulator from [Research Center](https://mods.factorio.com/user/hurricane046) by Hurricane046
 - Advanced accumulator code from [Quality condensor](https://mods.factorio.com/mod/quality-condenser?from=search) by Quezler
 
+
 # Biological Machines: Planet Balack
 
 ### Description
 
-Adds Balack, a post aquilo planet containing new scrap, oil sludge and strong enemies. A single bio fabricator can be placed at spawn and is required to produce new intermediates and products including a new module at the cost of massive pollution. The intermediates can be used to produce tank mk2, mech armor mk2 and warp drive.
+Adds Balack, a post Aquilo planet containing new scrap, oil sludge and strong enemies. A single bio fabricator can be placed at spawn and is required to produce new intermediates and products including a new module at the cost of massive pollution. The intermediates can be used to produce tank mk2, mech armor mk2 and warp drive.
 
 *Includes*
 
-- BM: Warp Drive (https://mods.factorio.com/mod/biological-machines-warp-drive)
-- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
-- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
+- [BM: Warp Drive](https://mods.factorio.com/mod/biological-machines-warp-drive)
+- [BM: Core](https://mods.factorio.com/mod/biological-machines-core)
+- [BM: K2 Assets](https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
+- [BM: Modpack](https://mods.factorio.com/mod/biological-machines-modpack)
 
 ### Features
 
@@ -264,18 +288,20 @@ Adds Balack, a post aquilo planet containing new scrap, oil sludge and strong en
 - Balack and shattered planet unlocked with promethium science packs. Starter packs can be made with chunks mined from promethium ore on Fulgora
 - Balack is covered in thick cloud and is completely dark without nightvision equipment. There is no solar power so startup energy must come from wind turbines
 - Surface has promethium ore, a new scrap and an oil sludge ocean. Scrap can be broken down into machinery intermediates, carbon based materials and uranium-238. Oil sludge can be filtered into water, spoilage and oil
-- Spawn has 4 electric turrets surounding a green patch on the ground, the only place a new bio fabricator can be placed. The bio fabricator has a number of unique recipes and outputs a lot of pollution
-- Tinted ruin vaults are spawners for armored biters and pentapods. The vaults are indestructable and spawn outside of a large starting circle. Worms and pentapod shells filled with wrigglers do spawn in the starting area
+- Spawn has 4 electric turrets surrounding a green patch on the ground, the only place a new bio fabricator can be placed. The bio fabricator has a number of unique recipes and outputs a lot of pollution
+- Tinted ruin vaults are spawners for armored biters and pentapods. The vaults are indestructible and spawn outside of a large starting circle. Worms and pentapod shells filled with wrigglers do spawn in the starting area
 - The armored biters spawn worms when killed and all the pentapods spawn lots of wrigglers. Balack enemies have a lot of health and resistance but are most vulnerable to physical/explosive damage
-- The bio fabricator can make ai modules with all 4 t3 modules and quantum processors. They give large speed buff with a large quality/productivity/consumption debuff. The modules can be activated for 15 min by feeding them u-235, flipping quality to a large buff and increasing polution debuff
-- The bio fabricator can also make radiation sheilding from promethium chunks and other intermediates. The rad sheilding and ai control units are required to produce an improved tank and mech armor as well as warp drive parts and power cells
+- The bio fabricator can make AI modules with all 4 t3 modules and quantum processors. They give large speed buff with a large quality/productivity/consumption debuff. The modules can be activated for 15 min by feeding them u-235, flipping quality to a large buff and increasing pollution debuff
+- The bio fabricator can also make radiation shielding from promethium chunks and other intermediates. The rad shielding and AI control units are required to produce an improved tank and mech armor as well as warp drive parts and power cells
 - Hypersonic machine gun ammo can be made with radiation shielding and deals massive damage
 - Optionally adds shattered planet surface. Surface covered promethium ore and a free electric grid. Promethium science can be crafted on the surface. Altered promethium asteroids float by, exploding randomly but vulnerable to lasers
+- Can be added to existing saves without any complications
 
 ### Supported Mods
 
 - [Promethium belts](https://mods.factorio.com/mod/promethium-belts?from=search) by Helios467
 - [Buggis Nuclear Bots](https://mods.factorio.com/mod/BuggisNuclearBots?from=search) by Buggi
+- [Shattered Planet](https://mods.factorio.com/mod/skewer_shattered_planet?from=updated) by CPU_BlackHeart. Disables and hides BM: Planet Balack's shattered planet setting when this mod is installed
 
 ### Credit
 
@@ -288,11 +314,12 @@ Adds Balack, a post aquilo planet containing new scrap, oil sludge and strong en
 - Hypersonic ammo graphics/code from [Tungsten ammo](https://mods.factorio.com/mod/tungsten-munition) by Hanuryk
 - AAI loader compat for promethium belts from [Advanced Belts](https://mods.factorio.com/mod/AdvancedBeltsSA) by Buggi
 
+
 # Biological Machines: Homeworld
 
 ### Warning
 
-Any sufficient platforms sent to the new system will be destroyed. Also, bring construction materials to the dyson sphere construction platform as nothing is provided.
+Any sufficient platforms (no players and a suspended clone) sent to the new system will be destroyed. Also, bring construction materials to the homeworlds dyson sphere construction platform as nothing is provided except power.
 
 ### Description
 
@@ -300,35 +327,37 @@ Use a warp drive to travel back to the engineers home star. Land on a dyson sphe
 
 *Includes*
 
-- BM: Warp Drive (https://mods.factorio.com/mod/biological-machines-warp-drive)
-- BM: Cloning (https://mods.factorio.com/mod/biological-machines-cloning)
-- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
-- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
+- [BM: Warp Drive](https://mods.factorio.com/mod/biological-machines-warp-drive)
+- [BM: Cloning](https://mods.factorio.com/mod/biological-machines-cloning)
+- [BM: Core](https://mods.factorio.com/mod/biological-machines-core)
+- [BM: K2 Assets](https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
+- [BM: Modpack](https://mods.factorio.com/mod/biological-machines-modpack)
 
 ### Features
 
 - An input chest (green) to deposit materials and an output chest (gold) where coin is deposited. Input materials are removed instantly from the chest and tallied until sufficient materials have been deposited to complete a transaction.
   - Every payment is 200 credits but the different required materials take different initial amounts and the required amount of any requested material increases by 10% of the initial amount every time a payment is made.
-  - Gui format for a single line in as follows {item icon} input amount / required amount for next transaction (completed transaction count)
-  - Requested materials include space platform foundation, tungsten plate, processing units, lds, electric engine units, superconductors, supercapacitors and more
+  - GUI format for a single line is as follows {item icon} input amount / required amount for next transaction (completed transaction count)
+  - Requested materials include space platform foundation, tungsten plate, processing units, LDS, electric engine units, superconductors, supercapacitors and more
 - Credits can be traded in a market which can be made from iron and steel but can only be placed on the construction platform.
   - All requested materials can be bought in the market plus a few others like rocket fuel or silos
   - Market productivity research affects all trades in the market
 - Free power is provided on the construction platform from the output (gold) chest
 - Adds super credits which can be purchased with credits in the market and recycled with quality modules to produce high quality, non super credits
-- Send a space platform with a suspended clone to a new, uncolonized solar system to get a large amount of credits at the construction platform. The new system is not accesible by the player and any platform sent there will be removed from the game
+- Send a space platform with a suspended clone to a new, uncolonized solar system to get a large amount of credits at the construction platform. The new system is not accessible by the player and any platform sent there will be removed from the game
   - insufficient platforms will be returned to the solar system edge location, including platforms without a clone or platforms with an active engineer
   - Sending your first clone to colonize a new world will trigger the new victory screen
+- Can be added to existing saves without any complications
 
 ### Credit
 
 - Dyson sphere construction platform graphics from [Metal and Stars](https://mods.factorio.com/mod/metal-and-stars) by 5forsilver
 - New system graphics from [New Star Graphics](https://mods.factorio.com/mod/sun-graphics?from=search) by bunshaman
 - Energy link entity and various item/recipe graphics from [Krastorio 2](https://mods.factorio.com/mod/Krastorio2?from=search) by raiguard, Krastor and Linver
+
 
 # Biological Machines: Cloning
 
@@ -338,14 +367,14 @@ Clones can be made in a biochamber and stored in dedicated tanks. Getting in a t
 
 *Includes*
 
-- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
-- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
+- [BM: Core](https://mods.factorio.com/mod/biological-machines-core)
+- [BM: K2 Assets](https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
-- BM: Radioactive tissue (https://mods.factorio.com/mod/biological-machines-radioactive-tissue)
-- BM: Homeworld (https://mods.factorio.com/mod/biological-machines-homeworld)
+- [BM: Modpack](https://mods.factorio.com/mod/biological-machines-modpack)
+- [BM: Radioactive tissue](https://mods.factorio.com/mod/biological-machines-radioactive-tissue)
+- [BM: Homeworld](https://mods.factorio.com/mod/biological-machines-homeworld)
 
 ### Features
 
@@ -356,8 +385,11 @@ Clones can be made in a biochamber and stored in dedicated tanks. Getting in a t
 - When a player respawns they are made temporarily invulnerable while they select where to respawn
 - Filled tanks constantly consume suspension fluid and empty tanks must be filled with suspension fluid to allow a player to enter
 - When a player respawns at a tank their engineer gains the quality of the clone originally placed in the tank. Higher quality clone bodies gives the engineer increased health and mining/crafting/running speed
+- Can be added to existing saves without any complications
+
 ### Credit
 - Graphics and code from [Cloning Vat](https://mods.factorio.com/mod/Cloning-vat-building?from=search) by snouz
+
 
 # Biological Machines: Warp Drive
 
@@ -367,26 +399,28 @@ Adds a warp drive machine which consumes warp power cells to transport a space p
 
 *Includes*
 
-- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
-- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
+- [BM: Core](https://mods.factorio.com/mod/biological-machines-core)
+- [BM: K2 Assets](https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
-- BM: Planet Wit (https://mods.factorio.com/mod/biological-machines-planet-wit)
-- BM: Planet Balack (https://mods.factorio.com/mod/biological-machines-planet-balack)
-- BM: Homeworld (https://mods.factorio.com/mod/biological-machines-homeworld)
+- [BM: Modpack](https://mods.factorio.com/mod/biological-machines-modpack)
+- [BM: Planet Wit](https://mods.factorio.com/mod/biological-machines-planet-wit)
+- [BM: Planet Balack](https://mods.factorio.com/mod/biological-machines-planet-balack)
+- [BM: Homeworld](https://mods.factorio.com/mod/biological-machines-homeworld)
 
 ### Features
 
 - Warp drive, available post Aquilo and craft-able only in space. Consumes massive amount of power and a warp drive to teleport moving platforms to the next space location
 - If the platform is not moving towards a location when the warp drive finished the warp recipe, the consumed power cell will be returned to the warp drives input. Shut off the drive when not traveling to conserve power
 - Warp power cell productivity research
+- Can be added to existing saves without any complications
 
 ### Credit
 
 - Graphics for warp drive from warp drive from [Quantum Stabilizer](https://mods.factorio.com/user/hurricane046) by Hurricane046
 - Warp power cell/warp recipe graphics from [Krastorio 2](https://mods.factorio.com/mod/Krastorio2?from=search by raiguard, Krastor and Linver
+
 
 # Biological Machines: Core
 
@@ -396,19 +430,25 @@ Contains shared modules and compatibility patches for other Biological Machines 
 
 *Includes*
 
-- BM: K2 Assets (https://mods.factorio.com/mod/biological-machines-k2-assets)
+- [BM: K2 Assets](https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 *Included in*
 
-- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
-- BM: Hunger (https://mods.factorio.com/mod/biological-machines-hunger)
-- BM: Industry (https://mods.factorio.com/mod/biological-machines-industry)
-- BM: Radioactive tissue (https://mods.factorio.com/mod/biological-machines-radioactive-tissue)
-- BM: Planet Wit (https://mods.factorio.com/mod/biological-machines-planet-wit)
-- BM: Planet Balack (https://mods.factorio.com/mod/biological-machines-planet-balack)
-- BM: Homeworld (https://mods.factorio.com/mod/biological-machines-homeworld)
-- BM: Cloning (https://mods.factorio.com/mod/biological-machines-cloning)
-- BM: Warp Drive (https://mods.factorio.com/mod/biological-machines-warp-drive)
+- [BM: Modpack](https://mods.factorio.com/mod/biological-machines-modpack)
+- [BM: Hunger](https://mods.factorio.com/mod/biological-machines-hunger)
+- [BM: Industry](https://mods.factorio.com/mod/biological-machines-industry)
+- [BM: Radioactive tissue](https://mods.factorio.com/mod/biological-machines-radioactive-tissue)
+- [BM: Planet Wit](https://mods.factorio.com/mod/biological-machines-planet-wit)
+- [BM: Planet Balack](https://mods.factorio.com/mod/biological-machines-planet-balack)
+- [BM: Homeworld](https://mods.factorio.com/mod/biological-machines-homeworld)
+- [BM: Cloning](https://mods.factorio.com/mod/biological-machines-cloning)
+- [BM: Warp Drive](https://mods.factorio.com/mod/biological-machines-warp-drive)
+
+### Features
+
+- Standalone modules which are enabled behind the scenes by various BM mods or can be enabled explicitly via startup settings even if only BM: Core is installed
+- Modding tools which can be used by third party mods with BM: Core as a dependency
+- Can be added to existing saves without any complications
 
 ### Standalone Modules
 
@@ -425,9 +465,7 @@ Contains shared modules and compatibility patches for other Biological Machines 
   - Auto included with BM: Radioactive Tissue and BM: Planet Balack
   - Internal setting name is bm-reinforced-wall-standalone
 
-### Modding Support
-
-Third party mods with BM: Core as a dependency can use the following tools
+### Modding Tools
 
 - *Data helper*, a util file with functions to manipulate data in the prototype stage. Load into your mod by calling
 
@@ -438,9 +476,9 @@ Third party mods with BM: Core as a dependency can use the following tools
   `ENTITY_PROTOTYPE = data.raw[ENTITY_TYPE][ENTITY_NAME]  
   table.insert(bm_add_full_resistences, ENTITY_PROTOTYPE)`
 
-- *All science*, a table containing names of technologies which will be made to consume all science packs during the data-final-fixes stage. Mark a technology for all science in the data or data-updates stages by calling
+- *All science*, a function returning a copy of a technologies ingredients table containing all science packs in BM
 
-  `table.insert(bm_add_all_packs, TECHNOLOGY_NAME)`
+  `data.raw.technology[TECH_NAME].unit.ingredients = BM_COPY_ALL_SCI_PACKS()`
 
 - *Standalone modules*, a global function to force a standalone module to be loaded and hide the setting. Call the function in any of the setting stages using the standalone modules internal setting name
 
@@ -452,6 +490,7 @@ Third party mods with BM: Core as a dependency can use the following tools
 - Glass plate icon from [glass](https://mods.factorio.com/mod/Glass) by GotLag
 - Graphics/code from [Offshore dump](https://mods.factorio.com/mod/offshore-dump/downloads) by chocoman
 
+
 # Biological Machines: K2 Assets
 
 ### Description
@@ -462,16 +501,16 @@ Please let me know if I am not properly complying with the license and I will fi
 
 *Included in*
 
-- BM: Modpack (https://mods.factorio.com/mod/biological-machines-modpack)
-- BM: Hunger (https://mods.factorio.com/mod/biological-machines-hunger)
-- BM: Industry (https://mods.factorio.com/mod/biological-machines-industry)
-- BM: Radioactive tissue (https://mods.factorio.com/mod/biological-machines-radioactive-tissue)
-- BM: Planet Wit (https://mods.factorio.com/mod/biological-machines-planet-wit)
-- BM: Planet Balack (https://mods.factorio.com/mod/biological-machines-planet-balack)
-- BM: Homeworld (https://mods.factorio.com/mod/biological-machines-homeworld)
-- BM: Cloning (https://mods.factorio.com/mod/biological-machines-cloning)
-- BM: Warp Drive (https://mods.factorio.com/mod/biological-machines-warp-drive)
-- BM: Core (https://mods.factorio.com/mod/biological-machines-core)
+- [BM: Modpack](https://mods.factorio.com/mod/biological-machines-modpack)
+- [BM: Hunger](https://mods.factorio.com/mod/biological-machines-hunger)
+- [BM: Industry](https://mods.factorio.com/mod/biological-machines-industry)
+- [BM: Radioactive tissue](https://mods.factorio.com/mod/biological-machines-radioactive-tissue)
+- [BM: Planet Wit](https://mods.factorio.com/mod/biological-machines-planet-wit)
+- [BM: Planet Balack](https://mods.factorio.com/mod/biological-machines-planet-balack)
+- [BM: Homeworld](https://mods.factorio.com/mod/biological-machines-homeworld)
+- [BM: Cloning](https://mods.factorio.com/mod/biological-machines-cloning)
+- [BM: Warp Drive](https://mods.factorio.com/mod/biological-machines-warp-drive)
+- [BM: Core](https://mods.factorio.com/mod/biological-machines-core)
 
 ### Credit
 

@@ -1,9 +1,3 @@
---ALL SCIENCE
-table.insert(bm_add_all_packs, "bm-warp-drive")
-table.insert(bm_add_all_packs, "bm-warp-power-cell-productivity")
-
-
-
 data:extend({
   {
     type = "technology",
@@ -19,6 +13,7 @@ data:extend({
     prerequisites = {"promethium-science-pack"},
     unit = {
       count = 5000,
+      ingredients = BM_COPY_ALL_SCI_PACKS(),
       time = 120,
     }
   },
@@ -37,6 +32,7 @@ data:extend({
     prerequisites = {"bm-warp-drive"},
     unit = {
       count_formula = "1.3^(L-1)*1000",
+      ingredients = BM_COPY_ALL_SCI_PACKS(),
       time = 120
     },
     max_level = "infinite",

@@ -2,13 +2,6 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 
---ALL SCIENCE
-table.insert(bm_all_sci_packs, {"bm-interstellar-science-pack", 1})
-
-table.insert(bm_add_all_packs, "bm-advanced-accumulator")
-
-
-
 --DESCRIPTIONS
 data.raw["technology"]["space-platform"].localised_description = {"technology-description.bm-new-space-platform"}
 
@@ -235,7 +228,7 @@ data:extend({
         {"cryogenic-science-pack", 1},
         {"promethium-science-pack", 1},
       },
-      time = 120
+      time = 120,
     }
   },
   {
@@ -253,7 +246,8 @@ data:extend({
     prerequisites = {"bm-interstellar-science-pack"},
     unit = {
       count = 2500,
-      time = 120
+      ingredients = BM_COPY_ALL_SCI_PACKS(),
+      time = 120,
     }
   },
 })
