@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 2. 2. 2026
+  Compatibility:
+    - Fixed crash on load with enemy race manager installed
+  Changes:
+    - Added space travel required feature flag
+---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 28. 1. 2026
   Compatibility:

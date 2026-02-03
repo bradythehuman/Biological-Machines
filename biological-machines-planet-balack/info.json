@@ -1,9 +1,10 @@
 {
   "name": "biological-machines-planet-balack",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "title": "Biological Machines: Planet Balack",
   "author": "bradythehuman",
   "description": "Adds Balack, a post aquilo planet containing new scrap, oil sludge and strong enemies. A single bio fabricator can be placed at spawn and is required to produce new intermediates and products including a new module at the cost of massive pollution. The intermediates can be used to produce tank mk2, mech armor mk2 and warp drive.",
   "factorio_version": "2.0",
-  "dependencies": ["biological-machines-warp-drive >= 1.0.0", "ArmouredBiters >= 1.2.1", "k2-wind-turbine-zars-fork >= 1.2.9", "module-inserter >= 1.0.2", "? promethium-belts >= 1.0.2", "? RoboticsFacility", "? BuggisNuclearBots >= 2.0.1"]
+  "dependencies": ["biological-machines-warp-drive >= 1.0.0", "ArmouredBiters >= 1.2.1", "k2-wind-turbine-zars-fork >= 1.2.9", "module-inserter >= 1.0.2", "? promethium-belts >= 1.0.2", "? RoboticsFacility", "? BuggisNuclearBots >= 2.0.1"],
+  "space_travel_required": true
 }
