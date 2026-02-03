@@ -94,7 +94,7 @@ local berry_bush = {
     mining_time = 0.5,
     results = {
       {type = "item", name = "wood", amount = 1, probability = 0.5},
-      {type = "item", name = "bm-berry", amount = 10}
+      {type = "item", name = "bm-berry", amount = settings.startup["bm-berry-yield"].value}
     },
     mining_trigger = {{
       type = "direct",
@@ -112,7 +112,7 @@ local berry_bush = {
   impact_category = "tree",
   --autoplace = util.table.deepcopy(data.raw["tree"]["tree-08"].autoplace),
   autoplace = {
-    control = "trees",
+    control = "berries",
     order = "a[tree]-b[forest]-f",
     probability_expression =
       "min(0.3, trees_forest_path_cutout_faded,\z
@@ -120,7 +120,7 @@ local berry_bush = {
           asymmetric_ramps{input=temperature, from_bottom=1, from_top=14, to_top=16, to_bottom=17},\z
           asymmetric_ramps{input=moisture, from_bottom=0.3, from_top=0.4, to_top=1, to_bottom=2})\z
       + min(0, distance/15 - 15)\z
-      - 8 + 1 * control:trees:size\z
+      - 10 - (1 / control:berries:size) + (2 * control:berries:size)\z
       + tree_small_noise * 0.1\z
       + multioctave_noise{x = x,\z
                           y = y,\z
@@ -128,7 +128,7 @@ local berry_bush = {
                           seed0 = map_seed,\z
                           seed1 = 'tree-08',\z
                           octaves = 10,\z
-                          input_scale = 1 * control:trees:frequency,\z
+                          input_scale = 0.25 * (control:berries:frequency * control:berries:size),\z
                           output_scale = 10})",
     richness_expression = "clamp(random_penalty_at(6, 1), 0, 1)"
   },
@@ -184,8 +184,17 @@ local berry_bush = {
 }
 berry_bush.autoplace.tile_restriction = data.raw["plant"]["tree-plant"].autoplace.tile_restriction
 
+--Adds berry autoplace control to nauvis
+data.raw.planet["nauvis"].map_gen_settings.autoplace_controls["berries"] = {}
+
 data:extend({
   berry_bush,
+  {
+    type = "autoplace-control",
+    name = "berries",
+    order = "c-x-a",
+    category = "terrain"
+  },
   {
     type = "item",
     name = "bm-berry",
@@ -380,7 +389,6 @@ data:extend({
     }
   }
 })
-
 
 
 

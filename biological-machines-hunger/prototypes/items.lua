@@ -165,9 +165,9 @@ data:extend({
     default_import_location = "gleba",
 
     fuel_category = "food",
-    fuel_value = "6MJ",
+    fuel_value = "15MJ",
 
-    spoil_ticks = 2 * hour,
+    spoil_ticks = 1 * hour,
     spoil_result = "spoilage"
   },
   {

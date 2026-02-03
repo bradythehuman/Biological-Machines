@@ -26,10 +26,18 @@ reinforced_wall_entity.max_health = 1250
 for _, picture_name in pairs(wall_pictures_names) do
   reinforced_wall_entity.pictures[picture_name].layers[1].tint = reinforced_tint
 end
-reinforced_wall_entity.pictures["filling"].tint = reinforced_tint
-reinforced_wall_entity.pictures["water_connection_patch"].sheets[1].tint = reinforced_tint
-reinforced_wall_entity.pictures["gate_connection_patch"].sheets[1].tint = reinforced_tint
 
+-- Checks for mods like Water-Friendly Walls which remove the water connection patch
+local wall_pictures = reinforced_wall_entity.pictures
+if wall_pictures["filling"] then
+  wall_pictures["filling"].tint = reinforced_tint
+end
+if wall_pictures["water_connection_patch"] then
+  wall_pictures["water_connection_patch"].sheets[1].tint = reinforced_tint
+end
+if wall_pictures["gate_connection_patch"] then
+  wall_pictures["gate_connection_patch"].sheets[1].tint = reinforced_tint
+end
 
 
 local gate_pictures_names = {

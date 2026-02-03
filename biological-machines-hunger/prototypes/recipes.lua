@@ -16,9 +16,9 @@ data:extend({
     },
     results = {
       {type = "item", name = "bm-berry-paste", amount = 1},
-      {type = "item", name = "bm-berry-seed", amount = 1}
+      --{type = "item", name = "bm-berry-seed", amount = 1}
     },
-    main_product = "bm-berry-paste"
+    --main_product = "bm-berry-paste"
   },
   --[[
   {

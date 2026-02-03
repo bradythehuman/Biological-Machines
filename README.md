@@ -302,6 +302,7 @@ Adds Balack, a post Aquilo planet containing new scrap, oil sludge and strong en
 - [Promethium belts](https://mods.factorio.com/mod/promethium-belts?from=search) by Helios467
 - [Buggis Nuclear Bots](https://mods.factorio.com/mod/BuggisNuclearBots?from=search) by Buggi
 - [Shattered Planet](https://mods.factorio.com/mod/skewer_shattered_planet?from=updated) by CPU_BlackHeart. Disables and hides BM: Planet Balack's shattered planet setting when this mod is installed
+- [Enemy Race Manager](https://mods.factorio.com/mod/enemyracemanager) by heyqule
 
 ### Credit
 

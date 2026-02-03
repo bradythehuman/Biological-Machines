@@ -1,6 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 3. 2. 2026
+  Changes:
+    - Added small speed buff to bioflux/nutrient slurry (fortified nutrient slurry has large speed buff)
+    - Added small speed debuff to jellynut/jelly
+    - Decreased berry and nutrients saturation value to 12
+    - Removed berry seeds result from berry paste recipe
+    - Added fluroflux as a food which gives same buff as fortified slurry.
+    - Tweaked fluroflux item, decreasing spoil time and increasing energy value
+---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 28. 1. 2026
   Changes:
     - Replaces thumbnail, replacing text plates with text
-

@@ -1,6 +1,6 @@
 {
   "name": "biological-machines-core",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "title": "Biological Machines: Core",
   "author": "bradythehuman",
   "description": "Contains shared modules and compatibility patches for other Biological Machines mods. Does nothing on its own by default although some modules can be enabled as standalone via mod settings.",

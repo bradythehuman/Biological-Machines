@@ -30,4 +30,12 @@ data:extend({
     setting_type = "startup",
     default_value = false
   },
+  {
+    type = "int-setting",
+    name = "bm-berry-yield",
+    setting_type = "startup",
+    default_value = 10,
+    minimum_value = 2,
+    maximum_value = 50,
+  },
 })
