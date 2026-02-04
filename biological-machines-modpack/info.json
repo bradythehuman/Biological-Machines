@@ -1,9 +1,10 @@
 {
   "name": "biological-machines-modpack",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "title": "Biological Machines: Modpack",
   "author": "bradythehuman",
   "description": "Biological Machines is a space age overhaul focused on mundane and sci-fi biological processes. This mod is the intended BM experience, although it only contains dependencies, any of which may be left out for preference/compatibility.",
   "factorio_version": "2.0",
-  "dependencies": ["biological-machines-hunger >= 1.0.0", "biological-machines-industry >= 1.0.0", "biological-machines-planet-balack >= 1.0.0", "biological-machines-planet-wit >= 1.0.0", "biological-machines-radioactive-tissue >= 1.0.0", "biological-machines-homeworld >= 1.0.0","aai-containers >= 0.3.2", "aai-stacking >= 1.2.0", "aai-signal-transmission >= 0.5.3", "ironclad-gunboat-and-mortar-turret-fork >= 0.0.4", "slipstacks >= 1.1.0", "Rocs-Improved-Platform-Drag >= 1.1.5", "shelter-k2 >= 0.0.3", "snouz-handcannon >= 1.0.1", "PersonalTeslaDefenseEquipment >= 1.7.0", "LargerLamps-2_0 >= 0.2.2", "snouz_better_substation >= 1.2.1", "shield-projector >= 0.2.2", "Repair_Turret >= 2.0.4", "reach-equipment >= 1.0.3", "promethium-belts >= 1.0.2", "BuggisNuclearBots >= 2.0.1", "robot_attrition >= 0.6.5"]
+  "dependencies": ["biological-machines-hunger >= 1.0.0", "biological-machines-industry >= 1.0.0", "biological-machines-planet-balack >= 1.0.0", "biological-machines-planet-wit >= 1.0.0", "biological-machines-radioactive-tissue >= 1.0.0", "biological-machines-homeworld >= 1.0.0","aai-containers >= 0.3.2", "aai-stacking >= 1.2.0", "aai-signal-transmission >= 0.5.3", "ironclad-gunboat-and-mortar-turret-fork >= 0.0.4", "slipstacks >= 1.1.0", "Rocs-Improved-Platform-Drag >= 1.1.5", "shelter-k2 >= 0.0.3", "snouz-handcannon >= 1.0.1", "PersonalTeslaDefenseEquipment >= 1.7.0", "LargerLamps-2_0 >= 0.2.2", "snouz_better_substation >= 1.2.1", "shield-projector >= 0.2.2", "Repair_Turret >= 2.0.4", "reach-equipment >= 1.0.3", "promethium-belts >= 1.0.2", "BuggisNuclearBots >= 2.0.1", "robot_attrition >= 0.6.5"],
+  "space_travel_required": true
 }

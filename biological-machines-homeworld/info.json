@@ -1,9 +1,10 @@
 {
   "name": "biological-machines-homeworld",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "title": "Biological Machines: Homeworld",
   "author": "bradythehuman",
   "description": "Use a warp drive to travel back to the engineers home star. Land on a dyson sphere construction platform to exchange materials for credits. Spend the credits on different materials and power uplinks which can send the power of the dyson sphere to the engineers factories. Also includes a new ending.",
   "factorio_version": "2.0",
-  "dependencies": ["biological-machines-cloning >= 1.0.0", "biological-machines-warp-drive >= 1.0.0"]
+  "dependencies": ["biological-machines-cloning >= 1.0.0", "biological-machines-warp-drive >= 1.0.0"],
+  "space_travel_required": true
 }
