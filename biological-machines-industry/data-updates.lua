@@ -2,6 +2,10 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 
+require("prototypes.slag") --delayed from data stage for muluna compat
+
+
+
 if settings.startup["bm-rocket-parts"].value then
   require("prototypes.rocket-parts")
 end

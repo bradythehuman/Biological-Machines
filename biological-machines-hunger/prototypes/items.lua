@@ -4,15 +4,7 @@ local item_effects = require("__space-age__.prototypes.item-effects")
 
 
 
-local capsules = {"raw-fish", "yumako", "yumako-mash", "jellynut", "jelly", "bioflux"}
-for _, name in pairs(capsules) do
-  local item = data.raw["capsule"][name]
-  item.type = "item"
-  data.raw["capsule"][name] = nil
-  data:extend({item})
-end
-
-data.raw["item"]["raw-fish"].stack_size = 50
+data.raw["capsule"]["raw-fish"].stack_size = 50
 
 
 

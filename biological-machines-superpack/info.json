@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "title": "Biological Machines: Superpack",
   "author": "bradythehuman",
-  "description": "Full personal modlist for survival BM game.",
+  "description": "BM plus all supported content mods.",
   "factorio_version": "2.0",
-  "dependencies": ["biological-machines-modpack >= 1.0.0", "4k_planets >= 1.0.60", "CleanedConcrete >= 2.0.0", "CursorEnhancements >= 2.2.2", "factoryplanner >= 2.0.43", "mining-patch-planner >= 1.7.15", "pump >= 2.1.20", "RateCalculator >= 3.3.8", "smooth_platform_walls >= 1.0.0", "visible-planets >= 1.7.0", "visual_tracers >= 1.0.5", "pollution-detector >= 0.7.1", "est-tiny-storage-tank >= 1.4.0", "Wood-Walls >= 1.3.1", "big-wooden-pole >= 0.2.1"]
+  "dependencies": ["biological-machines-modpack >= 1.0.0", "apia >= 0.0.1", "Arcanyx >= 0.1.9", "atomic-arig >= 1.0.7", "carna >= 0.2.5", "Cerys-Moon-of-Fulgora >= 4.20.2", "cloud-city >= 0.8.2", "Igrys >= 1.5.28", "lignumis >= 1.4.1", "linox >= 1.6.14", "maraxsis >= 1.31.5", "Moshine >= 1.1.3", "Muria >= 1.0.2", "Nexus >= 1.1.7", "panglia_planet >= 0.5.5", "Paracelsin >= 1.6.16", "pelagos >= 0.48.1", "planetaris-unbounded >= 1.8.0", "planet-muluna >= 2.1.73", "planet-rabbasca >= 0.11.7", "rubia >= 0.69.113", "secretas >= 1.0.33", "skewer_planet_vesta >= 2.1.11", "skewer_shattered_planet >= 1.0.39", "virentis >= 0.2.8", "outer-rim >= 0.17.2", "secretas-orbit-patch >= 1.0.2", "alchemy-khemia >= 0.2.1", "cubium >= 1.0.28", "corrundum >= 1.0.43", "castra >= 0.5.4", "tenebris-prime >= 1.3.8", "foliax >= 1.0.26", "Krastorio2-spaced-out", "particle-physics >= 1.0.7", "enemyracemanager >= 2.0.68"]
 }

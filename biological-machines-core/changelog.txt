@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 5. 2. 2026
+  Compatibility:
+    - Added compat with bio-processing tab
+    - Added k2so optional dependency for other BM mods compat
+  Modding:
+    - Changed data-helper's add_ingredient to change value of item if already in recipe instead of duplicating
+---------------------------------------------------------------------------------------------------
 Version: 1.0.3
 Date: 3. 2. 2026
   Changes:

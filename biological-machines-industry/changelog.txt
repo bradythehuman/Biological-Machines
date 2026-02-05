@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+Date: 5. 2. 2026
+  Compatibility:
+    - Added back copper lamp to larger lamps override for compatibility with tenebris prime (fixes crash on load)
+    - Moved slag to data-updates for muluna compat (fixes crash on load)
+    - Removed foundry concrete recipe from paracelsin concrete prod tech (fixes crash on load)
+    - Removed foundry concrete recipe from foliax foundry tech (fixes crash on load)
+    - Removed iron gear wheel from splitter when k2so is installed for compat (fixes crash on load)
+    - Fixed crash in rocket-parts when third party planet doesn't have its order defined (like Khemia: Age of Alchemy)
+  Changes:
+    - Changed recipe ingredient amounts for gunpowder and lds
+---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 3. 2. 2026
   Changes:

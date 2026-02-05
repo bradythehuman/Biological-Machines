@@ -69,7 +69,7 @@ for planet_name, planet in pairs(data.raw["planet"]) do
     },
     category = "advanced-crafting",
     subgroup = "space-rocket",
-    order = rp_order .. planet.order,
+    order = rp_order .. (planet.order or "zzz"), --in case planet mod doesn't have order
     enabled = enable,
     --hide_from_player_crafting = false,
     allow_productivity = true,

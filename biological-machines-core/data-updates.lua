@@ -67,3 +67,7 @@ if mods["biological-machines-planet-balack"]
 and mods["biological-machines-homeworld"] then
   require("prototypes.balack-x-homeworld-updates")
 end
+
+if mods["bioprocessing-tab"] then
+  require("prototypes.bm-x-bio-processing-tab")
+end

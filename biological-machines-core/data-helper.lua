@@ -57,6 +57,12 @@ end
 
 local function add_ingredient(recipe_name, ingredient_type, ingredient_name, amount)
   local ingredients = data.raw["recipe"][recipe_name].ingredients
+  for _, ingredient in pairs(ingredients) do
+    if ingredient.name == ingredient_name then
+      ingredient.amount = amount
+      return
+    end
+  end
   table.insert(ingredients, {type=ingredient_type, name=ingredient_name, amount=amount})
 end
 

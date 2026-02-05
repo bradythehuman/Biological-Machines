@@ -8,7 +8,6 @@ dh.remove_ingredient("deadlock-large-lamp", "copper-cable")
 dh.add_ingredient("deadlock-large-lamp", "item",  "bm-lightbulb", 4)
 
 local to_remove = {
-  ["deadlock-copper-lamp"] = true,
   ["deadlock-electric-copper-lamp"] = true,
   ["deadlock-floor-lamp"] = true,
 }

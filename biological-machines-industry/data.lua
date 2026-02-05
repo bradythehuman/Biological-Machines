@@ -1,3 +1,7 @@
+local dh = require("__biological-machines-core__.data-helper")
+
+
+
 require("prototypes.entities")
 require("prototypes.items")
 require("prototypes.noise-expressions")
@@ -20,13 +24,14 @@ if settings.startup["bm-boompuff-agriculture"].value then
   require("prototypes.boompuff-agriculture")
 end
 
---[[
-if  mods["aai-loaders"] and settings.startup["aai-loader-override"].value then
-  require("prototypes.industry-x-aai-loader")
-end
-]]
 
-local dh = require("__biological-machines-core__.data-helper")
+if mods["Krastorio2-spaced-out"] then
+  require("prototypes.industry-x-k2so") --mandatory changes so k2so loads
+end
+
+if mods["Paracelsin"] then
+  require("prototypes.industry-x-paracelsin") --mandatory changes so paracelsin loads
+end
 
 dh.mod_override_require("aai-loaders", "bm-aai-loader-override", "prototypes.industry-x-aai-loader")
 
