@@ -20,8 +20,6 @@ dh.add_entity_drop("tree", vulcanus_trees, "bm-potash", 2)
 
 
 
-data.raw["assembling-machine"]["crusher"].surface_conditions = nil
-
 data.raw["furnace"]["stone-furnace"].result_inventory_size = 2
 data.raw["furnace"]["steel-furnace"].result_inventory_size = 2
 data.raw["furnace"]["electric-furnace"].result_inventory_size = 4

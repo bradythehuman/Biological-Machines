@@ -102,7 +102,7 @@ local berry_bush = {
     }}
   },
   mined_sound = tree_mined_sound,
-  growth_ticks = 5 * minute,
+  growth_ticks = (settings.startup["bm-slow-growing-berries"].value and 10 or 5) * minute,
   emissions_per_second = { pollution = -0.001 },
   max_health = 50,
   --collision_box = {{-0.8, -0.8}, {0.8, 0.8}},

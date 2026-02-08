@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 7. 2. 2026
+  Compatibility:
+    - Fixed crash when rocket parts would try to generate recipe for factorissmo surfaces
+    - Added detailed compat with crushing industry
+  Changes:
+    - Added glass to recipes for lab, agricultural tower, solar panels and night vision equipment
+    - Removed stone crushing + glass techs, their unlocks were moved to steam power
+---------------------------------------------------------------------------------------------------
 Version: 1.0.3
 Date: 5. 2. 2026
   Compatibility:

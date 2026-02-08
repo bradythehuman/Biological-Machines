@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: 7. 2. 2026
+  Compatibility:
+    - Moved offshore dump signals to barreling group when barreling tab mod is installed
+  Changes:
+    - Added bool setting for slow growing berries
+---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 5. 2. 2026
   Compatibility:

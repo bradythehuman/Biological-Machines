@@ -19,7 +19,13 @@ end
 
 
 
---RECYCLING
+if mods["crushing-industry"] then
+  dh.remove_recipe_unlock("engine", "electric-crusher")
+end
+
+
+
+  --RECYCLING
 dh.recycle_to_ingredients("bm-steel-mix")
 dh.recycle_to_ingredients("bm-glass-mix")
 

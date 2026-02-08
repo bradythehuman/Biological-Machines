@@ -25,6 +25,26 @@ if settings.startup["bm-boompuff-agriculture"].value then
 end
 
 
+
+--table which is used byslag.lua in the data-updates stage
+BM_ADD_SLAG = {
+  {name = "iron-plate", prob = 0.01},
+  {name = "copper-plate", prob = 0.01},
+  {name = "molten-iron", prob = 0.5},
+  {name = "molten-copper", prob = 0.5},
+  {name = "tungsten-plate", prob = 0.05},
+}
+
+
+
+if mods["crushing-industry"] then
+  require("prototypes.industry-x-crushing-industry")
+else
+  require("prototypes.early-crusher")
+end
+
+
+
 if mods["Krastorio2-spaced-out"] then
   require("prototypes.industry-x-k2so") --mandatory changes so k2so loads
 end

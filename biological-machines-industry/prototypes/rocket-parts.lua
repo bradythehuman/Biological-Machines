@@ -31,6 +31,10 @@ local rp_order = "c-"
 data.raw.item["rocket-part"].order = rp_order
 
 for planet_name, planet in pairs(data.raw["planet"]) do
+  if string.find(planet_name, "factory") then
+    goto continue
+  end
+
   local recipe_name = "bm-rocket-part-" .. planet_name
   table.insert(rp_prod.effects, {type = "change-recipe-productivity", recipe = recipe_name, change = 0.1})
 
@@ -84,6 +88,7 @@ for planet_name, planet in pairs(data.raw["planet"]) do
     },
     results = {{type = "item", name = "rocket-part", amount = rp_amount}}
   }})
+  ::continue::
 end
 
 

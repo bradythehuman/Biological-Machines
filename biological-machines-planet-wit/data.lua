@@ -1,3 +1,5 @@
+local dh = require("__biological-machines-core__.data-helper")
+
 require("prototypes.entities")
 require("prototypes.items")
 require("prototypes.noise-expressions")
@@ -23,7 +25,16 @@ end
 
 
 
-local dh = require("__biological-machines-core__.data-helper")
+if not mods["biological-machines-industry"] or mods["crushing-industry"] then
+  data.raw["assembling-machine"]["crusher"].surface_conditions = {{property = "gravity", max = 2.5}}
+end
+
+if mods["crushing-industry"] and settings.startup["crushing-industry-ore"].value then
+  dh.add_ingredient("advanced-thruster-oxidizer", "item", "crushed-iron-ore", 10)
+else
+  dh.add_ingredient("advanced-thruster-oxidizer", "item", "iron-ore", 10)
+end
+
 
 dh.mod_override_require("PersonalTeslaDefenseEquipment", "bm-tesla-equipment-override", "prototypes.wit-x-tesla-equipment")
 

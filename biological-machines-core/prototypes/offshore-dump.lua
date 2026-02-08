@@ -2,6 +2,11 @@ local land_area = {{-1, -0.8}, {1, 0.8}}
 
 table.insert(data.raw["technology"]["steam-power"].effects, {type = "unlock-recipe", recipe = "bm-offshore-dump"})
 
+local group_name = "intermediate-products"
+if mods["barreling-group2"] then
+  group_name = "barreling"
+end
+
 data:extend({
   {
     type = "collision-layer",
@@ -14,7 +19,7 @@ data:extend({
   {
     type = "item-subgroup",
     name = "bm-fluid-void",
-    group = "intermediate-products",
+    group = group_name,
     order = "fa",
   },
   {

@@ -8,6 +8,12 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 
+if mods["crushing-industry"] and settings.startup["crushing-industry-coal"].value then
+  dh.remove_ingredient("poison-capsule", "crushed-coal")
+else
+  dh.remove_ingredient("poison-capsule", "coal")
+end
+
 dh.mod_override_require("ironclad-gunboat-and-mortar-turret-fork", "bm-ironclad-fork-override", "prototypes.tissue-x-ironclad-fork")
 
 dh.mod_override_require("snouz-handcannon", "bm-handcannon-override", "prototypes.tissue-x-handcannon")

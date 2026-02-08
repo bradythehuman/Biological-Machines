@@ -40,8 +40,10 @@ dh.add_ingredient("advanced-thruster-fuel", "item", "carbon", 10)
 --dh.add_ingredient("thruster-oxidizer", "fluid", "oxygen", 10)
 --dh.add_ingredient("advanced-thruster-oxidizer", "fluid", "oxygen", 100)
 
+--[[
 dh.remove_ingredient("advanced-thruster-oxidizer", "iron-ore")
 dh.add_ingredient("advanced-thruster-oxidizer", "item", "iron-ore", 10)
+]]
 
 local craftable_on_wit = {
   "thruster-fuel", "advanced-thruster-fuel",

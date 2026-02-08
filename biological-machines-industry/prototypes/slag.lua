@@ -1,11 +1,4 @@
-local smelting_recipes = {
-  {name = "iron-plate", prob = 0.01},
-  {name = "copper-plate", prob = 0.01},
-  {name = "molten-iron", prob = 0.5},
-  {name = "molten-copper", prob = 0.5},
-  {name = "tungsten-plate", prob = 0.05}
-}
-for _, s in pairs(smelting_recipes) do
+for _, s in pairs(BM_ADD_SLAG) do
   table.insert(data.raw["recipe"][s.name].results, {
     type = "item", name = "bm-slag", amount = 1, probability = s.prob
   })

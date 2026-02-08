@@ -145,13 +145,6 @@ end
 
 
 -------------------------------------------------STONE
-data.raw["recipe"]["crusher"].ingredients = {
-  {type = "item", name = "iron-plate", amount = 5},
-  {type = "item", name = "iron-gear-wheel", amount = 10},
-  {type = "item", name = "bm-piston", amount = 5},
-  {type = "item", name = "electronic-circuit", amount = 2}
-}
-
 data.raw["recipe"]["landfill"].ingredients = {
   {type = "item", name = "stone", amount = 100}
 }
@@ -191,7 +184,11 @@ local add_glass = {
   ["chemical-plant"] = 5,
   --["small-lamp"] = 1,
   ["display-panel"] = 1,
-  ["space-platform-starter-pack"] = 20
+  ["space-platform-starter-pack"] = 20,
+  ["lab"] = 4,
+  ["solar-panel"] = 5,
+  ["agricultural-tower"] = 10,
+  ["night-vision-equipment"] = 2,
 }
 dh.add_ingredient_table(add_glass, "item", "bm-glass-plate")
 
@@ -504,7 +501,7 @@ data:extend({
     enabled = false,
     allow_productivity = true,
     allow_decomposition = false,
-    energy_required = 2,
+    energy_required = 5,
     ingredients = {
       {type = "item", name = "bm-slag", amount = 1}
     },
@@ -682,13 +679,13 @@ data:extend({
     enabled = false,
     allow_productivity = true,
     allow_decomposition = false,
-    energy_required = 2,
+    energy_required = 10,
     --surface_conditions = {{property = "rock", min = 1, max = 1}},
     ingredients = {{type = "item", name = "stone", amount = 20}},
     results = {
-      {type = "item", name = "bm-sand", amount = 14},
+      {type = "item", name = "bm-sand", amount = 20},
       {type = "item", name = "calcite", amount = 1},
-      {type = "item", name = "stone", amount = 5}
+      {type = "item", name = "stone", amount = 4}
     }
   },
   {

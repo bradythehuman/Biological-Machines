@@ -4,15 +4,8 @@ local item_tints = require("__base__.prototypes.item-tints")
 
 
 
-local crusher = data.raw["item"]["crusher"]
-crusher.subgroup = "smelting-machine"
-crusher.order = "d[recycler]-a"
-
-
-
 data.raw["item"]["yumako-seed"].fuel_value = "1MJ"
 data.raw["item"]["jellynut-seed"].fuel_value = "1MJ"
-
 
 
 

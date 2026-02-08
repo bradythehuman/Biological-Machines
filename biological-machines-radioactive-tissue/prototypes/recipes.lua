@@ -2,6 +2,7 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 
+--[[
 local poison_capsule = data.raw["recipe"]["poison-capsule"]
 poison_capsule.category = "bm-military-crafting-with-fluid"
 poison_capsule.ingredients = {
@@ -15,6 +16,26 @@ data.raw["recipe"]["slowdown-capsule"].ingredients = {
   {type = "item", name = "plastic-bar", amount = 5},
   {type = "item", name = "coal", amount = 5}
 }
+]]
+
+local remove_circuit = {"poison-capsule", "slowdown-capsule"}
+dh.remove_ingredient(remove_circuit, "electronic-circuit")
+
+local swap_steel = {
+  ["poison-capsule"] = 1,
+  ["slowdown-capsule"] = 1,
+}
+dh.add_ingredient_table(swap_steel, "item", "steel-plate")
+
+local add_plastic = {
+  ["poison-capsule"] = 5,
+  ["slowdown-capsule"] = 5,
+}
+dh.add_ingredient_table(add_plastic, "item", "plastic-bar")
+
+dh.add_ingredient("poison-capsule", "fluid", "bm-poison", 20)
+
+
 
 data.raw["recipe"]["flamethrower-ammo"].category = "bm-military-crafting-with-fluid"
 

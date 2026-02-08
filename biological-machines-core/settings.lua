@@ -38,4 +38,10 @@ data:extend({
     minimum_value = 2,
     maximum_value = 50,
   },
+  {
+    type = "bool-setting",
+    name = "bm-slow-growing-berries",
+    setting_type = "startup",
+    default_value = false
+  },
 })

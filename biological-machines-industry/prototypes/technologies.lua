@@ -52,7 +52,6 @@ dh.remove_recipe_unlock("circuit-network", "iron-stick")
 dh.remove_recipe_unlock("concrete", "iron-stick")
 dh.remove_recipe_unlock("electric-energy-distribution-1", "iron-stick")
 
-data.raw["technology"]["steel-processing"].prerequisites = {"bm-stone-crushing"}
 dh.add_recipe_unlock("steel-processing", "bm-steel-mix")
 
 data.raw["technology"]["automation-2"].prerequisites = {"automation", "engine"}
@@ -69,15 +68,20 @@ dh.add_recipe_unlock("foundry", "bm-casting-piston")
 
 
 -------------------------------------------------STONE
+dh.add_recipe_unlock("steam-power", "bm-stone-crushing")
+dh.add_recipe_unlock("steam-power", "bm-lime")
+dh.add_recipe_unlock("steam-power", "bm-glass-mix")
+dh.add_recipe_unlock("steam-power", "bm-glass-plate")
+
+dh.add_recipe_unlock("advanced-material-processing", "bm-slag-crushing")
+
 dh.remove_prereq("production-science-pack", "railway")
 dh.add_prereq("elevated-rail", "railway")
 
-dh.add_prereq("concrete", "bm-stone-crushing")
 dh.add_recipe_unlock("concrete", "bm-cement-mix")
 
 dh.add_prereq("automation-3", "concrete")
 
-dh.remove_recipe_unlock("space-platform", "crusher")
 --dh.add_recipe_unlock("space-platform", "volcanic-stone-crushing")
 
 dh.add_recipe_unlock("foundry", "bm-molten-glass")
@@ -98,7 +102,6 @@ dh.add_recipe_unlock("planet-discovery-vulcanus", "bm-circuit-board-with-tar")
 dh.add_recipe_unlock("jellynut", "bm-circuit-board-with-jelly")
 dh.add_recipe_unlock("carbon-fiber", "bm-circuit-board-with-carbon-fiber")
 
-data.raw["technology"]["lamp"].prerequisites = {"bm-glass"}
 dh.add_recipe_unlock("lamp", "bm-lightbulb")
 dh.add_prereq("automobilism", "lamp")
 dh.add_prereq("modules", "lamp")
@@ -114,8 +117,6 @@ dh.add_prereq("spidertron", "productivity-module-2")
 
 
 ------------------------------------------------OIL
-dh.add_prereq("oil-processing", "bm-glass")
-dh.add_prereq("bm-alcohol", "bm-glass")
 dh.add_prereq("advanced-oil-processing", "bm-alcohol")
 
 dh.remove_recipe_unlock("sulfur-processing", "sulfur")
@@ -134,43 +135,6 @@ dh.add_recipe_unlock("lubricant", "bm-lubricant-from-tar")
 
 data:extend({
   --------------------------------------------------------STONE
-  {
-    type = "technology",
-    name = "bm-stone-crushing",
-    icon = "__biological-machines-industry__/graphics/stone-crushing.png",
-    icon_size = 64,
-    effects = {
-      {type = "unlock-recipe", recipe = "crusher"},
-      --{type = "unlock-recipe", recipe = "sedimentary-stone-crushing"},
-      {type = "unlock-recipe", recipe = "bm-slag-crushing"},
-      {type = "unlock-recipe", recipe = "bm-stone-crushing"},
-      {type = "unlock-recipe", recipe = "bm-lime"},
-    },
-    prerequisites = {"automation-science-pack"},
-    unit = {
-      count = 25,
-      ingredients = {
-        {"automation-science-pack", 1}
-      },
-      time = 15
-    }
-  },
-  {
-    type = "technology",
-    name = "bm-glass",
-    icon = "__biological-machines-core__/graphics/glass-plate.png",
-    icon_size = 64,
-    effects = {
-      {type = "unlock-recipe", recipe = "bm-glass-mix"},
-      {type = "unlock-recipe", recipe = "bm-glass-plate"}
-    },
-    prerequisites = {"bm-stone-crushing"},
-    unit = {
-      count = 25,
-      ingredients = {{"automation-science-pack", 1}},
-      time = 15
-    }
-  },
   {
     type = "technology",
     name = "bm-fertile-soil",
