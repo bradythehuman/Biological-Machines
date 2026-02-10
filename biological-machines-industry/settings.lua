@@ -1,5 +1,9 @@
 local dh = require("__biological-machines-core__.data-helper")
 
+
+
+dh.mod_override_setting("crushing-industry", "bm-crushing-industry-override")
+
 dh.mod_override_setting("slipstacks", "bm-slipstack-agriculture-override")
 
 dh.mod_override_setting("LargerLamps-2_0", "bm-larger-lamps-override")

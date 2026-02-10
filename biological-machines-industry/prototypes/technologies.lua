@@ -44,9 +44,11 @@ dh.add_prereq("agricultural-science-pack", "carbon-fiber")
 
 
 -----------------------------------------------------METAL
-data.raw["recipe"]["pipe"].enabled = true
-data.raw["recipe"]["iron-stick"].enabled = true
-dh.remove_recipe_unlock("steam-power", "pipe")
+--data.raw["recipe"]["pipe"].enabled = true
+--data.raw["recipe"]["iron-stick"].enabled = true
+--dh.remove_recipe_unlock("steam-power", "pipe")
+dh.add_recipe_unlock("steam-power", "iron-stick")
+dh.add_recipe_unlock("steam-power", "bm-piston")
 dh.remove_recipe_unlock("railway", "iron-stick")
 dh.remove_recipe_unlock("circuit-network", "iron-stick")
 dh.remove_recipe_unlock("concrete", "iron-stick")
@@ -68,10 +70,10 @@ dh.add_recipe_unlock("foundry", "bm-casting-piston")
 
 
 -------------------------------------------------STONE
-dh.add_recipe_unlock("steam-power", "bm-stone-crushing")
-dh.add_recipe_unlock("steam-power", "bm-lime")
-dh.add_recipe_unlock("steam-power", "bm-glass-mix")
-dh.add_recipe_unlock("steam-power", "bm-glass-plate")
+--dh.add_recipe_unlock("steam-power", "bm-stone-crushing")
+--dh.add_recipe_unlock("steam-power", "bm-lime")
+--dh.add_recipe_unlock("steam-power", "bm-glass-mix")
+--dh.add_recipe_unlock("steam-power", "bm-glass-plate")
 
 dh.add_recipe_unlock("advanced-material-processing", "bm-slag-crushing")
 

@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: 9. 2. 2026
+  Compatibility:
+    - Fixed crash when AAI loaders was in lubricated or graphics only mode
+    - Made crushing industry compat optional (enabled by crushing industry override setting)
+      - Added support for crushing industries glass and byproducts settings
+      - Fixed crash with crushing industry tweaks and/or planet vesta (with default settings) by auto disabling/hiding the crushing industry override setting
+      - Fixed crash with k2so (with default settings) by disabling crushing industries k2 compat by default. Either crushing industries k2 compat or BM: Industries crushing industry override must be enabled but not both
+  Changes:
+    - Iron stick and piston unlocked with steam power
+    - Steam power unlocking stone crushing/lime/glass mix/glass smelting moved to early crusher (not loaded if crushing industry override is loaded)
+---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 7. 2. 2026
   Compatibility:

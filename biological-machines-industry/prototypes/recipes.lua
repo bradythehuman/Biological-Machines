@@ -9,12 +9,9 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 
-data.raw["recipe"]["advanced-oxide-asteroid-crushing"].results = {
-  {type = "item", name = "ice", amount = 2},
-  {type = "item", name = "calcite", amount = 1},
-  {type = "item", name = "bm-potassium-nitrate", amount = 2},
-  {type = "item", name = "oxide-asteroid-chunk", amount = 1, probability = 0.05}
-}
+table.insert(data.raw["recipe"]["advanced-oxide-asteroid-crushing"].results,
+  {type = "item", name = "bm-potassium-nitrate", amount = 1}
+)
 
 
 
@@ -539,6 +536,7 @@ data:extend({
     category = "crafting",
     subgroup = "intermediate-product",
     allow_productivity = true,
+    enabled = false,
     energy_required = 2,
     ingredients = {
       {type = "item", name = "pipe", amount = 2},
@@ -676,7 +674,7 @@ data:extend({
     subgroup = "bm-powder",
     order = "c-a",
     auto_recycle = false,
-    enabled = false,
+    enabled = true,
     allow_productivity = true,
     allow_decomposition = false,
     energy_required = 10,
@@ -696,7 +694,7 @@ data:extend({
     subgroup = "bm-powder",
     order = "a-c",
     auto_recycle = false,
-    enabled = false,
+    enabled = true,
     allow_productivity = true,
     allow_decomposition = false,
     energy_required = 3.2,
@@ -727,7 +725,7 @@ data:extend({
     category = "crafting",
     subgroup = "bm-powder",
     order = "b-c",
-    enabled = false,
+    enabled = true,
     allow_productivity = true,
     energy_required = 1,
     ingredients = {
@@ -744,7 +742,7 @@ data:extend({
     category = "smelting",
     subgroup = "raw-material",
     auto_recycle = false,
-    enabled = false,
+    enabled = true,
     allow_productivity = true,
     allow_decomposition = false,
     energy_required = 3.2,

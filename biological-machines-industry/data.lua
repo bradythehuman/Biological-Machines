@@ -38,7 +38,12 @@ BM_ADD_SLAG = {
 
 
 if mods["crushing-industry"] then
-  require("prototypes.industry-x-crushing-industry")
+  data.raw.recipe["bm-stone-crushing"].category = "basic-crushing"
+  data.raw.recipe["bm-slag-crushing"].category = "basic-crushing"
+  
+  if settings.startup["bm-crushing-industry-override"].value then
+    require("prototypes.industry-x-crushing-industry")
+  end
 else
   require("prototypes.early-crusher")
 end
@@ -53,7 +58,10 @@ if mods["Paracelsin"] then
   require("prototypes.industry-x-paracelsin") --mandatory changes so paracelsin loads
 end
 
-dh.mod_override_require("aai-loaders", "bm-aai-loader-override", "prototypes.industry-x-aai-loader")
+if mods["aai-loaders"] and settings.startup["bm-aai-loader-override"].value
+and settings.startup["aai-loaders-mode"].value ~= "graphics-only" then
+  require("prototypes.industry-x-aai-loader")
+end
 
 dh.mod_override_require("slipstacks", "bm-slipstack-agriculture-override", "prototypes.industry-x-slipstack-agriculture")
 

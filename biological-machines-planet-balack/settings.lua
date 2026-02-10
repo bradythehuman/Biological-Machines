@@ -52,6 +52,12 @@ data:extend({
 
 
 
+if mods["metal-and-stars"] then
+  local setting_prototype = data.raw["bool-setting"]["bm-armored-biters-override"]
+  setting_prototype.hidden = true
+  setting_prototype.forced_value = false
+end
+
 if mods["skewer_shattered_planet"] then
   local setting_prototype = data.raw["bool-setting"]["bm-shattered-core"]
   setting_prototype.hidden = true

@@ -1,11 +1,13 @@
 local dh = require("__biological-machines-core__.data-helper")
 
 
+
 data.raw.recipe["bm-slag-crushing"].icon = nil
 data.raw.recipe["bm-slag-crushing"].icons = CrushingIndustry.make_crushing_icons("bm-slag")
 
 data.raw.recipe["bm-stone-crushing"].icon = nil
 data.raw.recipe["bm-stone-crushing"].icons = data.raw.recipe["sand"].icons
+
 data.raw.item["sand"] = nil
 data.raw.recipe["sand"] = nil
 dh.remove_recipe_unlock("steam-power", "sand")
@@ -17,9 +19,6 @@ local add_sand = {
   ["electrolyte"] = 1
 }
 dh.add_ingredient_table(add_sand, "item", "bm-sand")
-
-data.raw.recipe["bm-stone-crushing"].category = "basic-crushing"
-data.raw.recipe["bm-slag-crushing"].category = "basic-crushing"
 
 
 
@@ -42,7 +41,7 @@ if settings.startup["crushing-industry-ore"].value then
   crushing_recipe("holmium-powder", 10, "holmium-ore", "holmium-powder")
   crushing_recipe("crushed-tungsten-ore", 25, "tungsten-ore", "crushed-tungsten-ore")
 
-  dh.add_recipe_unlock("ore-crushing", "electric-crusher")
+  --dh.add_recipe_unlock("ore-crushing", "electric-crusher")
 
   dh.remove_recipe_unlock("advanced-material-processing", "bm-slag-crushing")
   dh.add_recipe_unlock("ore-crushing", "bm-slag-crushing")
@@ -120,6 +119,72 @@ end
 
 
 
+-----------------------------------------------------------------BYPRODUCTS
+if settings.startup["crushing-industry-byproducts"].value then
+  local remove_sand_byproduct = {"oxide-asteroid-crushing", "advanced-oxide-asteroid-crushing"}
+  for _, recipe_name in pairs(remove_sand_byproduct) do
+    local new_results = {}
+    for _, result in pairs(data.raw["recipe"][recipe_name].results) do
+      if result.name ~= "sand" then table.insert(new_results, result) end
+    end
+    data.raw["recipe"][recipe_name].results = new_results
+  end
+
+
+  table.insert(data.raw.recipe["oxide-asteroid-crushing"].results,
+    CrushingIndustry.make_crushing_byproduct("bm-sand", CrushingIndustry.FREQUENT_BYPRODUCT, 5, true)
+  )
+  table.insert(data.raw.recipe["advanced-oxide-asteroid-crushing"].results,
+    CrushingIndustry.make_crushing_byproduct("bm-sand", CrushingIndustry.COMMON_BYPRODUCT, 5, true)
+  )
+end
+
+
+
+---------------------------------------------------------SMELTING PRODUCTIVITY
+if settings.startup["crushing-industry-smelting-productivity"].value then
+  CrushingIndustry.add_molten_productivity("bm-steel-mix-melting")
+end
+
+
+
+---------------------------------------------------------------GLASS
+if settings.startup["crushing-industry-glass"].value then
+  data.raw.item["glass"] = nil
+  data.raw.recipe["glass"] = nil
+  dh.remove_recipe_unlock("electronics", "glass")
+
+  data.raw.item["molten-glass"] = nil
+  data.raw.recipe["molten-glass"] = nil
+  dh.remove_recipe_unlock("foundry", "molten-glass")
+
+  data.raw.recipe["casting-glass"] = nil
+  dh.remove_recipe_unlock("foundry", "casting-glass")
+
+  local remove_glass = {
+    "rail-signal", "rail-chain-signal", "small-lamp", "display-panel",
+    "solar-panel", "chemical-plant", "lab", "laser-turret",
+    "night-vision-equipment", "agricultural-tower", "biochamber",
+    "cryogenic-plant", "space-science-pack"
+  }
+  if settings.startup["crushing-industry-optical-fiber"].value then
+    table.insert(remove_glass, "optical-fiber")
+    dh.add_ingredient("optical-fiber", "item", "bm-glass-plate", 2)
+  end
+  dh.remove_ingredient(remove_glass, "glass")
+
+  if settings.startup["crushing-industry-smelting-productivity"].value then
+    local new_effects = {}
+    for _, effect in pairs(data.raw.technology["molten-crushed-ore-productivity"].effects) do
+      if effect.recipe ~= "molten-glass" then table.insert(new_effects, effect) end
+    end
+    data.raw.technology["molten-crushed-ore-productivity"].effects = new_effects
+
+    CrushingIndustry.add_molten_productivity("bm-molten-glass")
+  end
+end
+
+--[[
 -----------------------------------------------------------------OPTICAL FIBER
 if settings.startup["crushing-industry-optical-fiber"].value then
   data:extend({
@@ -166,3 +231,4 @@ if settings.startup["crushing-industry-optical-fiber"].value then
   }
   dh.add_ingredient_table(add_optical, "item",  "optical-fiber")
 end
+]]

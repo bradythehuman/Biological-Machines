@@ -19,8 +19,14 @@ end
 
 
 
-if mods["crushing-industry"] then
-  dh.remove_recipe_unlock("engine", "electric-crusher")
+if mods["crushing-industry"] and settings.startup["bm-crushing-industry-override"].value then
+  data.raw.recipe["burner-crusher"].enabled = true
+  dh.remove_recipe_unlock("steam-power", "burner-crusher")
+  --[[
+  if settings.startup["crushing-industry-ore"].value then
+    dh.remove_recipe_unlock("engine", "electric-crusher")
+  end
+  ]]
 end
 
 

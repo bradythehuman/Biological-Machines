@@ -304,6 +304,6 @@ data:extend({
       {type = "item", name = "uranium-235", amount = 1},
       {type = "item", name = "tungsten-plate", amount = 1},
     },
-    results = {{type = "item", name = "bm-hypersonic-rounds-magazine", amount = 1}},
+    results = {{type = "item", name = "bm-hypersonic-rounds-magazine", amount = 10}},
   },
 })

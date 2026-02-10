@@ -426,14 +426,14 @@ data:extend({
         }
       }
     },
-    magazine_size = 10,
-    --reload_time = 10,
+    magazine_size = 1,
+    reload_time = 5,
     subgroup = "ammo",
     order = "a[basic-clips]-c[uranium-rounds-magazine]-a",
     inventory_move_sound = item_sounds.ammo_small_inventory_move,
     pick_sound = item_sounds.ammo_small_inventory_pickup,
     drop_sound = item_sounds.ammo_small_inventory_move,
-    stack_size = 20,
-    weight = 100 * kg
+    stack_size = 200,
+    weight = 10 * kg
   },
 })

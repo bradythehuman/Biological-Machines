@@ -22,11 +22,21 @@ data.raw["recipe"]["crusher"].ingredients = {
   {type = "item", name = "electronic-circuit", amount = 2}
 }
 
+data.raw["recipe"]["bm-stone-crushing"].enabled = false
+data.raw["recipe"]["bm-lime"].enabled = false
+data.raw["recipe"]["bm-glass-mix"].enabled = false
+data.raw["recipe"]["bm-glass-plate"].enabled = false
+
 
 
 --TECH
 dh.remove_recipe_unlock("space-platform", "crusher")
 dh.add_recipe_unlock("steam-power", "crusher")
+
+dh.add_recipe_unlock("steam-power", "bm-stone-crushing")
+dh.add_recipe_unlock("steam-power", "bm-lime")
+dh.add_recipe_unlock("steam-power", "bm-glass-mix")
+dh.add_recipe_unlock("steam-power", "bm-glass-plate")
 
 
 

@@ -59,11 +59,11 @@ data.raw["recipe"]["aai-turbo-loader"].category = "metallurgy"
 
 
 if settings.startup["aai-loaders-mode"].value == "lubricated" then
-  dh.remove_recipe_unlock("lubricant", "lubricant-from-tar")
-  dh.add_recipe_unlock("alcohol", "lubricant-from-tar")
+  dh.remove_recipe_unlock("lubricant", "bm-lubricant-from-tar")
+  dh.add_recipe_unlock("bm-alcohol", "bm-lubricant-from-tar")
 
   dh.remove_prereq("aai-loader", "oil-processing")
-  dh.add_prereq("aai-loader", "alcohol")
+  dh.add_prereq("aai-loader", "bm-alcohol")
 
   dh.remove_prereq("aai-fast-loader", "lubricant")
 else

@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+Date: 9. 2. 2026
+  Compatibility:
+    - Fixed crash on load with metal and stars when armored biter override is disabled (disabled and hide the setting)
+  Changes:
+    - Hypersonic rounds ammo has 1 round per mag instead of 10, but stacks 10x as high and the crafting recipe produces 10x as much. Added reload time between mags so functionally reduced shooting speed only for hypersonic rounds
+---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 2. 2. 2026
   Compatibility:
