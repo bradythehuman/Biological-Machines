@@ -88,6 +88,20 @@ if settings.startup["crushing-industry-ore"].value then
     data.raw["assembling-machine"]["big-crusher"].crafting_categories = new_categories
     ]]
   end
+
+  --BYPRODUCTS
+  if settings.startup["crushing-industry-byproducts"].value then
+    local new_results = {}
+    for _, result in pairs(data.raw["recipe"]["advanced-metallic-asteroid-crushing"].results) do
+      if result.name ~= "crushed-iron-ore" then table.insert(new_results, result) end
+    end
+    data.raw["recipe"]["advanced-metallic-asteroid-crushing"].results = new_results
+
+    local add_stone = {"crushed-iron-ore", "crushed-copper-ore", "holmium-powder", "crushed-tungsten-ore"}
+    for _, recipe_name in pairs(add_stone) do
+      table.insert(data.raw.recipe[recipe_name].results, {type = "item", name = "stone", amount = 1})
+    end
+  end
 end
 
 
@@ -115,21 +129,36 @@ if settings.startup["crushing-industry-coal"].value then
   if not mods["biological-machines-radioactive-tissue"] then
     dh.add_ingredient("poison-capsule", "item", "crushed-coal", 10)
   end
+
+  if settings.startup["crushing-industry-byproducts"].value then
+    table.insert(data.raw.recipe["crushed-coal"].results, {type = "item", name = "stone", amount = 1})
+  end
 end
 
 
 
 -----------------------------------------------------------------BYPRODUCTS
 if settings.startup["crushing-industry-byproducts"].value then
-  local remove_sand_byproduct = {"oxide-asteroid-crushing", "advanced-oxide-asteroid-crushing"}
-  for _, recipe_name in pairs(remove_sand_byproduct) do
+  local remove_byproduct = {
+    ["carbonic-asteroid-crushing"] = "coal",
+    ["advanced-carbonic-asteroid-crushing"] = "coal",
+    ["oxide-asteroid-crushing"] = "sand",
+    ["advanced-oxide-asteroid-crushing"] = "sand",
+  }
+  for recipe_name, byproduct_name in pairs(remove_byproduct) do
     local new_results = {}
     for _, result in pairs(data.raw["recipe"][recipe_name].results) do
-      if result.name ~= "sand" then table.insert(new_results, result) end
+      if result.name ~= byproduct_name then table.insert(new_results, result) end
     end
     data.raw["recipe"][recipe_name].results = new_results
   end
 
+  table.insert(data.raw.recipe["carbonic-asteroid-crushing"].results,
+    CrushingIndustry.make_crushing_byproduct("bm-potash", CrushingIndustry.FREQUENT_BYPRODUCT, 5, true)
+  )
+  table.insert(data.raw.recipe["advanced-carbonic-asteroid-crushing"].results,
+    CrushingIndustry.make_crushing_byproduct("bm-potash", CrushingIndustry.COMMON_BYPRODUCT, 5, true)
+  )
 
   table.insert(data.raw.recipe["oxide-asteroid-crushing"].results,
     CrushingIndustry.make_crushing_byproduct("bm-sand", CrushingIndustry.FREQUENT_BYPRODUCT, 5, true)

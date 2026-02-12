@@ -7,7 +7,6 @@ if mods["crushing-industry"] then
   data.raw["bool-setting"]["crushing-industry-space-crusher"].default_value = false
   data.raw["bool-setting"]["crushing-industry-space-crusher-quality"].default_value = false
   data.raw["bool-setting"]["crushing-industry-smelting-productivity"].default_value = false
-  data.raw["bool-setting"]["crushing-industry-byproducts"].default_value = false
 
   data.raw["bool-setting"]["crushing-industry-concrete-mix"].forced_value = false
   data.raw["bool-setting"]["crushing-industry-concrete-mix"].hidden = true

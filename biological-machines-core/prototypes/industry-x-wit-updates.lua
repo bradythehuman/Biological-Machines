@@ -107,6 +107,7 @@ data:extend({
     enabled = false,
     allow_productivity = true,
     allow_decomposition = false,
+    allow_as_intermediate = false,
     energy_required = 0.5,
     ingredients = {
       {type = "item", name = "bm-glass-shard", amount = 2},

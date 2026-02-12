@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.6
+Date: 12. 2. 2026
+  Compatibility:
+    - Added support for KS Power/Gas Generator/Gas Boiler. When vanilla fluid fuel value/efficiency is set by one of these or another mod, seed oil is set to heavy oil and puff gas is set to petroleum gas
+  Changes:
+    - Prevent all circuit board recipes from being auto hand crafted as intermediates (circuit board must be hand crafted specifically)
+    - Changed default crushing industry byproducts setting to true
+      - Added stone byproducts to ore crushing recipes
+      - Swapped carbonic crushing coal byproduct for potash and removed metallic crushing crushed iron byproduct
+---------------------------------------------------------------------------------------------------
 Version: 1.0.5
 Date: 9. 2. 2026
   Compatibility:

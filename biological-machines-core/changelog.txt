@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.6
+Date: 12. 2. 2026
+  Compatibility:
+    - Added KS Power/Gas Generator/Gas Boiler as optional dependencies. When heavy oil fuel value is set by one of these or another mod, ethanols fuel value is set equal to it
+      - When KS Power is installed ethanols fuel efficiency is set to 0.5
+  Changes:
+    -
+---------------------------------------------------------------------------------------------------
 Version: 1.0.5
 Date: 7. 2. 2026
   Compatibility:

@@ -12,9 +12,19 @@ end
 
 
 
+--compat with any fluid burning mod including KS Power (Klonan), Gas Generator (ElAdamo) and/or Gas Boiler (ElAdamo)
+data.raw.fluid["bm-seed-oil"].fuel_value = data.raw.fluid["heavy-oil"].fuel_value
+data.raw.fluid["bm-seed-oil"].emissions_multiplier = data.raw.fluid["heavy-oil"].emissions_multiplier
+
+
+
 if settings.startup["bm-boompuff-agriculture"].value then
   data.raw.item["bm-napalm-barrel"].default_import_location = "gleba"
   data.raw.item["bm-puff-gas-barrel"].default_import_location = "gleba"
+
+  --compat with any fluid burning mod
+  data.raw.fluid["bm-puff-gas"].fuel_value = data.raw.fluid["petroleum-gas"].fuel_value
+  data.raw.fluid["bm-puff-gas"].emissions_multiplier = data.raw.fluid["petroleum-gas"].emissions_multiplier
 end
 
 

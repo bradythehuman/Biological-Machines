@@ -13,6 +13,9 @@ local org_hand_recipes = {"wood-processing", "nutrients-from-spoilage", "nutrien
 for i=1, #org_hand_recipes do
   data.raw["recipe"][org_hand_recipes[i]].category = "organic-or-hand-crafting"
 end
+
+
+
 --------------------------------------------------NUTRIENT SUBGROUP
 data:extend({
   {

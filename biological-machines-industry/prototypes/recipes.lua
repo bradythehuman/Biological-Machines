@@ -964,6 +964,7 @@ data:extend({
     enabled = false,
     allow_productivity = true,
     allow_decomposition = false,
+    allow_as_intermediate = false,
     energy_required = 0.5,
     ingredients = {
       {type = "item", name = "stone-brick", amount = 1},
@@ -993,6 +994,7 @@ data:extend({
     enabled = false,
     allow_productivity = true,
     allow_decomposition = false,
+    allow_as_intermediate = false,
     energy_required = 0.5,
     ingredients = {
       {type = "item", name = "bm-glass-plate", amount = 1},
@@ -1027,6 +1029,7 @@ data:extend({
     enabled = false,
     allow_productivity = true,
     allow_decomposition = false,
+    allow_as_intermediate = false,
     energy_required = 0.5,
     ingredients = {
       {type = "item", name = "stone-brick", amount = 1},
@@ -1061,6 +1064,7 @@ data:extend({
     enabled = false,
     allow_productivity = true,
     allow_decomposition = false,
+    allow_as_intermediate = false,
     energy_required = 0.5,
     surface_conditions = {{property = "pressure", min = 4000, max = 4000}},
     ingredients = {
@@ -1096,6 +1100,7 @@ data:extend({
     enabled = false,
     allow_productivity = true,
     allow_decomposition = false,
+    allow_as_intermediate = false,
     energy_required = 0.5,
     ingredients = {
       {type = "item", name = "carbon-fiber", amount = 1},

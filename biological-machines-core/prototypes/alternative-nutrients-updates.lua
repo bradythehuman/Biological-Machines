@@ -13,6 +13,16 @@ end
 
 
 
+--------------------------------------------------GAS COMPAT
+if mods["KS_Power"] then
+  data.raw.fluid["bm-ethanol"].emissions_multiplier = 0.5
+end
+
+data.raw.fluid["bm-ethanol"].fuel_value = data.raw.fluid["heavy-oil"].fuel_value
+
+
+
+----------------------------------------------------CAPSULES
 local function alchohol_capsule(fluid_name, drunk_level)
   local barrel = util.table.deepcopy(data.raw["item"][fluid_name .. "-barrel"])
   barrel.type = "capsule"
