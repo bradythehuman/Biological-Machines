@@ -27,7 +27,7 @@ table.insert(data.raw["assembling-machine"]["robotics-facility"].crafting_catego
 data.raw.recipe["robotics-facility"].ingredients = {
   {type = "item", name = "bm-helium-power-cell", amount = 20},
   {type = "item", name = "bulk-inserter", amount = 3},
-  {type = "item", name = "steel-plate", amount = 100},
+  {type = "item", name = "steel-plate", amount = 50},
   {type = "item", name = "electric-engine-unit", amount = 10},
   {type = "item", name = "processing-unit", amount = 20}
 }

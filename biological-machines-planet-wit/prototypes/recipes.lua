@@ -55,6 +55,7 @@ end
 
 local space_science = data.raw["recipe"]["space-science-pack"]
 space_science.category = "bm-advanced-robotics"
+space_science.energy_required = 30
 space_science.ingredients = {
   {type = "fluid", name = "thruster-oxidizer", amount = 100},
   {type = "item", name = "bm-helium-power-cell", amount = 10},
@@ -250,8 +251,10 @@ data:extend({
       },
     },
     category = "crafting-with-fluid",
-    subgroup = "bm-wit-processes",
-    order = "c-d",
+    --subgroup = "bm-wit-processes",
+    --order = "c-d",
+    subgroup = "terrain",
+    order = "a[stone-brick]-b",
     enabled = false,
     allow_productivity = true,
     allow_decomposition = false,
@@ -414,7 +417,8 @@ data:extend({
       {type = "item", name = "bm-copper-dust", amount = 1},
       {type = "fluid", name = "water", amount = 5},
       {type = "fluid", name = "sulfuric-acid", amount = 5}
-    }
+    },
+    main_product = "bm-copper-dust",
   },
   {
     type = "recipe",

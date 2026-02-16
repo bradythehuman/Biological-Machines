@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 16. 2. 2026
+  Bugfixes:
+    - Removed circular tech dependency by making space science unlock by placing an asteroid collector.
+    - Added bulk inserter prereq to wit discovery as it is required for robo facility
+  Changes:
+    - Moved wit stone brick recipes to terrain group
+    - Lowered robo facility steel amount to 50
+    - Increased solar on wit to 300
+    - Industry x wit glass dust filtration now has probability results
+    - Doubled space science crafting time
+  Compatibility:
+    - Changes robot attrition swarm safety tech prereqs and cost
+---------------------------------------------------------------------------------------------------
 Version: 1.0.3
 Date: 7. 2. 2026
   Compatibility:

@@ -44,6 +44,8 @@ dh.mod_override_require("reach-equipment", "bm-reach-equipment-override", "proto
 
 dh.mod_override_require("Repair_Turret", "bm-repair-turret-override", "prototypes.wit-x-repair-turret")
 
+dh.mod_override_require("robot_attrition", "bm-robot-attrition-override", "prototypes.wit-x-robot-attrition")
+
 
 
 data.raw["autoplace-control"]["vulcanus_volcanism"].order = "c-z-aa"

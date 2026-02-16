@@ -14,6 +14,8 @@ dh.mod_override_setting("reach-equipment", "bm-reach-equipment-override")
 
 dh.mod_override_setting("Repair_Turret", "bm-repair-turret-override")
 
+dh.mod_override_setting("robot_attrition", "bm-robot-attrition-override")
+
 
 
 data:extend({

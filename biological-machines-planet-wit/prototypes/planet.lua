@@ -124,7 +124,7 @@ PlanetsLib:extend({
     surface_properties = {
       ["day-night-cycle"] = 14 * minute,
       ["magnetic-field"] = 98,
-      ["solar-power"] = 250,
+      ["solar-power"] = 300,
       pressure = 50, --5
       gravity = 2.5
     },

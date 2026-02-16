@@ -2,12 +2,17 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 
---DESCRIPTIONS
+--SPACE SCIENCE/THRUSTER TECH
 data.raw["technology"]["space-platform"].localised_description = {"technology-description.bm-new-space-platform"}
 
 local space_sci_tech = data.raw["technology"]["space-science-pack"]
 space_sci_tech.localised_description = {"technology-description.bm-new-space-science-pack"}
 space_sci_tech.prerequisites = {"robotics-facility"}
+space_sci_tech.research_trigger = {
+  type = "craft-item",
+  item = "robotics-facility",
+  count = 1
+}
 
 local thruster_tech = data.raw["technology"]["space-platform-thruster"]
 thruster_tech.localised_name = {"technology-name.bm-interplanetary-travel"}
@@ -95,7 +100,7 @@ data:extend({
         --icons = PlanetsLib.technology_icon_moon("__biological-machines-planet-wit__/graphics/wit-icon.png", 64),
       }
     },
-    prerequisites = {"space-platform", "electric-boiler"},
+    prerequisites = {"space-platform", "electric-boiler", "bulk-inserter"},
     research_trigger = {
       type = "build-entity",
       entity = "thruster"

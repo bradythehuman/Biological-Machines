@@ -11,10 +11,10 @@ dh.recycle_to_ingredients("discharge-defense-equipment")
 
 
 data.raw["recipe"]["bm-glass-dust-filtration"].results = {
-  {type = "item", name = "bm-sand", amount = 10},
-  {type = "item", name = "bm-lime", amount = 2},
-  {type = "item", name = "bm-potash", amount = 1},
-  {type = "item", name = "bm-glass-shard", amount = 1},
+  {type = "item", name = "bm-sand", amount = 10, probability = 0.5},
+  {type = "item", name = "bm-lime", amount = 2, probability = 0.5},
+  {type = "item", name = "bm-potash", amount = 1, probability = 0.5},
+  {type = "item", name = "bm-glass-shard", amount = 1, probability = 0.5},
 }
 
 local brick_recipe = data.raw["recipe"]["bm-brick-from-glass-shard"]
@@ -68,8 +68,10 @@ data:extend({
       },
     },
     category = "crafting",
-    subgroup = "bm-wit-processes",
-    order = "c-c",
+    --subgroup = "bm-wit-processes",
+    --order = "c-c",
+    subgroup = "terrain",
+    order = "a[stone-brick]-a",
     enabled = false,
     allow_productivity = true,
     allow_decomposition = false,
