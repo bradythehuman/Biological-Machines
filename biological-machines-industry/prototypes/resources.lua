@@ -71,10 +71,10 @@ data:extend({sand_resource})
 --resource_autoplace.initialize_patch_set("potash", true)
 
 data.raw["planet"]["vulcanus"].map_gen_settings.autoplace_settings["entity"].settings["bm-potash"] = {}
-data.raw["planet"]["vulcanus"].map_gen_settings.autoplace_controls["bm-potash"] = {}
+data.raw["planet"]["vulcanus"].map_gen_settings.autoplace_controls["bm_potash"] = {}
 
-data.raw["planet"]["vulcanus"].map_gen_settings.property_expression_names["entity:potash:probability"] = "potash_probability"
-data.raw["planet"]["vulcanus"].map_gen_settings.property_expression_names["entity:potash:richness"] = "potash_richness"
+data.raw["planet"]["vulcanus"].map_gen_settings.property_expression_names["entity:bm-potash:probability"] = "potash_probability"
+data.raw["planet"]["vulcanus"].map_gen_settings.property_expression_names["entity:bm-potash:richness"] = "potash_richness"
 
 local potash_resource = {
   type = "resource",
@@ -98,7 +98,7 @@ local potash_resource = {
   selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
   autoplace = {
     order = "b",
-    probability_expression = 0
+    probability_expression = 0,
   },
   stage_counts = {12000, 8000, 4000, 2000, 1200, 600, 300, 100},
   stages = {

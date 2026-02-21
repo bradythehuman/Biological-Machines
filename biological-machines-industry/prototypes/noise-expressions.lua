@@ -6,7 +6,7 @@ gleba_stone_le.richness = "2 * control:gleba_stone:richness"
 gleba_stone_le.frequency =  "2 * control:gleba_stone:frequency"
 
 local vulcanus_coal_richness = data.raw["noise-expression"]["vulcanus_coal_richness"]
-vulcanus_coal_richness.expression = "2 * "..vulcanus_coal_richness.expression
+vulcanus_coal_richness.expression = "3 * "..vulcanus_coal_richness.expression
 
 
 data:extend({
@@ -22,7 +22,7 @@ data:extend({
   {
     type = "noise-expression",
     name = "potash_size",
-    expression = "slider_rescale(control:potash:size, 2)"
+    expression = "slider_rescale(control:bm_potash:size, 2)"
   },
   {
     type = "noise-expression",
@@ -33,19 +33,19 @@ data:extend({
                       min(1 - vulcanus_starting_circle,\z
                           vulcanus_place_non_metal_spots(496827, 12, 1,\z
                                                          potash_size * min(1.2, vulcanus_ore_dist) * 25,\z
-                                                         control:potash:frequency,\z
+                                                         control:bm_potash:frequency,\z
                                                          vulcanus_ashlands_resource_favorability)))"
   },
   {
     type = "noise-expression",
     name = "potash_probability",
-    expression = "(control:potash:size > 0) * (1000 * ((1 + potash_region) * random_penalty_between(0.9, 1, 1) - 1))"
+    expression = "(control:bm_potash:size > 0) * (1000 * ((1 + potash_region) * random_penalty_between(0.9, 1, 1) - 1))"
   },
   {
     type = "noise-expression",
     name = "potash_richness",
     expression = "potash_region * random_penalty_between(0.9, 1, 1)\z
                   * 18000 * vulcanus_starting_area_multiplier\z
-                  * control:potash:richness / potash_size"
+                  * control:bm_potash:richness / potash_size"
   },
 })

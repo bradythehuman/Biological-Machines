@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 20. 2. 2026
+  Compatibility:
+    - When Asteroid Belt is present, the fulgora-balack connection is replaced with outer belt-balack and distanced are tweaked
+    - Nuclear bots recipe uses flying robot frames instead of the bots themselves and the nuclear logistics bot recipe has 2x quantum processors
+  Changes:
+    - Hypersonic rounds have 200% range modifier
+    - edge-shattered planet space connection distance reduced to 1000000 km
+---------------------------------------------------------------------------------------------------
 Version: 1.0.3
 Date: 9. 2. 2026
   Compatibility:

@@ -24,6 +24,12 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 
+if mods["AsteroidBelt"] then
+  require("prototypes.balack-x-asteroid-belt")
+end
+
+
+
 dh.mod_override_require("BuggisNuclearBots", "bm-nuclear-bots-override", "prototypes.balack-x-nuclear-bots")
 
 if settings.startup["bm-armored-biters-override"].value then

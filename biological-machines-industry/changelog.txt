@@ -1,4 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 20. 2. 2026
+  Features:
+    - Seawater filtration recipe producing mainly sand/spoilage with trace amounts of stone/iron ore/copper ore/fish
+    - Early heating tower setting which moves the heating tower technology after concrete and before nuclear power/Gleba
+    - Rails from landfill setting replacing stone in rail recipe with landfill
+  Changes:
+    - Stone crushing recipe can be crafted by hand
+    - Decreased ethanol cost in cracking recipes
+    - Added engine units to foundry recipe
+    - Replaced stone in foundation recipe with landfill
+    - Enabled productivity modules on pyrolysis recipes
+    - Moved brick from lava recipe to terrain subcategory in factoriopedia
+    - Increased default vulcanus coal generation increase to 3x
+  Bugfixes:
+    - Fixes potash generation on vulcanus, it wasn't generating at all
+---------------------------------------------------------------------------------------------------
 Version: 1.0.6
 Date: 12. 2. 2026
   Compatibility:

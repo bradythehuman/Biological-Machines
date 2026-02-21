@@ -110,7 +110,8 @@ local add_engine = {
   ["assembling-machine-2"] = 2,
   ["centrifuge"] = 20,
   ["rocket-turret"] = 10,
-  ["artillery-turret"] = 30
+  ["artillery-turret"] = 30,
+  ["foundry"] = 10,
 }
 dh.add_ingredient_table(add_engine, "item", "engine-unit")
 
@@ -196,6 +197,19 @@ local add_chem_plant = {
 }
 dh.add_ingredient_table(add_chem_plant, "item", "chemical-plant")
 
+dh.remove_ingredient("foundation", "stone")
+
+local foundation_recipe = data.raw["recipe"]["foundation"]
+foundation_recipe.energy_required = foundation_recipe.energy_required * 2
+for _, ingredient in pairs(foundation_recipe.ingredients) do
+  ingredient.amount = ingredient.amount * 2
+end
+for _, result in pairs(foundation_recipe.results) do
+  result.amount = result.amount * 2
+end
+
+dh.add_ingredient("foundation", "item", "landfill", 1)
+
 
 
 -------------------------------------------------ELECTRONICS
@@ -258,11 +272,11 @@ dh.add_ingredient("efficiency-module-3", "item", "pentapod-egg", 1)
 
 ------------------------------------------------OIL
 data.raw["recipe"]["heavy-oil-cracking"].ingredients = {
-  {type = "fluid", name = "bm-ethanol", amount = 8},
+  {type = "fluid", name = "bm-ethanol", amount = 5},
   {type = "fluid", name = "heavy-oil", amount = 40}
 }
 data.raw["recipe"]["light-oil-cracking"].ingredients = {
-  {type = "fluid", name = "bm-ethanol", amount = 6},
+  {type = "fluid", name = "bm-ethanol", amount = 5},
   {type = "fluid", name = "light-oil", amount = 30}
 }
 
@@ -321,6 +335,7 @@ data:extend({
     order = "a",
     auto_recycle = false,
     allow_decomposition = false,
+    allow_productivity = true,
     energy_required = 9.6,
     ingredients = {{type = "item", name = "wood", amount = 10}},
     results = {
@@ -349,6 +364,7 @@ data:extend({
     order = "b",
     auto_recycle = false,
     allow_decomposition = false,
+    allow_productivity = true,
     energy_required = 9.6,
     ingredients = {{type = "item", name = "coal", amount = 10}},
     results = {
@@ -379,6 +395,7 @@ data:extend({
     order = "c",
     auto_recycle = false,
     allow_decomposition = false,
+    allow_productivity = true,
     energy_required = 9.6,
     ingredients = {{type = "item", name = "spoilage", amount = 20}},
     results = {
@@ -408,6 +425,7 @@ data:extend({
     auto_recycle = false,
     enabled = false,
     allow_decomposition = false,
+    allow_productivity = true,
     energy_required = 9.6,
     ingredients = {
       {type = "item", name = "solid-fuel", amount = 10}
@@ -438,6 +456,7 @@ data:extend({
     order = "e",
     auto_recycle = false,
     allow_decomposition = false,
+    allow_productivity = true,
     energy_required = 9.6,
     ingredients = {{type = "item", name = "bm-tar", amount = 10}},
     results = {
@@ -644,6 +663,45 @@ data:extend({
   },
 
   ---------------------------------------------------------STONE
+  {
+    type = "recipe",
+    name = "bm-seawater-filtration",
+    icons = {
+      {
+        icon = "__base__/graphics/icons/fluid/water.png",
+        scale = 0.4,
+        shift = {0, -4},
+      },
+      {
+        icon = "__biological-machines-k2-assets__/graphics/sand.png",
+        scale = 0.25,
+        shift = {-8, 8},
+      },
+      {
+        icon = "__space-age__/graphics/icons/spoilage.png",
+        scale = 0.25,
+        shift = {8, 8},
+      },
+    },
+    category = "crafting-with-fluid",
+    subgroup = "fluid-recipes",
+    order = "e",
+    auto_recycle = false,
+    enabled = false,
+    allow_productivity = true,
+    allow_decomposition = false,
+    energy_required = 10,
+    surface_conditions = {{property = "pressure", min = 1000, max = 1000}},
+    ingredients = {{type = "fluid", name = "water", amount = 400}},
+    results = {
+      {type = "item", name = "bm-sand", amount = 3, probability = 0.5},
+      {type = "item", name = "spoilage", amount = 2, probability = 0.5},
+      {type = "item", name = "stone", amount = 1, probability = 0.1},
+      {type = "item", name = "iron-ore", amount = 1, probability = 0.01},
+      {type = "item", name = "copper-ore", amount = 1, probability = 0.01},
+      {type = "item", name = "raw-fish", amount = 1, probability = 0.01},
+    }
+  },
   --[[
   {
     type = "recipe",
@@ -811,8 +869,10 @@ data:extend({
       },
     },
     category = "metallurgy",
-    subgroup = "vulcanus-processes",
-    order = "b[casting]-z-b",
+    --subgroup = "vulcanus-processes",
+    --order = "b[casting]-z-b",
+    subgroup = "terrain",
+    order = "a[stone-brick]-c",
     auto_recycle = false,
     enabled = false,
     ingredients = {

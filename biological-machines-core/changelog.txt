@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 20. 2. 2026
+  Features:
+    - Added recipe for nutrients from sulfuric/petroleum bacteria
+  Changes:
+    - Increased scrapyard icon size
+    - Increased crafting speed and decreased ingredient cost of sulfuric/petroleum bacteria
+---------------------------------------------------------------------------------------------------
 Version: 1.0.7
 Date: 16. 2. 2026
   Changes:
@@ -14,7 +22,7 @@ Version: 1.0.5
 Date: 7. 2. 2026
   Compatibility:
     - Moved offshore dump signals to barreling group when barreling tab mod is installed
-  Changes:
+  Features:
     - Added bool setting for slow growing berries
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.4
@@ -32,7 +40,7 @@ Date: 3. 2. 2026
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 3. 2. 2026
-  Changes:
+  Features:
     - Added startup setting to change berry yield from berry bush
     - Added berry map gen terrain setting (scale/coverage)
   Compatibility:

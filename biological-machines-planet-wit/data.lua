@@ -23,6 +23,11 @@ if settings.startup["bm-early-logistics-system"].value then
   require("prototypes.early-logistics-system")
 end
 
+if not mods["biological-machines-industry"]
+or not settings.startup["bm-rails-from-landfill"].value then
+  require("prototypes.rails-from-glass")
+end
+
 
 
 if not mods["biological-machines-industry"] or mods["crushing-industry"] then
@@ -35,6 +40,9 @@ else
   dh.add_ingredient("advanced-thruster-oxidizer", "item", "iron-ore", 10)
 end
 
+if mods["BuggisNuclearBots"] then
+  require("prototypes.wit-x-nuclear-bots")
+end
 
 dh.mod_override_require("PersonalTeslaDefenseEquipment", "bm-tesla-equipment-override", "prototypes.wit-x-tesla-equipment")
 

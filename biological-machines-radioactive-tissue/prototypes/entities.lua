@@ -57,12 +57,13 @@ for i=1, #demo_heads do
     local type = demo_rst[i].type
     if type == "explosion" then
       demo_rst[i].percent = 80
-    elseif type == "physical" then
-      demo_rst[i].decrease = 5
+    --elseif type == "physical" then
+      --demo_rst[i].decrease = 5
     end
   end
 end
 
+--[[
 local demo_bodies = {}
 local segments = data.raw["segment"]
 for i=1, #segments do
@@ -76,6 +77,7 @@ for i=1, #demo_bodies do
     demo_rst[i].decrease = 10
   end
 end
+]]
 
 
 

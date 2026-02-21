@@ -59,7 +59,7 @@ data:extend{
         }
       }
     },
-    icon_draw_specification = {shift = {0, -0.55}},
+    icon_draw_specification = {scale = 2, shift = {0, -0.55}},
     icons_positioning = {
       {inventory_index = defines.inventory.furnace_modules, shift = {0, 0.2}}
     },

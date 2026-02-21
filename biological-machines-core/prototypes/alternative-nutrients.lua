@@ -34,9 +34,9 @@ data.raw["item"]["nutrients"].order = "b"
 local nutrient_recipes = {
   ["nutrients-from-spoilage"] = "c-a",
   ["nutrients-from-fish"] = "c-c",
-  ["nutrients-from-biter-egg"] = "c-d",
-  ["nutrients-from-yumako-mash"] = "c-e",
-  ["nutrients-from-bioflux"] = "c-f",
+  ["nutrients-from-biter-egg"] = "c-f",
+  ["nutrients-from-yumako-mash"] = "c-g",
+  ["nutrients-from-bioflux"] = "c-h",
 }
 for recipe_name, order in pairs(nutrient_recipes) do
   data.raw["recipe"][recipe_name].subgroup = "bm-nutrients"
@@ -77,11 +77,11 @@ end
 data.raw["technology"]["yumako"].prerequisites = {"planet-discovery-gleba"}
 data.raw["technology"]["jellynut"].prerequisites = {"planet-discovery-gleba"}
 
-local vulcanus_effects = {"bm-sulfuric-bacteria", "bm-sulfuric-bacteria-cultivation"}
+local vulcanus_effects = {
+  "bm-sulfuric-bacteria", "bm-sulfuric-bacteria-cultivation",
+  "bm-nutrients-from-sulfuric-bacteria",
+}
 dh.add_recipe_unlock("planet-discovery-vulcanus", vulcanus_effects)
-
-local recycling_effects = {"bm-hydrocarbon-bacteria", "bm-hydrocarbon-bacteria-cultivation"}
-dh.add_recipe_unlock("recycling", recycling_effects)
 
 
 
@@ -422,8 +422,8 @@ data:extend({
     surface_conditions = {{property = "pressure", min = 4000, max = 4000}},
     enabled = false,
     allow_productivity = true,
-    energy_required = 1,
-    ingredients = {{type = "fluid", name = "sulfuric-acid", amount = 100}},
+    energy_required = 0.5,
+    ingredients = {{type = "fluid", name = "sulfuric-acid", amount = 50}},
     results = {
       {type = "item", name = "bm-sulfuric-bacteria", amount = 1, probability = 0.1},
       {type = "item", name = "spoilage", amount = 1}
@@ -447,10 +447,10 @@ data:extend({
     enabled = false,
     allow_productivity = true,
     result_is_always_fresh = true,
-    energy_required = 4,
+    energy_required = 2,
     ingredients = {
-      {type = "fluid", name = "sulfuric-acid", amount = 20},
-      {type = "item", name = "carbon", amount = 2},
+      {type = "fluid", name = "sulfuric-acid", amount = 10},
+      {type = "item", name = "carbon", amount = 1},
       {type = "item", name = "bm-sulfuric-bacteria", amount = 1}
     },
     results = {
@@ -463,6 +463,30 @@ data:extend({
       tertiary = {r = 0.723, g = 0.638, b = 0.714, a = 1.000}, -- #b8a2b6ff
       quaternary = {r = 0.954, g = 1.000, b = 0.350, a = 1.000}, -- #f3ff59ff
     }
+  },
+  {
+    type = "recipe",
+    name = "bm-nutrients-from-sulfuric-bacteria",
+    icons = {
+      {
+        icon = "__biological-machines-core__/graphics/sulfuric-bacteria.png",
+        -- icon_size = 64,
+        scale = 0.30,
+        shift = {-5, -5},
+      },
+			{
+        icon = "__biological-machines-core__/graphics/nutrients-from-blank.png",
+        --icon_size = 64,
+      }
+		},
+    category = "organic-or-hand-crafting",
+    subgroup = "bm-nutrients",
+    order = "c-d",
+    enabled = false,
+    allow_productivity = true,
+    energy_required = 0.5,
+    ingredients = {{type = "item", name = "bm-sulfuric-bacteria", amount = 1}},
+    results = {{type = "item", name = "nutrients", amount = 1}}
   },
   {
     type = "item",
@@ -489,8 +513,8 @@ data:extend({
     surface_conditions = {{property = "magnetic-field", min = 98, max = 99}},
     enabled = false,
     allow_productivity = true,
-    energy_required = 1,
-    ingredients = {{type = "item", name = "ice", amount = 10}},
+    energy_required = 0.5,
+    ingredients = {{type = "item", name = "ice", amount = 5}},
     results = {
       {type = "item", name = "bm-hydrocarbon-bacteria", amount = 1, probability = 0.1 },
       {type = "item", name = "spoilage", amount = 1}
@@ -514,10 +538,10 @@ data:extend({
     enabled = false,
     allow_productivity = true,
     result_is_always_fresh = true,
-    energy_required = 4,
+    energy_required = 2,
     ingredients = {
-      {type = "fluid", name = "water", amount = 20},
-      {type = "item", name = "solid-fuel", amount = 2},
+      {type = "fluid", name = "water", amount = 10},
+      {type = "item", name = "solid-fuel", amount = 1},
       {type = "item", name = "bm-hydrocarbon-bacteria", amount = 1}
     },
     results = {{type = "item", name = "bm-hydrocarbon-bacteria", amount = 4}},
@@ -527,5 +551,29 @@ data:extend({
       tertiary = {r = 0.6, g = 0.8, b = 0.7, a = 1.000}, -- #b8a2b6ff
       quaternary = {r = 1, g = 0.35, b = 0.95, a = 1.000}, -- #f3ff59ff
     }
-  }
+  },
+  {
+    type = "recipe",
+    name = "bm-nutrients-from-hydrocarbon-bacteria",
+    icons = {
+      {
+        icon = "__biological-machines-core__/graphics/hydrocarbon-bacteria.png",
+        -- icon_size = 64,
+        scale = 0.30,
+        shift = {-5, -5},
+      },
+			{
+        icon = "__biological-machines-core__/graphics/nutrients-from-blank.png",
+        --icon_size = 64,
+      }
+		},
+    category = "organic-or-hand-crafting",
+    subgroup = "bm-nutrients",
+    order = "c-e",
+    enabled = false,
+    allow_productivity = true,
+    energy_required = 0.5,
+    ingredients = {{type = "item", name = "bm-hydrocarbon-bacteria", amount = 1}},
+    results = {{type = "item", name = "nutrients", amount = 1}}
+  },
 })

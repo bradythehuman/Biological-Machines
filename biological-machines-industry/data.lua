@@ -24,6 +24,14 @@ if settings.startup["bm-boompuff-agriculture"].value then
   require("prototypes.boompuff-agriculture")
 end
 
+if settings.startup["bm-rails-from-landfill"].value then
+  require("prototypes.rails-from-landfill")
+end
+
+if settings.startup["bm-early-heating-tower"].value then
+  require("prototypes.early-heating-tower")
+end
+
 
 
 --table which is used byslag.lua in the data-updates stage
@@ -40,7 +48,7 @@ BM_ADD_SLAG = {
 if mods["crushing-industry"] then
   data.raw.recipe["bm-stone-crushing"].category = "basic-crushing"
   data.raw.recipe["bm-slag-crushing"].category = "basic-crushing"
-  
+
   if settings.startup["bm-crushing-industry-override"].value then
     require("prototypes.industry-x-crushing-industry")
   end
@@ -106,7 +114,7 @@ data:extend({
   {
   	type = "autoplace-control",
   	localised_name = {"", "[item=bm-potash] ", {"entity-name.bm-potash"}},
-  	name = "bm-potash",
+  	name = "bm_potash",
   	richness = true,
   	order = "b-a-a",
   	category = "resource"

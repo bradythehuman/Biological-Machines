@@ -395,6 +395,7 @@ data:extend({
     ammo_category = "bullet",
     ammo_type =
     {
+      range_modifier = 2,
       action =
       {
         type = "direct",

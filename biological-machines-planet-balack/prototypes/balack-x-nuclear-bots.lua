@@ -8,8 +8,8 @@ local bot_category = data.raw["recipe"]["logistic-robot"].category
 local nuc_logistic_recipe = data.raw["recipe"]["logistic-robot-nuclear"]
 nuc_logistic_recipe.category = bot_category
 nuc_logistic_recipe.ingredients = {
-  {type = "item", name = "logistic-robot", amount = 1},
-  {type = "item", name = "quantum-processor", amount = 1},
+  {type = "item", name = "flying-robot-frame", amount = 1},
+  {type = "item", name = "quantum-processor", amount = 2},
   {type = "item", name = "uranium-fuel-cell", amount = 1},
   {type = "item", name = "bm-radiation-sheilding", amount = 2},
 }
@@ -17,7 +17,7 @@ nuc_logistic_recipe.ingredients = {
 local nuc_construction_recipe = data.raw["recipe"]["construction-robot-nuclear"]
 nuc_construction_recipe.category = bot_category
 nuc_construction_recipe.ingredients = {
-  {type = "item", name = "construction-robot", amount = 1},
+  {type = "item", name = "flying-robot-frame", amount = 1},
   {type = "item", name = "quantum-processor", amount = 1},
   {type = "item", name = "uranium-fuel-cell", amount = 1},
   {type = "item", name = "bm-radiation-sheilding", amount = 2},
@@ -26,6 +26,7 @@ nuc_construction_recipe.ingredients = {
 
 
 --TECH
+dh.add_prereq("nuclear-robots", "nuclear-power")
 dh.add_prereq("nuclear-robots", "bm-planet-discovery-balack")
 
 local nuc_bot_tech = data.raw["technology"]["nuclear-robots"]

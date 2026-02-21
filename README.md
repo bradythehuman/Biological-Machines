@@ -10,7 +10,7 @@ All BM mods should be safe to add to existing saves (and subsequently remove) bu
 
 ### Description  
 
-Biological Machines is a space age overhaul focused on mundane and sci-fi biological processes. This mod is the intended BM experience, although it only contains dependencies, any of which may be left out for preference/compatibility.
+Biological Machines is a space age overhaul focused on mundane and sci-fi biological processes. The pack adds new technologies, recipes, intermediates, buildings, weapons, equipment, planets, resources, a hunger mechanic, clones, a warp drive and more. This mod is the intended BM experience, although it only contains dependencies, any of which may be left out for preference/compatibility.
 
 *Includes*
 
@@ -26,6 +26,53 @@ Biological Machines is a space age overhaul focused on mundane and sci-fi biolog
 - [BM: K2 Assets](https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 Most optional dependencies for the above mods are modified by compatibility patches which can be skipped by disabling the mod override setting. All override settings are enabled by default and can be disabled for preference/compatibility. Any compatibility patch which fixes game breaking bugs has no override setting.
+
+### Features
+- Alternative nutrient sources on Nauvis, Vulcanus and Fulgora
+    - Berries are farmable in the early game on Nauvis with agricultural tower
+    - Unique bacteria can be collected on Vulcanus and Fulgora, both of which spoil into spoilage
+- Hunger, food is consumed directly from the engineers inventory. The consumed food type is determined by a ranked list in a new shortcut menu
+    - Different foods provide passive speed/regen buffs or speed debuffs while they are being consumed
+    - Equipment exists which prevents starvation and allows eating u-235 for a large buff
+    - Capsule effect of base game foods has been moved to dedicated items
+- Stringfronds can be farmed on Gleba and are used for better food, speed capsules and fluroflux a new intermediate
+- New early game machines scrapyard (slow polluting recycler) and carbonizer (insert burnables, get out carbon + byproducts)
+- Recipes are overall made slightly more complex and use significantly more biological intermediates
+    - Electronic circuits are made with circuit boards instead of iron, smelting produces slag which can be crushed, steel is made with carbon, oil is cracked with ethanol, etc
+    - Glass can be made from sand potash and lime and is used in many recipes including circuit boards
+    - Pistons are a new iron intermediate, added to rebalance overall copper/iron/stone consumption
+    - Production and inner planet science packs are tweaked and made slightly more complex
+- Oil can be made from seeds using new biodiesel recipe unlocked on Gleba
+- Boompuffs can be farmed on Gleba and can be used to produce grenades, explosives and napalm
+- Rocket parts are produced outside of the rocket silo using planet specific recipes. Different planets require more or less rocket fuel based on its gravity and also require a somewhat unique shielding material including steel on Nauvis and tungsten carbide on Vulcanus.
+- Radioactive tissue is dropped by biter spawners and can be propagated in biochambers by feeding it u-235 and bioflux. The tissue can be used to produce...
+    - A new nuclear military science pack required for nukes, uranium ammo, portable reactors, biolabs, etc
+    - A new military assembler used to produce ammo, turrets with 50% base productivity
+    - Poison gas which can be crafted into capsules, landmines, machine gun rounds and mortar bombs. Damage can be increased by a new infinite technology
+    - Hardened tissue which can be processed into more uranium than the amount required to produce the tissue, effectively turning bioflux (and iron ore) into uranium
+    - Biolabs which now also consume u-235 as fuel instead of electricity
+    - Clone bodies
+- Clones can be produced with quality and stored in tanks
+    - Stored clones must be fed suspension fluid to stay alive and can be used to respawn at via new respawn menu
+    - Getting into a tank immediately respawns the engineer and fills the tank
+    - Quality clone bodies give the engineer increased health and movement/crafting/mining speed
+- Space science production is moved to a new moon of Nauvis, Wit. It's cratered surface is covered in asteroid ore, copper sulfate crystals, glass shards and helium
+    - Travel to Wit on a space platform supplied entirely from Nauvis
+    - Produce helium power cells, a new intermediate used in laser turrets, robotics facilities and more
+    - Craft new robotics facility building (50% base productivity on inserters, bots, equipment, etc) which is required to produce space science and asteroid collectors
+- Adds advanced solar panels crafted with helium power cells and superconductors
+- Adds promethium ore which can first be found on Wit and Fulgora to craft promethium science packs. The science packs then unlock the shattered planet and other late game tech. A shattered core surface is also added to the shattered planet space location which is small but covered in promethium ore
+- Return to Wit post Aquilo to produce interstellar science packs and unlock late game tech including the warp drive. The warp drive allows moving platforms to teleport to their destination and are basically required to reach late game space locations in a timely manner.
+- A new planet Balack is added post Aquilo with very strong armored biters, worms, stomper pentapods and wrigglers. The surface has a new scrap and pumpable fluid which can be used to produce basic items. Discovering the planet unlocks the biofabricator which can only be placed at spawn and has massive pollution output/energy demands. The biofabricator is required to produce
+    - Radiation shielding from lds, tungsten carbide, carbon fiber and promethium chunks. This is required to produce almost everything on Balack including a tank mk2, mech armor mk2, nuclear powered bots and promethium belts (90 items/sec)
+    - AI control modules, built using all 4 tier 3 modules, quantum processors and radioactive tissue. Provide large speed buff at the cost of quality/productivity/energy consumption/pollution debuffs. These modules can be temporarily activated in multiple ways producing modules which give massive quality or productivity buffs
+    - Warp drive parts which must be sent to space to craft warp drives on the platform where they are built
+- A new surface in the engineers home system, the dyson sphere construction platform. The surface has a chest to deposit construction materials and another to collect credits paid in return. The credits can be spent in new market buildings
+    - The market is the only way to obtain energy link cores which are used to craft interstellar energy links which provide free power from the dyson sphere to any surface they are placed on. only 1 per surface, energy produced scales with quality
+    - Super credits can be purchased in the market and recycled into quality credits to buy quality items from the market
+    - Credits can also be earned by sending a space platform to the new worlds space location. In universe, the platform is meant to establish a new independent colony which will send resources back to the construction platform. As a result the platform is deleted from you game once it reaches the new world, it must contain a suspend clone (to do the colonizing) and cannot be ridden by an active player. Achieving this is the new end of the game although it may be continued after as usual
+- The pack also contains many standalone content mods that fill gaps in the main BM mods including AAI loaders, AAI signal transmission, handcannon, hypersonic substations, etc
+
 
 ### Future Plans
 
@@ -91,8 +138,8 @@ Adds a hunger mechanic which consumes selected foods from the engineers inventor
 ### Features
 
 - Saturation, every player has a saturation level that decreases each tick, decreasing faster while injured. Once the engineers saturation runs out they automatically attempt to consume a food item from the engineers inventory (or occupied space platform inventory)
-  - When a food item is consumed, passive effects are applied until the foods saturation runs out. Poor foods like nutrients apply speed debuffs while good foods like fish apply regen and/or speed buffs
-  - When no food items are consumed the engineer takes starvation damage until they find food or die
+    - When a food item is consumed, passive effects are applied until the foods saturation runs out. Poor foods like nutrients apply speed debuffs while good foods like fish apply regen and/or speed buffs
+    - When no food items are consumed the engineer takes starvation damage until they find food or die
 - Hunger shortcut menu, rank food preferences. Only ranked foods will be consumed by the engineer
 - Hunger widget, above engineers armor slot. From top to bottom displays most recent food source, how spoiled that food is and current saturation
 - Alternative nutrients sources including berry bush on early game Nauvis and new bacteria on Vulcanus and Fulgora
@@ -340,17 +387,17 @@ Use a warp drive to travel back to the engineers home star. Land on a dyson sphe
 ### Features
 
 - An input chest (green) to deposit materials and an output chest (gold) where coin is deposited. Input materials are removed instantly from the chest and tallied until sufficient materials have been deposited to complete a transaction.
-  - Every payment is 200 credits but the different required materials take different initial amounts and the required amount of any requested material increases by 10% of the initial amount every time a payment is made.
-  - GUI format for a single line is as follows {item icon} input amount / required amount for next transaction (completed transaction count)
-  - Requested materials include space platform foundation, tungsten plate, processing units, LDS, electric engine units, superconductors, supercapacitors and more
+    - Every payment is 200 credits but the different required materials take different initial amounts and the required amount of any requested material increases by 10% of the initial amount every time a payment is made.
+    - GUI format for a single line is as follows {item icon} input amount / required amount for next transaction (completed transaction count)
+    - Requested materials include space platform foundation, tungsten plate, processing units, LDS, electric engine units, superconductors, supercapacitors and more
 - Credits can be traded in a market which can be made from iron and steel but can only be placed on the construction platform.
-  - All requested materials can be bought in the market plus a few others like rocket fuel or silos
-  - Market productivity research affects all trades in the market
+    - All requested materials can be bought in the market plus a few others like rocket fuel or silos
+    - Market productivity research affects all trades in the market
 - Free power is provided on the construction platform from the output (gold) chest
 - Adds super credits which can be purchased with credits in the market and recycled with quality modules to produce high quality, non super credits
 - Send a space platform with a suspended clone to a new, uncolonized solar system to get a large amount of credits at the construction platform. The new system is not accessible by the player and any platform sent there will be removed from the game
-  - insufficient platforms will be returned to the solar system edge location, including platforms without a clone or platforms with an active engineer
-  - Sending your first clone to colonize a new world will trigger the new victory screen
+    - insufficient platforms will be returned to the solar system edge location, including platforms without a clone or platforms with an active engineer
+    - Sending your first clone to colonize a new world will trigger the new victory screen
 - Can be added to existing saves without any complications
 
 ### Credit
@@ -380,9 +427,9 @@ Clones can be made in a biochamber and stored in dedicated tanks. Getting in a t
 ### Features
 
 - Clones grown in biochambers may be placed in tanks. The tanks have 3 states, empty, prepared and filled.
-  - Only empty tanks are blueprint-able
-  - Prepared tanks are enterable, instantly respawning the player and filled tanks can be respawned at
-  - Filled or prepared tanks can be renamed and the new name will be used in the respawn menu
+    - Only empty tanks are blueprint-able
+    - Prepared tanks are enterable, instantly respawning the player and filled tanks can be respawned at
+    - Filled or prepared tanks can be renamed and the new name will be used in the respawn menu
 - When a player respawns they are made temporarily invulnerable while they select where to respawn
 - Filled tanks constantly consume suspension fluid and empty tanks must be filled with suspension fluid to allow a player to enter
 - When a player respawns at a tank their engineer gains the quality of the clone originally placed in the tank. Higher quality clone bodies gives the engineer increased health and mining/crafting/running speed

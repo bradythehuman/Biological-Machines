@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 20. 2. 2026
+  Changes:
+    - Portable nuclear reactor equipment cost no longer reduced
+    - Demolisher heads physical resistance no longer increased
+---------------------------------------------------------------------------------------------------
 Version: 1.0.3
 Date: 7. 2. 2026
   Compatibility:

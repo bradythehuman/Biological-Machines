@@ -280,8 +280,8 @@ data:extend({
     enabled = false,
     allow_productivity = true,
     allow_decomposition = false,
-    energy_required = 4,
-    ingredients = {{type = "fluid", name = "bm-glass-dust", amount = 200}},
+    energy_required = 10,
+    ingredients = {{type = "fluid", name = "bm-glass-dust", amount = 400}},
     results = {{type = "item", name = "bm-glass-shard", amount = 1}}
   },
   {
@@ -337,27 +337,6 @@ data:extend({
     energy_required = 0.5,
     ingredients = {{type = "item", name = "bm-glass-shard", amount = 50}},
     results = {{type = "item", name = "landfill", amount = 1}}
-  },
-  {
-    type = "recipe",
-    name = "bm-rail-from-glass-shard",
-    icons = {
-      {
-        icon = "__base__/graphics/icons/rail.png"
-      },
-      {
-        icon = "__biological-machines-planet-wit__/graphics/glass-shard-icon-opaque.png",
-        scale = 0.25,
-        shift = {8, 8}
-      },
-    },
-    enabled = false,
-    ingredients = {
-      {type = "item", name = "bm-glass-shard", amount = 1},
-      {type = "item", name = "iron-stick", amount = 1},
-      {type = "item", name = "steel-plate", amount = 1}
-    },
-    results = {{type = "item", name = "rail", amount = 2}}
   },
   {
     type = "recipe",

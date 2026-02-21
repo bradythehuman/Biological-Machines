@@ -61,4 +61,16 @@ data:extend({
     setting_type = "startup",
     default_value = true
   },
+  {
+    type = "bool-setting",
+    name = "bm-rails-from-landfill",
+    setting_type = "startup",
+    default_value = true
+  },
+  {
+    type = "bool-setting",
+    name = "bm-early-heating-tower",
+    setting_type = "startup",
+    default_value = true
+  },
 })

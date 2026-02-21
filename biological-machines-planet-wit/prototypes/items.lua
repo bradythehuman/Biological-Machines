@@ -2,6 +2,10 @@ local item_sounds = require("__base__.prototypes.item_sounds")
 
 
 
+data.raw["tool"]["space-science-pack"].default_import_location = "bm-wit"
+
+
+
 data:extend({
   {
     type = "item",

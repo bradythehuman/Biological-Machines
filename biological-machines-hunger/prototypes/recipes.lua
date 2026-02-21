@@ -127,7 +127,7 @@ data:extend({
     --icon = "__biological-machines-hunger__/graphics/nutrients-from-fluroflux.png",
     category = "organic",
     subgroup = "bm-nutrients",
-    order = "c-g",
+    order = "c-i",
     enabled = false,
     allow_productivity = true,
     energy_required = 2,

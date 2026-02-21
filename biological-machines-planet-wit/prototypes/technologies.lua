@@ -132,7 +132,7 @@ data:extend({
     effects = {
       {type = "unlock-recipe", recipe = "bm-glass-plate-from-shard"},
       {type = "unlock-recipe", recipe = "bm-landfill-from-shard"},
-      {type = "unlock-recipe", recipe = "bm-rail-from-glass-shard"},
+      --{type = "unlock-recipe", recipe = "bm-rail-from-glass-shard"},
       {type = "unlock-recipe", recipe = "bm-brick-from-glass-shard"},
       {type = "unlock-recipe", recipe = "bm-glass-dust-filtration"},
     },

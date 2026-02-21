@@ -6,9 +6,14 @@ data.raw["recipe"]["bm-hydrocarbon-bacteria-recycling"].results =
 {{type = "item", name = "bm-hydrocarbon-bacteria", amount = 1, probability = 0.25}}
 
 
-
+local recycling_effects = {
+  "bm-hydrocarbon-bacteria", "bm-hydrocarbon-bacteria-cultivation",
+  "bm-nutrients-from-hydrocarbon-bacteria",
+}
 if mods["biological-machines-planet-wit"] then
-  dh.add_recipe_unlock("bm-asteroid-deposit", {"bm-hydrocarbon-bacteria", "bm-hydrocarbon-bacteria-cultivation"})
+  dh.add_recipe_unlock("bm-asteroid-deposit", recycling_effects)
+else
+  dh.add_recipe_unlock("recycling", recycling_effects)
 end
 
 

@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: 20. 2. 2026
+  Compatibility:
+    - Rails from glass recipe no longer added when BM: Industry's rail from landfill setting is enabled
+    - Nuclear bots can be crafted in robotics facility
+  Bugfixes:
+    - Space science pack default import location changed to wit
+  Changes:
+    - Glass dust filtration recipe consumes 2x fluid and takes 2.5x as long
+    - Added concrete to robotics fracility recipe
+---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 16. 2. 2026
   Bugfixes:

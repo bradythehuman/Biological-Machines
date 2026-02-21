@@ -53,7 +53,7 @@ table.insert(data.raw["technology"]["promethium-science-pack"].unit.ingredients,
 --fix base technology other parameters
 dh.remove_recipe_unlock("military-3", "poison-capsule")
 
-data.raw["technology"]["fission-reactor-equipment"].unit.count = 100
+--data.raw["technology"]["fission-reactor-equipment"].unit.count = 100
 
 local modifiers = {0.25, 0.25, 0.05, 0.05, 0.05, 0.1, 0.1}
 for i=1, 7 do

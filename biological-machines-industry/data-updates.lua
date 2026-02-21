@@ -42,6 +42,10 @@ end
 
 
   --RECYCLING
+if settings.startup["bm-rails-from-landfill"].value then
+  data.raw["recipe"]["rail-recycling"].energy_required = 0.03
+end
+
 dh.recycle_to_ingredients("bm-steel-mix")
 dh.recycle_to_ingredients("bm-glass-mix")
 

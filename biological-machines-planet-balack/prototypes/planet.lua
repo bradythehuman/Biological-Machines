@@ -11,6 +11,10 @@ fulgora_map_gen.autoplace_settings.entity.settings["bm-promethium-ore"] = {}
 
 
 
+data.raw["space-connection"]["solar-system-edge-shattered-planet"].length = 1000000
+
+
+
 local balack_map_gen = {
   property_expression_names =
   {
@@ -121,7 +125,7 @@ data:extend({
     subgroup = "planets",
     map_gen_settings = balack_map_gen,
     pollutant_type = "pollution",
-    solar_power_in_space = 120,
+    solar_power_in_space = 60,
     platform_procession_set =
     {
       arrival = {"planet-to-platform-b"},

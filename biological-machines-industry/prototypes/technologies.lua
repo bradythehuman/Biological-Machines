@@ -77,6 +77,8 @@ dh.add_recipe_unlock("foundry", "bm-casting-piston")
 
 dh.add_recipe_unlock("advanced-material-processing", "bm-slag-crushing")
 
+dh.add_recipe_unlock("fluid-handling", "bm-seawater-filtration")
+
 dh.remove_prereq("production-science-pack", "railway")
 dh.add_prereq("elevated-rail", "railway")
 

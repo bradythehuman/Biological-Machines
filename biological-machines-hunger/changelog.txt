@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: 20. 2. 2026
+  Changes:
+    - Nutrients from fluroflux order changed to make space for nutrients from bacteria recipes
+---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 5. 2. 2026
   Compatibility:
