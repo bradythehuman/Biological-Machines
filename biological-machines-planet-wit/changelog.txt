@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.6
+Date: 24. 2. 2026
+  Bugfixes:
+    - Adds flourine barreling so it can be brought to wit and used in mixed gas power cell recipe
+    - Adds production science tech prereq for advanced solar panel tech
+    - Adds solar panel tech prereq for rocket silo tech
+---------------------------------------------------------------------------------------------------
 Version: 1.0.5
 Date: 20. 2. 2026
   Compatibility:

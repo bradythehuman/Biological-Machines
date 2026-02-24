@@ -2,12 +2,14 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 
+--PRODUCTION SCIENCE
 dh.remove_ingredient("production-science-pack", "rail")
 --dh.add_ingredient("production-science-pack", "item", "assembling-machine-2", 1)
 dh.add_ingredient("production-science-pack", "item", "chemical-plant", 1)
 
 
 
+--AGRICULTURAL SCIENCE
 local agro_recipe = data.raw["recipe"]["agricultural-science-pack"]
 agro_recipe.energy_required = 8
 agro_recipe.ingredients = {
@@ -20,10 +22,12 @@ agro_recipe.results = {{type = "item", name = "agricultural-science-pack", amoun
 
 
 
+--METALLURGIC SCIENCE
 dh.add_ingredient("metallurgic-science-pack", "fluid", "bm-molten-glass", 50)
 
 
 
+--ELECTROMAGNETIC SCIENCE
 local em_sci_pack = data.raw["recipe"]["electromagnetic-science-pack"]
 em_sci_pack.ingredients = {
   {type = "item", name = "supercapacitor", amount = 3},
@@ -35,3 +39,5 @@ em_sci_pack.energy_required = 20
 em_sci_pack.results = {{
   type = "item", name = "electromagnetic-science-pack", amount = 2
 }}
+
+dh.add_prereq("planet-discovery-fulgora", "quality-module")

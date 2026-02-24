@@ -45,6 +45,8 @@ dh.add_prereq("laser", "space-science-pack")
 
 dh.add_prereq("bm-warp-drive", "bm-interstellar-science-pack")
 
+dh.add_prereq("rocket-silo", "solar-energy")
+
 
 
 --ADD SPACE SCIENCE TO TECH COSTS

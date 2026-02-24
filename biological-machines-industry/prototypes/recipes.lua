@@ -619,7 +619,7 @@ data:extend({
     name = "bm-steel-mix-melting",
     icons = {
       {
-        icon = "__base__/graphics/icons/iron-ore.png",
+        icon = "__biological-machines-industry__/graphics/steel-mix.png",
         scale = 0.25,
         shift = {-8, -8},
         draw_background = true,
@@ -1173,7 +1173,7 @@ data:extend({
     type = "recipe",
     name = "bm-lightbulb",
     icon = "__biological-machines-industry__/graphics/lightbulb.png",
-    category = "crafting",
+    category = "electronics",
     subgroup = "intermediate-product",
     enabled = false,
     allow_productivity = true,

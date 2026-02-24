@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+Date: 24. 2. 2026
+  Changes:
+    - Lightbulbs also craftable in EM plant
+    - Steel mix melting recipe uses steel mix icon instead of iron ore
+  Bugfixes:
+    - Quality module tech is now a prereq for planetary discovery fulgora with complex science enabled (instead of EM science)
+    - Add locale for seawater filtration
+---------------------------------------------------------------------------------------------------
 Version: 1.1.0
 Date: 20. 2. 2026
   Features:
