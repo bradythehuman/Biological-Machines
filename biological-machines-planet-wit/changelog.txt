@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.7
+Date: 28. 2. 2026
+  Bugfixes:
+    - Without BM: Industry, carbon from coal/sulfuric acid recipe now unlocked with space platform to facilitate initial thruster fuel production above Nauvis
+  Changes:
+    - Both brick from shard recipes now availible with/without BM: Industry, non-simple recipe now uses calcite/water without BM: Industry
+    - Added calcite to glass dust filtration without BM: Industry for the brick from glass shard recipes
+    - Fluorine barrel default import location set to Aquilo
+---------------------------------------------------------------------------------------------------
 Version: 1.0.6
 Date: 24. 2. 2026
   Bugfixes:

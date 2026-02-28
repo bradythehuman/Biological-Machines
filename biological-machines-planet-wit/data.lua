@@ -30,6 +30,11 @@ end
 
 
 
+if not mods["biological-machines-industry"] then
+  dh.remove_recipe_unlock("tungsten-carbide", "carbon")
+  dh.add_recipe_unlock("space-platform", "carbon")
+end
+
 if not mods["biological-machines-industry"] or mods["crushing-industry"] then
   data.raw["assembling-machine"]["crusher"].surface_conditions = {{property = "gravity", max = 2.5}}
 end

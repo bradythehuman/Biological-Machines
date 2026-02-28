@@ -238,11 +238,57 @@ data:extend({
   --------------------------------------------------------GLASS
   {
     type = "recipe",
+    name = "bm-simple-brick-from-glass-shard",
+    --icon = "__biological-machines-planet-wit__/graphics/brick-from-glass-shard.png",
+    icons = {
+      {
+        icon = "__base__/graphics/icons/stone-brick.png",
+        --scale = 0.4,
+        shift = {0, -4}
+      },
+      {
+        --icon = "__space-age__/graphics/icons/calcite.png",
+        icon = "__space-age__/graphics/icons/ice.png",
+        scale = 0.25,
+        shift = {-8, 8}
+      },
+      {
+        icon = "__biological-machines-planet-wit__/graphics/glass-shard-icon-opaque.png",
+        scale = 0.25,
+        shift = {8, 8}
+      },
+    },
+    category = "crafting",
+    --subgroup = "bm-wit-processes",
+    --order = "c-c",
+    subgroup = "terrain",
+    order = "a[stone-brick]-a",
+    enabled = false,
+    allow_productivity = true,
+    allow_decomposition = false,
+    energy_required = 2,
+    ingredients = {
+      {type = "item", name = "ice", amount = 1},
+      {type = "item", name = "calcite", amount = 1},
+      {type = "item", name = "bm-glass-shard", amount = 2},
+    },
+    results = {{type = "item", name = "stone-brick", amount = 1}},
+  },
+  {
+    type = "recipe",
     name = "bm-brick-from-glass-shard",
     --icon = "__biological-machines-planet-wit__/graphics/brick-from-glass-shard.png",
     icons = {
       {
-        icon = "__base__/graphics/icons/stone-brick.png"
+        icon = "__base__/graphics/icons/stone-brick.png",
+        --scale = 0.4,
+        shift = {0, -4}
+      },
+      {
+        --icon = "__biological-machines-industry__/graphics/cement-mix.png",
+        icon = "__base__/graphics/icons/fluid/water.png",
+        scale = 0.25,
+        shift = {-8, 8}
       },
       {
         icon = "__biological-machines-planet-wit__/graphics/glass-shard-icon-opaque.png",
@@ -259,8 +305,12 @@ data:extend({
     allow_productivity = true,
     allow_decomposition = false,
     energy_required = 4,
-    ingredients = {{type = "item", name = "bm-glass-shard", amount = 4}},
-    results = {{type = "item", name = "stone-brick", amount = 2}}
+    ingredients = {
+      {type = "fluid", name = "water", amount = 10},
+      {type = "item", name = "calcite", amount = 1},
+      {type = "item", name = "bm-glass-shard", amount = 4},
+    },
+    results = {{type = "item", name = "stone-brick", amount = 2}},
   },
   {
     type = "recipe",
@@ -282,7 +332,10 @@ data:extend({
     allow_decomposition = false,
     energy_required = 10,
     ingredients = {{type = "fluid", name = "bm-glass-dust", amount = 400}},
-    results = {{type = "item", name = "bm-glass-shard", amount = 1}}
+    results = {
+      {type = "item", name = "calcite", amount = 1, probability = 0.5},
+      {type = "item", name = "bm-glass-shard", amount = 2, probability = 0.5},
+    },
   },
   {
     type = "recipe",
