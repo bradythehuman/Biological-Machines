@@ -1,6 +1,6 @@
 for _, s in pairs(BM_ADD_SLAG) do
   table.insert(data.raw["recipe"][s.name].results, {
-    type = "item", name = "bm-slag", amount = 1, probability = s.prob
+    type = "item", name = "bm-slag", amount = 1, independent_probability = s.prob
   })
 end
 

@@ -27,16 +27,18 @@ data.raw["recipe"]["bm-lime"].enabled = false
 data.raw["recipe"]["bm-glass-mix"].enabled = false
 data.raw["recipe"]["bm-glass-plate"].enabled = false
 
+--[[
 data:extend({
   {
     type = "recipe-category",
     name = "bm-crushing-or-hand"
   },
 })
+]]
 
-data.raw["recipe"]["bm-stone-crushing"].category = "bm-crushing-or-hand"
-table.insert(data.raw["assembling-machine"]["crusher"].crafting_categories, "bm-crushing-or-hand")
-table.insert(data.raw.character.character.crafting_categories, "bm-crushing-or-hand")
+data.raw["recipe"]["bm-stone-crushing"].categories = {"crushing", "hand-crafting"}
+--table.insert(data.raw["assembling-machine"]["crusher"].crafting_categories, "bm-crushing-or-hand")
+--table.insert(data.raw.character.character.crafting_categories, "bm-crushing-or-hand")
 
 
 --TECH

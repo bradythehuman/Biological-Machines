@@ -1,10 +1,17 @@
 {
   "name": "biological-machines-homeworld",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "title": "Biological Machines: Homeworld",
   "author": "bradythehuman",
-  "description": "Use a warp drive to travel back to the engineers home star. Land on a dyson sphere construction platform to exchange materials for credits. Spend the credits on different materials and power uplinks which can send the power of the dyson sphere to the engineers factories. Also includes a new ending.",
-  "factorio_version": "2.0",
-  "dependencies": ["biological-machines-cloning >= 1.0.0", "biological-machines-warp-drive >= 1.0.0"],
+  "description": "The Engineer is a clone sent to colonize a distant solar system. Use a warp drive to travel back to the Engineer's home star with construction materials. Land on a Dyson sphere construction station to exchange materials for credits which can be spent in markets on the station. Complete the new ending for a reward in credits.",
+  "factorio_version": "2.1",
+  "dependencies": [
+    "biological-machines-core >= 1.0.0",
+    "biological-machines-warp-drive >= 1.0.0",
+    "+ biological-machines-cloning >= 1.0.0",
+    "+ snouz_space_platform_hull >= 1.0.1",
+
+    "(?) AsteroidBelt >= 1.2.10"
+  ],
   "space_travel_required": true
 }

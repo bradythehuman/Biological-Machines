@@ -34,8 +34,9 @@ data:extend({
     fuel_category = "chemical",
     fuel_value = "100MJ",
 
-    spoil_ticks = 2 * minute,
+    spoil_ticks = 5 * minute,
   },
+  --[[
   {
     type = "item",
     name = "bm-suspended-clone",
@@ -110,6 +111,7 @@ data:extend({
       }
     }
   },
+  ]]
   {
     type = "fluid",
     name = "bm-suspension-fluid",

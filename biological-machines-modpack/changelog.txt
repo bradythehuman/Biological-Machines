@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+Date: 9. 9. 2026
+  Features:
+    - Updated to 2.1
+  Changes:
+    - Added new BM submods: addpack, alternative nutrients, scrapyard, reinforced wall (not shattered core)
+    - Added Moshine, Panglia, Asteroid belt, Crushing industry, Thruster upgrades
+    - Moved dependencies to submods
+      - Industry: Slipstacks
+      - Balack: Promethium belts, Larger lamps
+      - Wit: Repair turret, Shield projector, Reach equipment
+      - Tissue: ironclad mortar turret fork, shelter k2, handcannon
+    - Removed dependencies: AAI stacking, AAI signal, Buggis nuclear bots, Personal tesla defense, snouz substation
+---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 3. 2. 2026
   Changes:
@@ -8,3 +22,8 @@ Version: 1.0.1
 Date: 28. 1. 2026
   Changes:
     - Replaces thumbnail, replacing text plates with text
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 27. 1. 2026
+  Info:
+    - Initial release

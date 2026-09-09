@@ -31,7 +31,7 @@ dh.add_ingredient("metallurgic-science-pack", "fluid", "bm-molten-glass", 50)
 local em_sci_pack = data.raw["recipe"]["electromagnetic-science-pack"]
 em_sci_pack.ingredients = {
   {type = "item", name = "supercapacitor", amount = 3},
-  {type = "item", name = "quality-module", amount = 1},
+  --{type = "item", name = "quality-module", amount = 1},
   {type = "fluid", name = "electrolyte", amount = 25},
   {type = "fluid", name = "holmium-solution", amount = 25},
 }
@@ -40,4 +40,10 @@ em_sci_pack.results = {{
   type = "item", name = "electromagnetic-science-pack", amount = 2
 }}
 
-dh.add_prereq("planet-discovery-fulgora", "quality-module")
+if mods["quality"] then
+  dh.add_ingredient("electromagnetic-science-pack", "item", "quality-module", 1)
+  dh.add_prereq("planet-discovery-fulgora", "quality-module")
+else
+  dh.add_ingredient("electromagnetic-science-pack", "item", "speed-module", 1)
+  dh.add_prereq("planet-discovery-fulgora", "speed-module")
+end

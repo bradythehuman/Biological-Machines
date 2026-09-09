@@ -18,7 +18,49 @@ local add_battery = {
 }
 dh.add_ingredient_table(add_battery, "item", "battery")
 
-dh.add_ingredient("bm-warp-power-cell", "item", "bm-mixed-gas-power-cell", 5)
+
+
+-----------------------------------------------------ROBOTICS
+data.raw.recipe["electric-engine-unit"].categories = {"crafting-with-fluid", "bm-robotics"}
+data.raw.recipe["flying-robot-frame"].categories = {"crafting", "bm-robotics"}
+
+
+data.raw.recipe["roboport"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["active-provider-chest"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["passive-provider-chest"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["storage-chest"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["buffer-chest"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["requester-chest"].categories = {"crafting", "bm-robotics"}
+
+data.raw.recipe["construction-robot"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["logistic-robot"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["defender-capsule"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["distractor-capsule"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["destroyer-capsule"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["capture-robot-rocket"].categories = {"crafting", "bm-robotics"}
+
+data.raw.recipe["inserter"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["long-handed-inserter"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["fast-inserter"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["bulk-inserter"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["stack-inserter"].categories = {"crafting", "bm-robotics"}
+
+data.raw.recipe["assembling-machine-1"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["assembling-machine-2"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["assembling-machine-3"].categories = {"crafting", "bm-robotics"}
+
+data.raw.recipe["exoskeleton-equipment"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["personal-roboport-equipment"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["personal-roboport-mk2-equipment"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["power-armor"].categories = {"crafting", "bm-robotics"}
+data.raw.recipe["power-armor-mk2"].categories = {"crafting", "bm-robotics"}
+
+data.raw.recipe["laser-turret"].categories = {"bm-robotics"}
+data.raw.recipe["personal-laser-defense-equipment"].categories = {"bm-robotics"}
+data.raw.recipe["discharge-defense-equipment"].categories = {"bm-robotics"}
+data.raw.recipe["asteroid-collector"].categories = {"bm-robotics"}
+data.raw.recipe["spidertron"].categories = {"bm-robotics"}
+data.raw.recipe["mech-armor"].categories = {"bm-robotics"}
 
 
 
@@ -50,11 +92,11 @@ local craftable_on_wit = {
   "thruster-oxidizer", "advanced-thruster-oxidizer",
 }
 for i=1, #craftable_on_wit do
-  data.raw["recipe"][craftable_on_wit[i]].surface_conditions = {{property = "pressure", min = 0, max = 50}}
+  data.raw["recipe"][craftable_on_wit[i]].surface_conditions = {{property = "pressure", min = 0, max = 5}}
 end
 
 local space_science = data.raw["recipe"]["space-science-pack"]
-space_science.category = "bm-advanced-robotics"
+space_science.categories = {"bm-robotics"}
 space_science.energy_required = 30
 space_science.ingredients = {
   {type = "fluid", name = "thruster-oxidizer", amount = 100},
@@ -62,15 +104,38 @@ space_science.ingredients = {
   {type = "item", name = "electric-engine-unit", amount = 1}
 }
 space_science.results = {{type = "item", name = "space-science-pack", amount = 3}}
-space_science.surface_conditions = {{property = "pressure", min = 50, max = 50}}
+space_science.surface_conditions = {{property = "pressure", min = 5, max = 5}}
 
 data:extend({
+  {
+    type = "recipe",
+    name = "bm-wit-steam",
+    icon = "__base__/graphics/icons/fluid/steam.png",
+    categories = {"chemistry"},
+    subgroup = "bm-wit-processes",
+    order = "b",
+    auto_recycle = false,
+    enabled = false,
+    ingredients = {{type = "fluid", name = "water", amount = 6}},
+    energy_required = 60,
+    results = {{type = "fluid", name = "steam", amount = 60}},
+    allow_productivity = false,
+    allow_decomposition = false,
+    crafting_machine_tint =
+    {
+      primary = {r = 0.433, g = 0.773, b = 1.000, a = 1.000}, -- #6ec5ffff
+      secondary = {r = 0.591, g = 0.856, b = 1.000, a = 1.000}, -- #96daffff
+      tertiary = {r = 0.381, g = 0.428, b = 0.436, a = 0.502}, -- #616d6f80
+      quaternary = {r = 0.499, g = 0.797, b = 0.793, a = 0.733}, -- #7fcbcabb
+    },
+    surface_conditions = {{property = "pressure", min = 5, max = 5}},
+  },
   --[[
   {
     type = "recipe",
     name = "water-separation",
     icon = "__biological-machines-planet-wit__/graphics/water-separation.png",
-    category = "chemistry",
+    categories = {"chemistry"},
     subgroup = "fluid-recipes",
     order = "d[other-chemistry]-c[ice-melting]-a",
     auto_recycle = false,
@@ -90,7 +155,7 @@ data:extend({
       quaternary = {r = 0.499, g = 0.797, b = 0.793, a = 0.733},
     },
     show_amount_in_title = false,
-    surface_conditions = {{property = "pressure", max = 50}}
+    surface_conditions = {{property = "pressure", max = 5}}
   },
   ]]
 
@@ -101,15 +166,17 @@ data:extend({
     --icon = "__biological-machines-planet-wit__/graphics/plastic-from-thruster-fuel.png",
     icons = {
       {
-        icon = "__base__/graphics/icons/plastic-bar.png"
-      },
-      {
         icon = "__space-age__/graphics/icons/fluid/thruster-fuel.png",
         scale = 0.25,
-        shift = {8, -8}
+        shift = {6, -10},
+      },
+      {
+        icon = "__base__/graphics/icons/plastic-bar.png",
+        scale = 0.5,
+        draw_background = true,
       },
     },
-    category = "chemistry",
+    categories = {"chemistry"},
     subgroup = "bm-wit-processes",
     order = "b-a",
     auto_recycle = false,
@@ -135,15 +202,17 @@ data:extend({
     --icon = "__biological-machines-planet-wit__/graphics/solid-fuel-from-hydrogen.png",
     icons = {
       {
-        icon = "__base__/graphics/icons/solid-fuel.png"
+        icon = "__base__/graphics/icons/solid-fuel.png",
+        scale = 0.5,
       },
       {
         icon = "__space-age__/graphics/icons/fluid/thruster-fuel.png",
         scale = 0.25,
-        shift = {-10, -8}
+        shift = {-9, -8},
+        draw_background = true,
       },
     },
-    category = "chemistry",
+    categories = {"chemistry"},
     subgroup = "bm-wit-processes",
     order = "b-b",
     auto_recycle = false,
@@ -170,15 +239,17 @@ data:extend({
     --icon = "__biological-machines-planet-wit__/graphics/rocket-fuel-from-thruster-fuel.png",
     icons = {
       {
-        icon = "__base__/graphics/icons/rocket-fuel.png"
-      },
-      {
         icon = "__space-age__/graphics/icons/fluid/thruster-fuel.png",
         scale = 0.25,
-        shift = {-10, -8}
+        shift = {-8, -8},
+      },
+      {
+        icon = "__base__/graphics/icons/rocket-fuel.png",
+        scale = 0.5,
+        draw_background = true,
       },
     },
-    category = "chemistry",
+    categories = {"chemistry"},
     subgroup = "bm-wit-processes",
     order = "b-c",
     enabled = false,
@@ -198,22 +269,24 @@ data:extend({
     --icon = "__biological-machines-planet-wit__/graphics/lubricant-from-hydrogen.png",
     icons = {
       {
-        icon = "__base__/graphics/icons/fluid/lubricant.png",
-        scale = 0.4,
-        shift = {0, 4}
+        icon = "__base__/graphics/icons/solid-fuel.png",
+        scale = 0.25,
+        shift = {5, -7},
       },
       {
         icon = "__space-age__/graphics/icons/fluid/thruster-fuel.png",
         scale = 0.25,
-        shift = {-6, -8}
+        shift = {-5, -7},
+        draw_background = true,
       },
       {
-        icon = "__base__/graphics/icons/solid-fuel.png",
-        scale = 0.25,
-        shift = {6, -8}
+        icon = "__base__/graphics/icons/fluid/lubricant.png",
+        scale = 0.4,
+        shift = {0, 4},
+        draw_background = true,
       },
     },
-    category = "chemistry",
+    categories = {"chemistry"},
     subgroup = "bm-wit-processes",
     order = "b-d",
     auto_recycle = false,
@@ -244,21 +317,23 @@ data:extend({
       {
         icon = "__base__/graphics/icons/stone-brick.png",
         --scale = 0.4,
-        shift = {0, -4}
+        shift = {0, -4},
       },
       {
         --icon = "__space-age__/graphics/icons/calcite.png",
         icon = "__space-age__/graphics/icons/ice.png",
         scale = 0.25,
-        shift = {-8, 8}
+        shift = {-8, 8},
+        draw_background = true,
       },
       {
         icon = "__biological-machines-planet-wit__/graphics/glass-shard-icon-opaque.png",
         scale = 0.25,
-        shift = {8, 8}
+        shift = {8, 8},
+        draw_background = true,
       },
     },
-    category = "crafting",
+    categories = {"crafting"},
     --subgroup = "bm-wit-processes",
     --order = "c-c",
     subgroup = "terrain",
@@ -282,21 +357,23 @@ data:extend({
       {
         icon = "__base__/graphics/icons/stone-brick.png",
         --scale = 0.4,
-        shift = {0, -4}
+        shift = {0, -4},
       },
       {
         --icon = "__biological-machines-industry__/graphics/cement-mix.png",
         icon = "__base__/graphics/icons/fluid/water.png",
         scale = 0.25,
-        shift = {-8, 8}
+        shift = {-8, 8},
+        draw_background = true,
       },
       {
         icon = "__biological-machines-planet-wit__/graphics/glass-shard-icon-opaque.png",
         scale = 0.25,
-        shift = {8, 8}
+        shift = {8, 8},
+        draw_background = true,
       },
     },
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     --subgroup = "bm-wit-processes",
     --order = "c-d",
     subgroup = "terrain",
@@ -322,9 +399,10 @@ data:extend({
       {
         icon = "__biological-machines-planet-wit__/graphics/glass-shard-icon-opaque.png",
         scale = 0.35,
+        draw_background = true,
       },
     },
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     subgroup = "bm-wit-processes",
     order = "c-b",
     enabled = false,
@@ -333,15 +411,15 @@ data:extend({
     energy_required = 10,
     ingredients = {{type = "fluid", name = "bm-glass-dust", amount = 400}},
     results = {
-      {type = "item", name = "calcite", amount = 1, probability = 0.5},
-      {type = "item", name = "bm-glass-shard", amount = 2, probability = 0.5},
+      {type = "item", name = "calcite", amount = 1, independent_probability = 0.5},
+      {type = "item", name = "bm-glass-shard", amount = 2, independent_probability = 0.5},
     },
   },
   {
     type = "recipe",
     name = "bm-glass-plate-from-shard",
     icon = "__biological-machines-core__/graphics/glass-plate.png",
-    category = "smelting",
+    categories = {"smelting"},
     subgroup = "bm-wit-processes",
     order = "c-f",
     auto_recycle = false,
@@ -356,7 +434,7 @@ data:extend({
     type = "recipe",
     name = "bm-molten-glass-from-shard",
     icon = "__biological-machines-core__/graphics/molten-glass.png",
-    category = "metallurgy",
+    categories = {"metallurgy"},
     subgroup = "vulcanus-processes",
     order = "a[melting]-d[molten-glass]",
     auto_recycle = false,
@@ -379,10 +457,11 @@ data:extend({
       {
         icon = "__biological-machines-planet-wit__/graphics/glass-shard-icon.png",
         scale = 0.25,
-        shift = {8, 8}
+        shift = {8, 8},
+        draw_background = true,
       },
     },
-    category = "crafting",
+    categories = {"crafting"},
     subgroup = "terrain",
     order = "c[landfill]-a[dirt]-d",
     auto_recycle = false,
@@ -395,7 +474,7 @@ data:extend({
     type = "recipe",
     name = "bm-helium-power-cell",
     icon = "__biological-machines-planet-wit__/graphics/helium-power-cell.png",
-    category = "chemistry-or-cryogenics",
+    categories = {"chemistry", "cryogenics"},
     subgroup = "bm-wit-processes",
     order = "c-g",
     enabled = false,
@@ -412,7 +491,7 @@ data:extend({
     type = "recipe",
     name = "bm-mixed-gas-power-cell",
     icon = "__biological-machines-planet-wit__/graphics/mixed-gas-power-cell.png",
-    category = "cryogenics",
+    categories = {"cryogenics"},
     subgroup = "bm-wit-processes",
     order = "c-g",
     enabled = false,
@@ -420,7 +499,7 @@ data:extend({
     energy_required = 1,
     ingredients = {
       {type = "fluid", name = "fluorine", amount = 10},
-      {type = "fluid", name = "petroleum-gas", amount = 10},
+      {type = "fluid", name = "thruster-fuel", amount = 10},
       {type = "fluid", name = "bm-helium", amount = 10},
       {type = "item", name = "holmium-plate", amount = 2},
       {type = "item", name = "bm-glass-plate", amount = 2}
@@ -433,7 +512,7 @@ data:extend({
     type = "recipe",
     name = "bm-copper-sulfate-electrolysis",
     icon = "__biological-machines-planet-wit__/graphics/copper-sulfate-electrolysis.png",
-    category = "chemistry",
+    categories = {"chemistry"},
     subgroup = "bm-wit-processes",
     order = "a-b",
     auto_recycle = false,
@@ -456,7 +535,7 @@ data:extend({
     type = "recipe",
     name = "bm-copper-plate-from-dust",
     icon = "__base__/graphics/icons/copper-plate.png",
-    category = "smelting",
+    categories = {"smelting"},
     subgroup = "bm-wit-processes",
     order = "a-e",
     auto_recycle = false,
@@ -470,7 +549,7 @@ data:extend({
     type = "recipe",
     name = "bm-molten-copper-from-dust",
     icon = "__biological-machines-planet-wit__/graphics/molten-copper-from-dust.png",
-    category = "metallurgy",
+    categories = {"metallurgy"},
     subgroup = "bm-wit-processes",
     order = "a-f",
     auto_recycle = false,
@@ -491,10 +570,10 @@ data:extend({
     type = "recipe",
     name = "bm-empty-data-disk",
     energy_required = 6,
-    surface_conditions = {{property = "pressure", min = 0, max = 50}},
+    surface_conditions = {{property = "pressure", min = 0, max = 5}},
     enabled = false,
     allow_productivity = true,
-    category = "electromagnetics",
+    categories = {"electromagnetics"},
     ingredients = {
       {type = "fluid", name = "lubricant", amount = 10},
       {type = "item", name = "bm-glass-plate", amount = 2},
@@ -511,12 +590,13 @@ data:extend({
       {
         icon = "__biological-machines-k2-assets__/graphics/complete-data-disk.png",
         scale = 0.3,
-        shift = {-4, -4}
+        shift = {-4, -4},
       },
       {
         icon = "__biological-machines-k2-assets__/graphics/incomplete-data-disk.png",
         scale = 0.4,
-        shift = {3, 3}
+        shift = {3, 3},
+        draw_background = true,
       },
     },
     --icon = "__biological-machines-k2-assets__/graphics/incomplete-data-disk.png",
@@ -525,11 +605,11 @@ data:extend({
     energy_required = 4,
     enabled = false,
     allow_productivity = false,
-    category = "electromagnetics",
+    categories = {"electromagnetics"},
     ingredients = {{type = "item", name = "bm-empty-data-disk", amount = 1}},
     results = {
-      {type = "item", name = "bm-incomplete-data-disk", amount = 1, probability = 0.7425},
-      {type = "item", name = "bm-complete-data-disk", amount = 1, probability = 0.2475},
+      {type = "item", name = "bm-incomplete-data-disk", amount = 1, independent_probability = 0.7425},
+      {type = "item", name = "bm-complete-data-disk", amount = 1, independent_probability = 0.2475},
     },
   },
   {
@@ -539,12 +619,13 @@ data:extend({
       {
         icon = "__biological-machines-k2-assets__/graphics/incomplete-data-disk.png",
         scale = 0.3,
-        shift = {-4, -4}
+        shift = {-4, -4},
       },
       {
         icon = "__biological-machines-k2-assets__/graphics/complete-data-disk.png",
         scale = 0.4,
-        shift = {3, 3}
+        shift = {3, 3},
+        draw_background = true,
       },
     },
     --icon = "__biological-machines-k2-assets__/graphics/complete-data-disk.png",
@@ -553,11 +634,11 @@ data:extend({
     energy_required = 2,
     enabled = false,
     allow_productivity = false,
-    category = "electromagnetics",
+    categories = {"electromagnetics"},
     ingredients = {{type = "item", name = "bm-incomplete-data-disk", amount = 1}},
     results = {
-      {type = "item", name = "bm-incomplete-data-disk", amount = 1, probability = 0.225},
-      {type = "item", name = "bm-complete-data-disk", amount = 1, probability = 0.675},
+      {type = "item", name = "bm-incomplete-data-disk", amount = 1, independent_probability = 0.225},
+      {type = "item", name = "bm-complete-data-disk", amount = 1, independent_probability = 0.675},
     },
   },
   {
@@ -565,10 +646,10 @@ data:extend({
     name = "bm-interstellar-science-pack",
     icon = "__biological-machines-planet-wit__/graphics/interstellar-science-pack-icon.png",
     energy_required = 5,
-    surface_conditions = {{property = "pressure", min = 50, max = 50}},
+    surface_conditions = {{property = "pressure", min = 5, max = 5}},
     enabled = false,
     allow_productivity = true,
-    category = "bm-advanced-robotics",
+    categories = {"bm-robotics"},
     ingredients = {
       {type = "fluid", name = "thruster-oxidizer", amount = 100},
       {type = "item", name = "bm-mixed-gas-power-cell", amount = 5},
@@ -577,14 +658,14 @@ data:extend({
     },
     results = {
       {type = "item", name = "bm-interstellar-science-pack", amount = 1},
-      {type = "item", name = "bm-empty-data-disk", amount = 1, probability = 0.9, ignored_by_productivity = 1},
+      {type = "item", name = "bm-empty-data-disk", amount = 1, independent_probability = 0.9, ignored_by_productivity = 1},
     },
     main_product = "bm-interstellar-science-pack",
   },
   {
     type = "recipe",
     name = "bm-advanced-accumulator",
-    category = "electromagnetics",
+    categories = {"electromagnetics"},
     --subgroup = "bm-wit-processes",
     --order = "a-g-b",
     enabled = false,
@@ -599,4 +680,21 @@ data:extend({
     },
     results = {{type = "item", name = "bm-advanced-accumulator", amount = 1}}
   },
+  {
+    type = "recipe",
+    name = "bm-robotics-facility",
+    categories = {"bm-robotics", "advanced-crafting"},
+    enabled = false,
+    energy_required = 10,
+    ingredients = {
+      {type = "item", name = "bm-helium-power-cell", amount = 20},
+      {type = "item", name = "bulk-inserter", amount = 3},
+      {type = "item", name = "steel-plate", amount = 50},
+      {type = "item", name = "electric-engine-unit", amount = 10},
+      {type = "item", name = "processing-unit", amount = 20},
+      {type = "item", name = "concrete", amount = 20},
+    },
+    results = {{type = "item", name = "bm-robotics-facility", amount = 1}},
+    surface_conditions = {{property = "pressure", min = 5, max = 5}},
+  }
 })

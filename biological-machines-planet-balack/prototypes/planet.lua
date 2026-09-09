@@ -11,10 +11,6 @@ fulgora_map_gen.autoplace_settings.entity.settings["bm-promethium-ore"] = {}
 
 
 
-data.raw["space-connection"]["solar-system-edge-shattered-planet"].length = 1000000
-
-
-
 local balack_map_gen = {
   property_expression_names =
   {
@@ -117,15 +113,15 @@ data:extend({
     starmap_icon = "__biological-machines-planet-balack__/graphics/balack-starmap.png",
     starmap_icon_size = 3840,
     gravity_pull = 10,
-    distance = 41,
-    orientation = 0.29,
+    distance = 38,
+    orientation = 0.26,
     magnitude = 0.9,
     label_orientation = 0.35,
     order = "f[balack]",
     subgroup = "planets",
     map_gen_settings = balack_map_gen,
     pollutant_type = "pollution",
-    solar_power_in_space = 60,
+    solar_power_in_space = 10,
     platform_procession_set =
     {
       arrival = {"planet-to-platform-b"},
@@ -141,7 +137,7 @@ data:extend({
     {
       ["day-night-cycle"] = 60 * 60,
       ["magnetic-field"] = 25,
-      ["solar-power"] = 0,
+      ["solar-power"] = 0.1,
       pressure = 1500,
       gravity = 15,
     },
@@ -261,7 +257,22 @@ data:extend({
 
 
 
+data.raw.planet["bm-balack"].platform_surface_render_parameters = util.table.deepcopy(data.raw.planet["nauvis"].platform_surface_render_parameters)
+data.raw.planet["bm-balack"].platform_surface_render_parameters.platform_backdrop = util.table.deepcopy(data.raw.planet["fulgora"].platform_surface_render_parameters.platform_backdrop)
+
+local balack_backdrop = data.raw.planet["bm-balack"].platform_surface_render_parameters.platform_backdrop
+balack_backdrop.planet_surface.filename = "__biological-machines-planet-balack__/graphics/balack-ddark.png"
+balack_backdrop.global_cloud.filename = "__biological-machines-planet-balack__/graphics/balack-cloud-ddark.png"
+balack_backdrop.cloudiness = 1 --0.05
+balack_backdrop.cloud_panning_rate = 1 --0.1
+balack_backdrop.specular_intensity = 0
+balack_backdrop.atmosphere_color = {0.01, 0.01, 0.01, 0.1} --{0.07, 0.057, 0.075, 0.1}
+balack_backdrop.hero_clouds_are_emissive = false
+balack_backdrop.hero_clouds = nil
+balack_backdrop.hero_cloud_texture_1 = nil
+
 data:extend({
+  --[[
   {
     type = "space-connection",
     name = "bm-fulgora-to-balack",
@@ -272,6 +283,7 @@ data:extend({
     length = 100000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.aquilo_solar_system_edge)
   },
+  ]]
   {
     type = "space-connection",
     name = "bm-aquilo-to-balack",
@@ -279,7 +291,7 @@ data:extend({
     from = "aquilo",
     to = "bm-balack",
     order = "i-b",
-    length = 100000,
+    length = 40000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.aquilo_solar_system_edge)
   },
   {
@@ -289,7 +301,7 @@ data:extend({
     from = "bm-balack",
     to = "solar-system-edge",
     order = "i-c",
-    length = 100000,
+    length = 80000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.aquilo_solar_system_edge)
   },
 })

@@ -7,7 +7,7 @@ require("prototypes.slag") --delayed from data stage for muluna compat
 
 
 if settings.startup["bm-rocket-parts"].value then
-  require("prototypes.rocket-parts")
+  require("prototypes.rocket-parts-updates")
 end
 
 
@@ -48,6 +48,7 @@ end
 
 dh.recycle_to_ingredients("bm-steel-mix")
 dh.recycle_to_ingredients("bm-glass-mix")
+dh.recycle_to_ingredients("bm-cement-mix")
 
 dh.recycle_to_self("grenade")
 dh.recycle_to_self("bm-tar")

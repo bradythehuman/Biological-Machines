@@ -34,7 +34,7 @@ data:extend({
     circuit_connector = circuit_connector_definitions["electromagnetic-plant"],
     icon_draw_specification = {shift = {0, -0.55}},
     module_slots = 4,
-    allowed_effects = {"consumption", "speed"},
+    allowed_effects = {"consumption", "speed", "productivity"},
     graphics_set = {
       animation = {
         layers = {

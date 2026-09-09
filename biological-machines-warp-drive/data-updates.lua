@@ -2,6 +2,11 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 
+dh.mod_override_require("Moshine", "bm-moshine-override", "prototypes.warp-x-moshine-updates")
+
+
+
+--TECHNOLOGY
 --adds nuclear/interstellar sci pack if bm tissue/wit is installed
 local all_packs = util.table.deepcopy(data.raw.technology["research-productivity"].unit.ingredients)
 if mods["biological-machines-planet-wit"] then
@@ -9,6 +14,21 @@ if mods["biological-machines-planet-wit"] then
 end
 data.raw["technology"]["bm-warp-drive"].unit.ingredients = util.table.deepcopy(all_packs)
 data.raw["technology"]["bm-warp-power-cell-productivity"].unit.ingredients = util.table.deepcopy(all_packs)
+
+
+
+--RECYCLING
+local used_cell_recycling = data.raw.recipe["bm-warp-power-cell-used-recycling"]
+used_cell_recycling.name = "bm-warp-power-cell-used-recycling"
+used_cell_recycling.results = util.table.deepcopy(data.raw.recipe["bm-warp-power-cell-recycling"].results)
+
+for _, result in pairs(used_cell_recycling.results) do
+  if result.name == "uranium-235" then result.name = "uranium-238" end
+  if result.name == "bm-ai-control-unit-active" then result.name = "bm-ai-control-unit" end
+  if result.name == "bm-datacell-solved-warp-path" then result.name = "datacell-empty" end
+end
+
+data:extend({used_cell_recycling})
 
 
 

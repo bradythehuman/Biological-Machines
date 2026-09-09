@@ -195,7 +195,7 @@ local function recycle_to_ingredients(item_name)
         type = "item",
         name = ingredient.name,
         amount = ingredient.amount,
-        probability = 0.25
+        independent_probability = 0.25
       })
     end
   end
@@ -205,7 +205,7 @@ end
 --item name can be string or table of strings
 local function recycle_to_self(item_name)
   data.raw["recipe"][item_name .. "-recycling"].results =
-  {{type = "item", name = item_name, amount = 1, probability = 0.25}}
+  {{type = "item", name = item_name, amount = 1, independent_probability = 0.25}}
 end
 
 local function mod_override_setting(mod_name, setting_name)

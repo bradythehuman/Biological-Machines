@@ -46,14 +46,14 @@ local wit_map_gen = {
     },
     ["decorative"] = {
       settings = {
-        ["vulcanus-dune-decal"] = {},
+        ["bm-wit-dune-decal"] = {},
         --["vulcanus-sand-decal"] = {},
         --["calcite-stain"] = {},
         --["calcite-stain-small"] = {},
         --["sulfur-stain"] = {},
         --["sulfur-stain-small"] = {},
-        ["crater-small"] = {},
-        ["crater-large"] = {},
+        ["bm-wit-crater-small"] = {},
+        ["bm-wit-crater-large"] = {},
         ["bm-small-wit-rock"] = {},
         ["bm-medium-wit-rock"] = {},
         ["bm-tiny-wit-rock"] = {},
@@ -61,7 +61,7 @@ local wit_map_gen = {
         --["small-sulfur-rock"] = {},
         --["tiny-sulfur-rock"] = {},
         --["sulfur-rock-cluster"] = {},
-        ["waves-decal"] = {},
+        ["bm-wit-waves-decal"] = {},
         ["bm-glassberg-medium"] = {},
         ["bm-glassberg-small"] = {},
       }
@@ -77,13 +77,14 @@ local wit_map_gen = {
         ["bm-wit-crater-cliff"] = {},
         ["bm-glassberg-huge"] = {},
         ["bm-glassberg-big"] = {},
+        ["bm-crash-probe"] = {},
       }
     }
   }
 }
 
 
-
+--data:extend({
 PlanetsLib:extend({
   {
     type = "planet",
@@ -93,6 +94,12 @@ PlanetsLib:extend({
     starmap_icon = "__biological-machines-planet-wit__/graphics/wit-starmap.png",
     starmap_icon_size = 1482,
     gravity_pull = 0,
+    --[[
+    distance = 15,
+    orientation = 0.3,
+    subgroup = "planets",
+    --]]
+    ---[[
     orbit = {
 			parent = {
 				type = "planet",
@@ -102,8 +109,7 @@ PlanetsLib:extend({
 			orientation = 0.59,
 		},
 		subgroup = "satellites",
-    --distance = 15,
-    --orientation = 0.3,
+    --]]
     label_orientation = 0.51,
     magnitude = 0.5,
     draw_orbit = false,
@@ -125,8 +131,9 @@ PlanetsLib:extend({
       ["day-night-cycle"] = 14 * minute,
       ["magnetic-field"] = 98,
       ["solar-power"] = 300,
-      pressure = 50, --5
-      gravity = 2.5
+      pressure = 5, --50
+      gravity = 2.5,
+      ["robot-energy-usage"] = 5,
     },
     asteroid_spawn_influence = 1,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_vulcanus, 0.1),
@@ -175,9 +182,42 @@ PlanetsLib:extend({
         zoom_factor = 3,
         zoom_intensity = 0.6
       }
-    }
+    },
+    platform_surface_render_parameters = util.table.deepcopy(data.raw.planet["nauvis"].platform_surface_render_parameters)
   }
 })
+
+data.raw.planet["bm-wit"].platform_surface_render_parameters.platform_backdrop = {
+  planet_surface = {
+    filename = "__biological-machines-planet-wit__/graphics/wit-compressed-half.png",
+    --x = 2048,
+    --y = 1024,
+    width = 4096, --Double the size of vanilla surfaces, because Muluna needs to rely much more on surface detail for planet detail. There's no clouds nor atmosphere on Muluna.
+    height = 2024
+  },
+  planet_normal =
+    {
+      filename = "__biological-machines-planet-wit__/graphics/normal-map-high-intensity.png",
+      width = 4096,
+      height = 2024
+    },
+  surface_normal_intensity = 0.2,
+
+  --emission_scales_with_shadow = false,
+  --rotation_seconds = nauvis.rotation_seconds,
+  --planet_axis = nauvis.planet_axis,
+  --planet_axis_deviation_amplidude = nauvis.planet_axis_deviation_amplidtude,
+  atmosphere_thickness = 0.0,
+  atmosphere_color = {0, 0, 0, 0},
+  --specular_intensity = 1,
+  radius = 400,
+  light_radius = 8.9,
+  light_intensity_contrast = 0.3,
+  rotation_seconds = -660,
+  parallax_strength = {1.05, 1.05}, --Slightly higher parallax strength than Nauvis{0.95,0.95} creates a sense of reduced scale
+  light_direction = {-0.42, 0.23, 0.67},
+  position = {-480, 401},
+}
 
 
 

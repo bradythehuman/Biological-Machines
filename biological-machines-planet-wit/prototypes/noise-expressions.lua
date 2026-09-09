@@ -784,4 +784,35 @@ data:extend({
     name = "wit_crater_cliff",
     expression = "0.5 * (wit_rock_noise + 0.5 * aux - 0.5 * moisture) * (1 - wit_ashlands_biome) * place_every_n(21,21,0,0)"
   },
+
+  -------------------------------------------------CRASHED PROBE
+  {
+    type = "noise-expression",
+    name = "wit_starting_crash_probe",
+    --wit_ashlands_angle + 15 * wit_starting_direction
+    expression = "100 * starting_spot_at_angle{ angle = wit_ashlands_angle + 5 * wit_starting_direction,\z
+                                          distance = 120 * wit_starting_area_radius,\z
+                                          radius = 1,\z
+                                          x_distortion = 0,\z
+                                          y_distortion = 0}"
+  },
+  {
+    type = "noise-expression",
+    name = "wit_crash_probe_region",
+    -- -1 to 1: needs a positive region for resources & decoratives plus a subzero baseline and skirt for surrounding decoratives.
+    expression = "max(wit_starting_crash_probe, min(1 - wit_starting_circle,\z
+                      spot_noise{x = x,\z
+                                 y = y,\z
+                                 seed0 = map_seed,\z
+                                 seed1 = 777,\z
+                                 candidate_spot_count = 10,\z
+                                 suggested_minimum_candidate_point_spacing = 128,\z
+                                 density_expression = 1,\z
+                                 spot_quantity_expression = 1,\z
+                                 spot_radius_expression = 1,\z
+                                 hard_region_target_quantity = 1,\z
+                                 spot_favorability_expression = 1,\z
+                                 basement_value = -1,\z
+                                 maximum_spot_basement_radius = 128}))"
+  },
 })

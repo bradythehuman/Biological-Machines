@@ -1,3 +1,7 @@
+local dh = require("__biological-machines-core__.data-helper")
+
+
+
 --[[
 -add previous tier of armor to recipes for power armor mk1/mk2. add flying robot framges to mech armor recipe
 -greasy sludge (chemistry)-> crude  oil, water, spoilage
@@ -15,22 +19,6 @@
 
 
 
-data.raw["recipe"]["bm-warp-drive"].ingredients = {
-  {type = "item", name = "bm-warp-drive-part", amount = 20}
-}
---subgroup = "bm-balack-processes"
-
-local warp_cell = data.raw["recipe"]["bm-warp-power-cell"]
-warp_cell.category = "bm-bio-cube"
-warp_cell.subgroup = "bm-balack-processes"
-warp_cell.energy_required = 120
-warp_cell.ingredients = {
-  {type = "item", name = "bm-ai-control-unit-active", amount = 1},
-  {type = "item", name = "bm-radiation-sheilding", amount = 10},
-  {type = "item", name = "superconductor", amount = 5},
-  {type = "item", name = "lithium-plate", amount = 5},
-}
-
 data.raw.recipe["fish-breeding"].surface_conditions = {
   {property = "pressure", min = 1000, max = 1500}
 }
@@ -42,17 +30,19 @@ data:extend({
     name = "bm-balack-scrap-recycling",
     icons = {
       {
-        icon = "__quality__/graphics/icons/recycling.png"
+        icon = "__recycler__/graphics/icons/recycling.png"
       },
       {
         icon = "__biological-machines-planet-balack__/graphics/balack-scrap.png",
-        scale = 0.4
+        scale = 0.4,
+        draw_background = true,
       },
       {
-        icon = "__quality__/graphics/icons/recycling-top.png"
+        icon = "__recycler__/graphics/icons/recycling-top.png",
+        draw_background = true,
       }
     },
-    category = "recycling-or-hand-crafting",
+    categories = {"recycling", "hand-crafting"},
     subgroup = "bm-balack-processes",
     order = "a-a",
     enabled = false,
@@ -60,17 +50,17 @@ data:extend({
     energy_required = 0.2,
     ingredients = {{type = "item", name = "bm-balack-scrap", amount = 1}},
     results = {
-      {type = "item", name = "iron-gear-wheel", amount = 1, probability = 0.12, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "steel-plate", amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "engine-unit", amount = 1, probability = 0.06, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "copper-cable", amount = 1, probability = 0.03, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "processing-unit", amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "small-lamp", amount = 1, probability = 0.01, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "low-density-structure", amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "stone", amount = 1, probability = 0.01, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "refined-concrete", amount = 1, probability = 0.05, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "coal", amount = 1, probability = 0.1, show_details_in_recipe_tooltip = false},
-      {type = "item", name = "explosive-uranium-cannon-shell", amount = 1, probability = 0.1, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "iron-gear-wheel", amount = 1, shared_probability = {min = 0, max = 0.12}, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "steel-plate", amount = 1, shared_probability = {min = 0.12, max = 0.14}, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "engine-unit", amount = 1, shared_probability = {min = 0.14, max = 0.20}, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "copper-cable", amount = 1, shared_probability = {min = 0.20, max = 0.23}, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "processing-unit", amount = 1, shared_probability = {min = 0.23, max = 0.25}, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "small-lamp", amount = 1, shared_probability = {min = 0.25, max = 0.26}, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "low-density-structure", amount = 1, shared_probability = {min = 0.26, max = 0.28}, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "stone", amount = 1, shared_probability = {min = 0.28, max = 0.29}, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "refined-concrete", amount = 1, shared_probability = {min = 0.29, max = 0.34}, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "coal", amount = 1, shared_probability = {min = 0.34, max = 0.35}, show_details_in_recipe_tooltip = false},
+      {type = "item", name = "explosive-uranium-cannon-shell", amount = 1, shared_probability = {min = 0.35, max = 0.36}, show_details_in_recipe_tooltip = false},
     }
   },
   {
@@ -95,7 +85,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "chemistry",
+    categories = {"chemistry"},
     subgroup = "bm-balack-processes",
     order = "b",
     enabled = false,
@@ -113,7 +103,7 @@ data:extend({
     type = "recipe",
     name = "bm-bio-cube",
     icon = "__biological-machines-planet-balack__/graphics/bio_cube/pathogen-lab-icon.png",
-    category = "organic-or-hand-crafting",
+    categories = {"bm-bio-cube", "organic", "hand-crafting"},
     subgroup = "bm-balack-processes",
     enabled = false,
     allow_productivity = false,
@@ -130,7 +120,7 @@ data:extend({
     type = "recipe",
     name = "bm-radiation-sheilding",
     icon = "__biological-machines-k2-assets__/graphics/radiation-sheilding.png",
-    category = "bm-bio-cube",
+    categories = {"bm-bio-cube"},
     subgroup = "bm-balack-processes",
     enabled = false,
     allow_productivity = true,
@@ -150,7 +140,7 @@ data:extend({
     type = "recipe",
     name = "bm-ai-control-unit",
     icon = "__biological-machines-planet-balack__/graphics/ai-control-unit-dark.png",
-    category = "bm-bio-cube",
+    categories = {"bm-bio-cube"},
     subgroup = "bm-balack-processes",
     order = "d",
     enabled = false,
@@ -161,7 +151,7 @@ data:extend({
       {type = "item", name = "speed-module-3", amount = 1},
       {type = "item", name = "efficiency-module-3", amount = 1},
       {type = "item", name = "productivity-module-3", amount = 1},
-      {type = "item", name = "quality-module-3", amount = 1},
+      --{type = "item", name = "quality-module-3", amount = 1},
       {type = "item", name = "quantum-processor", amount = 5},
       {type = "item", name = "raw-fish", amount = 1},
     },
@@ -171,11 +161,12 @@ data:extend({
     type = "recipe",
     name = "bm-ai-control-unit-active",
     icon = "__biological-machines-planet-balack__/graphics/ai-control-unit-light.png",
-    category = "organic",
+    categories = {"organic"},
     subgroup = "bm-balack-processes",
     order = "d",
     enabled = false,
     allow_productivity = false,
+    allow_quality = false,
     maximum_productivity = 0,
     allow_decomposition = false,
     energy_required = 5,
@@ -185,34 +176,7 @@ data:extend({
     },
     results = {{type = "item", name = "bm-ai-control-unit-active", amount = 1}},
   },
-  {
-    type = "recipe",
-    name = "bm-warp-drive-part",
-    icons = {
-      {
-        icon = "__biological-machines-warp-drive__/graphics/quantum-stabilizer/quantum-stabilizer-icon.png",
-      },
-      {
-        icon = "__base__/graphics/icons/iron-gear-wheel.png",
-        scale = 0.25,
-        shift = {8, -8},
-      },
-    },
-    category = "bm-bio-cube",
-    subgroup = "bm-balack-processes",
-    enabled = false,
-    allow_productivity = false,
-    allow_decomposition = false,
-    energy_required = 120,
-    ingredients = {
-      {type = "item", name = "bm-ai-control-unit", amount = 2},
-      {type = "item", name = "bm-radiation-sheilding", amount = 25},
-      {type = "item", name = "beacon", amount = 1},
-      {type = "item", name = "supercapacitor", amount = 10},
-      {type = "item", name = "tungsten-plate", amount = 10},
-    },
-    results = {{type = "item", name = "bm-warp-drive-part", amount = 1}},
-  },
+
   {
     type = "recipe",
     name = "bm-tank-mk2",
@@ -249,7 +213,7 @@ data:extend({
     type = "recipe",
     name = "bm-bio-cube-ooze",
     icon = "__biological-machines-planet-balack__/graphics/bio-cube-ooze.png",
-    category = "bm-bio-cube",
+    categories = {"bm-bio-cube"},
     subgroup = "bm-balack-processes",
     enabled = false,
     allow_productivity = true,
@@ -277,7 +241,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "organic",
+    categories = {"organic"},
     subgroup = "bm-balack-processes",
     order = "c-c",
     enabled = false,
@@ -292,6 +256,35 @@ data:extend({
       {type = "item", name = "bm-bio-cube-ooze", amount = 10}
     },
     results = {{type = "item", name = "bm-radiation-sheilding", amount = 5}},
+  },
+  {
+    type = "recipe",
+    name = "bm-bioflux-from-ooze",
+    icons = {
+      {
+        icon = "__biological-machines-planet-balack__/graphics/bio-cube-ooze.png",
+        scale = 0.35,
+        shift = {-4, -4},
+      },
+      {
+        icon = "__space-age__/graphics/icons/bioflux.png",
+        scale = 0.35,
+        shift = {4, 4},
+        draw_background = true,
+      },
+    },
+    categories = {"organic"},
+    subgroup = "bm-balack-processes",
+    order = "c-c",
+    enabled = false,
+    allow_productivity = true,
+    allow_decomposition = false,
+    energy_required = 6,
+    ingredients = {
+      {type = "item", name = "solid-fuel", amount = 3},
+      {type = "item", name = "bm-bio-cube-ooze", amount = 6}
+    },
+    results = {{type = "item", name = "bioflux", amount = 4}},
   },
   {
     type = "recipe",

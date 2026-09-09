@@ -1,3 +1,15 @@
+--AQUILO SURFACE CONDITIONS ONLY AQUILO
+local aquilo_recipes = {"cryogenic-plant", "quantum-processor", "fusion-reactor", "fusion-generator"}
+for _, aquilo_recipe in pairs(aquilo_recipes) do
+  for _, surface_condition in pairs(data.raw.recipe[aquilo_recipe].surface_conditions) do
+    if surface_condition.property == "pressure" then
+      surface_condition.min = 300
+    end
+  end
+end
+
+
+
 data:extend({
   {
     type = "recipe",
@@ -32,7 +44,7 @@ data:extend({
         shift = {4, 8},
       },
     },
-    category = "bm-market",
+    categories = {"bm-market"},
     subgroup = "bm-homeworld",
     order = "b",
     --hidden = true,
@@ -44,7 +56,7 @@ data:extend({
   {
     type = "recipe",
     name = "bm-interstellar-energy-link",
-    category = "electromagnetics",
+    categories = {"electromagnetics"},
     enabled = false,
     energy_required = 30,
     ingredients = {
@@ -53,7 +65,7 @@ data:extend({
       {type = "item", name = "quantum-processor", amount = 100},
       {type = "item", name = "superconductor", amount = 400},
       {type = "item", name = "tungsten-plate", amount = 200},
-      {type = "item", name = "refined-concrete", amount = 100},
+      {type = "item", name = "electric-engine-unit", amount = 200},
     },
     results = {{type = "item", name = "bm-interstellar-energy-link", amount = 1}},
   },

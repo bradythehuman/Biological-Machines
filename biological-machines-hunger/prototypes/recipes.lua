@@ -3,7 +3,7 @@ data:extend({
     type = "recipe",
     name = "bm-berry-paste",
     icon = "__biological-machines-hunger__/graphics/berry-paste.png",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     subgroup = "bm-processed-food",
     order = "b",
     enabled = false,
@@ -38,7 +38,7 @@ data:extend({
     type = "recipe",
     name = "bm-nutrient-paste",
     icon = "__biological-machines-hunger__/graphics/nutrient-paste.png",
-    category = "organic-or-assembling",
+    categories = {"organic", "crafting-with-fluid"},
     enabled = false,
     allow_productivity = true,
     auto_recycle = false,
@@ -53,7 +53,7 @@ data:extend({
     type = "recipe",
     name = "bm-empty-can",
     icon = "__biological-machines-hunger__/graphics/empty-can.png",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     allow_productivity = true,
     energy_required = 0.2,
@@ -64,7 +64,7 @@ data:extend({
     type = "recipe",
     name = "bm-canned-fish",
     icon = "__biological-machines-hunger__/graphics/closed-can.png",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     enabled = false,
     allow_productivity = false,
     energy_required = 2,
@@ -79,14 +79,14 @@ data:extend({
     type = "recipe",
     name = "bm-nutrient-slurry",
     icon = "__biological-machines-hunger__/graphics/nutrient-slurry.png",
-    category = "organic",
+    categories = {"organic"},
     enabled = false,
     allow_productivity = false, --does biochamber 50% still apply? i want it to
     energy_required = 2,
     ingredients = {
       {type = "fluid", name = "steam", amount = 20},
       {type = "item", name = "plastic-bar", amount = 1},
-      {type = "item", name = "bioflux", amount = 1},
+      {type = "item", name = "bioflux", amount = 2},
       {type = "item", name = "nutrients", amount = 20}
     },
     results = {{type = "item", name = "bm-nutrient-slurry", amount = 2}}
@@ -95,7 +95,7 @@ data:extend({
     type = "recipe",
     name = "bm-fluroflux",
     icon = "__biological-machines-hunger__/graphics/fluroflux.png",
-    category = "organic",
+    categories = {"organic"},
     enabled = false,
     allow_productivity = true,
     energy_required = 1,
@@ -122,10 +122,11 @@ data:extend({
 			{
         icon = "__biological-machines-core__/graphics/nutrients-from-blank.png",
         --icon_size = 64,
+        draw_background = true,
       }
 		},
     --icon = "__biological-machines-hunger__/graphics/nutrients-from-fluroflux.png",
-    category = "organic",
+    categories = {"organic"},
     subgroup = "bm-nutrients",
     order = "c-i",
     enabled = false,
@@ -138,7 +139,7 @@ data:extend({
     type = "recipe",
     name = "bm-fortified-nutrient-slurry",
     icon = "__biological-machines-hunger__/graphics/fortified-nutrient-slurry.png",
-    category = "organic",
+    categories = {"organic"},
     enabled = false,
     allow_productivity = false,
     energy_required = 5,
@@ -146,7 +147,7 @@ data:extend({
       {type = "fluid", name = "steam", amount = 20},
       {type = "item", name = "plastic-bar", amount = 1},
       {type = "item", name = "bm-fluroflux", amount = 1},
-      {type = "item", name = "nutrients", amount = 20}
+      {type = "item", name = "nutrients", amount = 10}
     },
     results = {{type = "item", name = "bm-fortified-nutrient-slurry", amount = 2}}
   },
@@ -154,14 +155,15 @@ data:extend({
     type = "recipe",
     name = "bm-medkit",
     icon = "__biological-machines-k2-assets__/graphics/medkit.png",
-    category = "crafting",
+    categories = {"crafting-with-fluid"},
     enabled = false,
     allow_productivity = false,
     energy_required = 2,
     ingredients = {
       {type = "item", name = "plastic-bar", amount = 1},
       {type = "item", name = "iron-bacteria", amount = 5},
-      {type = "item", name = "jelly", amount = 5}
+      {type = "item", name = "jelly", amount = 5},
+      {type = "fluid", name = "steam", amount = 10},
     },
     results = {{type = "item", name = "bm-medkit", amount = 4}}
   },
@@ -169,14 +171,15 @@ data:extend({
     type = "recipe",
     name = "bm-stims",
     icon = "__biological-machines-k2-assets__/graphics/stims.png",
-    category = "crafting",
+    categories = {"crafting-with-fluid"},
     enabled = false,
     allow_productivity = false,
     energy_required = 2,
     ingredients = {
       {type = "item", name = "plastic-bar", amount = 1},
       {type = "item", name = "bm-stingfrond", amount = 1},
-      {type = "item", name = "jelly", amount = 5}
+      {type = "item", name = "jelly", amount = 5},
+      {type = "fluid", name = "steam", amount = 10},
     },
     results = {{type = "item", name = "bm-stims", amount = 4}},
   },
@@ -186,20 +189,20 @@ data:extend({
     icons = {
       {
         icon = "__base__/graphics/icons/fluid/barreling/empty-barrel.png",
-        icon_size = defines.default_icon_size
+        icon_size = defines.default_icon_size,
       },
       {
         icon = "__base__/graphics/icons/fluid/barreling/barrel-side-mask.png",
         icon_size = defines.default_icon_size,
-        tint = util.get_color_with_alpha({0.61, 0.11, 0.54}, 0.75, true)
+        tint = util.get_color_with_alpha({0.61, 0.11, 0.54}, 0.75, true),
       },
       {
         icon = "__base__/graphics/icons/fluid/barreling/barrel-hoop-top-mask.png",
         icon_size = defines.default_icon_size,
-        tint = util.get_color_with_alpha({0.94, 0.26, 0.91}, 0.75, true)
+        tint = util.get_color_with_alpha({0.94, 0.26, 0.91}, 0.75, true),
       }
     },
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     enabled = false,
     allow_productivity = false,
     energy_required = 5,
@@ -215,7 +218,7 @@ data:extend({
     name = "bm-biological-recycler",
     icon = "__biological-machines-hunger__/graphics/biological-recycler.png",
     icon_size = 128,
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     allow_productivity = false,
     energy_required = 10,
@@ -232,7 +235,7 @@ data:extend({
     name = "bm-artificial-organs",
     icon = "__biological-machines-core__/graphics/artificial-organs.png",
     icon_size = 256,
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     allow_productivity = false,
     energy_required = 60,

@@ -32,22 +32,29 @@ if settings.startup["bm-early-heating-tower"].value then
   require("prototypes.early-heating-tower")
 end
 
+if mods["quality"] then
+  dh.add_ingredient("quality-module", "item", "steel-plate", 1)
+  dh.add_ingredient("quality-module", "item", "bm-lightbulb", 3)
+  dh.add_ingredient("mech-armor", "item", "quality-module-2", 25)
+  dh.add_prereq("mech-armor", "quality-module-2")
+end
 
 
---table which is used byslag.lua in the data-updates stage
+
+--table which is used by slag.lua in the data-updates stage
 BM_ADD_SLAG = {
   {name = "iron-plate", prob = 0.01},
   {name = "copper-plate", prob = 0.01},
-  {name = "molten-iron", prob = 0.5},
-  {name = "molten-copper", prob = 0.5},
+  {name = "iron-ore-melting", prob = 0.5},
+  {name = "copper-ore-melting", prob = 0.5},
   {name = "tungsten-plate", prob = 0.05},
 }
 
 
 
 if mods["crushing-industry"] then
-  data.raw.recipe["bm-stone-crushing"].category = "basic-crushing"
-  data.raw.recipe["bm-slag-crushing"].category = "basic-crushing"
+  data.raw.recipe["bm-stone-crushing"].categories = {"basic-crushing"}
+  data.raw.recipe["bm-slag-crushing"].categories = {"basic-crushing"}
 
   if settings.startup["bm-crushing-industry-override"].value then
     require("prototypes.industry-x-crushing-industry")
@@ -82,6 +89,12 @@ dh.mod_override_require("shield-projector", "bm-shield-projector-override", "pro
 dh.mod_override_require("pollution-detector", "bm-pollution-detector-override", "prototypes.industry-x-pollution-detector")
 
 dh.mod_override_require("big-wooden-pole", "bm-big-wooden-pole-override", "prototypes.industry-x-big-wooden-pole")
+
+--dh.mod_override_require("Rocs-Improved-Platform-Drag", "bm-simpler-platform-drag-override", "prototypes.industry-x-simpler-platform-drag")
+
+dh.mod_override_require("Moshine", "bm-moshine-override", "prototypes.industry-x-moshine")
+
+dh.mod_override_require("panglia_planet", "bm-panglia-override", "prototypes.industry-x-panglia")
 
 
 

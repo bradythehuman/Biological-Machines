@@ -3,10 +3,10 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 --RECIPES
-local bot_category = data.raw["recipe"]["logistic-robot"].category
+local bot_categories = data.raw["recipe"]["logistic-robot"].categories
 
 local nuc_logistic_recipe = data.raw["recipe"]["logistic-robot-nuclear"]
-nuc_logistic_recipe.category = bot_category
+nuc_logistic_recipe.categories = bot_categories
 nuc_logistic_recipe.ingredients = {
   {type = "item", name = "flying-robot-frame", amount = 1},
   {type = "item", name = "quantum-processor", amount = 2},
@@ -15,7 +15,7 @@ nuc_logistic_recipe.ingredients = {
 }
 
 local nuc_construction_recipe = data.raw["recipe"]["construction-robot-nuclear"]
-nuc_construction_recipe.category = bot_category
+nuc_construction_recipe.categories = bot_categories
 nuc_construction_recipe.ingredients = {
   {type = "item", name = "flying-robot-frame", amount = 1},
   {type = "item", name = "quantum-processor", amount = 1},

@@ -140,7 +140,7 @@ data:extend({
     weight = 1 / 300 * tons,
     default_import_location = "gleba",
 
-    spoil_ticks = 4 * hour,
+    spoil_ticks = 6 * hour,
     spoil_result = "spoilage"
   },
   {
@@ -159,7 +159,7 @@ data:extend({
     fuel_category = "food",
     fuel_value = "15MJ",
 
-    spoil_ticks = 1 * hour,
+    spoil_ticks = 3 * hour,
     spoil_result = "spoilage"
   },
   {
@@ -175,7 +175,7 @@ data:extend({
     weight = 1 / 300 * tons,
     default_import_location = "gleba",
 
-    spoil_ticks = 4 * hour,
+    spoil_ticks = 6 * hour,
     spoil_result = "spoilage"
   },
   {
@@ -191,7 +191,7 @@ data:extend({
     weight = 5 * kg,
     default_import_location = "gleba",
 
-    spoil_ticks = 4 * hour,
+    --spoil_ticks = 4 * hour,
 
     capsule_action = item_effects.yumako_regen
   },
@@ -208,7 +208,7 @@ data:extend({
     weight = 5 * kg,
     default_import_location = "gleba",
 
-    spoil_ticks = 4 * hour,
+    --spoil_ticks = 4 * hour,
 
     capsule_action = item_effects.jellynut_speed
   },

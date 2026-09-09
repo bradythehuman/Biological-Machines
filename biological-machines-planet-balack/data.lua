@@ -9,28 +9,30 @@ require("prototypes.resources")
 require("prototypes.technologies")
 require("prototypes.tiles")
 
-require("prototypes.k2-wind-turbine")
+--require("prototypes.k2-wind-turbine")
 require("prototypes.mech-armor-mk2-animations")
-
-
-
-if settings.startup["bm-shattered-core"].value then
-  require("prototypes.shattered-core")
-end
-
-
 
 local dh = require("__biological-machines-core__.data-helper")
 
 
 
+if mods["biological-machines-planet-balack"]
+and mods["biological-machines-warp-drive"] then
+  require("prototypes.balack-x-warp-drive")
+end
+
+if mods["quality"] then
+  dh.add_ingredient("bm-ai-control-unit", "item", "quality-module-3", 1)
+  dh.add_prereq("bm-ai-control-unit", "quality-module-3")
+end
+
 if mods["AsteroidBelt"] then
   require("prototypes.balack-x-asteroid-belt")
 end
 
-
-
 dh.mod_override_require("BuggisNuclearBots", "bm-nuclear-bots-override", "prototypes.balack-x-nuclear-bots")
+
+dh.mod_override_require("Moshine", "bm-moshine-override", "prototypes.balack-x-moshine")
 
 if settings.startup["bm-armored-biters-override"].value then
   require("prototypes.armored-biters-override")
@@ -87,15 +89,6 @@ data:extend({
     order = "f-z-d",
     category = "terrain",
     can_be_disabled = false,
-  },
-  {
-    type = "autoplace-control",
-    name = "bm_promethium_ore",
-    localised_name = {"", "[entity=bm-promethium-ore] ", {"entity-name.bm-promethium-ore"}},
-    richness = true,
-    --order = "d-a",
-    order = "f-a",
-    category = "resource"
   },
 
   --COLLISION

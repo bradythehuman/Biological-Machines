@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 9. 9. 2026
+  Features:
+    - Updated to 2.1
+  Changes:
+    - Increased spoil times for fluroflux, nutrient slurry and fortified nutrient slurry
+    - Medkit and stims no longer spoil
+    - Medkit unlocked with jellynut
+    - Food ranking resets when food list changes instead of getting messed up
+---------------------------------------------------------------------------------------------------
 Version: 1.0.5
 Date: 20. 2. 2026
   Changes:
@@ -28,3 +38,8 @@ Version: 1.0.1
 Date: 28. 1. 2026
   Changes:
     - Replaces thumbnail, replacing text plates with text
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 27. 1. 2026
+  Info:
+    - Initial release

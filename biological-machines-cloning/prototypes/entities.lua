@@ -8,7 +8,7 @@ local hit_effects = require("__base__.prototypes.entity.hit-effects")
 
 local shared_tank_data = {
   --surface_conditions = {{property = "gravity", min = 1}},
-  flags = {"placeable-neutral","placeable-player", "player-creation"},
+  --flags = {"placeable-neutral","placeable-player", "player-creation"},
   minable = {mining_time = 0.1, result = "bm-suspension-tank"},
   max_health = 300,
   icon_draw_specification = {shift = {0, 0}},
@@ -32,11 +32,10 @@ local shared_tank_data = {
       percent = 70
     }
   },
-  fluid_boxes =
-  {
+  fluid_boxes = {
     {
       production_type = "input",
-      pipe_picture = assembler3pipepictures(),
+      pipe_picture = require("__base__.prototypes.entity.assembler-pictures").assembler3pipepictures,
       pipe_covers = pipecoverspictures(),
       volume = 1000,
       pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {0, -1} }},
@@ -44,7 +43,7 @@ local shared_tank_data = {
     },
     {
       production_type = "output",
-      pipe_picture = assembler3pipepictures(),
+      pipe_picture = require("__base__.prototypes.entity.assembler-pictures").assembler3pipepictures,
       pipe_covers = pipecoverspictures(),
       volume = 1000,
       pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {0, 1} }},
@@ -202,11 +201,8 @@ data:extend({
   make_tank_entity({
     type = "assembling-machine",
     name = "bm-suspension-tank",
+    flags = {"placeable-neutral","placeable-player", "player-creation"},
     icon = "__biological-machines-cloning__/graphics/suspension-tank/cloning-vat-icon.png",
-    localised_description = {
-      "", {"entity-description.bm-suspension-tank"}, " ",
-      {"entity-description.bm-suspension-tank-warning"}
-    },
     crafting_categories = {"bm-suspension-tank"},
     corpse = "biochamber-remnants",
     dying_explosion = "biochamber-explosion",
@@ -214,6 +210,7 @@ data:extend({
   make_tank_entity({
     type = "assembling-machine",
     name = "bm-suspension-tank-filled",
+    flags = {"placeable-neutral","placeable-player", "player-creation", "no-logistic-connection"},
     icons = {
       {
         icon = "__biological-machines-cloning__/graphics/suspension-tank/cloning-vat-icon.png",
@@ -223,10 +220,6 @@ data:extend({
         scale = 0.30,
         shift = {-7, 7},
       }
-    },
-    localised_description = {
-      "", {"entity-description.bm-suspension-tank-filled"}, " ",
-      {"entity-description.bm-suspension-tank-warning"}
     },
     crafting_categories = {"bm-suspension-tank-filled"},
     fixed_recipe = "bm-clone-life-support",
@@ -240,6 +233,7 @@ data:extend({
         effect_id = "bm-suspended-clone-died"
       }
     },
+    --[[
     crafting_speed_quality_multiplier = {
       ["normal"] = 1,
       ["uncommon"] = 0.8,
@@ -247,19 +241,17 @@ data:extend({
       ["epic"] = 0.55,
       ["legendary"] = 0.4
     },
-    enable_logistic_control_behavior = false,
+    ]]
+    --enable_logistic_control_behavior = false,
     --placeable_by = {item = "bm-suspension-tank", count = 1},
     create_ghost_on_death = false,
-    --hidden = true,
+    hidden = true,
   }),
   make_tank_entity({
     type = "assembling-machine",
     name = "bm-suspension-tank-prepared",
+    flags = {"placeable-neutral","placeable-player", "player-creation", "no-logistic-connection"},
     icon = "__biological-machines-cloning__/graphics/suspension-tank/cloning-vat-icon.png",
-    localised_description = {
-      "", {"entity-description.bm-suspension-tank-prepared"}, " ",
-      {"entity-description.bm-suspension-tank-warning"}
-    },
     crafting_categories = {"bm-suspension-tank-prepared"},
     fixed_recipe = "bm-prepared-tank-maintenance",
     production_health_effect = {
@@ -272,11 +264,12 @@ data:extend({
         effect_id = "bm-prepared-tank-died"
       }
     },
-    enable_logistic_control_behavior = false,
+    --enable_logistic_control_behavior = false,
     --placeable_by = {item = "bm-suspension-tank", count = 1},
     create_ghost_on_death = false,
     hidden = true,
   }),
+  --[[
   {
     type = "projectile",
     name = "bm-clone-suspended",
@@ -307,4 +300,5 @@ data:extend({
       }
     }
   },
+  ]]
 })

@@ -27,13 +27,6 @@ table.insert(data.raw.technology["scrap-recycling-productivity"].effects, {
 
 
 
-data.raw.technology["bm-warp-drive"].prerequisites = {"bm-activated-ai-control-unit"}
-table.insert(data.raw.technology["bm-warp-drive"].effects,
-  {type = "unlock-recipe", recipe = "bm-warp-drive-part"}
-)
-
-
-
 data:extend({
   {
     type = "technology",
@@ -84,7 +77,7 @@ data:extend({
       {type = "unlock-recipe", recipe = "bm-oil-sludge-seperation"},
       {type = "unlock-recipe", recipe = "bm-bio-cube"},
       {type = "unlock-recipe", recipe = "bm-radiation-sheilding"},
-      {type = "unlock-recipe", recipe = "bm-ai-control-unit"},
+      --{type = "unlock-recipe", recipe = "bm-ai-control-unit"},
     },
     prerequisites = {"promethium-science-pack", "automation-3"},
     unit = {
@@ -108,14 +101,43 @@ data:extend({
   },
   {
     type = "technology",
-    name = "bm-activated-ai-control-unit",
+    name = "bm-ai-control-unit",
     icon = "__biological-machines-planet-balack__/graphics/ai-control-unit-tech.png",
+    icon_size = 256,
+    essential = true,
+    effects = {
+      {type = "unlock-recipe", recipe = "bm-ai-control-unit"},
+    },
+    prerequisites = {"bm-planet-discovery-balack", "speed-module-3", "efficiency-module-3", "productivity-module-3", --[["quality-module-3"]]},
+    unit = {
+      count = 1000,
+      ingredients = {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"military-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"utility-science-pack", 1},
+        {"space-science-pack", 1},
+        {"metallurgic-science-pack", 1},
+        {"electromagnetic-science-pack", 1},
+        {"agricultural-science-pack", 1},
+        {"cryogenic-science-pack", 1},
+        {"promethium-science-pack", 1}
+      },
+      time = 120
+    }
+  },
+  {
+    type = "technology",
+    name = "bm-activated-ai-control-unit",
+    icon = "__biological-machines-planet-balack__/graphics/ai-control-unit-activated-tech.png",
     icon_size = 256,
     essential = true,
     effects = {
       {type = "unlock-recipe", recipe = "bm-ai-control-unit-active"},
     },
-    prerequisites = {"bm-planet-discovery-balack"},
+    prerequisites = {"bm-ai-control-unit"},
     unit = {
       count = 2500,
       ingredients = {
@@ -154,7 +176,7 @@ data:extend({
     effects = {
       {type = "unlock-recipe", recipe = "bm-tank-mk2"},
     },
-    prerequisites = {"bm-planet-discovery-balack", "tank", "fusion-reactor-equipment", "railgun"},
+    prerequisites = {"bm-ai-control-unit", "tank", "fusion-reactor-equipment", "railgun"},
     unit = {
       count = 5000,
       ingredients = {
@@ -193,7 +215,7 @@ data:extend({
     effects = {
       {type = "unlock-recipe", recipe = "bm-mech-armor-mk2"},
     },
-    prerequisites = {"bm-planet-discovery-balack", "mech-armor"},
+    prerequisites = {"bm-ai-control-unit", "mech-armor"},
     unit = {
       count = 10000,
       ingredients = {
@@ -221,6 +243,7 @@ data:extend({
     effects = {
       {type = "unlock-recipe", recipe = "bm-bio-cube-ooze"},
       {type = "unlock-recipe", recipe = "bm-radiation-sheilding-from-ooze"},
+      {type = "unlock-recipe", recipe = "bm-bioflux-from-ooze"},
     },
     prerequisites = {"bm-planet-discovery-balack"},
     unit = {

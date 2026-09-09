@@ -2,7 +2,7 @@ local item_sounds = require("__base__.prototypes.item_sounds")
 
 
 
-data.raw["tool"]["space-science-pack"].default_import_location = "bm-wit"
+data.raw["item"]["space-science-pack"].default_import_location = "bm-wit"
 
 data.raw["fluid"]["fluorine"].auto_barrel = true
 
@@ -118,7 +118,7 @@ data:extend({
     spoil_result = "bm-empty-data-disk",
   },
   {
-    type = "tool",
+    type = "item",
     name = "bm-interstellar-science-pack",
     localised_description = {"item-description.science-pack"},
     icon = "__biological-machines-planet-wit__/graphics/interstellar-science-pack-icon.png",
@@ -150,6 +150,18 @@ data:extend({
     place_result = "bm-advanced-accumulator",
     stack_size = 5,
     weight = 200 * kg,
+  },
+  {
+    type = "item",
+    name = "bm-robotics-facility",
+    icon = "__biological-machines-planet-wit__/graphics/mfr/mfr-icon.png",
+    icon_size = 64,
+    subgroup = "production-machine",
+    order = "f",
+    place_result = "bm-robotics-facility",
+    stack_size = 10,
+    default_import_location = "bm-wit",
+  	weight = 200 * kg,
   },
   --[[
   {

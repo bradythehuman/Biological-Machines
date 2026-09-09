@@ -1,10 +1,4 @@
 --MODULE UPDATES
-if mods["biological-machines-hunger"]
-or mods["biological-machines-industry"]
-or settings.startup["bm-alternative-nutrients-standalone"].value then
-  require("prototypes.alternative-nutrients-updates")
-end
-
 if mods["biological-machines-industry"]
 or mods["biological-machines-planet-wit"] then
   require("prototypes.offshore-dump-updates")
@@ -44,13 +38,13 @@ and mods["biological-machines-hunger"] then
 end
 
 if mods["biological-machines-planet-balack"]
-and mods["biological-machines-radioactive-tissue"] then
-  require("prototypes.balack-x-tissue-updates")
+and mods["biological-machines-planet-wit"] then
+  require("prototypes.balack-x-wit-updates")
 end
 
 if mods["biological-machines-planet-balack"]
-and mods["biological-machines-planet-wit"] then
-  require("prototypes.balack-x-wit-updates")
+and mods["biological-machines-radioactive-tissue"] then
+  require("prototypes.balack-x-tissue-updates")
 end
 
 if mods["biological-machines-planet-balack"]
@@ -69,5 +63,15 @@ and mods["biological-machines-homeworld"] then
 end
 
 if mods["bioprocessing-tab"] then
-  require("prototypes.bm-x-bio-processing-tab")
+  require("prototypes.bm-x-bio-processing-tab-updates")
+end
+
+if mods["biological-machines-hunger"]
+and mods["biological-machines-cloning"] then
+  require("prototypes.cloning-x-homeworld-updates")
+end
+
+if mods["biological-machines-homeworld"]
+and mods["biological-machines-radioactive-tissue"] then
+  require("prototypes.homeworld-x-tissue-updates")
 end

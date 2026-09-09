@@ -3,20 +3,8 @@ if mods["biological-machines-hunger"]
 or mods["biological-machines-industry"]
 or mods["biological-machines-cloning"]
 or mods["biological-machines-radioactive-tissue"]
-or settings.startup["bm-alternative-nutrients-standalone"].value then
+or mods["biological-machines-alternative-nutrients"] then
   require("prototypes.cultivation")
-end
-
-if mods["biological-machines-hunger"]
-or mods["biological-machines-industry"]
-or settings.startup["bm-alternative-nutrients-standalone"].value then
-  require("prototypes.alternative-nutrients")
-end
-
-if mods["biological-machines-industry"]
-or mods["biological-machines-planet-wit"]
-or settings.startup["bm-scrapyard-standalone"].value then
-  require("prototypes.scrapyard")
 end
 
 if mods["biological-machines-industry"]
@@ -29,20 +17,19 @@ or mods["biological-machines-planet-wit"]
 or mods["biological-machines-planet-balack"] then
   require("prototypes.offshore-dump")
 end
-if mods["biological-machines-radioactive-tissue"]
-or mods["biological-machines-planet-balack"]
-or settings.startup["bm-reinforced-wall-standalone"].value then
-  require("prototypes.reinforced-wall")
-end
 
 if mods["biological-machines-homeworld"]
-or (mods["biological-machines-planet-balack"]
-and settings.startup["bm-shattered-core"].value) then
+or mods["biological-machines-shattered-core"] then
   require("prototypes.empty-space")
 end
 
+if mods["biological-machines-planet-balack"]
+or mods["biological-machines-shattered-core"] then
+  require("prototypes.promethium-ore")
+end
+
 if mods["biological-machines-modpack"]
-or settings.startup["bm-bot-start-standalone"].value then
+or settings.startup["bm-bot-start"].value then
   require("prototypes.bot-start")
 end
 

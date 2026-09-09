@@ -1,8 +1,12 @@
 --BASE SOLAR/EQUIPMENT POWER PRODUCTION
 --data.raw["solar-panel"]["solar-panel"].production = "50kW" --base 60kW
 --data.raw["solar-panel-equipment"]["solar-panel-equipment"].power = "25kW" --base 30kW
-data.raw["generator-equipment"]["fission-reactor-equipment"].power = "1.5MW" --base 750kW
-data.raw["generator-equipment"]["fusion-reactor-equipment"].power = "5MW" --base 2.5MW
+--data.raw["generator-equipment"]["fission-reactor-equipment"].power = "1.5MW" --base 750kW
+--data.raw["generator-equipment"]["fusion-reactor-equipment"].power = "5MW" --base 2.5MW
+
+
+
+data.raw["item"]["solar-panel"].next_upgrade = "bm-advanced-solar-panel"
 
 
 
@@ -12,6 +16,7 @@ adv_panel_item.name = "bm-advanced-solar-panel"
 adv_panel_item.icon = "__biological-machines-planet-wit__/graphics/advanced-solar-panel-icon.png"
 adv_panel_item.order = "d[solar-panel]-a[solar-panel]-a"
 adv_panel_item.place_result = "bm-advanced-solar-panel"
+adv_panel_item.weight = 40 * kg
 
 local adv_panel_recipe = util.table.deepcopy(data.raw["recipe"]["solar-panel"])
 adv_panel_recipe.name = "bm-advanced-solar-panel"
@@ -20,7 +25,7 @@ adv_panel_recipe.ingredients = {
   {type = "item", name = "solar-panel", amount = 1},
   {type = "item", name = "advanced-circuit", amount = 5},
   {type = "item", name = "bm-helium-power-cell", amount = 20},
-  {type = "item", name = "superconductor", amount = 10}
+  {type = "item", name = "superconductor", amount = 5}
 }
 adv_panel_recipe.results = {
   {type = "item", name = "bm-advanced-solar-panel", amount = 1}
@@ -50,7 +55,7 @@ adv_panel_entity.icon = "__biological-machines-planet-wit__/graphics/advanced-so
 adv_panel_entity.minable = {mining_time = 0.1, result = "bm-advanced-solar-panel"}
 adv_panel_entity.corpse = "bm-advanced-solar-panel-remnants"
 adv_panel_entity.picture.layers[1].filename = "__biological-machines-planet-wit__/graphics/advanced-solar-panel-entity.png"
-adv_panel_entity.production = "240kW"
+adv_panel_entity.production = "120kW"
 
 local adv_panel_remnants = util.table.deepcopy(data.raw["corpse"]["solar-panel-remnants"])
 adv_panel_remnants.name = "bm-advanced-solar-panel-remnants"
@@ -112,6 +117,6 @@ local adv_equip_equip = util.table.deepcopy(data.raw["solar-panel-equipment"]["s
 adv_equip_equip.name = "bm-advanced-solar-panel-equipment"
 adv_equip_equip.icon = "__biological-machines-planet-wit__/graphics/advanced-solar-panel-equipment-icon.png"
 adv_equip_equip.sprite.filename = "__biological-machines-planet-wit__/graphics/advanced-solar-panel-equipment-equipment.png"
-adv_equip_equip.power = "60kW"
+adv_equip_equip.power = "45kW"
 
 data:extend({adv_equip_item, adv_equip_recipe, adv_equip_tech, adv_equip_equip})

@@ -8,6 +8,11 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 
+if mods["biological-machines-reinforced-wall"] then
+  dh.remove_prereq("bm-reinforced-wall", "military-3")
+  dh.add_prereq("bm-reinforced-wall", "bm-nuclear-military-science-pack")
+end
+
 if mods["crushing-industry"] and settings.startup["crushing-industry-coal"].value then
   dh.remove_ingredient("poison-capsule", "crushed-coal")
 else
@@ -19,6 +24,10 @@ dh.mod_override_require("ironclad-gunboat-and-mortar-turret-fork", "bm-ironclad-
 dh.mod_override_require("snouz-handcannon", "bm-handcannon-override", "prototypes.tissue-x-handcannon")
 
 dh.mod_override_require("shelter-k2", "bm-shelter-override", "prototypes.tissue-x-shelter")
+
+dh.mod_override_require("panglia_planet", "bm-panglia-override", "prototypes.tissue-x-panglia")
+
+
 
 
 

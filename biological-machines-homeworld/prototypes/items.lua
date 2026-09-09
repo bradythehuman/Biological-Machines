@@ -17,8 +17,10 @@ super_credit.icon = "__biological-machines-homeworld__/graphics/purple-coin.png"
 super_credit.subgroup = "bm-homeworld"
 super_credit.order = "b-b"
 super_credit.hidden = false
-super_credit.stack_size = 1
-super_credit.weight = 100 * kg
+super_credit.stack_size = 200
+--super_credit.stack_size = 1
+super_credit.weight = 0.5 * kg
+--super_credit.weight = 100 * kg
 super_credit.default_import_location = "bm-dyson-sphere"
 
 data:extend({credit, super_credit})

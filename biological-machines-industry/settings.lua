@@ -16,9 +16,12 @@ dh.mod_override_setting("pollution-detector", "bm-pollution-detector-override")
 
 dh.mod_override_setting("big-wooden-pole", "bm-big-wooden-pole-override")
 
+--dh.mod_override_setting("Rocs-Improved-Platform-Drag", "bm-simpler-platform-drag-override")
+
 if mods["aai-loaders"] then
-  local mode_setting = data.raw["string-setting"]["aai-loaders-mode"]
-  mode_setting.default_value = "expensive"
+  data.raw["string-setting"]["aai-loaders-mode"].default_value = "expensive"
+
+  data.raw["string-setting"]["aai-loaders-belt-stacking-mode"].default_value = "opt-out"
 
   local recipe_setting = data.raw["string-setting"]["aai-loaders-lubricant-recipe"]
   recipe_setting.default_value = "disabled"

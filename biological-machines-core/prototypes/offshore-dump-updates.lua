@@ -20,9 +20,9 @@ local function generate_void_recipe_icons(fluid, fluid_icon_shift)
   }
   local fluid_icons = fluid.icons
   if fluid_icons == nil then
-    fluid_icons = {{icon=fluid.icon, icon_size=(fluid.icon_size or defines.default_icon_size)}}
+    fluid_icons = {{icon=fluid.icon, icon_size=(fluid.icon_size or defines.constant.default_icon_size)}}
   end
-  icons = util.combine_icons(icons, fluid_icons, {scale = 0.5, shift = fluid_icon_shift}, fluid.icon_size or defines.default_icon_size)
+  icons = util.combine_icons(icons, fluid_icons, {scale = 0.5, shift = fluid_icon_shift}, fluid.icon_size or defines.constant.default_icon_size)
   return icons
 end
 
@@ -46,7 +46,7 @@ for name, fluid in pairs(data.raw["fluid"]) do
       type = "recipe",
       name = fluid.name .. "-void",
       localised_name = {"", fluid.localised_name or {"fluid-name." .. fluid.name}, " ", {"fluid-name.bm-spill"}},
-      category = "bm-fluid-void",
+      categories = {"bm-fluid-void"},
       subgroup = "bm-fluid-void",
       order = fluid.order,
       icons = generate_void_recipe_icons(fluid, {7, -8}),

@@ -6,7 +6,7 @@ dh.add_ingredient("repair-turret", "item", "bm-helium-power-cell", 5)
 
 
 
-data.raw["recipe"]["repair-turret"].category = "robotics"
+data.raw["recipe"]["repair-turret"].categories = {"bm-robotics"}
 
 
 

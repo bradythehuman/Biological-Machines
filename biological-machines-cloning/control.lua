@@ -19,12 +19,14 @@ end)
 
 
 
+--[[
 local id_to_name = {
 	["bm-clone-suspended"] = "bm-suspension-tank-filled",
 	["bm-tank-prepared"] = "bm-suspension-tank-prepared",
 	["bm-suspended-clone-died"] = "bm-suspension-tank",
 	["bm-prepared-tank-died"] = "bm-suspension-tank",
 }
+]]
 
 local function connections_unwrapper(connections)
 	local unwrapper = {}
@@ -258,7 +260,8 @@ local function transform_tank(tank, new_name)
 				circuit_set_recipe = control.circuit_set_recipe,
 				circuit_read_contents = control.circuit_read_contents,
 				include_in_crafting = control.include_in_crafting,
-				include_fuel = control.include_fuel,
+				read_fuel = control.read_fuel,
+				--include_fuel = control.include_fuel,
 				circuit_read_ingredients = control.circuit_read_ingredients,
 				circuit_read_recipe_finished = control.circuit_read_recipe_finished,
 				circuit_recipe_finished_signal = util.table.deepcopy(control.circuit_recipe_finished_signal),
@@ -268,6 +271,8 @@ local function transform_tank(tank, new_name)
 				circuit_condition = util.table.deepcopy(control.circuit_condition),
 				connect_to_logistic_network = control.connect_to_logistic_network,
 				logistic_condition = util.table.deepcopy(control.logistic_condition),
+				input_networks = util.table.deepcopy(control.input_networks),
+				output_networks = util.table.deepcopy(control.output_networks),
 			},
 			connections = {
 				red = connections_unwrapper(tank.get_wire_connector(defines.wire_connector_id.circuit_red, true).real_connections),
@@ -319,6 +324,26 @@ end
 
 
 
+script.on_event(prototypes.recipe["bm-suspend-clone"].on_crafted_event, function(event)
+	local tank = event.entity
+	if tank == nil or not tank.valid then return end
+	transform_tank(tank, "bm-suspension-tank-filled")
+	attempt_rebuild_respawn_guis()
+end)
+
+script.on_event(prototypes.recipe["bm-prepare-tank"].on_crafted_event, function(event)
+	local tank = event.entity
+	if tank == nil or not tank.valid then return end
+	transform_tank(tank, "bm-suspension-tank-prepared")
+end)
+
+script.on_event(defines.events.on_script_trigger_effect, function(event)
+	local tank = event.source_entity
+	if tank == nil or not tank.valid or tank.name ~= "bm-suspension-tank" then return end
+	transform_tank(tank, "bm-suspension-tank")
+end)
+
+--[[
 script.on_event(defines.events.on_script_trigger_effect, function(event)
 	local new_name = id_to_name[event.effect_id]
 	if not new_name then return end
@@ -329,6 +354,7 @@ script.on_event(defines.events.on_script_trigger_effect, function(event)
 		attempt_rebuild_respawn_guis()
 	end
 end)
+]]
 
 
 
@@ -674,6 +700,14 @@ end)
 
 
 
+--triggered by homeworld when a platform containing a filled suspension tank travels to new world and is destroyed
+script.on_event(defines.events.script_raised_destroy, function(event)
+	destroy_tank_data(event)
+	attempt_rebuild_respawn_guis()
+end, {
+	{filter = "name", type = "assembling-machine", name = "bm-suspension-tank-filled"}
+})
+
 script.on_event(defines.events.on_entity_died, function(event)
 	local entity_name = event.entity.name
 	if entity_name == "bm-suspension-tank" then
@@ -687,24 +721,21 @@ end, {
 })
 
 script.on_event(defines.events.on_player_mined_entity,
-function(event) destroy_tank_data(event) end,
-{
+function(event) destroy_tank_data(event) end, {
 	{filter = "name", name = "bm-suspension-tank"},
 	{filter = "name", name = "bm-suspension-tank-filled"},
 	{filter = "name", name = "bm-suspension-tank-prepared"}
 })
 
 script.on_event(defines.events.on_robot_mined_entity,
-function(event) destroy_tank_data(event) end,
-{
+function(event) destroy_tank_data(event) end, {
 	{filter = "name", name = "bm-suspension-tank"},
 	{filter = "name", name = "bm-suspension-tank-filled"},
 	{filter = "name", name = "bm-suspension-tank-prepared"}
 })
 
 script.on_event(defines.events.on_space_platform_mined_entity,
-function(event) destroy_tank_data(event) end,
-{
+function(event) destroy_tank_data(event) end, {
 	{filter = "name", name = "bm-suspension-tank"},
 	{filter = "name", name = "bm-suspension-tank-filled"},
 	{filter = "name", name = "bm-suspension-tank-prepared"}

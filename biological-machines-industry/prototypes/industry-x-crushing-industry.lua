@@ -8,8 +8,8 @@ data.raw.recipe["bm-slag-crushing"].icons = CrushingIndustry.make_crushing_icons
 data.raw.recipe["bm-stone-crushing"].icon = nil
 data.raw.recipe["bm-stone-crushing"].icons = data.raw.recipe["sand"].icons
 
-data.raw.item["sand"] = nil
-data.raw.recipe["sand"] = nil
+data.raw.item["sand"].hidden = true
+data.raw.recipe["sand"].hidden = true
 dh.remove_recipe_unlock("steam-power", "sand")
 
 local remove_sand = {"holmium-solution", "electrolyte"}
@@ -49,18 +49,18 @@ if settings.startup["crushing-industry-ore"].value then
   dh.remove_recipe_unlock("ore-crushing", "crushed-iron-ore")
   dh.add_recipe_unlock("steel-processing", "crushed-iron-ore")
 
-  data.raw.recipe["bm-steel-mix"].category = "crafting"
+  data.raw.recipe["bm-steel-mix"].categories = {"crafting"}
   dh.remove_ingredient("bm-steel-mix", "iron-ore")
   dh.add_ingredient("bm-steel-mix", "item", "crushed-iron-ore", 5)
 
-  data.raw.recipe["bm-cement-mix"].category = "crafting"
+  data.raw.recipe["bm-cement-mix"].categories = {"crafting"}
   dh.remove_ingredient("bm-cement-mix", "iron-ore")
   dh.add_ingredient("bm-cement-mix", "item", "crushed-iron-ore", 1)
 
   dh.remove_ingredient("concrete", "crushed-iron-ore")
 
-  dh.add_ingredient("molten-iron", "item", "crushed-iron-ore", 50)
-  dh.add_ingredient("molten-copper", "item", "crushed-copper-ore", 50)
+  dh.add_ingredient("iron-ore-melting", "item", "crushed-iron-ore", 50)
+  dh.add_ingredient("copper-ore-melting", "item", "crushed-copper-ore", 50)
   dh.add_ingredient("holmium-solution", "item", "holmium-powder", 2)
   dh.add_ingredient("crushed-tungsten-carbide", "item", "crushed-tungsten-ore", 2)
   dh.add_ingredient("tungsten-plate", "item", "crushed-tungsten-ore", 4)
@@ -71,7 +71,7 @@ if settings.startup["crushing-industry-ore"].value then
   --BIG CRUSHER
   if settings.startup["crushing-industry-big-crusher"].value then
     data:extend({{type = "recipe-category", name = "hard-crushing"}})
-    data.raw.recipe["crushed-tungsten-ore"].category = "hard-crushing"
+    data.raw.recipe["crushed-tungsten-ore"].categories = {"hard-crushing"}
 
     local big_crusher = data.raw["assembling-machine"]["big-crusher"]
     big_crusher.crafting_categories = util.table.deepcopy(big_crusher.crafting_categories)
@@ -117,8 +117,8 @@ end
 if settings.startup["crushing-industry-coal"].value then
   crushing_recipe("crushed-coal", 10, "coal", "crushed-coal")
 
-  data.raw.recipe["crushed-grenade"] = nil
-  dh.remove_recipe_unlock("oil-processing", "crushed-grenade")
+  --data.raw.recipe["crushed-grenade"].hidden = true
+  --dh.remove_recipe_unlock("oil-processing", "crushed-grenade")
 
   dh.add_ingredient("coal-liquefaction", "item", "crushed-coal", 10)
   dh.add_ingredient("plastic-bar", "item", "crushed-coal", 1)
@@ -179,15 +179,15 @@ end
 
 ---------------------------------------------------------------GLASS
 if settings.startup["crushing-industry-glass"].value then
-  data.raw.item["glass"] = nil
-  data.raw.recipe["glass"] = nil
+  data.raw.item["glass"].hidden = true
+  data.raw.recipe["glass"].hidden = true
   dh.remove_recipe_unlock("electronics", "glass")
 
-  data.raw.item["molten-glass"] = nil
-  data.raw.recipe["molten-glass"] = nil
+  data.raw.fluid["molten-glass"].hidden = true
+  data.raw.recipe["molten-glass"].hidden = true
   dh.remove_recipe_unlock("foundry", "molten-glass")
 
-  data.raw.recipe["casting-glass"] = nil
+  data.raw.recipe["casting-glass"].hidden = true
   dh.remove_recipe_unlock("foundry", "casting-glass")
 
   local remove_glass = {

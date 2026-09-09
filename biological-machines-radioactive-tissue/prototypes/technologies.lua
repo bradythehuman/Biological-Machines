@@ -13,11 +13,12 @@ dh.remove_prereq("fission-reactor-equipment", "military-science-pack")
 local add_nuclear_military = {
   "uranium-ammo", "fission-reactor-equipment", "atomic-bomb", "spidertron",
   "physical-projectile-damage-7", "captive-biter-spawner", "railgun",
-  "promethium-science-pack", "bm-reinforced-wall",
+  "promethium-science-pack",
+  --"bm-reinforced-wall",
 }
 dh.add_prereq(add_nuclear_military, "bm-nuclear-military-science-pack")
 
-dh.remove_prereq("bm-reinforced-wall", "military-3")
+--dh.remove_prereq("bm-reinforced-wall", "military-3")
 
 dh.remove_prereq("bm-cloning", "captive-biter-spawner")
 dh.add_prereq("bm-cloning", "bm-radioactive-tissue-cultivation")
@@ -37,6 +38,7 @@ local add_ingredient = {
   "railgun",
   "railgun-shooting-speed-1",
   "railgun-damage-1",
+  "stellar-discovery-solar-system-edge",
   "promethium-science-pack",
   "research-productivity",
   "bm-reinforced-wall",

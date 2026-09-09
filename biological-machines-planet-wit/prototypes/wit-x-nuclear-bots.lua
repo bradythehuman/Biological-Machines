@@ -1,2 +1,2 @@
-data.raw.recipe["logistic-robot-nuclear"].category = "robotics"
-data.raw.recipe["construction-robot-nuclear"].category = "robotics"
+data.raw.recipe["logistic-robot-nuclear"].categories = {"bm-robotics"}
+data.raw.recipe["construction-robot-nuclear"].categoriies = {"bm-robotics"}

@@ -18,11 +18,11 @@ end
 
 table.insert(
   data.raw["recipe"]["bm-balack-scrap-recycling"].results,
-  {type = "item", name = "carbon", amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false}
+  {type = "item", name = "carbon", amount = 1, independent_probability = 0.02, show_details_in_recipe_tooltip = false}
 )
 table.insert(
   data.raw["recipe"]["bm-balack-scrap-recycling"].results,
-  {type = "item", name = "bm-potassium-nitrate", amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false}
+  {type = "item", name = "bm-potassium-nitrate", amount = 1, independent_probability = 0.02, show_details_in_recipe_tooltip = false}
 )
 
 
@@ -64,7 +64,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "cryogenics",
+    categories = {"cryogenics"},
     subgroup = "bm-balack-processes",
     order = "b-a",
     enabled = false,
@@ -107,7 +107,7 @@ if settings.startup["bm-boompuff-agriculture"].value then
           draw_background = true,
         },
       },
-      category = "organic-or-chemistry",
+      categories = {"organic", "chemistry"},
       subgroup = "bm-balack-processes",
       order = "c-d",
       auto_recycle = false,
@@ -118,7 +118,7 @@ if settings.startup["bm-boompuff-agriculture"].value then
       ingredients = {
         {type = "fluid", name = "light-oil", amount = 50},
         {type = "fluid", name = "bm-puff-gas", amount = 35},
-        {type = "item", name = "bm-bio-cube-ooze", amount = 10}
+        {type = "item", name = "bm-bio-cube-ooze", amount = 5}
       },
       results = {
         {type = "fluid", name = "bm-napalm", amount = 50}

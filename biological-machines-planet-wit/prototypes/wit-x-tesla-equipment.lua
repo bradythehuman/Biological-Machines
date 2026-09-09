@@ -33,7 +33,7 @@ data:extend({
 
 --RECIPE
 local tesla_equipment_recipe = data.raw["recipe"]["personal-tesla-defense-equipment"]
-tesla_equipment_recipe.category = "bm-advanced-robotics"
+tesla_equipment_recipe.categories = {"bm-robotics"}
 tesla_equipment_recipe.ingredients = {
   {type = "item", name = "teslagun", amount = 1},
   {type = "item", name = "low-density-structure", amount = 10},

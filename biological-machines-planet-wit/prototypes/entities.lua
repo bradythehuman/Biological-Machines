@@ -13,6 +13,8 @@ local glass_color = {0.34, 0.77, 0.68}
 
 
 --SURFACE CONDITIONS
+data.raw["roboport"]["roboport"].surface_conditions = {{property = "gravity", min = 1}}
+--[[
 local burner_entities = {
   data.raw["fluid-turret"]["flamethrower-turret"],
   data.raw["furnace"]["stone-furnace"],
@@ -25,8 +27,7 @@ local burner_entities = {
 for i=1, #burner_entities do
   PlanetsLib.restrict_surface_conditions(burner_entities[i], {property = "pressure", min = 51})
 end
-
-data.raw["roboport"]["roboport"].surface_conditions = {{property = "gravity", min = 1}}
+]]
 
 
 
@@ -52,19 +53,40 @@ local vulc_rocks = {
   ["tiny-rock-cluster"] = {"optimized-decorative", "bm-tiny-wit-rock-cluster", "wit_rock_cluster"},
   ["tiny-volcanic-rock"] = {"optimized-decorative", "bm-tiny-wit-rock", "wit_rock_tiny"},
   ["small-volcanic-rock"] = {"optimized-decorative", "bm-small-wit-rock", "wit_rock_small"},
-  ["medium-volcanic-rock"] = {"optimized-decorative", "bm-medium-wit-rock", "wit_rock_medium"},
-  ["big-volcanic-rock"] = {"simple-entity", "bm-big-wit-rock", "wit_rock_big"},
-  ["huge-volcanic-rock"] = {"simple-entity", "bm-huge-wit-rock", "wit_rock_huge"}
+  --["medium-volcanic-rock"] = {"optimized-decorative", "bm-medium-wit-rock", "wit_rock_medium"},
+  --["big-volcanic-rock"] = {"simple-entity", "bm-big-wit-rock", "wit_rock_big"},
+  --["huge-volcanic-rock"] = {"simple-entity", "bm-huge-wit-rock", "wit_rock_huge"}
 }
-
-local file_trim_len = #"__space-age__" + 1
 
 for rock_name, rock_data in pairs(vulc_rocks) do
   local rock = util.table.deepcopy(data.raw[rock_data[1]][rock_name])
   rock.name = rock_data[2]
   rock.autoplace.probability_expression  = rock_data[3]
+  rock.autoplace.tile_restriction = nil
   for i=1, #rock.pictures do
-    local file_tail = string.sub(rock.pictures[i].filename, file_trim_len)
+    local file_tail = string.sub(rock.pictures[i].filename, #"__space-age__" + 1)
+    rock.pictures[i].filename = "__biological-machines-planet-wit__" .. file_tail
+    rock.pictures[i].tint_as_overlay = false
+    rock.pictures[i].tint = nil
+  end
+  data:extend({rock})
+end
+
+local nauvis_rocks = {
+  ["medium-rock"] = {"optimized-decorative", "bm-medium-wit-rock", "wit_rock_medium"},
+  ["big-rock"] = {"simple-entity", "bm-big-wit-rock", "wit_rock_big"},
+  ["huge-rock"] = {"simple-entity", "bm-huge-wit-rock", "wit_rock_huge"}
+}
+
+for rock_name, rock_data in pairs(nauvis_rocks) do
+  local rock = util.table.deepcopy(data.raw[rock_data[1]][rock_name])
+  rock.name = rock_data[2]
+  rock.autoplace.probability_expression  = rock_data[3]
+  rock.autoplace.control = nil
+  rock.autoplace.local_expressions = nil
+  rock.autoplace.tile_restriction = nil
+  for i=1, #rock.pictures do
+    local file_tail = string.sub(rock.pictures[i].filename, #"__base__" + 1)
     rock.pictures[i].filename = "__biological-machines-planet-wit__" .. file_tail
     rock.pictures[i].tint_as_overlay = false
     rock.pictures[i].tint = nil
@@ -106,14 +128,12 @@ local icebergs = {
   ["lithium-iceberg-huge"] = {"simple-entity", "bm-glassberg-huge", "glassberg_huge"}
 }
 
-local file_trim_len = #"__space-age__" + 1
-
 for berg_name, berg_data in pairs(icebergs) do
   local berg = util.table.deepcopy(data.raw[berg_data[1]][berg_name])
   berg.name = berg_data[2]
   berg.autoplace.probability_expression  = berg_data[3]
   for i=1, #berg.pictures do
-    local file_tail = string.sub(berg.pictures[i].filename, file_trim_len)
+    local file_tail = string.sub(berg.pictures[i].filename, #"__space-age__" + 1)
     berg.pictures[i].filename = "__biological-machines-planet-wit__" .. file_tail
   end
   data:extend({berg})
@@ -178,7 +198,7 @@ data:extend({
 
 
 
---BUILDINGS
+--ADV ACUMULATOR
 local function get_stripes(s)
   local stripes = {}
 
@@ -367,5 +387,272 @@ data:extend({
     circuit_wire_max_distance = default_circuit_wire_max_distance,
 
     default_output_signal = {type = "virtual", name = "signal-A"}
+  },
+})
+
+
+
+--ROBOTICS FACILITY
+data:extend({
+  {
+    type = "assembling-machine",
+    name = "bm-robotics-facility",
+    icon = "__biological-machines-planet-wit__/graphics/mfr/mfr-icon.png",
+    icon_size = 64,
+    flags = {
+      "placeable-neutral",
+      "placeable-player",
+      "player-creation"
+    },
+    minable = {
+      mining_time = 0.2,
+      result = "bm-robotics-facility"
+    },
+    max_health = 350,
+    corpse = "big-remnants",
+    dying_explosion = "medium-explosion",
+    circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["electromagnetic-plant"],
+    heating_energy = "100kW",
+    effect_receiver = {
+        base_effect = {
+            productivity = 0.5
+        }
+    },
+    icon_draw_specification = {
+        shift = {0, -0.6},
+        scale = 1.8,
+        scale_for_many = 1,
+        render_layer = "entity-info-icon"
+    },
+    -- icons_positioning = {
+        -- {
+            -- inventory_index = defines.inventory.assembling_machine_modules, shift = {0, 1}
+        -- },
+    -- },
+    vehicle_impact_sound =  {
+        filename = "__base__/sound/car-metal-impact.ogg",
+        volume = 0.65
+    },
+    open_sound = sounds.machine_open,
+    close_sound = sounds.machine_close,
+    -- working_sound = {
+        -- sound = {
+            -- {
+                -- filename = "__base__/sound/assembling-machine-t3-1.ogg",
+                -- volume = 0.8
+            -- },
+            -- {
+                -- filename = "__base__/sound/assembling-machine-t3-2.ogg",
+                -- volume = 0.8
+            -- },
+        -- },
+        -- idle_sound = {
+            -- filename = "__base__/sound/idle1.ogg", volume = 0.6
+        -- },
+        -- apparent_volume = 1.5,
+    -- },
+  	working_sound = {
+          sound = {filename = "__biological-machines-planet-wit__/sound/mfr/working-loop.ogg", volume = 0.9},
+          sound_accents = {
+              {sound = {filename = "__biological-machines-planet-wit__/sound/mfr/plate-slide.ogg", volume = 0.4}, frame = 4, play_for_working_visualisation = "working", audible_distance_modifier = 0.4},
+              {sound = {filename = "__biological-machines-planet-wit__/sound/mfr/plate-show-1.ogg", volume = 0.6}, frame = 12, play_for_working_visualisation = "working", audible_distance_modifier = 0.4},
+              {sound = {filename = "__biological-machines-planet-wit__/sound/mfr/circuit-take.ogg", volume = 0.4}, frame = 20, play_for_working_visualisation = "working", audible_distance_modifier = 0.2},
+              {sound = {filename = "__biological-machines-planet-wit__/sound/mfr/plate-show-2.ogg", volume = 0.6}, frame = 28, play_for_working_visualisation = "working", audible_distance_modifier = 0.4},
+              {sound = {filename = "__biological-machines-planet-wit__/sound/mfr/weld-1.ogg", volume = 0.6}, frame = 39, play_for_working_visualisation = "working", audible_distance_modifier = 0.6},
+              {sound = {filename = "__biological-machines-planet-wit__/sound/mfr/weld-2.ogg", volume = 0.6}, frame = 65, play_for_working_visualisation = "working", audible_distance_modifier = 0.6},
+              {sound = {filename = "__biological-machines-planet-wit__/sound/mfr/circuit-drop.ogg", volume = 0.4}, frame = 66, play_for_working_visualisation = "working", audible_distance_modifier = 0.2},
+              {sound = {filename = "__biological-machines-planet-wit__/sound/mfr/door-open.ogg", volume = 0.4}, frame = 68, play_for_working_visualisation = "working", audible_distance_modifier = 0.4},
+              {sound = {filename = "__biological-machines-planet-wit__/sound/mfr/door-close.ogg", volume = 0.4}, frame = 96, play_for_working_visualisation = "working", audible_distance_modifier = 0.4},
+          },
+          fade_in_ticks = 10,
+          fade_out_ticks = 40
+      },
+      collision_box = {
+          {-2.2, -2.2},
+          {2.2, 2.2}
+      },
+      selection_box = {
+          {-2.5, -2.5},
+          {2.5, 2.5}
+      },
+      drawing_box = {
+          {-2.5, -2.5},
+          {2.5, 2.5}
+      },
+      fluid_boxes = {
+          {
+              production_type = "input",
+              pipe_picture = assembler2pipepictures,
+              pipe_covers = pipecoverspictures(),
+              volume = 1000,
+              pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {0, -2} }},
+              secondary_draw_orders = { north = -1 }
+          }
+      },
+      graphics_set = {
+          animation = {
+              layers = {
+                  {
+                    draw_as_shadow = true,
+                    filename = "__biological-machines-planet-wit__/graphics/mfr/mfr-shadow.png",
+                    priority = "high",
+                    width = 520,
+                    height = 500,
+                    frame_count = 1,
+                    line_length = 1,
+                    repeat_count = 99,
+                    animation_speed = 0.5,
+                    shift = util.by_pixel_hr(0, -16),
+                    scale = 0.5,
+                  },
+                  {
+                    priority = "high",
+                    width = 320,
+                    height = 320,
+                    frame_count = 99,
+                    shift = util.by_pixel_hr(0, -16),
+                    animation_speed = 0.5,
+                    scale = 0.5,
+                    stripes =
+                    {
+                      {
+                        filename = "__biological-machines-planet-wit__/graphics/mfr/mfr-animation-1.png",
+                        width_in_frames = 8,
+                        height_in_frames = 8,
+                      },
+                      {
+                        filename = "__biological-machines-planet-wit__/graphics/mfr/mfr-animation-2.png",
+                        width_in_frames = 8,
+                        height_in_frames = 8,
+                      },
+                    },
+                  },
+                },
+          },
+          working_visualisations = {
+              {
+                  name = "working",
+  				fadeout = true,
+                  secondary_draw_order = 1,
+                  animation = {
+                      layers = {
+                          {
+                              size = {320, 320},
+                              shift = util.by_pixel_hr(0, -16),
+                              scale = 0.5,
+                              frame_count = 99,
+                              draw_as_glow = true,
+                              blend_mode = "additive",
+                              animation_speed = 0.5,
+                              stripes = {
+                                  {
+                                      filename = "__biological-machines-planet-wit__/graphics/mfr/mfr-animation-emission-1.png",
+                                      width_in_frames = 8,
+                                      height_in_frames = 8,
+                                  },
+                                  {
+                                      filename = "__biological-machines-planet-wit__/graphics/mfr/mfr-animation-emission-2.png",
+                                      width_in_frames = 8,
+                                      height_in_frames = 8,
+                                  },
+                              },
+                          },
+                      },
+                  },
+              }
+          },
+      },
+    crafting_categories = {"bm-robotics"},
+    crafting_speed = 2,
+    energy_source = {
+      type = "electric",
+      usage_priority = "secondary-input",
+  	  emissions_per_minute = { pollution = 5 },
+    },
+    energy_usage = "1500kW",
+    module_slots = 5,
+    allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
+    match_animation_speed_to_activity = true,
+  	perceived_performance = { minimum = 0.25, performance_to_activity_rate = 2, maximum = 10 },
+    fluid_boxes_off_when_no_fluid_recipe = true,
+  }
+})
+
+
+
+--CRASHED PROBE
+data:extend({
+  {
+    type = "simple-entity",
+    name = "bm-crash-probe",
+    icon = "__biological-machines-planet-wit__/graphics/crash-site-lab-broken.png",
+    icon_size = 64,
+    flags = {"placeable-player", "player-creation"},
+    map_color = {r = 0, g = 0.365, b = 0.58, a = 1},
+    max_health = 150,
+	  --hidden=true,
+    corpse = "big-remnants",
+    dying_explosion = "medium-explosion",
+    collision_box = {{-3.2, -1.2}, {3.2, 1.2}},
+    selection_box = {{-3.5, -1.5}, {3.5, 1.5}},
+    --light = {intensity = 0.75, size = 8, color = {r = 1.0, g = 1.0, b = 1.0}},
+    integration_patch_render_layer = "decals",
+    integration_patch = {
+      filename = "__biological-machines-planet-wit__/graphics/hr-crash-site-lab-ground-light.png",
+      priority = "very-low",
+      width = 700,
+      height = 344,
+      shift = util.by_pixel(-49, 11),
+      frame_count = 1,
+      line_length = 1,
+      scale = 0.5
+    },
+    animations = {
+      layers = {
+        {
+            filename = "__biological-machines-planet-wit__/graphics/hr-crash-site-lab-broken.png",
+            priority = "very-low",
+            width = 472,
+            height = 280,
+            frame_count = 1,
+            line_length = 1,
+            animation_speed = 1 / 3,
+            shift = util.by_pixel(-24 + 32, 6),
+            scale = 0.5
+        },
+        {
+            filename = "__biological-machines-planet-wit__/graphics/hr-crash-site-lab-broken-shadow.png",
+            priority = "very-low",
+            width = 550,
+            height = 304,
+            frame_count = 1,
+            line_length = 1,
+            repeat_count = 1,
+            animation_speed = 1 / 3,
+            shift = util.by_pixel(-14 + 32, 9),
+            scale = 0.5,
+            draw_as_shadow = true
+        }
+      }
+    },
+    vehicle_impact_sound = sounds.generic_impact,
+    autoplace = {
+      order = "a",
+      force = "player",
+      probability_expression = "wit_crash_probe_region",
+    },
+    minable = {
+      mining_time = 5,
+      transfer_entity_health_to_products = false,
+      results = {
+        {type = "item", name = "steel-plate", amount = 15},
+        {type = "item", name = "iron-plate", amount = 25},
+        {type = "item", name = "copper-plate", amount = 20},
+        {type = "item", name = "plastic-bar", amount = 10},
+        {type = "item", name = "electronic-circuit", amount = 25},
+        {type = "item", name = "battery", amount = 5},
+      }
+    },
   },
 })

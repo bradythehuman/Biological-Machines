@@ -2,6 +2,10 @@ local asteroid_util = require("__space-age__.prototypes.planet.asteroid-spawn-de
 
 
 
+--data.raw["space-connection"]["solar-system-edge-shattered-planet"].length = 1000000
+
+
+
 local dyson_map_gen = {
   property_expression_names =
   {
@@ -36,21 +40,40 @@ local dyson_map_gen = {
       settings = {
         ["bm-station-floor"] = {},
         ["bm-empty-space-2"] = {},
+        ["refined-concrete"] = {},
+        ["refined-hazard-concrete-left"] = {},
       }
     },
-    --[[
     ["decorative"] = {
       settings = {
-        [""] = {},
+        ["space-platform-decorative-pipes-2x1"] = {},
+        ["space-platform-decorative-pipes-1x2"] = {},
+        ["space-platform-decorative-pipes-1x1"] = {},
+        ["space-platform-decorative-4x4"] = {},
+        ["space-platform-decorative-2x2"] = {},
+        ["space-platform-decorative-1x1"] = {},
+        ["space-platform-decorative-tiny"] = {},
       }
     },
-    ]]
     ["entity"] = {
       settings = {
         ["bm-station-wall"] = {},
         ["bm-homeworld-market"] = {},
+        ["pipe"] = {},
+        ["heat-pipe"] = {},
+        --["turbo-transport-belt"] = {},
+        --["iron-chest"] = {},
+        --["steel-chest"] = {},
+        ["bm-loot-chest"] = {},
+        ["assembling-machine-3"] = {},
+        ["recycler"] = {},
+        --["compilatron"] = {},
+        ["bm-station-bot"] = {},
+        ["bm-crash-spaceship"] = {},
+        ["small-biter"] = {},
+        ["bm-market-spawner"] = {},
       }
-    }
+    },
   }
 }
 
@@ -64,17 +87,30 @@ data:extend({
     icon = "__biological-machines-homeworld__/graphics/dyson-sphere-icon.png",
     starmap_icon = "__biological-machines-homeworld__/graphics/dyson-sphere-starmap.png",
     starmap_icon_size = 1000,
+    --[[
+    starmap_icons = {
+      {
+        icon = "__biological-machines-homeworld__/graphics/dyson-sphere-starmap.png",
+        icon_size = 1000,
+      },
+      {
+        icon = "__biological-machines-homeworld__/graphics/debris-starmap.png",
+        icon_size = 2436,
+        scale = 0.5,
+      },
+    },
+    ]]
     gravity_pull = 20,
-    distance = 80,
+    distance = 116,
     orientation = 0.2,
-    magnitude = 1.5,
+    magnitude = 3,
     draw_orbit = false,
     --label_orientation = 0.35,
-    order = "h",
+    order = "h-c",
     subgroup = "planets",
     map_gen_settings = dyson_map_gen,
     pollutant_type = "pollution",
-    solar_power_in_space = 300,
+    solar_power_in_space = 3000,
     platform_procession_set =
     {
       arrival = {"planet-to-platform-b"},
@@ -89,7 +125,7 @@ data:extend({
     surface_properties = {
       ["day-night-cycle"] = 60 * 60,
       ["magnetic-field"] = 10,
-      ["solar-power"] = 0,
+      ["solar-power"] = 300,
       pressure = 100,
       gravity = 1,
     },
@@ -104,16 +140,57 @@ data:extend({
   -----------------------------------------------------NEW SYSTEM
   {
     type = "space-location",
+    name = "bm-outer-debris-edge",
+    icon = "__biological-machines-homeworld__/graphics/outer-debris-edge-starmap.png",
+    icon_size = 256,
+    starmap_icon = "__biological-machines-homeworld__/graphics/outer-debris-edge-starmap.png",
+    starmap_icon_size = 256,
+    order = "h-a",
+    subgroup = "planets",
+    --gravity_pull = 20,
+    distance = 100,
+    orientation = 0.2,
+    --magnitude = 1.5,
+    --label_orientation = 0.15,
+    draw_orbit = false,
+  	fly_condition = false,
+  	solar_power_in_space = 100,
+    asteroid_spawn_influence = 1,
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.aquilo_solar_system_edge, 0.9),
+  },
+  {
+    type = "space-location",
+    name = "bm-inner-debris-edge",
+    icon = "__biological-machines-homeworld__/graphics/inner-debris-edge-starmap.png",
+    icon_size = 256,
+    starmap_icon = "__biological-machines-homeworld__/graphics/inner-debris-edge-starmap.png",
+    starmap_icon_size = 256,
+    order = "h-b",
+    subgroup = "planets",
+    --gravity_pull = 20,
+    distance = 104,
+    orientation = 0.2,
+    --magnitude = 1.5,
+    --label_orientation = 0.15,
+    draw_orbit = false,
+  	fly_condition = false,
+  	solar_power_in_space = 300,
+    asteroid_spawn_influence = 1,
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.aquilo_solar_system_edge, 0.9),
+    --asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.shattered_planet_trip, 0.8),
+  },
+  {
+    type = "space-location",
     name = "bm-new-system",
     icon = "__biological-machines-homeworld__/graphics/new-system-icon.png",
     starmap_icon = "__biological-machines-homeworld__/graphics/new-system-starmap.png",
     starmap_icon_size = 512,
-    order = "h",
+    order = "h-d",
     subgroup = "planets",
     gravity_pull = 20,
-    distance = 80,
+    distance = 100,
     orientation = 0.3,
-    magnitude = 1.5,
+    magnitude = 2,
     --label_orientation = 0.15,
     draw_orbit = false,
     solar_power_in_space = 300,
@@ -124,12 +201,32 @@ data:extend({
   ----------------------------------------------------------SPACE CONNECTIONS
   {
     type = "space-connection",
-    name = "bm-edge-to-dyson-sphere",
+    name = "bm-edge-to-outer-debris",
     subgroup = "planet-connections",
     from = "solar-system-edge",
+    to = "bm-outer-debris-edge",
+    order = "j-a",
+    length = 10000000,
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_vulcanus)
+  },
+  {
+    type = "space-connection",
+    name = "bm-outer-debris-to-inner-debris",
+    subgroup = "planet-connections",
+    from = "bm-outer-debris-edge",
+    to = "bm-inner-debris-edge",
+    order = "j-a",
+    length = 5000,
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.shattered_planet_trip)
+  },
+  {
+    type = "space-connection",
+    name = "bm-inner-debris-to-dyson-sphere",
+    subgroup = "planet-connections",
+    from = "bm-inner-debris-edge",
     to = "bm-dyson-sphere",
     order = "j-a",
-    length = 4000000,
+    length = 25000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_vulcanus)
   },
   {
@@ -139,7 +236,7 @@ data:extend({
     from = "solar-system-edge",
     to = "bm-new-system",
     order = "j-b",
-    length = 4000000,
+    length = 10000000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_vulcanus)
   },
 })

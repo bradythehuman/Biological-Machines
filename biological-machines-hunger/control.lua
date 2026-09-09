@@ -18,13 +18,17 @@ local foods = {
   ["jellynut"] = {saturation = 30, effect = "bm-malnourished"},
   ["jelly"] = {saturation = 8, effect = "bm-malnourished"},
   ["bioflux"] = {saturation = 120, effect = "bm-energized"},
-  ["bm-fluroflux"] = {saturation = 120, effect = "bm-energized-2"},
+  ["bm-fluroflux"] = {saturation = 240, effect = "bm-energized-2"},
   ["bm-nutrient-slurry"] = {saturation = 120, effect = "bm-energized"},
   ["bm-fortified-nutrient-slurry"] = {saturation = 120, effect = "bm-energized-2"},
-  ["bm-demolisher-meat"] = {saturation = 240, effect = "bm-well-nourished-2"},
-  ["bm-demolisher-meat-barrel"] = {saturation = 240, effect = "bm-well-nourished-2"},
+  ["bm-demolisher-meat"] = {saturation = 300, effect = "bm-well-nourished-2"},
+  ["bm-demolisher-meat-barrel"] = {saturation = 300, effect = "bm-well-nourished-2"},
   ["uranium-235"] = {saturation = 600, effect = "bm-artificial-biology"},
 }
+
+if prototypes.item["panglia_branbalite"] then
+  foods["panglia_branbalite"] = {saturation = 30, effect = "bm-energized-2"}
+end
 
 local food_wrappers = {
   ["bm-canned-fish"] = "bm-empty-can",
@@ -61,6 +65,7 @@ for i=1, max_preferences do
   bmh_dd_to_i["bmh_dd_" .. i] = i
 end
 
+--[[
 local default_prefs = {
   foods_to_i["raw-fish"],
   foods_to_i["bm-berry"],
@@ -71,6 +76,18 @@ local default_prefs = {
   foods_to_i["none"],
   foods_to_i["none"],
   foods_to_i["none"],
+}
+]]
+local default_prefs = {
+  "raw-fish",
+  "bm-berry",
+  "bm-nutrient-paste",
+  "bm-canned-fish",
+  "bm-berry-paste",
+  "none",
+  "none",
+  "none",
+  "none",
 }
 
 
@@ -172,7 +189,7 @@ local function build_interface(i)
     caption = {"bmh-gui.description", base_sat_per_sec, injured_sat_per_sec}
   }
 
-  for pref_i, selected_i in pairs(storage.hungry[i].prefs) do
+  for pref_i, selected_name in pairs(storage.hungry[i].prefs) do
     local controls_flow = content_frame.add{
       type = "flow",
       name = "pref_flow_"..pref_i,
@@ -186,7 +203,7 @@ local function build_interface(i)
       type = "drop-down",
       name = bmh_i_to_dd[pref_i],
       items = wrapped_i_to_foods,
-      selected_index = selected_i
+      selected_index = foods_to_i[selected_name]
     }
   end
 
@@ -393,7 +410,8 @@ local function hunger_tick_player(i, hunger, tick)
 
     local special_equipment = get_special_equipment(i, c)
     for pref_i = 1, max_preferences do
-      local food = i_to_foods[hunger.prefs[pref_i]]
+      local food = hunger.prefs[pref_i]
+      --local food = i_to_foods[hunger.prefs[pref_i]]
       if food ~= "none" then
         for q, _ in pairs(prototypes.quality) do
           if food ~= "uranium-235"
@@ -454,6 +472,33 @@ local function hunger_tick_player(i, hunger, tick)
     destroy_widget(i)
   end
 end
+
+local function player_load_check(i)
+  local hunger = storage.hungry[i]
+
+  --check if all prefs and current food are legal
+  for pref_i, pref_name in pairs(hunger.prefs) do
+    if not foods_to_i[pref_name] or type(pref_name) == "number" then
+      hunger.prefs[pref_i] = "none"
+    end
+    if not (foods_to_i[hunger.food]
+    or hunger.food == "bm-artificial-organs"
+    or hunger.food == "bm-biological-recycler") then
+      --hunger.food = "none"
+      hunger.saturation = 0
+      hunger.effect = nil
+      hunger.food = nil
+      hunger.quality = nil
+    end
+  end
+
+  --begin hungering
+  hunger.is_hungry = is_hungry(i)
+  hunger.food_inventory = get_food_inventory(i)
+end
+
+
+
 --setup
 script.on_init(function()
   if remote.interfaces.freeplay then
@@ -499,15 +544,19 @@ script.on_load(function()
 end)
 ]]
 
+script.on_configuration_changed(function()
+  for i, _ in pairs(storage.hungry) do
+    player_load_check(i)
+  end
+end)
+
 script.on_event(defines.events.on_player_created, function(event)
   initialize_player(event.player_index)
 end)
 
 --updates storage.hungry
 script.on_event(defines.events.on_player_joined_game, function(event)
-  local i = event.player_index
-  storage.hungry[i].is_hungry = is_hungry(i)
-  storage.hungry[i].food_inventory = get_food_inventory(i)
+  player_load_check(event.player_index)
 end)
 
 script.on_event(defines.events.on_player_died, function(event)
@@ -639,7 +688,7 @@ script.on_event(defines.events.on_gui_selection_state_changed, function(event)
   if event.element.parent.parent.name == "bmh_content_frame" then
     local player_prefs = storage.hungry[event.player_index].prefs
     local pref_i = bmh_dd_to_i[event.element.name]
-    player_prefs[pref_i] = event.element.selected_index
+    player_prefs[pref_i] = i_to_foods[event.element.selected_index]
   end
 end)
 

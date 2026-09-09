@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+Date: 9. 9. 2026
+  Features:
+    - Updated to 2.1
+    - Moshine compatibility
+      - Adds warp path datacell, made from cosmic data which must be solved in compute farm
+      - Solved warp path datacells added as a ingredient in warp cell recipe
+      - Adds warp space tech using datacells, prereq for warp drive tech
+    - Warp drive made from parts in space (previously part of balack compat)
+    - Warp recipe has chance to return used warp power cell
+      - Used cells may be refurbished with replacement materials
+      - Frequency of used cells being returned by the warp recipe scales with warp power cell productivity (max 80% of time)
+  Bugfixes:
+    - Script uses on_crafted instead of an item with a spoil trigger eliminating a potential crash method
+---------------------------------------------------------------------------------------------------
 Version: 1.0.2
 Date: 3. 2. 2026
   Changes:
@@ -11,3 +26,8 @@ Date: 28. 1. 2026
       This prevents factorio crashing on load when Particle Physics by half_a_cat
   Changes:
     - Replaces thumbnail, replacing text plates with text
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 27. 1. 2026
+  Info:
+    - Initial release

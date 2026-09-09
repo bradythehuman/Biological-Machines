@@ -64,10 +64,10 @@ data:extend({
     weight = 100 * kg,
 
     spoil_ticks = 1 * minute,
-    spoil_result = "uranium-235"
+    spoil_result = "uranium-238",
   },
   {
-    type = "tool",
+    type = "item",
     name = "bm-nuclear-military-science-pack",
     icon = "__biological-machines-radioactive-tissue__/graphics/nuclear-military-science-pack.png",
     subgroup = "science-pack",

@@ -2,6 +2,29 @@ data:extend({
   {
     type = "technology",
     name = "bm-solar-system-discovery-homeworld",
+    icon = "__biological-machines-homeworld__/graphics/space-discovery-debris.png",
+    icon_size = 512,
+    essential = true,
+    effects = {
+      {
+        type = "unlock-space-location",
+        space_location = "bm-outer-debris-edge",
+      },
+      {
+        type = "unlock-space-location",
+        space_location = "bm-inner-debris-edge",
+      },
+    },
+    prerequisites = {"bm-warp-drive"},
+    unit = {
+      count = 10000,
+      ingredients = BM_COPY_ALL_SCI_PACKS(),
+      time = 120
+    }
+  },
+  {
+    type = "technology",
+    name = "bm-dyson-sphere-discovery",
     icon = "__biological-machines-homeworld__/graphics/dyson-sphere-starmap.png",
     icon_size = 1000,
     essential = true,
@@ -23,13 +46,18 @@ data:extend({
         type = "unlock-recipe",
         recipe = "bm-interstellar-energy-link",
       },
+      --[[
+      {
+        type = "unlock-recipe",
+        recipe = "bm-rocket-silo-from-space-platform",
+      },
+      ]]
     },
-    prerequisites = {"bm-warp-drive", "bm-cloning"},
-    unit = {
-      count = 10000,
-      ingredients = BM_COPY_ALL_SCI_PACKS(),
-      time = 120
-    }
+    prerequisites = {"bm-solar-system-discovery-homeworld"},
+    research_trigger = {
+      type = "scripted",
+      trigger_description = {"bm.dyson-sphere-discovery-trigger"},
+    },
   },
   {
     type = "technology",
@@ -44,7 +72,7 @@ data:extend({
         use_icon_overlay_constant = false
       },
     },
-    prerequisites = {"bm-solar-system-discovery-homeworld"},
+    prerequisites = {"bm-dyson-sphere-discovery"},
     research_trigger = {
       type = "build-entity",
       entity = "bm-interstellar-energy-link"

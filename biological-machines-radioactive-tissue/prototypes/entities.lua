@@ -1,8 +1,24 @@
 require ("util")
 require ("__base__.prototypes.entity.pipecovers")
 require ("circuit-connector-sprites")
-require ("__base__.prototypes.entity.assemblerpipes")
+--require ("__base__.prototypes.entity.assemblerpipes")
 --local hit_effects = require("__base__.prototypes.entity.hit-effects")
+
+
+
+--ADD ASTEROID POUISON RESISTANCE
+--copies from Poison Immunity for Asteroids by davoob
+local asteroid_sizes = {"small", "medium", "big", "huge"}
+local asteroid_types = {'metallic', 'carbonic', 'oxide', 'promethium', 'auric'}
+
+for _, asteroid_size in pairs(asteroid_sizes) do
+    for _, asteroid_type in pairs(asteroid_types) do
+        local asteroid = data.raw['asteroid'][asteroid_size..'-'..asteroid_type..'-asteroid']
+        if asteroid and asteroid.resistances then
+            table.insert(asteroid.resistances, {type = "poison", decrease = 0, percent = 100})
+        end
+    end
+end
 
 
 
@@ -161,6 +177,6 @@ data.raw["lab"]["biolab"].energy_source = {
 }
 
 
-local tissue_loot = {{item = "bm-radioactive-tissue", count_min = 1, count_max = 9}}
+local tissue_loot = {{type = "item", name = "bm-radioactive-tissue", amount_min = 1, amount_max = 9}}
 data.raw["unit-spawner"]["biter-spawner"].loot = tissue_loot
 data.raw["unit-spawner"]["spitter-spawner"].loot = tissue_loot

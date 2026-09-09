@@ -53,9 +53,8 @@ data.raw["recipe"]["aai-turbo-loader"].ingredients = {
   {type = "item", name = "tungsten-plate", amount = 15},
   {type = "fluid", name = "lubricant", amount = 80}
 }
-data.raw["recipe"]["aai-turbo-loader"].category = "metallurgy"
+data.raw["recipe"]["aai-turbo-loader"].categories = {"metallurgy"}
 
---
 
 
 if settings.startup["aai-loaders-mode"].value == "lubricated" then

@@ -27,14 +27,14 @@ tank_t2.collision_box = {{-0.9 * 1.5, -1.3 * 1.5}, {0.9 * 1.5, 1.3 * 1.5}}
 tank_t2.selection_box = {{-0.9 * 1.5, -1.3 * 1.5}, {0.9 * 1.5, 1.3 * 1.5}}
 tank_t2.energy_source = {type = "void"}
 --tank_t2.effectivity = 0.9
-tank_t2.braking_power = "40000kW" --base 800kW
-tank_t2.consumption = "30000kW" --base 600kW
+tank_t2.braking_force = (20 * 800 * 1000) / 60 --base 13333
+tank_t2.consumption = "60000kW" --base 600kW
 tank_t2.terrain_friction_modifier = 0.8 --base 0.2
-tank_t2.friction = 0.008 --base 0.002
+tank_t2.friction_force = 0.008 --base 0.002
 tank_t2.sound_no_fuel = nil
-tank_t2.turret_rotation_speed = 0.50 / 60 --base 0.35 / 60
-tank_t2.rotation_speed = 0.0060 --base 0.0035
-tank_t2.weight = 40000
+tank_t2.turret_rotation_speed = 0.70 / 60 --base 0.35 / 60
+tank_t2.rotation_speed = 0.0070 --base 0.0035
+tank_t2.weight = 40000 --base 20000
 tank_t2.inventory_size = 120
 tank_t2.guns = {
   "bm-tank-mk2-cannon", "bm-tank-mk2-machine-gun",
@@ -116,7 +116,7 @@ data:extend({
     },
     icons_positioning = {
       {
-        inventory_index = defines.inventory.assembling_machine_modules, shift = {0, 1}
+        inventory_index = defines.inventory.crafter_modules, shift = {0, 1}
       },
     },
     vehicle_impact_sound =  {
@@ -147,7 +147,8 @@ data:extend({
     fluid_boxes = {
       {
         production_type = "input",
-        pipe_picture = assembler2pipepictures(),
+        --pipe_picture = assembler2pipepictures(),
+        pipe_picture = require("__base__.prototypes.entity.assembler-pictures").assembler2pipepictures,
         pipe_covers = pipecoverspictures(),
         volume = 50,
         pipe_connections = {

@@ -1,18 +1,16 @@
-if mods["est-tiny-storage-tank"] then
-  data.raw["string-setting"]["tiny-storage-tank-enable"].default_value = "inline-variant"
-  data.raw["int-setting"]["tiny-storage-tank-volume"].default_value = 1000
-end
-
 if mods["crushing-industry"] then
-  data.raw["bool-setting"]["crushing-industry-space-crusher"].default_value = false
+  --data.raw["bool-setting"]["crushing-industry-space-crusher"].default_value = false
   data.raw["bool-setting"]["crushing-industry-space-crusher-quality"].default_value = false
   data.raw["bool-setting"]["crushing-industry-smelting-productivity"].default_value = false
+  data.raw["bool-setting"]["crushing-industry-optical-fiber"].default_value = false
 
   data.raw["bool-setting"]["crushing-industry-concrete-mix"].forced_value = false
   data.raw["bool-setting"]["crushing-industry-concrete-mix"].hidden = true
 
   data.raw["int-setting"]["crushing-industry-concrete-spoil-amount"].hidden = true
   data.raw["string-setting"]["crushing-industry-concrete-machine-ignorelist"].hidden = true
+
+  data.raw["bool-setting"]["crushing-industry-sandfill"].default_value = false
 
   --[[
   if mods["Krastorio2-spaced-out"] then

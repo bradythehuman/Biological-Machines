@@ -48,6 +48,10 @@ data.raw["recipe"]["acid-neutralisation"].results = {
   {type = "item", name = "sulfur", amount = 10}
 }
 
+table.insert(data.raw.recipe["burnt-spoilage"].results,
+  {type = "item", name = "bm-potash", amount = 1, independent_probability = 0.25}
+)
+
 
 
 ------------------------------------------------METAL
@@ -75,7 +79,7 @@ local add_steel = {
   ["speed-module"] = 1,
   ["efficiency-module"] = 1,
   ["productivity-module"] = 1,
-  ["quality-module"] = 1,
+  --["quality-module"] = 1,
   ["low-density-structure"] = 4
 }
 dh.add_ingredient_table(add_steel, "item", "steel-plate")
@@ -227,7 +231,7 @@ local remove_electronic_circuit = {
 dh.remove_ingredient(remove_electronic_circuit, "electronic-circuit")
 
 table.insert(data.raw["recipe"]["scrap-recycling"].results, {
-  type = "item", name = "bm-lightbulb", amount = 1, probability = 0.02
+  type = "item", name = "bm-lightbulb", amount = 1, shared_probability = {min = 0.6, max = 0.62}
 })
 
 local add_lightbulb = {
@@ -237,12 +241,13 @@ local add_lightbulb = {
   ["speed-module"] = 3,
   ["efficiency-module"] = 3,
   ["productivity-module"] = 3,
-  ["quality-module"] = 3,
+  --["quality-module"] = 3,
   ["car"] = 2,
   ["tank"] = 2,
   ["locomotive"] = 2,
 }
 dh.add_ingredient_table(add_lightbulb, "item", "bm-lightbulb")
+
 --[[
 local add_plastic = {
   ["speed-module-2"] = 20,
@@ -260,7 +265,7 @@ dh.add_ingredient("spidertron", "item", "productivity-module-2", 25)
 
 --dh.add_ingredient("power-armor", "item", "modular-armor", 1)
 dh.add_ingredient("power-armor-mk2", "item", "power-armor", 1)
-dh.add_ingredient("mech-armor", "item", "quality-module-2", 25)
+--dh.add_ingredient("mech-armor", "item", "quality-module-2", 25)
 dh.add_ingredient("mech-armor", "item", "flying-robot-frame", 40)
 
 dh.add_ingredient("biolab", "item", "efficiency-module", 10)
@@ -309,7 +314,7 @@ data:extend({
     type = "recipe",
     name = "bm-carbonizer",
     icon = "__biological-machines-industry__/graphics/carbonizer-icon.png",
-    category = "crafting",
+    categories = {"crafting"},
     energy_required = 1,
     ingredients = {{type = "item", name = "stone-brick", amount = 5}},
     results = {{type = "item", name = "bm-carbonizer", amount = 1}}
@@ -330,7 +335,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "bm-pyrolysis",
+    categories = {"bm-pyrolysis"},
     subgroup = "bm-pyrolysis",
     order = "a",
     auto_recycle = false,
@@ -359,7 +364,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "bm-pyrolysis",
+    categories = {"bm-pyrolysis"},
     subgroup = "bm-pyrolysis",
     order = "b",
     auto_recycle = false,
@@ -370,8 +375,8 @@ data:extend({
     results = {
       {type = "item", name = "carbon", amount = 2},
       {type = "item", name = "bm-tar", amount = 2},
-      {type = "item", name = "bm-potash", amount = 1, probability = 0.5},
-      {type = "item", name = "sulfur", amount = 1, probability = 0.5}
+      {type = "item", name = "bm-potash", amount = 1, independent_probability = 0.5},
+      {type = "item", name = "sulfur", amount = 1, independent_probability = 0.5}
     }
   },
   {
@@ -390,7 +395,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "bm-pyrolysis",
+    categories = {"bm-pyrolysis"},
     subgroup = "bm-pyrolysis",
     order = "c",
     auto_recycle = false,
@@ -419,7 +424,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "bm-pyrolysis",
+    categories = {"bm-pyrolysis"},
     subgroup = "bm-pyrolysis",
     order = "d",
     auto_recycle = false,
@@ -451,7 +456,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "bm-pyrolysis",
+    categories = {"bm-pyrolysis"},
     subgroup = "bm-pyrolysis",
     order = "e",
     auto_recycle = false,
@@ -462,14 +467,14 @@ data:extend({
     results = {
       {type = "item", name = "carbon", amount = 1},
       {type = "item", name = "bm-tar", amount = 5},
-      {type = "item", name = "sulfur", amount = 1, probability = 0.5}
+      {type = "item", name = "sulfur", amount = 1, independent_probability = 0.5}
     }
   },
   {
     type = "recipe",
     name = "bm-potassium-nitrate",
     icon = "__biological-machines-k2-assets__/graphics/potassium-nitrate.png",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     subgroup = "bm-powder",
     order = "a-d",
     --auto_recycle = false,
@@ -487,7 +492,7 @@ data:extend({
     type = "recipe",
     name = "bm-gunpowder-mix",
     icon = "__biological-machines-industry__/graphics/gunpowder-mix.png",
-    category = "crafting",
+    categories = {"crafting"},
     subgroup = "bm-powder",
     order = "b-a",
     --auto_recycle = false,
@@ -510,7 +515,7 @@ data:extend({
     type = "recipe",
     name = "bm-slag-crushing",
     icon = "__biological-machines-industry__/graphics/slag-crushing.png",
-    category = "crushing",
+    categories = {"crushing"},
     subgroup = "bm-powder",
     order = "c-c",
     auto_recycle = false,
@@ -524,15 +529,15 @@ data:extend({
     results = {
       {type = "item", name = "bm-sand", amount = 10},
       {type = "item", name = "carbon", amount = 1},
-      {type = "item", name = "sulfur", amount = 1, probability = 0.5},
-      {type = "item", name = "bm-slag", amount = 1, probability = 0.2}
+      {type = "item", name = "sulfur", amount = 1, independent_probability = 0.5},
+      {type = "item", name = "bm-slag", amount = 1, independent_probability = 0.2}
     }
   },
   {
     type = "recipe",
     name = "bm-steel-mix",
     icon = "__biological-machines-industry__/graphics/steel-mix.png",
-    category = "crushing",
+    categories = {"crushing"},
     subgroup = "bm-powder",
     order = "b-a",
     --auto_recycle = false,
@@ -552,7 +557,7 @@ data:extend({
     type = "recipe",
     name = "bm-piston",
     icon = "__biological-machines-industry__/graphics/piston.png",
-    category = "crafting",
+    categories = {"crafting"},
     subgroup = "intermediate-product",
     allow_productivity = true,
     enabled = false,
@@ -577,9 +582,10 @@ data:extend({
         icon = "__space-age__/graphics/icons/fluid/molten-iron.png",
         scale = 0.3,
         shift = {4, -4},
+        draw_background = true,
       },
     },
-    category = "metallurgy",
+    categories = {"metallurgy"},
     subgroup = "vulcanus-processes",
     order = "b[casting]-e[casting-iron-stick]-a",
     enabled = false,
@@ -596,7 +602,7 @@ data:extend({
     type = "recipe",
     name = "bm-molten-steel-from-lava",
     icon = "__biological-machines-industry__/graphics/molten-steel-from-lava.png",
-    category = "metallurgy",
+    categories = {"metallurgy"},
     subgroup = "vulcanus-processes",
     order = "a[melting]-a[lava-b]-a",
     auto_recycle = false,
@@ -641,7 +647,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "metallurgy",
+    categories = {"metallurgy"},
     subgroup = "vulcanus-processes",
     order = "a[melting]-c[molten-copper]-a",
     auto_recycle = false,
@@ -655,7 +661,7 @@ data:extend({
     energy_required = 32,
     results = {
       {type = "fluid", name = "bm-molten-steel", amount = 500},
-      {type = "item", name = "bm-slag", amount = 1, probability = 0.5}
+      {type = "item", name = "bm-slag", amount = 1, independent_probability = 0.5}
     },
     allow_productivity = true,
     hide_from_signal_gui = false,
@@ -676,14 +682,16 @@ data:extend({
         icon = "__biological-machines-k2-assets__/graphics/sand.png",
         scale = 0.25,
         shift = {-8, 8},
+        draw_background = true,
       },
       {
         icon = "__space-age__/graphics/icons/spoilage.png",
         scale = 0.25,
         shift = {8, 8},
+        draw_background = true,
       },
     },
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     subgroup = "fluid-recipes",
     order = "e",
     auto_recycle = false,
@@ -694,12 +702,12 @@ data:extend({
     surface_conditions = {{property = "pressure", min = 1000, max = 1000}},
     ingredients = {{type = "fluid", name = "water", amount = 400}},
     results = {
-      {type = "item", name = "bm-sand", amount = 3, probability = 0.5},
-      {type = "item", name = "spoilage", amount = 2, probability = 0.5},
-      {type = "item", name = "stone", amount = 1, probability = 0.1},
-      {type = "item", name = "iron-ore", amount = 1, probability = 0.01},
-      {type = "item", name = "copper-ore", amount = 1, probability = 0.01},
-      {type = "item", name = "raw-fish", amount = 1, probability = 0.01},
+      {type = "item", name = "bm-sand", amount = 3, independent_probability = 0.5},
+      {type = "item", name = "spoilage", amount = 2, independent_probability = 0.5},
+      {type = "item", name = "stone", amount = 1, independent_probability = 0.1},
+      {type = "item", name = "iron-ore", amount = 1, independent_probability = 0.01},
+      {type = "item", name = "copper-ore", amount = 1, independent_probability = 0.01},
+      {type = "item", name = "raw-fish", amount = 1, independent_probability = 0.01},
     }
   },
   --[[
@@ -707,7 +715,7 @@ data:extend({
     type = "recipe",
     name = "volcanic-stone-crushing",
     icon = "__biological-machines-industry__/graphics/stone-crushing.png",
-    category = "crushing",
+    categories = {"crushing"},
     subgroup = "powder",
     order = "c-b",
     auto_recycle = false,
@@ -728,7 +736,7 @@ data:extend({
     --name = "sedimentary-stone-crushing",
     name = "bm-stone-crushing",
     icon = "__biological-machines-industry__/graphics/stone-crushing.png",
-    category = "crushing",
+    categories = {"crushing"},
     subgroup = "bm-powder",
     order = "c-a",
     auto_recycle = false,
@@ -748,7 +756,7 @@ data:extend({
     type = "recipe",
     name = "bm-lime",
     icon = "__biological-machines-industry__/graphics/lime.png",
-    category = "smelting",
+    categories = {"smelting"},
     subgroup = "bm-powder",
     order = "a-c",
     auto_recycle = false,
@@ -763,7 +771,7 @@ data:extend({
     type = "recipe",
     name = "bm-cement-mix",
     icon = "__biological-machines-industry__/graphics/cement-mix.png",
-    category = "crushing",
+    categories = {"crushing"},
     subgroup = "bm-powder",
     order = "b-b",
     enabled = false,
@@ -780,7 +788,7 @@ data:extend({
     type = "recipe",
     name = "bm-glass-mix",
     icon = "__biological-machines-industry__/graphics/glass-mix.png",
-    category = "crafting",
+    categories = {"crafting"},
     subgroup = "bm-powder",
     order = "b-c",
     enabled = true,
@@ -797,7 +805,7 @@ data:extend({
     type = "recipe",
     name = "bm-glass-plate",
     icon = "__biological-machines-core__/graphics/glass-plate.png",
-    category = "smelting",
+    categories = {"smelting"},
     subgroup = "raw-material",
     auto_recycle = false,
     enabled = true,
@@ -811,7 +819,7 @@ data:extend({
     type = "recipe",
     name = "bm-molten-glass",
     icon = "__biological-machines-core__/graphics/molten-glass.png",
-    category = "metallurgy",
+    categories = {"metallurgy"},
     subgroup = "vulcanus-processes",
     order = "a[melting]-d[molten-glass]",
     auto_recycle = false,
@@ -828,16 +836,18 @@ data:extend({
     name = "bm-sand-from-lava",
     icons = {
       {
-        icon = "__biological-machines-k2-assets__/graphics/sand.png"
+        icon = "__biological-machines-k2-assets__/graphics/sand.png",
+        scale = 0.4,
+        shift = {0, 2},
       },
       {
         icon = "__space-age__/graphics/icons/fluid/lava.png",
-        scale = 0.25,
-        shift = {-8, -8},
+        scale = 0.3,
+        shift = {0, -6},
         draw_background = true,
       },
     },
-    category = "metallurgy",
+    categories = {"metallurgy"},
     subgroup = "vulcanus-processes",
     order = "b[casting]-z-a",
     auto_recycle = false,
@@ -868,7 +878,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "metallurgy",
+    categories = {"metallurgy"},
     --subgroup = "vulcanus-processes",
     --order = "b[casting]-z-b",
     subgroup = "terrain",
@@ -898,7 +908,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "crafting",
+    categories = {"crafting"},
     subgroup = "terrain",
     order = "c[landfill]-a[dirt]-a",
     auto_recycle = false,
@@ -925,7 +935,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "crafting",
+    categories = {"crafting"},
     subgroup = "terrain",
     order = "c[landfill]-a[dirt]-b",
     auto_recycle = false,
@@ -952,7 +962,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "crafting",
+    categories = {"crafting"},
     subgroup = "terrain",
     order = "c[landfill]-a[dirt]-c",
     auto_recycle = false,
@@ -969,7 +979,7 @@ data:extend({
       icon = "__base__/graphics/icons/landfill.png",
       tint = {0.45, 0.25, 0}
     }},
-    category = "crafting",
+    categories = {"crafting"},
     subgroup = "terrain",
     order = "c[landfill]-a[dirt]-z",
     enabled = false,
@@ -988,7 +998,7 @@ data:extend({
     type = "recipe",
     name = "bm-resin",
     icon = "__biological-machines-industry__/graphics/resin.png",
-    category = "crafting",
+    categories = {"crafting"},
     auto_recycle = false,
     enabled = false,
     allow_productivity = true,
@@ -1002,7 +1012,7 @@ data:extend({
     name = "bm-circuit-board-with-resin",
     icons = {
       {
-        icon = "__biological-machines-industry__/graphics/circuit-board.png"
+        icon = "__biological-machines-industry__/graphics/circuit-board.png",
       },
       {
         icon = "__biological-machines-industry__/graphics/resin.png",
@@ -1017,7 +1027,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "crafting",
+    categories = {"crafting"},
     subgroup = "nauvis-agriculture",
     order = "b-d",
     auto_recycle = false,
@@ -1047,7 +1057,7 @@ data:extend({
       },
     },
     ]]
-    category = "electronics",
+    categories = {"crafting", "electromagnetics"},
     subgroup = "raw-material",
     order = "a-b",
     auto_recycle = false,
@@ -1082,7 +1092,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "crafting",
+    categories = {"crafting"},
     subgroup = "agriculture-products",
     order = "a[organic-products]-b[biolubricant]-a",
     auto_recycle = false,
@@ -1117,7 +1127,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "crafting",
+    categories = {"crafting"},
     subgroup = "vulcanus-processes",
     order = "b[casting]-z-c",
     auto_recycle = false,
@@ -1153,7 +1163,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "organic",
+    categories = {"organic"},
     subgroup = "agriculture-products",
     order = "a[organic-products]-b[biolubricant]-b",
     auto_recycle = false,
@@ -1173,7 +1183,7 @@ data:extend({
     type = "recipe",
     name = "bm-lightbulb",
     icon = "__biological-machines-industry__/graphics/lightbulb.png",
-    category = "electronics",
+    categories = {"crafting", "electromagnetics"},
     subgroup = "intermediate-product",
     enabled = false,
     allow_productivity = true,
@@ -1194,17 +1204,19 @@ data:extend({
     name = "bm-sulfur-from-crude-oil",
     icons = {
       {
-        icon = "__base__/graphics/icons/sulfur.png"
-      },
-      {
         icon = "__base__/graphics/icons/fluid/crude-oil.png",
         scale = 0.25,
-        shift = {8, -8},
+        shift = {-8, -8},
+      },
+      {
+        icon = "__base__/graphics/icons/sulfur.png",
+        scale = 0.4,
+        shift = {2, 2},
         draw_background = true,
       },
     },
     icon = "__biological-machines-industry__/graphics/sulfur-from-crude-oil.png",
-    category = "chemistry",
+    categories = {"chemistry"},
     energy_required = 2,
     enabled = false,
     auto_recycle = false,
@@ -1240,7 +1252,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     subgroup = "bm-biological-fluid-recipes",
     order = "a-c",
     auto_recycle = false,
@@ -1272,7 +1284,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     subgroup = "bm-biological-fluid-recipes",
     order = "a-d",
     auto_recycle = false,
@@ -1304,7 +1316,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     subgroup = "bm-biological-fluid-recipes",
     order = "a-e",
     auto_recycle = false,
@@ -1336,7 +1348,7 @@ data:extend({
         draw_background = true,
       },
     },
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     subgroup = "bm-biological-fluid-recipes",
     order = "a-f",
     auto_recycle = false,
@@ -1356,7 +1368,7 @@ data:extend({
     type = "recipe",
     name = "bm-biodeisel",
     icon = "__biological-machines-industry__/graphics/biodeisel.png",
-    category = "oil-processing",
+    categories = {"oil-processing"},
     subgroup = "bm-biological-fluid-recipes",
     order = "a-h",
     auto_recycle = false,
@@ -1386,11 +1398,11 @@ data:extend({
       {
         icon = "__biological-machines-industry__/graphics/tar.png",
         scale = 0.25,
-        shift = {-8, -8},
+        shift = {-9, -8},
         draw_background = true,
       },
     },
-    category = "chemistry",
+    categories = {"chemistry"},
     subgroup = "fluid-recipes",
     order = "b[fluid-chemistry]-e[solid-fuel-from-heavy-oil]-a",
     auto_recycle = false,
@@ -1412,24 +1424,24 @@ data:extend({
     --icon = "__biological-machines-industry__/graphics/lubricant-from-tar.png",
     icons = {
       {
-        icon = "__base__/graphics/icons/fluid/lubricant.png",
-        scale = 0.4,
-        shift = {0, 4}
-      },
-      {
         icon = "__biological-machines-core__/graphics/ethanol.png",
         scale = 0.25,
-        shift = {-6, -8},
-        draw_background = true,
+        shift = {-5, -6},
       },
       {
         icon = "__biological-machines-industry__/graphics/tar.png",
         scale = 0.25,
-        shift = {6, -8},
+        shift = {5, -6},
+        draw_background = true,
+      },
+      {
+        icon = "__base__/graphics/icons/fluid/lubricant.png",
+        scale = 0.4,
+        shift = {0, 4},
         draw_background = true,
       },
     },
-    category = "chemistry",
+    categories = {"chemistry"},
     subgroup = "fluid-recipes",
     order = "b[fluid-chemistry]-e[solid-fuel-from-heavy-oil]-b",
     auto_recycle = false,
@@ -1455,7 +1467,7 @@ data:extend({
     type = "recipe",
     name = "carbon-from-tar",
     icon = "__biological-machines-industry__/graphics/carbon-from-tar.png",
-    category = "chemistry",
+    categories = {"chemistry"},
     subgroup = "raw-material",
     auto_recycle = false,
     enabled = false,

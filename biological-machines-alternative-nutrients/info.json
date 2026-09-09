@@ -1,0 +1,10 @@
+{
+  "name": "biological-machines-alternative-nutrients",
+  "version": "1.0.0",
+  "title": "Biological Machines: Alternative Nutrients",
+  "author": "bradythehuman",
+  "description": "Adds source of nutrients to early game Nauvis and Vulcanus/Gleba.",
+  "factorio_version": "2.1",
+  "dependencies": ["biological-machines-core >= 1.0.0"],
+  "space_travel_required": true
+}

@@ -1,0 +1,15 @@
+{
+  "name": "biological-machines-panglia-tweaks",
+  "version": "1.0.0",
+  "title": "Bradythehuman's Panglia Tweaks",
+  "author": "bradythehuman",
+  "description": "",
+  "factorio_version": "2.1",
+  "dependencies": [
+    "biological-machines-core >= 1.0.0",
+    "panglia_planet >= 0.5.11",
+
+    "(?) biological-machines-warp-drive >= 1.0.0"
+  ],
+  "space_travel_required": true
+}

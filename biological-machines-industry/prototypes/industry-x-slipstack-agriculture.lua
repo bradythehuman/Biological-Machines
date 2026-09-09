@@ -17,13 +17,16 @@ data.raw.item["slipstack-seed"].order = "a[seeds]-d[slipstack-seed]-b"
 local seed_recipe = data.raw.recipe["slipstack-seed"]
 seed_recipe.icons = {
   {
-    icon = seed_recipe.icon
+    icon = "__base__/graphics/icons/fluid/water.png",
+    scale = 0.25,
+    shift = {-8, -8},
   },
   {
-    icon = "__base__/graphics/icons/fluid/water.png",
+    icon = seed_recipe.icon,
     scale = 0.35,
-    shift = {5, -5},
-  }
+    shift = {3, 3},
+    draw_background = true,
+  },
 }
 seed_recipe.icon = nil
 seed_recipe.order = "a[seeds]-d[slipstack-seed]-a"
@@ -32,7 +35,7 @@ seed_recipe.ingredients = {
   {type = "item", name = "nutrients", amount = 1}
 }
 seed_recipe.results = {
-  {type = "item", name = "slipstack-seed", amount = 1, probability = 0.1},
+  {type = "item", name = "slipstack-seed", amount = 1, independent_probability = 0.1},
   {type = "item", name = "spoilage", amount = 5}
 }
 seed_recipe.primary_result = "slipstack-seed"

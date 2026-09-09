@@ -1,0 +1,13 @@
+{
+  "name": "biological-machines-promethium-belts",
+  "version": "1.0.0",
+  "title": "Bradythehuman's Promethium Belts",
+  "author": "bradythehuman",
+  "description": "Fork of Promethium Belts by Helios467 for 2.1 adding AAI Loader support, AAI Loaders Sane Rebalance support and a few startup settings.",
+  "factorio_version": "2.1",
+  "dependencies": [
+    "biological-machines-core >= 1.0.0",
+    "? aai-loaders-sane >= 1.0.5"
+  ],
+  "space_travel_required": true
+}

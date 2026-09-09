@@ -10,11 +10,15 @@ dh.recycle_to_ingredients("discharge-defense-equipment")
 
 
 
+table.insert(data.raw["simple-entity"]["bm-crash-probe"].minable.results,
+  {type = "item", name = "bm-glass-plate", amount = 5}
+)
+
 data.raw["recipe"]["bm-glass-dust-filtration"].results = {
-  {type = "item", name = "bm-sand", amount = 10, probability = 0.5},
-  {type = "item", name = "bm-lime", amount = 2, probability = 0.5},
-  {type = "item", name = "bm-potash", amount = 1, probability = 0.5},
-  {type = "item", name = "bm-glass-shard", amount = 1, probability = 0.5},
+  {type = "item", name = "bm-sand", amount = 10, independent_probability = 0.5},
+  {type = "item", name = "bm-lime", amount = 2, independent_probability = 0.5},
+  {type = "item", name = "bm-potash", amount = 1, independent_probability = 0.5},
+  {type = "item", name = "bm-glass-shard", amount = 1, independent_probability = 0.5},
 }
 
 local brick_recipe = data.raw["recipe"]["bm-brick-from-glass-shard"]
@@ -48,7 +52,7 @@ data:extend({
         shift = {8, 8}
       },
     },
-    category = "crafting",
+    categories = {"crafting"},
     subgroup = "bm-wit-processes",
     order = "c-e",
     auto_recycle = false,

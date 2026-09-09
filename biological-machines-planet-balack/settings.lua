@@ -2,7 +2,11 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 
-dh.mod_override_setting("promethium-belts", "bm-promethium-belts-override")
+if mods["biological-machines-promethium-belts"] then
+  data.raw["int-setting"]["promethium-belt-science-count"].default_value = 5000
+end
+
+dh.mod_override_setting("biological-machines-promethium-belts", "bm-promethium-belts-override")
 
 if mods["BuggisNuclearBots"] then
   data.raw["int-setting"]["robot-cargo-mul"].default_value = 5
@@ -23,12 +27,6 @@ data:extend({
   {
     type = "bool-setting",
     name = "bm-armored-biters-override",
-    setting_type = "startup",
-    default_value = true,
-  },
-  {
-    type = "bool-setting",
-    name = "bm-shattered-core",
     setting_type = "startup",
     default_value = true,
   },
@@ -58,8 +56,10 @@ if mods["metal-and-stars"] then
   setting_prototype.forced_value = false
 end
 
+--[[
 if mods["skewer_shattered_planet"] then
   local setting_prototype = data.raw["bool-setting"]["bm-shattered-core"]
   setting_prototype.hidden = true
   setting_prototype.forced_value = false
 end
+]]

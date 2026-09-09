@@ -6,8 +6,10 @@ data:extend({
     icon_size = 640,
     essential = true,
     effects = {
+      {type = "unlock-recipe", recipe = "bm-warp-drive-part"},
       {type = "unlock-recipe", recipe = "bm-warp-drive"},
       {type = "unlock-recipe", recipe = "bm-warp-power-cell"},
+      {type = "unlock-recipe", recipe = "bm-warp-power-cell-recharge"},
       {type = "unlock-recipe", recipe = "bm-warp"},
     },
     prerequisites = {"promethium-science-pack"},
@@ -26,6 +28,11 @@ data:extend({
       {
         type = "change-recipe-productivity",
         recipe = "bm-warp-power-cell",
+        change = 0.1
+      },
+      {
+        type = "change-recipe-productivity",
+        recipe = "bm-warp",
         change = 0.1
       },
     },

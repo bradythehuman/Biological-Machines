@@ -7,10 +7,10 @@ data.raw["technology"]["space-platform"].localised_description = {"technology-de
 
 local space_sci_tech = data.raw["technology"]["space-science-pack"]
 space_sci_tech.localised_description = {"technology-description.bm-new-space-science-pack"}
-space_sci_tech.prerequisites = {"robotics-facility"}
+space_sci_tech.prerequisites = {"bm-robotics-facility"}
 space_sci_tech.research_trigger = {
   type = "craft-item",
-  item = "robotics-facility",
+  item = "bm-robotics-facility",
   count = 1
 }
 
@@ -43,9 +43,10 @@ dh.add_recipe_unlock("foundry", "bm-molten-copper-from-dust")
 dh.remove_prereq("laser", "chemical-science-pack")
 dh.add_prereq("laser", "space-science-pack")
 
-dh.add_prereq("bm-warp-drive", "bm-interstellar-science-pack")
-
 dh.add_prereq("rocket-silo", "solar-energy")
+
+dh.remove_recipe_unlock("space-platform", "asteroid-collector")
+dh.add_recipe_unlock("space-platform-thruster", "asteroid-collector")
 
 
 
@@ -102,7 +103,7 @@ data:extend({
         --icons = PlanetsLib.technology_icon_moon("__biological-machines-planet-wit__/graphics/wit-icon.png", 64),
       }
     },
-    prerequisites = {"space-platform", "electric-boiler", "bulk-inserter"},
+    prerequisites = {"space-platform", --[["electric-boiler",]] "bulk-inserter", "bm-scrapyard"},
     research_trigger = {
       type = "build-entity",
       entity = "thruster"
@@ -119,11 +120,12 @@ data:extend({
       {type = "unlock-recipe", recipe = "bm-rocket-fuel-from-thruster-fuel"},
       {type = "unlock-recipe", recipe = "bm-lubricant-from-thruster-fuel"},
       {type = "unlock-recipe", recipe = "ice-melting"},
+      {type = "unlock-recipe", recipe = "bm-wit-steam"},
     },
     prerequisites = {"bm-planet-discovery-wit"},
     research_trigger = {
       type = "mine-entity",
-      entity = "bm-big-wit-rock"
+      entities = {"bm-big-wit-rock", "bm-huge-wit-rock"}
     }
   },
   {
@@ -142,7 +144,7 @@ data:extend({
     prerequisites = {"bm-planet-discovery-wit"},
     research_trigger = {
       type = "mine-entity",
-      entity = "bm-glassberg-big"
+      entities = {"bm-glassberg-big", "lithium-iceberg-huge"}
     }
   },
   {
@@ -159,7 +161,7 @@ data:extend({
     prerequisites = {"bm-asteroid-deposit", "bm-glass-deposit"},
     research_trigger = {
       type = "mine-entity",
-      entity = "bm-asteroid-ore"
+      entities = {"bm-asteroid-ore"}
     }
   },
   {
@@ -174,7 +176,7 @@ data:extend({
     prerequisites = {"bm-asteroid-deposit", "bm-glass-deposit"},
     research_trigger = {
       type = "mine-entity",
-      entity = "bm-copper-sulfate"
+      entities = {"bm-copper-sulfate"}
     }
   },
   {
@@ -188,7 +190,7 @@ data:extend({
     prerequisites = {"bm-asteroid-crushing", "bm-copper-sulfate-processing"},
     research_trigger = {
       type = "mine-entity",
-      entity = "bm-helium-vent"
+      entities = {"bm-helium-vent"}
     }
   },
   {
@@ -258,4 +260,22 @@ data:extend({
       time = 120,
     }
   },
+  {
+    type = "technology",
+    name = "bm-robotics-facility",
+    icon = "__biological-machines-planet-wit__/graphics/mfr/mfr-icon-big.png",
+    icon_size = 640,
+    effects = {
+      {
+        type = "unlock-recipe",
+        recipe = "bm-robotics-facility"
+      },
+    },
+    prerequisites = {"bm-helium-processing"},
+    research_trigger = {
+      type = "craft-item",
+      item = "bm-helium-power-cell",
+      count = 20
+    }
+  }
 })

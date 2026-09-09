@@ -10,16 +10,16 @@ data.raw["recipe"]["robotics-facility"].surface_conditions = {
 }
 
 --RECIPE CATEGORIES
-data.raw.recipe["engine-unit"].category = "advanced-crafting"
+data.raw.recipe["engine-unit"].categories = {"advanced-crafting"}
 --data.raw.recipe["electric-engine-unit"].category = "crafting-with-fluid"
 
-data.raw.recipe["laser-turret"].category = "bm-advanced-robotics"
-data.raw.recipe["personal-laser-defense-equipment"].category = "bm-advanced-robotics"
-data.raw.recipe["discharge-defense-equipment"].category = "bm-advanced-robotics"
+data.raw.recipe["laser-turret"].categories = {"bm-advanced-robotics"}
+data.raw.recipe["personal-laser-defense-equipment"].categories = {"bm-advanced-robotics"}
+data.raw.recipe["discharge-defense-equipment"].categories = {"bm-advanced-robotics"}
 
-data.raw.recipe["asteroid-collector"].category = "bm-advanced-robotics"
-data.raw.recipe["spidertron"].category = "bm-advanced-robotics"
-data.raw.recipe["mech-armor"].category = "bm-advanced-robotics"
+data.raw.recipe["asteroid-collector"].categories = {"bm-advanced-robotics"}
+data.raw.recipe["spidertron"].categories = {"bm-advanced-robotics"}
+data.raw.recipe["mech-armor"].categories = {"bm-advanced-robotics"}
 
 table.insert(data.raw["assembling-machine"]["robotics-facility"].crafting_categories, "bm-advanced-robotics")
 
@@ -36,11 +36,11 @@ data.raw.recipe["robotics-facility"].ingredients = {
 dh.recycle_to_ingredients("robotics-facility")
 --[[
 data.raw["recipe"]["robotics-facility-recycling"].results = {
-  {type = "item", name = "bm-helium-power-cell", amount = 20, probability = 0.25},
-  {type = "item", name = "bulk-inserter", amount = 3, probability = 0.25},
-  {type = "item", name = "steel-plate", amount = 100, probability = 0.25},
-  {type = "item", name = "electric-engine-unit", amount = 10, probability = 0.25},
-  {type = "item", name = "processing-unit", amount = 20, probability = 0.25}
+  {type = "item", name = "bm-helium-power-cell", amount = 20, independent_probability = 0.25},
+  {type = "item", name = "bulk-inserter", amount = 3, independent_probability = 0.25},
+  {type = "item", name = "steel-plate", amount = 100, independent_probability = 0.25},
+  {type = "item", name = "electric-engine-unit", amount = 10, independent_probability = 0.25},
+  {type = "item", name = "processing-unit", amount = 20, independent_probability = 0.25}
 }
 ]]
 

@@ -1,4 +1,4 @@
-local recycling = require("__quality__.prototypes.recycling")
+local recycling = require("__recycler__.recycling")
 
 local dh = require("__biological-machines-core__.data-helper")
 
@@ -25,11 +25,24 @@ dh.remove_prereq("promethium-transport-belt", "promethium-science-pack")
 
 dh.add_prereq("promethium-transport-belt", "bm-planet-discovery-balack")
 
-data.raw["technology"]["promethium-transport-belt"].unit = util.table.deepcopy(data.raw.technology["bm-tank-mk2"].unit)
+data.raw["technology"]["promethium-transport-belt"].unit.ingredients = util.table.deepcopy(data.raw.technology["bm-tank-mk2"].unit.ingredients)
+
+data.raw["technology"]["promethium-transport-belt"].unit.time = 120
 
 
 
 --LOADER
+if mods["aai-loaders"] and settings.startup["aai-loaders-mode"].value ~= "graphics-only" then
+  dh.remove_ingredient("aai-promethium-loader", "promethium-asteroid-chunk")
+  dh.add_ingredient("aai-promethium-loader", "item", "bm-radiation-sheilding", 5)
+
+  dh.remove_ingredient("aai-promethium-loader", "quantum-processor")
+  dh.add_ingredient("aai-promethium-loader", "item", "quantum-processor", 5)
+
+  dh.remove_ingredient("aai-promethium-loader", "lubricant")
+  dh.add_ingredient("aai-promethium-loader", "fluid", "lubricant", 50)
+end
+--[[
 if mods["aai-loaders"] and settings.startup["aai-loaders-mode"].value ~= "graphics-only" then
   AAILoaders.make_tier{
 		name = "promethium",
@@ -43,7 +56,7 @@ if mods["aai-loaders"] and settings.startup["aai-loaders-mode"].value ~= "graphi
       unit = util.table.deepcopy(data.raw.technology["bm-tank-mk2"].unit),
 		},
 		recipe = {
-			crafting_category = "metallurgy",
+			crafting_categories = {"metallurgy"},
 			ingredients = {
 			  {type = "item", name = "aai-turbo-loader", amount = 1},
 			  {type = "item", name = "bm-radiation-sheilding", amount = 5},
@@ -53,7 +66,7 @@ if mods["aai-loaders"] and settings.startup["aai-loaders-mode"].value ~= "graphi
 			energy_required = 4
 		},
 		unlubricated_recipe = {
-			crafting_category = "metallurgy",
+			crafting_categories = {"metallurgy"},
 			ingredients = {
         {type = "item", name = "aai-turbo-loader", amount = 1},
 			  {type = "item", name = "bm-radiation-sheilding", amount = 5},
@@ -76,6 +89,7 @@ if mods["aai-loaders"] and settings.startup["aai-loaders-mode"].value ~= "graphi
 
   table.insert(remove_promethium, "aai-promethium-loader")
 end
+]]
 
 
 

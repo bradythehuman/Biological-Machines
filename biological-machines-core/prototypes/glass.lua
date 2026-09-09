@@ -34,7 +34,7 @@ data:extend({
   {
     type = "recipe",
     name = "bm-casting-glass",
-    category = "metallurgy",
+    categories = {"metallurgy"},
     subgroup = "vulcanus-processes",
     order = "b[casting]-ba[casting-glass]",
     icon = "__biological-machines-core__/graphics/casting-glass.png",

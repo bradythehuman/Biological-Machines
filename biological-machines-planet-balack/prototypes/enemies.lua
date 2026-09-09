@@ -364,7 +364,7 @@ local balack_behemoth_snapper_corpse = add_biter_armoured_die_animation(
   {
     type = "corpse",
     name = "bm-balack-behemoth-snapper-corpse",
-    icon = "__ArmouredBiters__/graphics/icons/leviathan-armoured-biter.png",
+    icon = "__ArmouredBiters-2_1-update__/graphics/icons/leviathan-armoured-biter.png",
     icon_size = 64,
     --selection_box = {{-2.5, -1.8}, {2.5, 1.8}},
     selection_box = {{-3, -2.1}, {3, 2.1}},

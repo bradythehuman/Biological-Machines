@@ -11,6 +11,11 @@ require("prototypes.tiles")
 
 
 
+if mods["biological-machines-planet-wit"]
+and mods["biological-machines-warp-drive"] then
+  require("prototypes.wit-x-warp-drive")
+end
+
 if settings.startup["bm-advanced-solar-panels"].value then
   require("prototypes.advanced-solar-panels")
 end
@@ -59,6 +64,12 @@ dh.mod_override_require("Repair_Turret", "bm-repair-turret-override", "prototype
 
 dh.mod_override_require("robot_attrition", "bm-robot-attrition-override", "prototypes.wit-x-robot-attrition")
 
+dh.mod_override_require("long_stack_inserter", "bm-long-stack-inserter-override", "prototypes.wit-x-long-stack-inserter")
+
+dh.mod_override_require("Moshine", "bm-moshine-override", "prototypes.wit-x-moshine")
+
+dh.mod_override_require("panglia_planet", "bm-panglia-override", "prototypes.wit-x-panglia")
+
 
 
 data.raw["autoplace-control"]["vulcanus_volcanism"].order = "c-z-aa"
@@ -83,8 +94,8 @@ data:extend({
   --RECIIPE CATEGORY
   {
    type = "recipe-category",
-   name = "bm-advanced-robotics" --robotics facility only
- },
+   name = "bm-robotics"
+  },
 
  --AUTOPLACE CONTROLS
  {

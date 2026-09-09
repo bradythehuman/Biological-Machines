@@ -5,6 +5,12 @@ require("prototypes.recipes")
 require("prototypes.technologies")
 require("prototypes.gui")
 
+local dh = require("__biological-machines-core__.data-helper")
+
+
+
+dh.mod_override_require("panglia_planet", "bm-panglia-override", "prototypes.hunger-x-panglia")
+
 
 
 data:extend({

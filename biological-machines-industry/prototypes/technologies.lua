@@ -114,7 +114,7 @@ dh.add_prereq("railway", "lamp")
 dh.remove_recipe_unlock("circuit-network", "display-panel")
 dh.add_recipe_unlock("lamp", "display-panel")
 
-dh.add_prereq("mech-armor", "quality-module-2")
+--dh.add_prereq("mech-armor", "quality-module-2")
 dh.add_prereq("spidertron", "productivity-module-2")
 
 

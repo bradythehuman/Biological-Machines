@@ -7,4 +7,4 @@ dh.add_ingredient("bm-interstellar-energy-link", "item", "bm-radiation-sheilding
 
 
 
-K2_WIND_TURBINE_ZARS_FORK.OVERRIDE_SOLAR_POWER_SCALING["bm-dyson-sphere"] = 0
+--K2_WIND_TURBINE_ZARS_FORK.OVERRIDE_SOLAR_POWER_SCALING["bm-dyson-sphere"] = 0

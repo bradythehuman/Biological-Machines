@@ -48,7 +48,7 @@ local function make_trade(item_type, item_name, item_amount)
     name = recipe_name,
     localised_name = {"", {"item-name." .. item_name}, {"bm.market-recipe-suffix"}},
     icons = trade_icons,
-    category = "bm-market",
+    categories = {"bm-market"},
     subgroup = "bm-homeworld",
     order = "c",
     enabled = false,
@@ -57,7 +57,7 @@ local function make_trade(item_type, item_name, item_amount)
     results = {{type = "item", name = item_name, amount = item_amount}}
   }})
 
-  dh.add_recipe_unlock("bm-solar-system-discovery-homeworld", recipe_name)
+  dh.add_recipe_unlock("bm-dyson-sphere-discovery", recipe_name)
   table.insert(data.raw["technology"]["bm-market-productivity"].effects, {
     type = "change-recipe-productivity",
     recipe = recipe_name,
@@ -67,15 +67,15 @@ end
 
 for item_name, item_amount in pairs(th.initial_trades) do
   if th.only_sell[item_name] == nil then
-    make_trade("item", item_name, item_amount)
+    make_trade(th.alt_item_types[item_name] or "item", item_name, item_amount)
   end
 end
 
 for item_name, item_amount in pairs(th.only_buy) do
-  make_trade("item", item_name, item_amount)
+  make_trade(th.alt_item_types[item_name] or "item", item_name, item_amount)
 end
 
 
 
 --RECYCLING RECIPES
-data.raw["recipe"]["bm-super-credit-recycling"].results = {{type = "item", name = "bm-credit", amount = 200, probability = 0.25, ignored_by_stats = 1}}
+data.raw["recipe"]["bm-super-credit-recycling"].results = {{type = "item", name = "bm-credit", amount = 200, independent_probability = 0.25, ignored_by_stats = 1}}

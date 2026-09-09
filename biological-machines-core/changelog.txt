@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+Date: 9. 9. 2026
+  Features:
+    - Updated to 2.1
+  Changes:
+    - Increased bot start construction bot count to 25
+  Info:
+    - Moved standalone features (alternative nutrients, reinforced wall and scrapyard) to submods
+---------------------------------------------------------------------------------------------------
 Version: 1.1.1
 Date: 28. 2. 2026
   Compatibility:
@@ -60,3 +69,8 @@ Date: 28. 1. 2026
       This prevents factorio crashing on load when Particle Physics by half_a_cat
   Changes:
     - Replaces thumbnail, replacing text plates with text
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 27. 1. 2026
+  Info:
+    - Initial release

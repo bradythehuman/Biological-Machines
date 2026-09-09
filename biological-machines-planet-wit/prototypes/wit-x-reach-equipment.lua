@@ -4,7 +4,7 @@ reach_recipe.ingredients = {
   {type = "item", name = "advanced-circuit", amount = 5},
   {type = "item", name = "electric-engine-unit", amount = 1},
 }
-reach_recipe.category = "robotics"
+reach_recipe.categories = {"bm-robotics"}
 
 
 

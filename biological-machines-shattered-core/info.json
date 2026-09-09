@@ -1,0 +1,10 @@
+{
+  "name": "biological-machines-shattered-core",
+  "version": "1.0.0",
+  "title": "Biological Machines: Shattered Core",
+  "author": "bradythehuman",
+  "description": "Adds a small planet to the shattered planet space location where promethium science can be made. The entire surface is covered in promethium ore and an electric grid with free power.",
+  "factorio_version": "2.1",
+  "dependencies": ["biological-machines-core >= 1.0.0"],
+  "space_travel_required": true
+}

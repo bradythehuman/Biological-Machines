@@ -12,13 +12,23 @@ local initial_trades = {
 
 local only_buy = {
   ["rocket-fuel"] = 100,
-  ["rocket-silo"] = 1,
-  ["bm-suspension-fluid-barrel"] = 10,
+  ["uranium-rounds-magazine"] = 100,
+  ["concrete"] = 250,
+  --["rocket-silo"] = 1,
   ["bm-clone"] = 1,
   ["bm-energy-link-core"] = 1
 }
 
 local only_sell = {}
+
+local alt_item_types = {
+  ["uranium-rounds-magazine"] = "ammo",
+}
+
+if (mods and mods["biological-machines-cloning"])
+or (prototypes and prototypes.item["bm-nutrient-paste"]) then
+  only_buy["bm-suspension-fluid-barrel"] = 10
+end
 
 if (mods and mods["biological-machines-planet-wit"])
 or (prototypes and prototypes.item["bm-advanced-solar-panel"]) then
@@ -61,4 +71,5 @@ return {
   only_buy = only_buy,
   only_sell = only_sell,
   scale_trade = scale_trade,
+  alt_item_types = alt_item_types,
 }

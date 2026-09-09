@@ -22,9 +22,9 @@ asteroid_ore.stages.sheet.filename = "__biological-machines-planet-wit__/graphic
 asteroid_ore.minable.mining_time = 10
 asteroid_ore.minable.result = nil
 asteroid_ore.minable.results = {
-  {name = "metallic-asteroid-chunk", type = "item", amount = 1, probability = 0.4},
-  {name = "carbonic-asteroid-chunk", type = "item", amount = 1, probability = 0.3},
-  {name = "oxide-asteroid-chunk", type = "item", amount = 1, probability = 0.3}
+  {name = "metallic-asteroid-chunk", type = "item", amount = 1, independent_probability = 0.4},
+  {name = "carbonic-asteroid-chunk", type = "item", amount = 1, independent_probability = 0.3},
+  {name = "oxide-asteroid-chunk", type = "item", amount = 1, independent_probability = 0.3}
 }
 --asteroid_ore.map_color = {0.17, 0.42, 0.82}
 asteroid_ore.subgroup = "space-material"

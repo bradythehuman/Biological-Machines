@@ -13,15 +13,18 @@ script.on_event(defines.events.on_surface_created, function(event)
     --surface.set_pollution({0, 0}, 100000)
     game.forces["enemy"].set_evolution_factor(1, event.surface_index)
     storage.balack = surface
+  --[[
   elseif surface.name == "shattered-planet"
   and settings.startup["bm-shattered-core"].value then
     storage.shattered_planet = surface
     storage.asteroids = {}
 
     surface.create_entity({name = "hidden-electric-energy-interface", position = {0, 10}})
+  ]]
   end
 end)
 
+--[[
 script.on_event(defines.events.on_player_changed_surface, function(event)
   if not event.surface_index then return end
   local surface = game.surfaces[event.surface_index]
@@ -29,6 +32,7 @@ script.on_event(defines.events.on_player_changed_surface, function(event)
     --game.players[event.player_index].enable_flashlight()
   end
 end)
+]]
 
 local balack_pentapod_table = {
   ["bm-balack-stomper-pentapod"] = true,
@@ -101,6 +105,7 @@ script.on_nth_tick(60 * 45, function(event)
   target_balack_enemies(20)
 end)
 
+--[[
 local function spawn_promethium_asteroid(spawn_angle, velocity_scalar)
   local velocity_angle = spawn_angle + math.pi * (1 + (math.random() - 0.5) / 5)
   local asteroid = storage.shattered_planet.create_entity({
@@ -156,6 +161,7 @@ if settings.startup["bm-shattered-core"].value then
     spawn_promethium_asteroid(spawn_angle + 0.04 * math.pi, 1 * velocity_scalar)
   end)
 end
+]]
 
 script.on_event(defines.events.on_player_mined_entity, function(event)
   event.entity.die()

@@ -1,4 +1,22 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 9. 9. 2026
+  Features:
+    - Updated to 2.1
+    - Added crashed probe, minable for basic construction materials, no longer need to bring minimum to avoid soft lock
+    - Moshine, long stack inserter and Panglia compatibility
+      - long stack inserter built in robotics facility
+      - advanced solar prereq for hypercell solar
+      - Blank ai core recipe uses helium power cells
+      - Interstellar science uses Ai cores instead of data disks
+      - Trained AI control unit requires raw data
+  Changes:
+    - Added repair turret, reach equipment and shield projector as recommended dependencies
+    - Reimplemented robotics facility mod within this mod
+  Bugfixes:
+    - Asteroid collector unlocked at correct time
+    - Corrected machine surface conditions
+---------------------------------------------------------------------------------------------------
 Version: 1.0.7
 Date: 28. 2. 2026
   Bugfixes:

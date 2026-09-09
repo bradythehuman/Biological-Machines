@@ -22,13 +22,6 @@ table.insert(foundation_placable, "bm-balack-oil-deep")
 
 
 
-local warp_cell = data.raw["item"]["bm-warp-power-cell"]
-warp_cell.default_import_location = "bm-balack"
-warp_cell.subgroup = "bm-balack-processes"
-warp_cell.order = "e-b"
-
-
-
 data:extend({
   {
     type = "item",
@@ -74,7 +67,7 @@ data:extend({
     order = "z[biter-nest]-a",
     place_result = "bm-bio-cube",
     stack_size = 1,
-    weight = 10000 * kg,
+    weight = 1000 * kg,
   },
   {
     type = "item",
@@ -175,28 +168,6 @@ data:extend({
     default_import_location = "bm-balack",
     spoil_ticks = 15 * minute,
     spoil_result = "bm-ai-control-unit"
-  },
-  {
-    type = "item",
-    name = "bm-warp-drive-part",
-    icons = {
-      {
-        icon = "__biological-machines-warp-drive__/graphics/quantum-stabilizer/quantum-stabilizer-icon.png",
-      },
-      {
-        icon = "__base__/graphics/icons/iron-gear-wheel.png",
-        scale = 0.25,
-        shift = {8, -8},
-      },
-    },
-    subgroup = "bm-balack-processes",
-    order = "e-a",
-    inventory_move_sound = item_sounds.mechanical_inventory_move,
-    pick_sound = item_sounds.mechanical_inventory_pickup,
-    drop_sound = item_sounds.mechanical_inventory_move,
-    default_import_location = "bm-balack",
-    stack_size = 10,
-    weight = 100 * kg,
   },
   {
     type = "item-with-entity-data",

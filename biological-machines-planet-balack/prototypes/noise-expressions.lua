@@ -17,6 +17,14 @@ the starting island also needs to have a moat.
 The natural area of the starting island should override the vault content if the overlap too much.
 ]]
 
+
+
+local prom_ore_auto = data.raw.resource["bm-promethium-ore"].autoplace
+prom_ore_auto.probability_expression = "bm_balack_promethium_probability - bm_bio_cube_scrap_buffer"
+prom_ore_auto.richness_expression = "bm_balack_promethium_richness"
+
+
+
 data:extend
 {
   { -- The grid sze for the voronoi. As most other noise is scaled based on this it acts like terrain segmentation, but the value has a specific meaning.

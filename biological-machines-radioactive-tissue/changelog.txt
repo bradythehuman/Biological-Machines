@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: 9. 9. 2026
+  Features:
+    - Updated to 2.1
+    - Panglia compatibility
+      - Clone body 0 recipe uses tissue instead of u-235
+  Changes:
+    - Poison resistant asteroids dependency removed, functionality recreated in mod
+    - hardened tissue crafted with stone and spoils into u-238
+    - Added handcannon, ironclad mortar and shelter-k2 as recommended dependencies
+---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 20. 2. 2026
   Changes:
@@ -22,3 +33,8 @@ Date: 28. 1. 2026
       This prevents factorio crashing on load when Particle Physics by half_a_cat
   Changes:
     - Replaces thumbnail, replacing text plates with text
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 9. 9. 2026
+  Info:
+    - Initial release

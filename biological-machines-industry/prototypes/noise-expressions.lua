@@ -1,9 +1,9 @@
 local stone_ap = data.raw["resource"]["stone"].autoplace
-stone_ap.richness_expression = "1.5 * " .. stone_ap.richness_expression
+stone_ap.richness_expression = "2 * " .. stone_ap.richness_expression
 
 local gleba_stone_le = data.raw["noise-expression"]["gleba_stone_richness"].local_expressions
 gleba_stone_le.richness = "2 * control:gleba_stone:richness"
-gleba_stone_le.frequency =  "2 * control:gleba_stone:frequency"
+--gleba_stone_le.frequency =  "2 * control:gleba_stone:frequency"
 
 local vulcanus_coal_richness = data.raw["noise-expression"]["vulcanus_coal_richness"]
 vulcanus_coal_richness.expression = "3 * "..vulcanus_coal_richness.expression

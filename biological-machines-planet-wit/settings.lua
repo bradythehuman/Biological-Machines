@@ -8,13 +8,13 @@ if mods["PersonalTeslaDefenseEquipment"] then
   data.raw["string-setting"]["PeronsalTeslaDefenseSetting-grid_size"].default_value = "3X3"
 end
 
-dh.mod_override_setting("aai-signal-transmission", "bm-aai-signal-override")
-
 dh.mod_override_setting("reach-equipment", "bm-reach-equipment-override")
 
 dh.mod_override_setting("Repair_Turret", "bm-repair-turret-override")
 
 dh.mod_override_setting("robot_attrition", "bm-robot-attrition-override")
+
+dh.mod_override_setting("long_stack_inserter", "bm-long-stack-inserter-override")
 
 
 

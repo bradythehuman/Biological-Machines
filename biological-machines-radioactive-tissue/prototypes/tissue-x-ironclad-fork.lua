@@ -42,7 +42,7 @@ local to_military_cc = {
   "mortar-turret",
 }
 for _, recipe in pairs(to_military_cc) do
-  data.raw["recipe"][recipe].category = "bm-military-crafting"
+  data.raw["recipe"][recipe].categories = {"bm-military-crafting"}
 end
 
 

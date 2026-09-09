@@ -4,7 +4,7 @@ local dh = require("__biological-machines-core__.data-helper")
 
 --[[
 local poison_capsule = data.raw["recipe"]["poison-capsule"]
-poison_capsule.category = "bm-military-crafting-with-fluid"
+poison_capsule.categories = {"bm-military-crafting-with-fluid"}
 poison_capsule.ingredients = {
   {type = "item", name = "steel-plate", amount = 1},
   {type = "item", name = "plastic-bar", amount = 5},
@@ -37,7 +37,7 @@ dh.add_ingredient("poison-capsule", "fluid", "bm-poison", 20)
 
 
 
-data.raw["recipe"]["flamethrower-ammo"].category = "bm-military-crafting-with-fluid"
+data.raw["recipe"]["flamethrower-ammo"].categories = {"bm-military-crafting-with-fluid"}
 
 
 
@@ -81,7 +81,7 @@ local to_military_cc = {
   "military-science-pack",
 }
 for _, recipe in pairs(to_military_cc) do
-  data.raw["recipe"][recipe].category = "bm-military-crafting"
+  data.raw["recipe"][recipe].categories = {"bm-military-crafting"}
 end
 
 
@@ -91,39 +91,39 @@ data:extend({
     type = "recipe",
     name = "bm-radioactive-tissue-cultivation",
     icon = "__biological-machines-radioactive-tissue__/graphics/radioactive-tissue-cultivation.png",
-    category = "organic",
+    categories = {"organic"},
     subgroup = "bm-cultivation",
     order = "c-b",
     surface_conditions = {{property = "pressure", min = 1000, max = 2000}},
     enabled = false,
     allow_productivity = true,
-    result_is_always_fresh = true,
+    --result_is_always_fresh = true,
     energy_required = 30,
     ingredients = {
       {type = "item", name = "bm-radioactive-tissue", amount = 1},
       {type = "item", name = "uranium-235", amount = 1},
-      {type = "item", name = "bioflux", amount = 25}
+      {type = "item", name = "bioflux", amount = 10}
     },
-    results = {{type = "item", name = "bm-radioactive-tissue", amount = 2}}
+    results = {{type = "item", name = "bm-radioactive-tissue", amount = 2, always_fresh = true}}
   },
   {
     type = "recipe",
     name = "bm-hardened-tissue",
     icon = "__biological-machines-radioactive-tissue__/graphics/hardened-tissue.png",
-    category = "chemistry",
+    categories = {"chemistry"},
     subgroup = "bm-cultivation",
     order = "c-c",
     enabled = false,
     allow_productivity = false,
-    result_is_always_fresh = true,
+    --result_is_always_fresh = true,
     energy_required = 15,
     ingredients = {
       {type = "item", name = "bm-radioactive-tissue", amount = 1},
-      {type = "item", name = "iron-ore", amount = 10},
+      {type = "item", name = "stone", amount = 3},
       {type = "fluid", name = "steam", amount = 50}
     },
     results = {
-      {type = "item", name = "bm-hardened-tissue", amount = 1},
+      {type = "item", name = "bm-hardened-tissue", amount = 1, always_fresh = true},
       {type = "fluid", name = "bm-radioactive-biosludge", amount = 50}
     },
     main_product = "bm-hardened-tissue"
@@ -132,7 +132,7 @@ data:extend({
     type = "recipe",
     name = "bm-biosludge-processing",
     icon = "__biological-machines-radioactive-tissue__/graphics/radioactive-biosludge.png",
-    category = "organic-or-chemistry",
+    categories = {"organic", "chemistry"},
     subgroup = "bm-biological-fluid-recipes",
     order = "b-c",
     enabled = false,
@@ -143,7 +143,7 @@ data:extend({
       {type = "fluid", name = "sulfuric-acid", amount = 25}
     },
     results = {
-      {type = "item", name = "spoilage", amount = 25},
+      {type = "item", name = "spoilage", amount = 10},
       {type = "fluid", name = "bm-poison", amount = 25},
       {type = "fluid", name = "water", amount = 25}
     }
@@ -152,7 +152,7 @@ data:extend({
     type = "recipe",
     name = "bm-hardened-tissue-processing",
     icon = "__biological-machines-radioactive-tissue__/graphics/hardened-tissue-processing.png",
-    category = "centrifuging",
+    categories = {"centrifuging"},
     subgroup = "bm-cultivation",
     order = "c-d",
     enabled = false,
@@ -162,14 +162,14 @@ data:extend({
     ingredients = {{type = "item", name = "bm-hardened-tissue", amount = 1}},
     results = {
      {type = "item", name = "uranium-ore", amount = 3},
-     {type = "item", name = "spoilage", amount = 30}
+     {type = "item", name = "spoilage", amount = 10}
     }
   },
   {
     type = "recipe",
     name = "bm-nuclear-military-science-pack",
     icon = "__biological-machines-radioactive-tissue__/graphics/nuclear-military-science-pack.png",
-    category = "bm-military-crafting",
+    categories = {"bm-military-crafting"},
     enabled = false,
     energy_required = 15,
     allow_productivity = true,
@@ -185,7 +185,7 @@ data:extend({
     type = "recipe",
     name = "bm-poison",
     icon = "__biological-machines-radioactive-tissue__/graphics/poison.png",
-    category = "organic-or-chemistry",
+    categories = {"organic", "chemistry"},
     subgroup = "bm-biological-fluid-recipes",
     order = "b-a",
     enabled = false,
@@ -205,7 +205,7 @@ data:extend({
     type = "recipe",
     name = "bm-poison-rounds-magazine",
     icon = "__biological-machines-radioactive-tissue__/graphics/poison-rounds-magazine.png",
-    category = "bm-military-crafting-with-fluid",
+    categories = {"bm-military-crafting-with-fluid"},
     enabled = false,
     energy_required = 6,
     allow_productivity = false,
@@ -220,7 +220,7 @@ data:extend({
     type = "recipe",
     name = "bm-poison-mine",
     icon = "__biological-machines-radioactive-tissue__/graphics/poison-mine.png",
-    category = "bm-military-crafting-with-fluid",
+    categories = {"bm-military-crafting-with-fluid"},
     enabled = false,
     allow_productivity = false,
     energy_required = 8,
@@ -235,7 +235,7 @@ data:extend({
     type = "recipe",
     name = "bm-cybernetic-contact",
     icon = "__biological-machines-radioactive-tissue__/graphics/cybernetic-contact.png",
-    category = "crafting-with-fluid",
+    categories = {"crafting-with-fluid"},
     enabled = false,
     allow_productivity = false,
     energy_required = 30,
@@ -252,7 +252,7 @@ data:extend({
     name = "bm-military-assembling-machine",
     --icons = {{icon = "__base__/graphics/icons/assembling-machine-3.png", tint = {1, 0.5, 1, 1}}},
     icon = "__biological-machines-k2-assets__/graphics/aam-icon.png",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     allow_productivity = false,
     energy_required = 15,

@@ -1,4 +1,22 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 9. 9. 2026
+  Info:
+    - WARNING: Remove all ships from space connection to/from balack before updating
+    - WARNING: The mod "module inserter" by protocol_1903 is not included as a dependency because it is not compatible with 2.1. It will be re added once updated
+  Features:
+    - Updated to 2.1
+    - Moshine and Panglia compatibility
+      - Ai control unit made with ai core 10 and sentient processor instead of tissue and quantum processors
+    - Added bioflux from ooze
+    - Added active ai control unit tech
+  Changes:
+    - Improved tank brake force (tweaked handling generally)
+    - Increased u-235 output for uranium enrichment with ooze (requires tissue)
+    - Removed wind turbine dependency, added weak solar to balack surface
+    - Moved shattered core to its own BM submod
+    - Added pollution detector, larger lamps and radar equipment as recommended dependencies
+---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 20. 2. 2026
   Compatibility:
@@ -28,3 +46,8 @@ Date: 28. 1. 2026
     - Disables and hides shattered core setting if Shattered Planet by CPU_BlackHeart is installed as the two surfaces conflict
   Changes:
     - Replaces thumbnail, replacing text plates with text
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 27. 1. 2026
+  Info:
+    - Initial release

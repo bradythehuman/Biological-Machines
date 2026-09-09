@@ -3,7 +3,7 @@ data:extend({
     type = "recipe",
     name = "bm-suspension-tank",
     icon = "__biological-machines-cloning__/graphics/suspension-tank/cloning-vat-icon.png",
-    category = "crafting",
+    categories = {"crafting"},
     enabled = false,
     allow_productivity = false,
     energy_required = 20,
@@ -18,23 +18,24 @@ data:extend({
     type = "recipe",
     name = "bm-clone",
     icon = "__core__/graphics/icons/entity/character.png",
-    category = "organic",
+    categories = {"organic"},
     enabled = false,
     allow_productivity = false,
+    maximum_productivity = 0,
     energy_required = 120,
     ingredients = {
       {type = "item", name = "biter-egg", amount = 10},
       {type = "item", name = "quantum-processor", amount = 1},
       {type = "item", name = "bioflux", amount = 50},
     },
-    results = {{type = "item", name = "bm-clone", amount = 1}},
-    result_is_always_fresh = true,
+    results = {{type = "item", name = "bm-clone", amount = 1, always_fresh = true}},
+    --result_is_always_fresh = true,
   },
   {
     type = "recipe",
     name = "bm-suspension-fluid",
     icon = "__biological-machines-cloning__/graphics/suspension-fluid.png",
-    category = "organic",
+    categories = {"organic"},
     subgroup = "bm-biological-fluid-recipes",
     order = "b-b",
     enabled = false,
@@ -58,10 +59,11 @@ data:extend({
       {
         icon = "__biological-machines-cloning__/graphics/suspension-fluid.png",
         scale = 0.25,
-        shift = {8, -8}
+        shift = {8, -8},
+        draw_background = true,
       },
     },
-    category = "bm-suspension-tank",
+    categories = {"bm-suspension-tank"},
     enabled = false,
     allow_productivity = false,
     energy_required = 8,
@@ -69,8 +71,10 @@ data:extend({
       {type = "fluid", name = "bm-suspension-fluid", amount = 100},
       {type = "item", name = "bm-clone", amount = 1}
     },
-    results = {{type = "item", name = "bm-suspended-clone", amount = 1}},
-    result_is_always_fresh = true,
+    results = {
+      --{type = "item", name = "bm-suspended-clone", amount = 1, always_fresh = true}
+    },
+    raise_on_crafted = true,
   },
   {
     type = "recipe",
@@ -82,16 +86,19 @@ data:extend({
       {
         icon = "__biological-machines-cloning__/graphics/suspension-fluid.png",
         scale = 0.25,
-        shift = {8, -8}
+        shift = {8, -8},
+        draw_background = true,
       },
     },
-    category = "bm-suspension-tank",
+    categories = {"bm-suspension-tank"},
     enabled = false,
     allow_productivity = false,
     energy_required = 8,
     ingredients = {{type = "fluid", name = "bm-suspension-fluid", amount = 100}},
-    results = {{type = "item", name = "bm-prepared-tank", amount = 1}},
-    result_is_always_fresh = true,
+    results = {
+      --{type = "item", name = "bm-prepared-tank", amount = 1, always_fresh = true}
+    },
+    raise_on_crafted = true,
   },
   {
     type = "recipe",
@@ -104,22 +111,24 @@ data:extend({
       {
         icon = "__biological-machines-cloning__/graphics/suspension-fluid.png",
         scale = 0.25,
-        shift = {8, -8}
+        shift = {8, -8},
+        draw_background = true,
       },
       {
         icon = "__base__/graphics/icons/signal/signal-clock.png",
         scale = 0.25,
-        shift = {-8, 8}
+        shift = {-8, 8},
+        draw_background = true,
       },
     },
-    category = "bm-suspension-tank-filled",
+    categories = {"bm-suspension-tank-filled"},
     subgroup = "bm-cultivation",
     order = "z-b",
     enabled = false,
     allow_productivity = false,
     energy_required = 120,
     ingredients = {
-      {type = "fluid", name = "bm-suspension-fluid", amount = 5},
+      {type = "fluid", name = "bm-suspension-fluid", amount = 2},
       --{type = "item", name = "bioflux", amount = 1},
     },
     results = {},
@@ -130,7 +139,7 @@ data:extend({
     type = "recipe",
     name = "bm-prepared-tank-maintenance",
     icon = "__biological-machines-cloning__/graphics/suspension-tank/cloning-vat-icon.png",
-    category = "bm-suspension-tank-prepared",
+    categories = {"bm-suspension-tank-prepared"},
     enabled = false,
     allow_productivity = false,
     energy_required = 120,

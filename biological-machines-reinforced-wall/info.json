@@ -1,0 +1,10 @@
+{
+  "name": "biological-machines-reinforced-wall",
+  "version": "1.0.0",
+  "title": "Biological Machines: Reinforced Wall",
+  "author": "bradythehuman",
+  "description": "Adds a more durable wall made from refined concrete and tungsten plate.",
+  "factorio_version": "2.1",
+  "dependencies": ["biological-machines-core >= 1.0.0"],
+  "space_travel_required": true
+}

@@ -1,3 +1,11 @@
+local dh = require("__biological-machines-core__.data-helper")
+
+
+
+dh.add_recipe_unlock("jellynut", "bm-medkit")
+
+
+
 local slurry = {type = "unlock-recipe", recipe = "bm-nutrient-slurry"}
 table.insert(data.raw["technology"]["bioflux-processing"].effects, slurry)
 
@@ -69,7 +77,7 @@ data:extend({
     effects = {
       {type = "unlock-recipe", recipe = "bm-fluroflux"},
       {type = "unlock-recipe", recipe = "bm-nutrients-from-fluroflux"},
-      {type = "unlock-recipe", recipe = "bm-medkit"},
+      --{type = "unlock-recipe", recipe = "bm-medkit"},
       {type = "unlock-recipe", recipe = "bm-stims"},
       {type = "unlock-recipe", recipe = "bm-fortified-nutrient-slurry"}
     }
@@ -118,7 +126,7 @@ data:extend({
     icon_size = defines.default_icon_size,
     prerequisites = {"bm-food-processing", "planet-discovery-vulcanus"},
 
-    research_trigger = {type = "mine-entity", entity = "small-demolisher-corpse"},
+    research_trigger = {type = "mine-entity", entities = {"small-demolisher-corpse"}},
 
     effects = {{type = "unlock-recipe", recipe = "bm-demolisher-meat-barrel"}}
   },
