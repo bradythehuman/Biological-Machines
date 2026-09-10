@@ -3,7 +3,7 @@ Version: 2.0.0
 Date: 9. 9. 2026
   Info:
     - WARNING: Remove all ships from space connection between solar system edge and dyson sphere construction station before updating
-    - WARNING: If you have already landed on the dyson sphere construction platform and want only the new surface generation, leave, delete the surface, then return
+    - WARNING: If you have already landed on the dyson sphere construction platform newly generated terrain will be decorated differently. If you want only the new surface generation, leave, delete the surface, then return
   Features:
     - Updated to 2.1
     - Removed BM: Cloning dependency, adds clone dummy item when not active to replace functionality in ending

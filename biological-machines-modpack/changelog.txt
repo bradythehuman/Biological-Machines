@@ -1,6 +1,12 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.3
 Date: 9. 9. 2026
+  Info:
+    - WARNING: Remove all ships from space connection to/from balack/dyson sphere before updating
+    - WARNING: Shattered core has been moved from balack to it's own submod which was not included in the modpack because I do not like it. The submod is compatible with the modpack if you want to use it.
+    - WARNING: The mods module inserter, Buggis nuclear bots and Personal tesla defense are not included as a dependencies because they are not compatible with 2.1. Module inserter will be re added once updated. Likely a different version of higher tier bots will be added later
+    - WARNING: If you have already landed on the Dyson sphere construction platform newly generated terrain will be decorated differently. If you want only the new surface generation, leave, delete the surface, then return
+    - WARNING: Panglia is currently a recommended dependency because it is in beta/currently being updated. Once it is more complete I will change it to a mandatory dependency
   Features:
     - Updated to 2.1
   Changes:

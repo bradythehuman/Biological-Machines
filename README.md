@@ -22,6 +22,10 @@ Pack of QOL/utility/graphics mods I use with Space Age and Biological Machines.
 
 ### Warning
 
+The mod module inserter is not included as a dependencies because it is not compatible with 2.1. It will be re added once updated.
+
+Panglia is a recomended dependency because it is in beta/currently being updated and will be made a required dependency once it is more complete.
+
 I recommend bringing a significant supply of food to start on Wit as it takes time to produce locally.
 
 Any sufficient platforms (no players and a suspended clone) sent to the new system will be destroyed.
@@ -30,7 +34,7 @@ All BM mods should be safe to add to existing saves (and subsequently remove) bu
 
 ### Description  
 
-Biological Machines is a space age overhaul focused on mundane and sci-fi biological processes. The pack adds new technologies, recipes, intermediates, buildings, weapons, equipment, planets, resources, a hunger mechanic, clones, a warp drive and more. This mod is the intended BM experience, although it only contains dependencies, any of which may be left out for preference/compatibility.
+Biological Machines is a space age overhaul focused on mundane and sci-fi biological processes. The pack adds new technologies, recipes, intermediates, buildings, weapons, equipment, planets, resources, a hunger mechanic, clones, a warp drive and more. This mod is the intended BM experience, although it only contains settings tweaks and dependencies, any of which may be left out for preference/compatibility.
 
 *Includes*
 
@@ -96,17 +100,18 @@ Most optional/recommended dependencies for the above mods are modified by compat
   - The market is one way to obtain energy link cores which are used to craft interstellar energy links which provide free power from the Dyson sphere to any surface they are placed on. only 1 per surface, energy produced scales with quality
   - Super credits can be purchased in the market and recycled into quality credits to buy quality items from the market
   - Credits can also be earned by sending a space platform to the distant solar system space location. In universe, the platform is meant to establish a new independent colony which will send resources back to the construction platform. As a result the platform is deleted from you game once it reaches the distant system, it must contain a suspend clone (to do the colonizing) and cannot be ridden by an active player. Achieving this is the new end of the game although it may be continued after as usual
-- The pack also contains many standalone content mods that fill gaps in the main BM mods including Crushing Industry, AAI loaders, Thruster upgrades, etc
+- The pack also has recomended/required dependencies on many standalone content mods that fill gaps in the main BM mods including Crushing Industry, AAI loaders, Thruster upgrades, etc
 
 
 ### Future Plans
 
-- Bugfixes including script/gui ups optimizations
+- Bugfixes
 - Balance tweaks including extra settings so players can customize the balance for their preferences
-- Compatibility with content mods including Maraxis Cerys and Orbital ion cannon
-- Explanations in the form of item descriptions or tips
-- Graphics upgrades including berry bush, circuit board, scrapyard, recipe icons and the Bio fabricator
-- Additional content including a Gleba moon, an enemy on wit and demolisher spawners on Vulcanus
+- Explanations in the form of item/recipe/tech descriptions, tips, menu screens
+- Compatibility with content mods including planets like Maraxis and Cerys
+- Graphics upgrades including berry bush, circuit board, scrapyard, recipe icons, the Bio fabricator and more
+- Code cleanup
+- Additional content submods including better robots, a Gleba moon, an enemy on wit, demolisher spawners on Vulcanus and Orbital ion cannon
 
 If you want to help with anything, particularly with graphics or additional localizations, please let me know I would appreciate it.  
 
@@ -117,11 +122,11 @@ Inspiration and concepts of a plan from [AAI Industry](https://mods.factorio.com
 
 # Biological Machines: Hunger
 
-###  Warning
+### Warning
 
 Can be added to existing saves but I recommend being near a source of fish/bioflux to eat when you do so. Also berries will only spawn in newly generated chunks on Nauvis.
 
-###  Description
+### Description
 
 Adds a hunger mechanic which consumes selected foods from the engineers inventory or the engineer starves. Different foods give the engineer passive regen/movement buffs/debuffs while they are being consumed. Also adds equipment which prevents starvation and more.
 
@@ -149,6 +154,10 @@ Adds a hunger mechanic which consumes selected foods from the engineers inventor
 - Biorecycler, equipment which prevents starvation damage when an engineers saturation is at 0, applies speed debuff instead
 - Artificial organs, act as Biorecycler without the debuff and allows the consumption of u-235 which gives large movement/regen buffs
 - Settings to adjust rate of food consumption at rest and when injured
+
+### Supported Mods
+
+- [Panglia](https://mods.factorio.com/mod/panglia_planet) by snouz. Stringfronds replaced by brambalite
 
 ### Credit
 
@@ -197,11 +206,13 @@ Adds new biological materials and intermediates to basic recipes including steel
 
 - [AAI Loaders](https://mods.factorio.com/mod/aai-loaders) by Earendel. Changes recipes to be more in line with BM: Industry splitters
 - [Slipstack agriculture](https://mods.factorio.com/mod/slipstacks) by LordMiguel. Changes spore recipe
-- [Larger lamps 2.0](https://mods.factorio.com/mod/LargerLamps-2_0) by goakiller900. Changes recipes, removes all but 1 lamp
+- [Larger lamps 2.0](https://mods.factorio.com/mod/LargerLamps-2_0) by goakiller900. Changes recipes, removes all but 2 lamps
 - [Hypercell substation](https://mods.factorio.com/mod/snouz_better_substation) by snouz. Changes tech and recipe
 - [Shield projector](https://mods.factorio.com/mod/shield-projector) by earendel. Changes tech and recipe
 - [Pollution detector](https://mods.factorio.com/mod/pollution-detector) by Schorty. Changes recipe and tech prereqs
 - [Big wooden pole](https://mods.factorio.com/mod/big-wooden-pole) by ElAdamo. Reduces copper cost and moves order after small wooden pole
+- [Moshine](https://mods.factorio.com/mod/Moshine) by snouz. Adds back steam cracking with a worse recipe and many small tweaks
+- [Panglia](https://mods.factorio.com/mod/panglia_planet) by snouz. Adds basic recipes
 
 ### Credit
 
@@ -250,6 +261,7 @@ Adds tissue dropped by biter nests which may be cultivated in a biochamber using
 - [K2 Shelter](https://mods.factorio.com/mod/shelter-k2) by zanven. Complicates shelter recipe and move the tech later
 - [Ironclad gunboat and mortar turret (fork)](https://mods.factorio.com/mod/ironclad-gunboat-and-mortar-turret-fork) by Keysivi. Adds poison/fire mortar ammo to  relavent infinite damage technologies
 - [Handcannon](https://mods.factorio.com/mod/snouz-handcannon) by snouz. Adds nuclear military science pack as prereq for the handcannon
+- [Panglia](https://mods.factorio.com/mod/panglia_planet) by snouz. Adds rad tissue as ingredient for specimen
 
 ### Credit
 
@@ -303,6 +315,7 @@ Adds Wit, a moon of Nauvis covered in asteroid craters, glass, helium and coper 
 - [Personal tesla defense equipment](https://mods.factorio.com/mod/PersonalTeslaDefenseEquipment) by  pluralmonad. Changes recipe and tech
 - [Repair turret](https://mods.factorio.com/mod/Repair_Turret?from=downloaded) by Klonan. Changes tech and recipe
 - [Reach equipment](https://mods.factorio.com/mod/reach-equipment) by between walls. Changes tech and recipe
+- [Moshine](https://mods.factorio.com/mod/Moshine) by snouz. Replaces data disks with trained AI cores and raw data. Adds wit products to Moshine recipes
 
 ### Credit
 
@@ -319,6 +332,10 @@ Adds Wit, a moon of Nauvis covered in asteroid craters, glass, helium and coper 
 
 
 # Biological Machines: Planet Balack
+
+### Warning
+
+The mod module inserter is not included as a dependencies because it is not compatible with 2.1. It will be re added once updated.
 
 ### Description
 
@@ -352,19 +369,36 @@ Adds Balack, a post Aquilo planet containing new scrap, oil sludge and strong en
 ### Supported Mods
 
 - [Buggis Nuclear Bots](https://mods.factorio.com/mod/BuggisNuclearBots?from=search) by Buggi
-- [Shattered Planet](https://mods.factorio.com/mod/skewer_shattered_planet?from=updated) by CPU_BlackHeart. Disables and hides BM: Planet Balack's shattered planet setting when this mod is installed
 - [Enemy Race Manager](https://mods.factorio.com/mod/enemyracemanager) by heyqule
+- [Moshine](https://mods.factorio.com/mod/Moshine) by snouz. AI control unit made with trained AI core 10
+- [Panglia](https://mods.factorio.com/mod/panglia_planet) by snouz. AI control unit made with sentient processor
 
 ### Credit
 
-- Planet graphics from [4k planets](https://mods.factorio.com/mod/4k_planets?from=search) by Grog2
 - Concept for spoilable module from [Yield Module](https://mods.factorio.com/mod/yield-module?from=search) by AnotherZach
 - Graphics and code for darkness from [Tenebris](https://mods.factorio.com/mod/tenebris?from=search) by Big_J
 - Graphics for bio fabricator from [Pathogen Lab](https://mods.factorio.com/user/hurricane046) by Hurricane046
 - Graphics/code from [Offshore dump](https://mods.factorio.com/mod/offshore-dump/downloads) by chocoman
 - Oil sludge/warp power cell/tier II graphics from [Krastorio 2](https://mods.factorio.com/mod/Krastorio2?from=search) by raiguard, Krastor and Linver
 - Hypersonic ammo graphics/code from [Tungsten ammo](https://mods.factorio.com/mod/tungsten-munition) by Hanuryk
-- AAI loader compat for promethium belts from [Advanced Belts](https://mods.factorio.com/mod/AdvancedBeltsSA) by Buggi
+
+
+# Biological Machines: Shattered Core
+
+### Description
+
+Adds a small planet to the shattered planet space location where promethium science can be made. The entire surface is covered in promethium ore and an electric grid with free power.
+
+*Includes*
+
+- [BM: Core](https://mods.factorio.com/mod/biological-machines-core)
+
+I moved the Shattered Core from BM: Balack to separate mod because I am not happy with it and wanted to remove it from the modpack while still letting those who want keep using it.
+
+### Features
+
+- Shattered core surface covered in promethium ore which allows production of promethium science
+- Unstable promethium asteroid which spawn on the core surface and explode after a random period of time
 
 
 # Biological Machines: Homeworld
@@ -375,7 +409,7 @@ Any sufficient platforms (no players and a suspended clone) sent to the distant 
 
 ### Description
 
-The Engineer is a clone sent to colonize a distant solar system. Use a warp drive to travel back to the Engineer's home star with construction materials. Land on a Dyson sphere construction station to exchange materials for credits which can be spent in markets on the station. Complete the new ending for a reward in credits.
+Long ago the Engineer was sent to colonize a distant solar system. Use a warp drive to travel back to the Engineer's home star with construction materials. Land on a Dyson sphere construction station to exchange materials for credits which can be spent in markets on the station. Complete the new ending for a reward in credits.
 
 *Includes*
 
@@ -409,6 +443,7 @@ The Engineer is a clone sent to colonize a distant solar system. Use a warp driv
 - Dyson sphere construction station graphics from [Metal and Stars](https://mods.factorio.com/mod/metal-and-stars) by 5forsilver
 - Distant solar system graphics from [New Star Graphics](https://mods.factorio.com/mod/sun-graphics?from=search) by bunshaman
 - Energy link entity and various item/recipe graphics from [Krastorio 2](https://mods.factorio.com/mod/Krastorio2?from=search) by raiguard, Krastor and Linver
+- Asteroid belt starmap sprite from [Asteroid Belt](https://mods.factorio.com/mod/AsteroidBelt?from=search) by MrLumme
 
 
 # Biological Machines: Cloning
@@ -437,6 +472,10 @@ Clones can be made in a biochamber and stored in dedicated tanks. Getting in a t
 - Filled tanks constantly consume suspension fluid and empty tanks must be filled with suspension fluid to allow a player to enter
 - When a player respawns at a tank their engineer gains the quality of the clone originally placed in the tank. Higher quality clone bodies gives the engineer increased health and mining/crafting/running speed
 - Can be added to existing saves without any complications
+
+### Supported Mods
+
+- [Panglia](https://mods.factorio.com/mod/panglia_planet) by snouz. Clone recipe used adult specimen
 
 ### Credit
 
@@ -468,10 +507,15 @@ Adds a warp drive machine which consumes warp power cells to transport a space p
 - Warp power cell productivity research. Also increases chance of getting used power cell back from warp recipe
 - Can be added to existing saves without any complications
 
+### Supported Mods
+
+- [Moshine](https://mods.factorio.com/mod/Moshine) by snouz. Warp power cells use new solved equation made from cosmic data
+
 ### Credit
 
 - Graphics for warp drive from warp drive from [Quantum Stabilizer](https://mods.factorio.com/user/hurricane046) by Hurricane046
 - Warp power cell/warp recipe graphics from [Krastorio 2](https://mods.factorio.com/mod/Krastorio2?from=search) by raiguard, Krastor and Linver
+- Construction icon from [Moshine](https://mods.factorio.com/mod/Moshine) by snouz
 
 
 # Biological Machines: Scrapyard
@@ -570,10 +614,15 @@ Fork of Promethium Belts by Helios467 for 2.1 adding AAI Loader support, AAI Loa
   - Tech science cost amount, default to 1000 (5000 if Balack is installed), accepts 500-50000
   - Belt speed, default 90, accepts 75/90/105/120
 
+### Supported Mods
+
+- [AAI Loaders, a sane rebalance](https://mods.factorio.com/mod/) by snouz.
+
 ### Credit
 
 - Forked from [Promethium Belts](https://mods.factorio.com/mod/promethium-belts?from=updated) by Helios467
 - Added settings for some changes made in [Promethium Belts Rebalance](https://mods.factorio.com/mod/promethium-belts-rebalance?from=updated) by Cubickman
+- AAI loader compat from [Advanced Belts](https://mods.factorio.com/mod/AdvancedBeltsSA) by Buggi
 
 
 # Biological Machines: Core

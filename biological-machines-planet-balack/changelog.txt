@@ -2,7 +2,8 @@
 Version: 1.1.0
 Date: 9. 9. 2026
   Info:
-    - WARNING: Remove all ships from space connection to/from balack before updating
+    - WARNING: Remove all ships from space connection to/from Balack before updating
+    - WARNING: Shattered core has been moved to it's own submod because I do not like it. The submod is compatible with Balack if you want to use it
     - WARNING: The mod "module inserter" by protocol_1903 is not included as a dependency because it is not compatible with 2.1. It will be re added once updated
   Features:
     - Updated to 2.1
@@ -13,14 +14,14 @@ Date: 9. 9. 2026
   Changes:
     - Improved tank brake force (tweaked handling generally)
     - Increased u-235 output for uranium enrichment with ooze (requires tissue)
-    - Removed wind turbine dependency, added weak solar to balack surface
+    - Removed wind turbine dependency, added weak solar to Balack surface
     - Moved shattered core to its own BM submod
     - Added pollution detector, larger lamps and radar equipment as recommended dependencies
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.4
 Date: 20. 2. 2026
   Compatibility:
-    - When Asteroid Belt is present, the fulgora-balack connection is replaced with outer belt-balack and distanced are tweaked
+    - When Asteroid Belt is present, the Fulgora <-> Balack connection is replaced with Outer belt <-> Balack and distanced are tweaked
     - Nuclear bots recipe uses flying robot frames instead of the bots themselves and the nuclear logistics bot recipe has 2x quantum processors
   Changes:
     - Hypersonic rounds have 200% range modifier
