@@ -50,13 +50,11 @@ else
   dh.add_ingredient("advanced-thruster-oxidizer", "item", "iron-ore", 10)
 end
 
-if mods["BuggisNuclearBots"] then
+if mods["BuggisNuclearBots"] or mods["BuggisBots_Fork_Moe"] then
   require("prototypes.wit-x-nuclear-bots")
 end
 
-dh.mod_override_require("PersonalTeslaDefenseEquipment", "bm-tesla-equipment-override", "prototypes.wit-x-tesla-equipment")
-
-dh.mod_override_require("aai-signal-transmission", "bm-aai-signal-override", "prototypes.wit-x-aai-signal")
+--dh.mod_override_require("PersonalTeslaDefenseEquipment", "bm-tesla-equipment-override", "prototypes.wit-x-tesla-equipment")
 
 dh.mod_override_require("reach-equipment", "bm-reach-equipment-override", "prototypes.wit-x-reach-equipment")
 

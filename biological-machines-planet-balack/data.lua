@@ -30,7 +30,10 @@ if mods["AsteroidBelt"] then
   require("prototypes.balack-x-asteroid-belt")
 end
 
-dh.mod_override_require("BuggisNuclearBots", "bm-nuclear-bots-override", "prototypes.balack-x-nuclear-bots")
+--dh.mod_override_require("BuggisNuclearBots", "bm-nuclear-bots-override", "prototypes.balack-x-nuclear-bots")
+if mods["BuggisNuclearBots"] or mods["BuggisBots_Fork_Moe"] and settings.startup["bm-nuclear-bots-override"].value then
+  require("prototypes.balack-x-nuclear-bots")
+end
 
 dh.mod_override_require("Moshine", "bm-moshine-override", "prototypes.balack-x-moshine")
 

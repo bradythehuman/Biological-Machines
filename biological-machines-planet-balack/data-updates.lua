@@ -17,7 +17,10 @@ end
 
 dh.mod_override_require("biological-machines-promethium-belts", "bm-promethium-belts-override", "prototypes.balack-x-promethium-belts-updates")
 
-dh.mod_override_require("BuggisNuclearBots", "bm-nuclear-bots-override", "prototypes.balack-x-nuclear-bots-updates")
+--dh.mod_override_require("BuggisNuclearBots", "bm-nuclear-bots-override", "prototypes.balack-x-nuclear-bots-updates")
+if mods["BuggisNuclearBots"] or mods["BuggisBots_Fork_Moe"] and settings.startup["bm-nuclear-bots-override"].value then
+  require("prototypes.balack-x-nuclear-bots-updates")
+end
 
 
 

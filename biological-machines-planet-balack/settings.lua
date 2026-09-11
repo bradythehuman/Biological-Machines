@@ -8,7 +8,7 @@ end
 
 dh.mod_override_setting("biological-machines-promethium-belts", "bm-promethium-belts-override")
 
-if mods["BuggisNuclearBots"] then
+if mods["BuggisNuclearBots"] or mods["BuggisBots_Fork_Moe"] then
   data.raw["int-setting"]["robot-cargo-mul"].default_value = 5
 
   data:extend({
