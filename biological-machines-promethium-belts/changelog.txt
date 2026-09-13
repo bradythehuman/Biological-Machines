@@ -1,3 +1,7 @@
+Version: 1.0.1
+Date: 9. 9. 2026
+  Bugfixes:
+    - Added base/space age dependencies, removed by mistake
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
 Date: 9. 9. 2026

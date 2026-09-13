@@ -1,3 +1,11 @@
+Version: 1.1.2
+Date: 13. 9. 2026
+  Changes:
+    - Scrapyard is now a recommended dependency instead of a mandatory one
+  Features:
+    - Setting to make wit crater tiles destroy items (like vulcanus lava), disabled by default with scrapyard, enabled by default without it
+  Compatibility:
+    - Fixed crash with Vesta involving pipe cover pictures (thanks to beomyo for code fix)
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.1
 Date: 11. 9. 2026

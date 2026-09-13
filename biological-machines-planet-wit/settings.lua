@@ -37,4 +37,10 @@ data:extend({
     setting_type = "startup",
     default_value = true,
   },
+  {
+    type = "bool-setting",
+    name = "bm-crater-destroys-items",
+    setting_type = "startup",
+    default_value = not mods["biological-machines-scrapyard"],
+  },
 })

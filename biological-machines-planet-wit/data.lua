@@ -11,6 +11,10 @@ require("prototypes.tiles")
 
 
 
+if mods["biological-machines-scrapyard"] then
+  dh.add_prereq("bm-planet-discovery-wit", "bm-scrapyard")
+end
+
 if mods["biological-machines-planet-wit"]
 and mods["biological-machines-warp-drive"] then
   require("prototypes.wit-x-warp-drive")

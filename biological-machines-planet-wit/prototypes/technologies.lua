@@ -103,7 +103,7 @@ data:extend({
         --icons = PlanetsLib.technology_icon_moon("__biological-machines-planet-wit__/graphics/wit-icon.png", 64),
       }
     },
-    prerequisites = {"space-platform", --[["electric-boiler",]] "bulk-inserter", "bm-scrapyard"},
+    prerequisites = {"space-platform", --[["electric-boiler",]] "bulk-inserter", --[["bm-scrapyard"]]},
     research_trigger = {
       type = "build-entity",
       entity = "thruster"

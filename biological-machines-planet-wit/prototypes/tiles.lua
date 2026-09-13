@@ -65,6 +65,7 @@ wit_ash_dark.layer_group = "water-overlay"
 --wit_ash_dark.collision_mask = tile_collision_masks.ground()
 wit_ash_dark.collision_mask = wit_dust()
 wit_ash_dark.map_color = dark_rock_color
+wit_ash_dark.destroys_dropped_items = settings.startup["bm-crater-destroys-items"].value
 
 local wit_ash_cracks = util.table.deepcopy(data.raw["tile"]["volcanic-ash-flats"])
 wit_ash_cracks.name = "bm-wit-ash-cracks"
@@ -81,6 +82,8 @@ wit_ash_cracks.layer_group = "water-overlay"
 --wit_ash_cracks.collision_mask = tile_collision_masks.ground()
 wit_ash_cracks.collision_mask = wit_dust()
 wit_ash_cracks.map_color = dark_rock_color
+wit_ash_cracks.destroys_dropped_items = settings.startup["bm-crater-destroys-items"].value
+wit_ash_cracks.localised_description = {"tile-description.bm-wit-ash-dark"} 
 
 data:extend({wit_ash_light, wit_ash_flats, wit_ash_dark, wit_ash_cracks})
 

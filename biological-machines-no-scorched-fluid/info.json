@@ -1,0 +1,10 @@
+{
+  "name": "biological-machines-no-scorched-fluid",
+  "version": "1.0.0",
+  "title": "Bradythehuman's No Scorched Fluid Tiles",
+  "author": "bradythehuman",
+  "description": "Creates a new layer group for walkable fluid tiles which cannot have a tinted scorchmak placed on it.",
+  "factorio_version": "2.1",
+  "dependencies": ["? aai-loaders-sane >= 1.0.5"],
+  "space_travel_required": true
+}
