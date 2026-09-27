@@ -53,7 +53,7 @@ for i = 1, foods_i - 1 do
     {"item-name."..i_to_foods[i]},
     " (",
     foods[i_to_foods[i]].saturation,
-    " sat)"
+    {"?", {"bmh-gui.saturation-suffix"}, " sat)"}
   }
 end
 wrapped_i_to_foods[foods_i] = {"bmh-gui.none"}
