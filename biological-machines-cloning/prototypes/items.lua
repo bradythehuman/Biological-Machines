@@ -31,7 +31,7 @@ data:extend({
     weight = 1000 * kg,
     --hidden = true,
 
-    fuel_category = "chemical",
+    fuel_categories = {"chemical"},
     fuel_value = "100MJ",
 
     spoil_ticks = 5 * minute,

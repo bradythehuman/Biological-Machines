@@ -137,7 +137,7 @@ data:extend({
     weight = 10 * kg,
     default_import_location = "gleba",
 
-    fuel_category = "chemical",
+    fuel_categories = {"chemical"},
     fuel_value = "1MJ",
 
     plant_result = "bm-boompuff-plant",

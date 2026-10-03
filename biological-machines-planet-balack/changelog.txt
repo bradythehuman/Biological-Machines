@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+Date: 3. 10. 2026
+  Locale:
+    - Added Polish Locale (Thanks S3BA)
+  Bugfixes:
+    - Replaces fuel_category for fuel_categories
+---------------------------------------------------------------------------------------------------
 Version: 1.1.1
 Date: 11. 9. 2026
   Compatibility:

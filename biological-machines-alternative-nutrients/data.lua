@@ -212,7 +212,7 @@ data:extend({
     stack_size = 50,
     weight = 1 * kg,
 
-    fuel_category = "chemical",
+    fuel_categories = {"chemical"},
     fuel_value = "250kJ",
 
     spoil_ticks = 30 * minute,
@@ -255,7 +255,7 @@ data:extend({
     stack_size = 10,
     weight = 10 * kg,
 
-    fuel_category = "chemical",
+    fuel_categories = {"chemical"},
     fuel_value = "100kJ",
 
     plant_result = "bm-berry-bush",

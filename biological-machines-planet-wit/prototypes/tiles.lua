@@ -39,6 +39,8 @@ wit_ash_light.variants = tile_variations_helper("__biological-machines-planet-wi
 wit_ash_light.walking_speed_modifier = 1.3
 wit_ash_light.vehicle_friction_modifier = 0.8
 wit_ash_light.map_color = light_rock_color
+wit_ash_light.transitions = nil
+wit_ash_light.transitions_between_transitions = nil
 
 local wit_ash_flats = util.table.deepcopy(data.raw["tile"]["volcanic-ash-flats"])
 wit_ash_flats.name = "bm-wit-ash-flats"
@@ -49,6 +51,8 @@ wit_ash_flats.variants = tile_variations_helper("__biological-machines-planet-wi
 wit_ash_flats.walking_speed_modifier = 1.3
 wit_ash_flats.vehicle_friction_modifier = 0.8
 wit_ash_flats.map_color = light_rock_color
+wit_ash_flats.transitions = nil
+wit_ash_flats.transitions_between_transitions = nil
 
 local wit_ash_dark = util.table.deepcopy(data.raw["tile"]["volcanic-ash-flats"])
 wit_ash_dark.name = "bm-wit-ash-dark"
@@ -66,6 +70,8 @@ wit_ash_dark.layer_group = "water-overlay"
 wit_ash_dark.collision_mask = wit_dust()
 wit_ash_dark.map_color = dark_rock_color
 wit_ash_dark.destroys_dropped_items = settings.startup["bm-crater-destroys-items"].value
+wit_ash_dark.transitions = nil
+wit_ash_dark.transitions_between_transitions = nil
 
 local wit_ash_cracks = util.table.deepcopy(data.raw["tile"]["volcanic-ash-flats"])
 wit_ash_cracks.name = "bm-wit-ash-cracks"
@@ -83,7 +89,9 @@ wit_ash_cracks.layer_group = "water-overlay"
 wit_ash_cracks.collision_mask = wit_dust()
 wit_ash_cracks.map_color = dark_rock_color
 wit_ash_cracks.destroys_dropped_items = settings.startup["bm-crater-destroys-items"].value
-wit_ash_cracks.localised_description = {"tile-description.bm-wit-ash-dark"} 
+wit_ash_cracks.localised_description = {"tile-description.bm-wit-ash-dark"}
+wit_ash_cracks.transitions = nil
+wit_ash_cracks.transitions_between_transitions = nil
 
 data:extend({wit_ash_light, wit_ash_flats, wit_ash_dark, wit_ash_cracks})
 

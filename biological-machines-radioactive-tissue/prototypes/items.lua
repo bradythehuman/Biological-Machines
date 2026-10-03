@@ -28,7 +28,7 @@ attack_parameters.ammo_categories = {"bullet", "bm-poison-bullet"}
 attack_parameters.ammo_category = nil
 
 local u_235 = data.raw["item"]["uranium-235"]
-u_235.fuel_category = "bm-radioactive-mineral"
+u_235.fuel_categories = {"bm-radioactive-mineral"}
 u_235.fuel_value = "4GJ" --1 u-235 = 40GJ in reactor w/o neighbor bonus (assuming reprocessing)
 
 data:extend({
@@ -45,7 +45,7 @@ data:extend({
     stack_size = 10,
     weight = 100 * kg,
 
-    fuel_category = "chemical",
+    fuel_categories = {"chemical"},
     fuel_value = "1GJ", --16GJ in heating tower == fuel cell w/o neighbor bonus (in power per uranium)
     fuel_emissions_multiplier = 2,
 

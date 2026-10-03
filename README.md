@@ -4,10 +4,6 @@
 
 Pack of QOL/utility/graphics mods I use with Space Age and Biological Machines.
 
-*Includes*
-
-- [BM: Core](https://mods.factorio.com/mod/biological-machines-core)
-
 *Included in*
 
 - [BM: Modpack](https://mods.factorio.com/mod/biological-machines-modpack)
@@ -52,6 +48,10 @@ Biological Machines is a space age overhaul focused on mundane and sci-fi biolog
 - [BM: Core](https://mods.factorio.com/mod/biological-machines-core)
 - [Bradythehuman's Space Age Addpack](https://mods.factorio.com/mod/biological-machines-addpack)
 - [Bradythehuman's Promethium Belts](https://mods.factorio.com/mod/biological-machines-promethium-belts)
+
+*See also*
+
+- [BM: Shattered Core](https://mods.factorio.com/mod/biological-machines-shattered-core)
 
 Most optional/recommended dependencies for the above mods are modified by compatibility patches which can be skipped by disabling the mod override setting. All override settings are enabled by default and can be disabled for preference/compatibility. Any compatibility patch which fixes game breaking bugs has no override setting.
 
@@ -596,9 +596,7 @@ Adds a more durable wall made from refined concrete and tungsten plate.
 
 Fork of Promethium Belts by Helios467 for 2.1 adding AAI Loader support, AAI Loaders Sane Rebalance support and a few startup settings.
 
-*Includes*
-
-- [BM: Core](https://mods.factorio.com/mod/biological-machines-core)
+Helios467, let me know if you want me to change anything/take this down, I will ASAP.
 
 *Included in*
 
@@ -616,7 +614,7 @@ Fork of Promethium Belts by Helios467 for 2.1 adding AAI Loader support, AAI Loa
 
 ### Supported Mods
 
-- [AAI Loaders, a sane rebalance](https://mods.factorio.com/mod/) by snouz.
+- [AAI Loaders, a sane rebalance](https://mods.factorio.com/mod/aai-loaders-sane) by Samuel_Bucher
 
 ### Credit
 
@@ -645,8 +643,16 @@ Contains shared modules and compatibility patches for other Biological Machines 
 - [BM: Alternative Nutrients](https://mods.factorio.com/mod/biological-machines-alternative-nutrients)
 - [BM: Reinforced Wall](https://mods.factorio.com/mod/biological-machines-reinforced-wall)
 - [BM: Scrapyard](https://mods.factorio.com/mod/biological-machines-scrapyard)
+- [BM: Shattered Core](https://mods.factorio.com/mod/biological-machines-shattered-core)
+
+*See also*
+
 - [Bradythehuman's Space Age Addpack](https://mods.factorio.com/mod/biological-machines-addpack)
 - [Bradythehuman's Promethium Belts](https://mods.factorio.com/mod/biological-machines-promethium-belts)
+
+*Includes*
+
+- [BM: K2 Assets](https://mods.factorio.com/mod/biological-machines-k2-assets)
 
 ### Features
 
@@ -683,9 +689,13 @@ Contains shared modules and compatibility patches for other Biological Machines 
 
 Does nothing on its own. Derived from Krastorio 2 and kept separate for BM mods to comply with K2's license.
 
-Please let me know if I am not properly complying with the license and I will fix ASAP.
+Raiguard, please let me know if I am not properly complying with the license and I will fix ASAP.
 
 *Included in*
+
+- [BM: Core](https://mods.factorio.com/mod/biological-machines-core)
+
+*See also*
 
 - [BM: Modpack](https://mods.factorio.com/mod/biological-machines-modpack)
 - [BM: Hunger](https://mods.factorio.com/mod/biological-machines-hunger)
@@ -699,9 +709,9 @@ Please let me know if I am not properly complying with the license and I will fi
 - [BM: Alternative Nutrients](https://mods.factorio.com/mod/biological-machines-alternative-nutrients)
 - [BM: Reinforced Wall](https://mods.factorio.com/mod/biological-machines-reinforced-wall)
 - [BM: Scrapyard](https://mods.factorio.com/mod/biological-machines-scrapyard)
+- [BM: Shattered Core](https://mods.factorio.com/mod/biological-machines-shattered-core)
 - [Bradythehuman's Space Age Addpack](https://mods.factorio.com/mod/biological-machines-addpack)
 - [Bradythehuman's Promethium Belts](https://mods.factorio.com/mod/biological-machines-promethium-belts)
-- [BM: Core](https://mods.factorio.com/mod/biological-machines-core)
 
 ### Credit
 

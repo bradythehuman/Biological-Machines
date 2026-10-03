@@ -21,7 +21,7 @@ data:extend({
     stack_size = 50,
     weight = 2.5 * kg,
 
-    fuel_category = "chemical",
+    fuel_categories = {"chemical"},
     fuel_value = "500kJ",
 
     spoil_ticks = 4 * hour,
@@ -40,7 +40,7 @@ data:extend({
     stack_size = 100,
     weight = 1 * kg,
 
-    fuel_category = "chemical",
+    fuel_categories = {"chemical"},
     fuel_value = "50kJ",
 
     spoil_ticks = 2 * hour,
@@ -59,7 +59,7 @@ data:extend({
     stack_size = 50,
     weight = 2.5 * kg,
 
-    fuel_category = "chemical",
+    fuel_categories = {"chemical"},
     fuel_value = "500kJ",
 
     spoil_ticks = 4 * hour,
@@ -121,7 +121,7 @@ data:extend({
     weight = 10 * kg,
     default_import_location = "gleba",
 
-    fuel_category = "chemical",
+    fuel_categories = {"chemical"},
     fuel_value = "100kJ",
 
     plant_result = "bm-stingfrond-plant",
@@ -156,7 +156,7 @@ data:extend({
     weight = 2 * kg,
     default_import_location = "gleba",
 
-    fuel_category = "food",
+    fuel_categories = {"food"},
     fuel_value = "15MJ",
 
     spoil_ticks = 3 * hour,

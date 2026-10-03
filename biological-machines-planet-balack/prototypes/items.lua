@@ -107,7 +107,7 @@ data:extend({
     inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
     pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
     drop_sound = space_age_item_sounds.agriculture_inventory_move,
-    fuel_category = "chemical",
+    fuel_categories = {"chemical"},
     fuel_value = "1MJ",
     stack_size = 100,
     default_import_location = "bm-balack",

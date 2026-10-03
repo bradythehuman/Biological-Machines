@@ -101,7 +101,11 @@ data:extend({
         space_location = "bm-wit",
         use_icon_overlay_constant = false,
         --icons = PlanetsLib.technology_icon_moon("__biological-machines-planet-wit__/graphics/wit-icon.png", 64),
-      }
+      },
+      {
+        type = "unlock-travel-to-space-platforms",
+        modifier = true
+      },
     },
     prerequisites = {"space-platform", --[["electric-boiler",]] "bulk-inserter", --[["bm-scrapyard"]]},
     research_trigger = {
