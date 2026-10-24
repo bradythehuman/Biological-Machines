@@ -1,6 +1,6 @@
 {
   "name": "biological-machines-radioactive-tissue",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "title": "Biological Machines: Radioactive Tissue",
   "author": "bradythehuman",
   "description": "Adds tissue dropped by biter nests which may be cultivated in a biochamber using bioflux and u-235. The tissue may be crafted into a new nuclear military science pack, various machines (including new military assembler with 50% base productivity), poison gas, uranium ore (centrifuge) and clones.",
@@ -11,7 +11,9 @@
     "+ biological-machines-reinforced-wall >= 1.0.0",
     "+ ironclad-gunboat-and-mortar-turret-fork >= 0.0.4",
     "+ shelter-k2 >= 0.0.3",
-    "+ snouz-handcannon >= 1.0.1"
+    "+ snouz-handcannon >= 1.0.1",
+
+    "? bobenemies >= 3.0.1"
   ],
   "space_travel_required": true
 }

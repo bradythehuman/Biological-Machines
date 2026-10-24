@@ -8,6 +8,8 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 
+require("prototypes.tissue-x-bobs-enemies")
+
 if mods["biological-machines-reinforced-wall"] then
   dh.remove_prereq("bm-reinforced-wall", "military-3")
   dh.add_prereq("bm-reinforced-wall", "bm-nuclear-military-science-pack")

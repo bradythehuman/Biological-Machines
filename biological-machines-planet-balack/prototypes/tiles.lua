@@ -3,75 +3,138 @@ local tile_sounds = require("__space-age__/prototypes/tile/tile-sounds")
 local base_tile_sounds = require("__base__/prototypes/tile/tile-sounds")
 --local tile_trigger_effects = require("prototypes.tile.tile-trigger-effects")
 
+local tile_graphics = require("__base__/prototypes/tile/tile-graphics")
+local tile_spritesheet_layout = tile_graphics.tile_spritesheet_layout
+
+
+
+--TODO
+--add back transitions for tiles other than deep oil
+--lighten deep oil transition
+
+
+
+table.insert(water_tile_type_names, "bm-balack-oil-shallow")
+table.insert(water_tile_type_names, "bm-balack-oil-deep")
+
+
+
+local balack_oil_transitions =
+{
+  {
+    to_tiles = water_tile_type_names,
+    transition_group = water_transition_group_id,
+
+    background_layer_group = "water",
+    background_layer_offset = -5,
+    masked_background_layer_offset = 1,
+    offset_background_layer_by_tile_layer = false,
+    spritesheet = "__biological-machines-planet-balack__/graphics/water-transitions/balack-oil-sand.png",
+    layout = tile_spritesheet_layout.transition_16_16_16_4_8_short,
+    background_enabled = false,
+    background_mask_layout = tile_spritesheet_layout.simple_white_mask
+  },
+  {
+    to_tiles = out_of_map_tile_type_names,
+    transition_group = out_of_map_transition_group_id,
+
+    background_layer_offset = 1,
+    background_layer_group = "zero",
+    offset_background_layer_by_tile_layer = true,
+
+    spritesheet = "__biological-machines-planet-balack__/graphics/out-of-map-transition/balack-oil-out-of-map-transition.png",
+    layout = tile_spritesheet_layout.transition_4_4_8_1_1,
+    overlay_enabled = false
+  }
+}
+local balack_oil_transitions_between_transitions =
+{
+  {
+    transition_group1 = water_transition_group_id,
+    transition_group2 = out_of_map_transition_group_id,
+
+    background_layer_offset = 1,
+    background_layer_group = "zero",
+    offset_background_layer_by_tile_layer = true,
+
+    spritesheet = "__biological-machines-planet-balack__/graphics/out-of-map-transition/balack-oil-out-of-map-transition-b.png",
+    layout = tile_spritesheet_layout.transition_3_3_3_1_0,
+    background_enabled = true,
+    background_mask_layout = tile_spritesheet_layout.simple_3_3_3_1_0_three_way_edge_mask,
+  }
+}
+
 
 
 local balack_tile_data = {
   ["oil-ocean-shallow"] = {
-    "bm-balack-oil-shallow",
-    "bm_balack_oil_ocean_shallow",
-    {25, 21, 21},
-    "__biological-machines-planet-balack__/graphics/tiles/balack-oil-sand-8x.png",
+    name = "bm-balack-oil-shallow",
+    probability = "bm_balack_oil_ocean_shallow",
+    color = {25, 21, 21},
+    picture = "__biological-machines-planet-balack__/graphics/tiles/balack-oil-sand-8x.png",
+    transitions = balack_oil_transitions,
+    tbt = balack_oil_transitions_between_transitions,
   },
   ["oil-ocean-deep"] = {
-    "bm-balack-oil-deep",
-    "bm_balack_oil_ocean_deep",
-    {8, 4, 4},
+    name = "bm-balack-oil-deep",
+    probability = "bm_balack_oil_ocean_deep",
+    color = {8, 4, 4},
   },
   ["fulgoran-rock"] = {
-    "bm-balack-n-rock",
-    "0.8 + bm_balack_rock * 2 - max(0, bm_balack_mix_oil) * 6 - bm_bio_cube_pool",
-    {38, 35, 35},
-    "__biological-machines-planet-balack__/graphics/tiles/balack-n-rock.png",
+    name = "bm-balack-n-rock",
+    probability = "0.8 + bm_balack_rock * 2 - max(0, bm_balack_mix_oil) * 6 - bm_bio_cube_pool",
+    color = {38, 35, 35},
+    picture = "__biological-machines-planet-balack__/graphics/tiles/balack-n-rock.png",
   },
   ["fulgoran-dust"] = {
-    "bm-balack-n-dust",
-    "bm_balack_scrap_medium + max(0, bm_balack_natural, 2 * bm_balack_mesa * bm_balack_pyramids) * 2 - 0.9 + bm_balack_rock + bm_balack_road_dust * bm_balack_sprawl - bm_bio_cube_pool",
-    {30, 27, 27},
-    "__biological-machines-planet-balack__/graphics/tiles/balack-n-dust.png",
+    name = "bm-balack-n-dust",
+    probability = "bm_balack_scrap_medium + max(0, bm_balack_natural, 2 * bm_balack_mesa * bm_balack_pyramids) * 2 - 0.9 + bm_balack_rock + bm_balack_road_dust * bm_balack_sprawl - bm_bio_cube_pool",
+    color = {30, 27, 27},
+    picture = "__biological-machines-planet-balack__/graphics/tiles/balack-n-dust.png",
   },
   ["fulgoran-sand"] = {
-    "bm-balack-n-sand",
-    "1 - bm_balack_dunes - bm_bio_cube_pool",
-    {26, 23, 23},
-    "__biological-machines-planet-balack__/graphics/tiles/balack-n-sand.png",
+    name = "bm-balack-n-sand",
+    probability = "1 - bm_balack_dunes - bm_bio_cube_pool",
+    color = {26, 23, 23},
+    picture = "__biological-machines-planet-balack__/graphics/tiles/balack-n-sand.png",
   },
   ["fulgoran-dunes"] = {
-    "bm-balack-n-dunes",
-    "1 + bm_balack_dunes - bm_bio_cube_pool",
-    {34, 31, 31},
-    "__biological-machines-planet-balack__/graphics/tiles/balack-n-dunes.png",
+    name = "bm-balack-n-dunes",
+    probability = "1 + bm_balack_dunes - bm_bio_cube_pool",
+    color = {34, 31, 31},
+    picture = "__biological-machines-planet-balack__/graphics/tiles/balack-n-dunes.png",
   },
   ["fulgoran-walls"] = {
-    "bm-balack-n-walls",
-    "bm_balack_tile_ruin_walls - bm_bio_cube_pool",
-    {54, 45, 45},
-    "__biological-machines-planet-balack__/graphics/tiles/balack-n-walls.png",
+    name = "bm-balack-n-walls",
+    probability = "bm_balack_tile_ruin_walls - bm_bio_cube_pool",
+    color = {54, 45, 45},
+    picture = "__biological-machines-planet-balack__/graphics/tiles/balack-n-walls.png",
   },
   ["fulgoran-paving"] = {
-    "bm-balack-n-paving",
-    "bm_balack_tile_ruin_paving - bm_bio_cube_pool",
-    {63, 45, 45},
-    "__biological-machines-planet-balack__/graphics/tiles/balack-n-paving.png",
+    name = "bm-balack-n-paving",
+    probability = "bm_balack_tile_ruin_paving - bm_bio_cube_pool",
+    color = {63, 45, 45},
+    picture = "__biological-machines-planet-balack__/graphics/tiles/balack-n-paving.png",
   },
   ["fulgoran-conduit"] = {
-    "bm-balack-n-conduit",
-    "bm_balack_tile_ruin_conduit - bm_bio_cube_pool",
-    {50, 41, 41},
-    "__biological-machines-planet-balack__/graphics/tiles/balack-n-conduit.png",
+    name = "bm-balack-n-conduit",
+    probability = "bm_balack_tile_ruin_conduit - bm_bio_cube_pool",
+    color = {50, 41, 41},
+    picture = "__biological-machines-planet-balack__/graphics/tiles/balack-n-conduit.png",
   },
   ["fulgoran-machinery"] = {
-    "bm-balack-n-machinery",
-    "bm_balack_tile_ruin_machinery - bm_bio_cube_pool",
-    {46, 37, 37},
-    "__biological-machines-planet-balack__/graphics/tiles/balack-n-machinery.png",
+    name = "bm-balack-n-machinery",
+    probability = "bm_balack_tile_ruin_machinery - bm_bio_cube_pool",
+    color = {46, 37, 37},
+    picture = "__biological-machines-planet-balack__/graphics/tiles/balack-n-machinery.png",
   },
 }
 for key, tile_data in pairs(balack_tile_data) do
   local new_tile = util.table.deepcopy(data.raw["tile"][key])
-  new_tile.name = tile_data[1]
-  new_tile.autoplace.probability_expression = tile_data[2]
+  new_tile.name = tile_data.name
+  new_tile.autoplace.probability_expression = tile_data.probability
   new_tile.sprite_usage_surface = "any"
-  new_tile.map_color = tile_data[3]
+  new_tile.map_color = tile_data.color
   new_tile.absorptions_per_second = {pollution = 0} --default 0.000030
 
   if key == "oil-ocean-deep" then
@@ -87,14 +150,16 @@ for key, tile_data in pairs(balack_tile_data) do
     )
     new_tile.fluid = "bm-oil-sludge"
     new_tile.effect = "balack-oil-deep"
-    new_tile.collision_mask = tile_collision_masks.oil_ocean_shallow()
+    --new_tile.collision_mask = tile_collision_masks.oil_ocean_shallow()
   else
     new_tile.absorptions_per_second = { pollution = 0 } --default 0.000030
-    new_tile.variants.material_background.picture = tile_data[4]
+    new_tile.variants.material_background.picture = tile_data.picture
     if key == "oil-ocean-shallow" then
       new_tile.fluid = "bm-oil-sludge"
     end
   end
+  new_tile.transitions = tile_data.transitions
+  new_tile.transitions_between_transitions = tile_data.tbt
   data:extend({new_tile})
 end
 
@@ -108,8 +173,9 @@ data:extend({
     water =
     {
       shader_variation = "oil",
-      textures =
-      {
+
+      --[[
+      textures = {
         {
           filename = "__space-age__/graphics/terrain/oilNoise.png",
           width = 512,
@@ -133,6 +199,34 @@ data:extend({
           height = 512 * 2
         },
       },
+      ]]
+
+      noise_textures =
+      {
+        {
+          filename = "__space-age__/graphics/terrain/oilNoise.png",
+          size = 512,
+          color_channels = 3
+        },
+        --gradient map for thin film effect
+        {
+          filename = "__space-age__/graphics/terrain/oilGradient.png",
+          width = 512,
+          height = 32,
+          color_channels = 3
+        }
+      },
+      image_textures =
+      {
+        {
+          filename = "__biological-machines-planet-balack__/graphics/tiles/balack-oil-ocean-deep-shader.png"
+        },
+        --specular highligts
+        {
+          filename = "__biological-machines-planet-balack__/graphics/tiles/balack-oil-ocean-deep-spec.png"
+        },
+      },
+
       texture_variations_columns = 1,
       texture_variations_rows = 1,
       secondary_texture_variations_columns = 4,
