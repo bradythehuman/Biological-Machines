@@ -1,6 +1,6 @@
 {
   "name": "biological-machines-scrapyard",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "title": "Biological Machines: Scrapyard",
   "author": "bradythehuman",
   "description": "Adds an early game recycler which consumes no power, is less space efficient and outputs a lot of pollution.",
