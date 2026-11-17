@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.4
+Date: 10. 11. 2026
+  Compatibility:
+    - Depends on the original Armoured Biters (2.1.0 supports Factorio 2.1) instead of ArmouredBiters-2_1-update
+---------------------------------------------------------------------------------------------------
 Version: 1.1.3
 Date: 24. 10. 2026
   Bugfixes:
