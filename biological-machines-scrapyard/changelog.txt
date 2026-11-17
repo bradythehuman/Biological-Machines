@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 17. 11. 2026
+  Bugfixes:
+    - Undoes bug introduced in the last update where the recycler is not unlocked with its technology
+---------------------------------------------------------------------------------------------------
 Version: 1.0.1
 Date: 29. 10. 2026
   Bugfixes:

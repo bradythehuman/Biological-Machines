@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.4
+Date: 17. 11. 2026
+  Bugfixes:
+    - cloning-x-homeworld compat now only triggers when both are installed (prev triggered when cloning + hunger where installed)
+---------------------------------------------------------------------------------------------------
 Version: 1.1.3
 Date: 3. 10. 2026
   Locale:

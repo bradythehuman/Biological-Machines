@@ -29,8 +29,8 @@ dh.add_prereq("panglia_dna_manipulation", "bm-fluroflux")
 
 
 
-dh.remove_ingredient("panglia_cloned_specimen_body_0", "bioflux")
-dh.add_ingredient("panglia_cloned_specimen_body_0", "item", "bm-fluroflux", 1)
+--dh.remove_ingredient("panglia_cloned_specimen_body_0", "bioflux")
+--dh.add_ingredient("panglia_cloned_specimen_body_0", "item", "bm-fluroflux", 1)
 
 
 

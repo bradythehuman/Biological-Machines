@@ -66,7 +66,7 @@ if mods["bioprocessing-tab"] then
   require("prototypes.bm-x-bio-processing-tab-updates")
 end
 
-if mods["biological-machines-hunger"]
+if mods["biological-machines-homeworld"]
 and mods["biological-machines-cloning"] then
   require("prototypes.cloning-x-homeworld-updates")
 end

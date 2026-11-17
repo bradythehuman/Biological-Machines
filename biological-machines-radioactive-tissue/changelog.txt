@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.8
+Date: 17. 11. 2026
+  Compatibility:
+    - Fixed tissue-x-panglia in response to a recent update. Currently brain chips do not require radioactive tissue but this may be readded depending on Panglia's future development
+---------------------------------------------------------------------------------------------------
 Version: 1.0.7
 Date: 24. 10. 2026
   Compatibility:

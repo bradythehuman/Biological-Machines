@@ -4,9 +4,10 @@ local dh = require("__biological-machines-core__.data-helper")
 
 dh.remove_ingredient("bm-clone", "bm-radioactive-tissue")
 
-dh.remove_ingredient("panglia_cloned_specimen_body_0", "uranium-235")
-dh.add_ingredient("panglia_cloned_specimen_body_0", "item", "bm-radioactive-tissue", 1)
+--dh.remove_ingredient("panglia_cloned_specimen_body_0", "uranium-235")
+--dh.add_ingredient("panglia_cloned_specimen_body_0", "item", "bm-radioactive-tissue", 1)
 
+--[[
 for _, result in pairs(data.raw.recipe["panglia_cloned_specimen_body_0"].results) do
   if result.name == "panglia_cloned_specimen_body_0" then
     result.shared_probability.max = 0.1
@@ -17,6 +18,7 @@ for _, result in pairs(data.raw.recipe["panglia_cloned_specimen_body_0"].results
     result.independent_probability = 0.25
   end
 end
+]]
 
 
 
