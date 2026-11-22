@@ -2,15 +2,17 @@ local dh = require("__biological-machines-core__.data-helper")
 
 
 
-local tree_seeding = data.raw["technology"]["tree-seeding"]
-tree_seeding.prerequisites = {"agriculture", "logistic-science-pack"}
-tree_seeding.unit = {
-  count = 200,
-  ingredients = {
-    {"automation-science-pack",   1}, {"logistic-science-pack",     1}
-  },
-  time = 30
-}
+if not mods["lignumis"] then  --Lignumis compat
+  local tree_seeding = data.raw["technology"]["tree-seeding"]
+  tree_seeding.prerequisites = {"agriculture", "logistic-science-pack"}
+  tree_seeding.unit = {
+    count = 200,
+    ingredients = {
+      {"automation-science-pack",   1}, {"logistic-science-pack",     1}
+    },
+    time = 30
+  }
+end
 
 data.raw["technology"]["fish-breeding"].prerequisites = {"agricultural-science-pack"}
 

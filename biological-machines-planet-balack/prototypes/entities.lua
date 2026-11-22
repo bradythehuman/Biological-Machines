@@ -44,8 +44,6 @@ tank_t2.repair_speed_modifier = 2
 tank_t2.water_reflection = car_reflection(1.2 * 1.5)
 
 local scalable_tank_images = {
-  tank_t2.light[1].picture,
-  tank_t2.light[2].picture,
   tank_t2.light_animation,
   tank_t2.animation.layers[1],
   tank_t2.animation.layers[2],
@@ -54,13 +52,17 @@ local scalable_tank_images = {
   tank_t2.turret_animation.layers[2],
   tank_t2.turret_animation.layers[3],
 }
+
+if not mods["EvenMoreLight"] then --Assumes base game tank lights
+  table.insert(scalable_tank_images, tank_t2.light[1].picture)
+  table.insert(scalable_tank_images, tank_t2.light[2].picture)
+end
+
 for _, scalable_tank_image in pairs(scalable_tank_images) do
   scalable_tank_image.scale = 1.5 * scalable_tank_image.scale
 end
 
 local tank_mk2_shift_y = 9
-tank_t2.light[1].shift = {-0.1 * 1.5, (-14 + tank_mk2_shift_y / 32) * 1.5}
-tank_t2.light[2].shift = {0.1 * 1.5, (-14 + tank_mk2_shift_y / 32) * 1.5}
 tank_t2.light_animation.shift = util.by_pixel(-1 * 1.5, (-17 + 6) * 1.5)
 tank_t2.animation.layers[1].shift = util.by_pixel(0, (-16 + tank_mk2_shift_y) * 1.5)
 tank_t2.animation.layers[2].shift = util.by_pixel(0, (-27.5 + tank_mk2_shift_y) * 1.5)
@@ -68,6 +70,11 @@ tank_t2.animation.layers[3].shift = util.by_pixel(22.5 * 1.5, (1 + tank_mk2_shif
 tank_t2.turret_animation.layers[1].shift = util.by_pixel(0.25 * 1.5, (-40.5 + tank_mk2_shift_y) * 1.5)
 tank_t2.turret_animation.layers[2].shift = util.by_pixel(0, (-41.5 + tank_mk2_shift_y) * 1.5)
 tank_t2.turret_animation.layers[3].shift = util.by_pixel(56.25 * 1.5, (0.5 + tank_mk2_shift_y) * 1.5)
+
+if not mods["EvenMoreLight"] then --Assumes base game tank lights
+  tank_t2.light[1].shift = {-0.1 * 1.5, (-14 + tank_mk2_shift_y / 32) * 1.5}
+  tank_t2.light[2].shift = {0.1 * 1.5, (-14 + tank_mk2_shift_y / 32) * 1.5}
+end
 
 local tank_t2_remnents = util.table.deepcopy(data.raw["corpse"]["tank-remnants"])
 tank_t2_remnents.name = "bm-tank-mk2-remnants"

@@ -54,30 +54,41 @@ data.raw["item"]["biter-egg"].order = "c-b"
 
 
 --------------------------------------------------------TECHNOLOGY
-local landfill = data.raw["technology"]["landfill"]
-landfill.prerequisites = {"automation-science-pack"}
-landfill.unit = {
-  count = 25,
-  ingredients = {{"automation-science-pack", 1}},
-  time = 15
-}
-local agriculture = data.raw["technology"]["agriculture"]
-table.insert(agriculture.effects, {type="unlock-recipe", recipe="bm-nutrients-from-berries"})
-agriculture.prerequisites = {"landfill", "steel-processing"}
-agriculture.unit = {
-  count = 75,
-  ingredients = {{"automation-science-pack", 1}},
-  time = 15
-}
-agriculture.research_trigger = nil
+if mods["lignumis"] then --Lignumis compat
+  local early_agriculture = data.raw["technology"]["tree-seeding"]
+  table.insert(early_agriculture.effects, {type="unlock-recipe", recipe="nutrients-from-spoilage"})
+  table.insert(early_agriculture.effects, {type="unlock-recipe", recipe="bm-nutrients-from-berries"})
+else --Normal
+  --Landfill tech changes
+  local landfill = data.raw["technology"]["landfill"]
+  landfill.prerequisites = {"automation-science-pack"}
+  landfill.unit = {
+    count = 25,
+    ingredients = {{"automation-science-pack", 1}},
+    time = 15
+  }
 
-if mods["biological-machines-hunger"] then
-  dh.add_prereq("planet-discovery-gleba", "bm-food-processing")
-else
-  dh.add_prereq("planet-discovery-gleba", "agriculture")
+  --Agri tower tech changes
+  local agriculture = data.raw["technology"]["agriculture"]
+  table.insert(agriculture.effects, {type="unlock-recipe", recipe="bm-nutrients-from-berries"})
+  agriculture.prerequisites = {"landfill", "steel-processing"}
+  agriculture.unit = {
+    count = 75,
+    ingredients = {{"automation-science-pack", 1}},
+    time = 15
+  }
+  agriculture.research_trigger = nil
+
+  if mods["biological-machines-hunger"] then
+    dh.add_prereq("planet-discovery-gleba", "bm-food-processing")
+  else
+    dh.add_prereq("planet-discovery-gleba", "agriculture")
+  end
+  data.raw["technology"]["yumako"].prerequisites = {"planet-discovery-gleba"}
+  data.raw["technology"]["jellynut"].prerequisites = {"planet-discovery-gleba"}
 end
-data.raw["technology"]["yumako"].prerequisites = {"planet-discovery-gleba"}
-data.raw["technology"]["jellynut"].prerequisites = {"planet-discovery-gleba"}
+
+
 
 local vulcanus_effects = {
   "bm-sulfuric-bacteria", "bm-sulfuric-bacteria-cultivation",
